@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Mental Health Discussions — Build Four</title>
+  <meta name="description" content="Mental Health Discussions is a free mental-health education and navigation project." />
+  <style>
+    :root{
+      --ink:#0b0b0b;
+      --paper:#ffffff;
+      --mist:#f4f4f2;
+      --mid:#777;
+      --line:#d8d8d5;
+      --soft:#ececea;
+      --max:1180px;
+      --radius:24px;
+      --shadow:0 18px 45px rgba(0,0,0,.07);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}
+    button,input{font:inherit}
+    a{color:inherit}
+    .hidden{display:none!important}
+    .shell{min-height:100vh;display:flex;flex-direction:column}
+    .topbar{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.06)}
+    .nav{max-width:var(--max);margin:auto;height:92px;padding:0 24px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:18px}
+    .nav-group{display:flex;align-items:center;gap:14px;font-size:.9rem}
+    .nav-group.right{justify-content:flex-end}
+    .nav a,.nav button{border:0;background:none;text-decoration:none;cursor:pointer;color:#222;padding:8px 7px}
+    .nav a:hover,.nav button:hover{text-decoration:underline;text-underline-offset:5px}
+    .brand{display:flex;align-items:center;justify-content:center;border:0;background:none;cursor:pointer;padding:0}
+    .wordmark{font-family:"Segoe Script","Snell Roundhand","Brush Script MT","Lucida Handwriting",cursive;font-weight:400;letter-spacing:-.03em;color:#111;white-space:nowrap}
+    .wordmark-onboard{font-size:clamp(1.45rem,2.6vw,2.15rem);margin:0 auto 32px;opacity:.86}
+    .wordmark-nav{font-size:1.35rem;opacity:.9}
+    .wordmark-footer{font-size:1.55rem;color:#fff;opacity:.96;margin-bottom:12px}
+    .nav-cta{border:1px solid var(--ink)!important;border-radius:999px!important;padding:9px 14px!important;text-decoration:none!important}
+    .crisisbar{background:#0b0b0b;color:#fff;text-align:center;padding:12px 16px;font-size:.88rem;line-height:1.35}
+    .crisisbar a{font-weight:700}
+    main{flex:1}
+    .onboarding{min-height:calc(100vh - 46px);display:grid;place-items:center;padding:38px 22px 66px;position:relative;overflow:hidden;background:#fff}
+    .onboarding::before,.onboarding::after{display:none}
+    .onboard-card{width:min(920px,100%);text-align:center;position:relative;z-index:2}
+    .eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:.74rem;font-weight:800;color:#555}
+    .big-title{font-size:clamp(2.35rem,5vw,4.9rem);line-height:.98;letter-spacing:-.055em;margin:0 auto 18px;max-width:840px}
+    .lede{font-size:clamp(1rem,1.6vw,1.22rem);color:#555;max-width:700px;margin:0 auto 22px}
+    .micro{font-size:.9rem;color:#666;margin:8px 0 0}
+    .primary{border:0;background:#0b0b0b;color:#fff;border-radius:999px;padding:15px 25px;cursor:pointer;font-weight:750;box-shadow:0 10px 25px rgba(0,0,0,.12);position:relative;overflow:hidden;transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s ease}
+    .primary:hover{transform:translateY(-3px) scale(1.015);box-shadow:0 16px 32px rgba(0,0,0,.16)}
+    .primary::after,.panel.black::after,.nav-cta::after{content:"";position:absolute;inset:-30% auto -30% -45%;width:30%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.22),transparent);transform:skewX(-18deg);animation:softShine 5.8s ease-in-out infinite;pointer-events:none}
+    @keyframes softShine{0%,68%{left:-45%;opacity:0}72%{opacity:.45}86%{left:118%;opacity:.25}100%{left:118%;opacity:0}}
+    .panel.black{position:relative;overflow:hidden}
+    .ghost{border:0;background:transparent;text-decoration:underline;text-underline-offset:5px;cursor:pointer;color:#555;padding:12px 18px}
+    .question-wrap{width:min(960px,100%);margin:auto;animation:cardIn .72s cubic-bezier(.22,.7,.2,1)}
+    @keyframes cardIn{from{opacity:0;filter:blur(5px);transform:translateY(8px) scale(.994)}to{opacity:1;filter:blur(0);transform:none}}
+    .onboard-card.is-leaving{animation:calmOut .24s ease forwards}
+    @keyframes calmOut{to{opacity:.08;filter:blur(4px);transform:translateY(-4px)}}
+    .question-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px;color:#666;font-size:.88rem}
+    .progress{display:flex;gap:7px}
+    .dot{width:26px;height:4px;border-radius:99px;background:#ddd;transition:.3s}.dot.active{background:#111}.dot.done{background:#666}
+    .question-title{font-size:clamp(2rem,4vw,3.65rem);line-height:1.04;letter-spacing:-.045em;margin:0 0 9px}
+    .question-help{color:#656565;margin:0 0 26px;font-size:1.02rem}
+    .choices{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;text-align:left}
+    .choice{border:1px solid #d7d7d4;background:#fff;border-radius:20px;padding:20px;min-height:138px;cursor:pointer;transition:.22s;position:relative;overflow:hidden}
+    .choice:hover{border-color:#111;transform:translateY(-3px);box-shadow:var(--shadow)}
+    .choice:active{transform:scale(.985)}
+    .choice strong{display:block;font-size:1.04rem;margin-bottom:5px}.choice span:last-child{font-size:.91rem;color:#666}
+    .question-actions{display:flex;justify-content:center;gap:8px;margin-top:24px}
+    .calmveil{position:fixed;inset:0;pointer-events:none;z-index:100;background:rgba(255,255,255,0);backdrop-filter:blur(0);opacity:0}
+    .calmveil.go{animation:calmVeil .62s ease-in-out}
+    @keyframes calmVeil{0%{opacity:0;backdrop-filter:blur(0)}45%{opacity:.78;backdrop-filter:blur(5px)}55%{opacity:.78;backdrop-filter:blur(5px)}100%{opacity:0;backdrop-filter:blur(0)}}
+
+    .site{display:none}.site.active{display:block;animation:fade .6s ease}.site-section{padding:76px 24px}.site-section.alt{background:#f7f7f5}.wrap{max-width:var(--max);margin:auto}
+    @keyframes fade{from{opacity:0}to{opacity:1}}
+    .hero{padding:70px 24px 55px;border-bottom:1px solid #eee}.hero-grid{max-width:var(--max);margin:auto;display:grid;grid-template-columns:1fr 1.05fr;gap:42px;align-items:center}
+    .hero h1{font-size:clamp(3rem,6vw,6.3rem);line-height:.92;letter-spacing:-.06em;margin:11px 0 19px}.hero p{font-size:1.12rem;color:#555;max-width:610px}
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}.outline{border:1px solid #111;background:#fff;color:#111;border-radius:999px;padding:13px 19px;cursor:pointer;font-weight:700}
+    .video{border:1px solid #111;border-radius:28px;overflow:hidden;background:#000;box-shadow:var(--shadow);aspect-ratio:16/9;position:relative}.video iframe{width:100%;height:100%;border:0;display:block}.video-note{font-size:.76rem;color:#777;margin-top:8px;text-align:center}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:30px}.section-head h2{font-size:clamp(2.2rem,4vw,4.2rem);letter-spacing:-.05em;line-height:1;margin:0}.section-head p{max-width:560px;color:#666;margin:0}
+    .path-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.path{border:1px solid #d8d8d5;border-radius:20px;padding:19px;min-height:190px;background:#fff;cursor:pointer;transition:.2s}.path:hover{transform:translateY(-3px);border-color:#111;box-shadow:var(--shadow)}.path.path h3{font-size:1.08rem;line-height:1.1;margin:0 0 8px}.path p{font-size:.87rem;color:#666;margin:0}
+    .result-banner{display:none}
+    .starting-point{display:flex;align-items:center;justify-content:space-between;gap:14px;border:1px solid #d8d8d5;border-radius:18px;padding:12px 14px 12px 17px;background:rgba(255,255,255,.96);box-shadow:0 16px 40px rgba(0,0,0,.08);margin:0 0 26px}
+    .starting-point strong{font-size:.95rem}.starting-point span{color:#6a6a6a;font-size:.88rem}.starting-actions{display:flex;gap:7px;flex-wrap:wrap}.starting-actions button{border:1px solid #bbb;background:#fff;border-radius:999px;padding:8px 11px;cursor:pointer;font-size:.82rem}.starting-actions .dark{background:#111;color:#fff;border-color:#111}
+    .two-col{display:grid;grid-template-columns:1.05fr .95fr;gap:24px}.panel{border:1px solid #d8d8d5;border-radius:24px;padding:26px;background:#fff}.panel.black{background:#111;color:#fff;border-color:#111}.panel h3{font-size:1.6rem;margin:0 0 8px;letter-spacing:-.03em}.panel p{color:#656565}.panel.black p{color:#cacaca}
+    .glossary-controls{display:grid;grid-template-columns:1fr auto;gap:10px;margin-top:18px}.glossary-controls input{width:100%;border:1px solid #bbb;border-radius:14px;padding:14px 15px;font-size:1rem}.mic{border:1px solid #111;background:#fff;border-radius:14px;padding:0 16px;cursor:pointer;font-size:.86rem;font-weight:700;letter-spacing:.02em}.definition{margin-top:17px;border-top:1px solid #ddd;padding-top:17px}.definition h4{font-size:1.35rem;margin:0 0 6px}.definition .pronounce{font-size:.92rem;color:#666;margin:0 0 10px}.listen-row{display:flex;gap:8px;flex-wrap:wrap}.small-btn{border:1px solid #111;background:#fff;border-radius:999px;padding:8px 11px;cursor:pointer;font-size:.85rem}.small-btn.dark{background:#111;color:#fff}
+    .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.feature{border:1px solid #d7d7d4;border-radius:22px;padding:23px;background:#fff;min-height:185px}.feature h3{margin:8px 0 7px}.feature p{color:#666;font-size:.93rem}.tag{display:inline-block;border:1px solid #ccc;border-radius:99px;padding:4px 9px;font-size:.73rem;color:#555}
+    .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.post{border-top:2px solid #111;padding:18px 2px 0}.post .kicker{font-size:.76rem;text-transform:uppercase;letter-spacing:.12em;color:#666}.post h3{font-size:1.35rem;line-height:1.1;margin:10px 0}.post p{color:#666;font-size:.92rem}
+    .hub{display:none;max-width:var(--max);margin:0 auto;padding:68px 24px 90px}.hub.active{display:block;animation:cardIn .4s ease}.hub-head{display:grid;grid-template-columns:1fr .8fr;gap:36px;align-items:start}.hub h2{font-size:clamp(2.6rem,5vw,5.5rem);line-height:.94;letter-spacing:-.055em;margin:10px 0 15px}.hub-card{border:1px solid #d8d8d5;border-radius:22px;padding:22px;background:#fff}.hub-tools{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:32px}.hub-tool{border:1px solid #d8d8d5;border-radius:18px;padding:19px}.hub-tool h4{margin:6px 0}.hub-tool p{color:#666;font-size:.89rem}.back-home{margin-top:28px}
+    footer{background:#0b0b0b;color:#fff;padding:52px 24px}.footer-grid{max-width:var(--max);margin:auto;display:grid;grid-template-columns:1.3fr repeat(3,1fr);gap:35px}.footer-copyright{font-size:.78rem;color:#aaa;margin-bottom:12px}.footer-copy{color:#aaa;font-size:.88rem;max-width:340px}.footer-col h4{margin:0 0 13px;font-size:.85rem;text-transform:uppercase;letter-spacing:.12em;color:#aaa}.footer-col a,.footer-col button{display:block;background:none;border:0;color:#fff;text-align:left;text-decoration:none;padding:5px 0;cursor:pointer;font-size:.9rem}.footer-col a:hover,.footer-col button:hover{text-decoration:underline}.fineprint{max-width:var(--max);margin:35px auto 0;border-top:1px solid #333;padding-top:22px;color:#999;font-size:.78rem}
+    .modal{position:fixed;inset:0;z-index:120;background:rgba(0,0,0,.62);display:none;padding:30px;overflow:auto}.modal.active{display:grid;place-items:start center}.modal-card{width:min(860px,100%);background:#fff;border-radius:24px;padding:30px;margin:auto;box-shadow:0 30px 90px rgba(0,0,0,.35)}.modal-top{display:flex;justify-content:space-between;gap:20px}.modal h2{font-size:2.2rem;letter-spacing:-.04em;margin:0 0 8px}.modal h3{margin:26px 0 7px}.modal p,.modal li{color:#555}.close{width:42px;height:42px;border:1px solid #aaa;border-radius:50%;background:#fff;cursor:pointer}.notice{border:1px solid #111;border-radius:16px;padding:14px 16px;background:#f8f8f6;font-weight:650}.future{display:inline-block;background:#111;color:#fff;border-radius:99px;padding:4px 9px;font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;margin-bottom:10px}
+
+    .question-symbol{font-size:1.5rem;display:block;margin-bottom:12px;filter:grayscale(1);opacity:.8}
+    .mobile-menu{display:none}
+    @media(max-width:950px){
+      .nav{grid-template-columns:auto 1fr auto;height:78px}.nav-group{display:none}.brand{justify-self:center}.wordmark-nav{font-size:1.22rem}.mobile-menu{display:block;justify-self:end;border:1px solid #111!important;border-radius:999px!important;padding:8px 12px!important}.choices{grid-template-columns:repeat(2,1fr)}.hero-grid,.two-col,.hub-head{grid-template-columns:1fr}.path-grid{grid-template-columns:repeat(2,1fr)}.feature-grid,.blog-grid,.hub-tools{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}.video{order:-1}.hero h1{font-size:clamp(3rem,11vw,5.2rem)}
+    }
+    @media(max-width:620px){
+      .crisisbar{font-size:.76rem}.onboarding{padding:28px 16px 46px;min-height:calc(100vh - 54px)}.big-title{font-size:2.55rem}.choices{grid-template-columns:1fr;gap:10px}.choice{min-height:auto;padding:16px}.choice.question-title{font-size:2.35rem}.question-help{font-size:.94rem}.path-grid,.feature-grid,.blog-grid,.hub-tools,.footer-grid{grid-template-columns:1fr}.site-section{padding:55px 18px}.hero{padding:44px 18px}.section-head{display:block}.section-head p{margin-top:12px}.result-inner{display:block}.result-inner button{margin-top:10px}.modal{padding:10px}.modal-card{padding:22px;border-radius:18px}.wordmark-footer{font-size:1.45rem}.glossary-controls{grid-template-columns:1fr auto}.nav{padding:0 14px}.wordmark-nav{font-size:1.08rem}
+    }
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+<div class="calmveil" id="calmveil"></div>
+<div class="shell">
+  <div class="crisisbar"><strong>Need immediate mental-health crisis support?</strong> In the U.S., call or text <a href="tel:988">988</a> now. If there is immediate danger, call <a href="tel:911">911</a>. This site does not replace professional care.</div>
+
+  <main>
+    <section id="onboarding" class="onboarding" aria-live="polite">
+      <div class="onboard-card" id="onboardContent">
+        <div class="wordmark wordmark-onboard">Mental Health Discussions</div>
+        <h1 class="big-title">Let’s get you to the right place.</h1>
+        <p class="lede">Four quick choices can point you toward the most useful part of the site. No diagnosis. No account. No pressure.</p>
+        <button class="primary" onclick="startGuide()">Start the quick guide →</button>
+        <div><button class="ghost" onclick="goSite()">Skip & explore the full site</button></div>
+        <p class="micro">Usually under 15 seconds.</p>
+      </div>
+    </section>
+
+    <div id="site" class="site">
+      <header class="topbar">
+        <nav class="nav" aria-label="Primary">
+          <div class="nav-group">
+            <button onclick="backToMain();scrollToId('start')">Start Here</button>
+            <a href="#understand" onclick="backToMain()">Understand</a>
+            <a href="#family" onclick="backToMain()">Family</a>
+          </div>
+          <button class="brand" onclick="backToMain();scrollToId('home')" aria-label="Mental Health Discussions home"><span class="wordmark wordmark-nav">Mental Health Discussions</span></button>
+          <div class="nav-group right">
+            <a href="#life" onclick="backToMain()">Life</a>
+            <a href="#change" onclick="backToMain()">Change</a>
+            <a href="#discuss" onclick="backToMain()">Discuss</a>
+            <button class="nav-cta" onclick="restartGuide()">Guide Me</button>
+          </div>
+          <button class="mobile-menu" onclick="restartGuide()">Guide me</button>
+        </nav>
+      </header>
+      <section id="home" class="hero">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">Mental Health Discussions</div>
+            <h1>Understand it.<br>Navigate it.<br>Change it.</h1>
+            <p>Mental health can feel complicated. This site is being built to make the information, next steps, family questions, research and system issues easier to understand—without putting essential information behind a paywall.</p>
+            <div class="hero-actions"><button class="primary" onclick="restartGuide()">Guide me to the right place</button><button class="outline" onclick="scrollToId('understand')">Explore everything</button></div>
+          </div>
+          <div class="video" id="mhdVideo" aria-label="Mental health in America video">
+            <iframe id="mhdYouTube" src="https://www.youtube.com/embed/7iDb7PaEszM?rel=0&playsinline=1&controls=1&modestbranding=1" title="Mental Health in America" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="eager"></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section id="start" class="site-section">
+        <div class="wrap">
+          <div class="section-head"><div><div class="eyebrow">Start where you are</div><h2>Five ways in.</h2></div><p>You don’t need to know a diagnosis or the “right” mental-health term. Pick what sounds closest to what you need today.</p></div>
+          <div class="path-grid">
+            <button class="path" onclick="showHub('self')"><h3>I need support for myself</h3><p>Symptoms, treatment questions, appointments, coping and next steps.</p></button>
+            <button class="path" onclick="showHub('family')"><h3>I’m supporting someone</h3><p>Adult loved ones, caregiver questions, communication, privacy and planning.</p></button>
+            <button class="path" onclick="showHub('crisis')"><h3>This feels urgent</h3><p>Immediate safety, crisis planning and what to do right now.</p></button>
+            <button class="path" onclick="showHub('work')"><h3>Work, school or daily life</h3><p>Functioning, accommodations, stress, communication and support.</p></button>
+            <button class="path" onclick="showHub('learn')"><h3>I want to understand or change it</h3><p>Conditions, treatments, research, laws, systems and advocacy education.</p></button>
+          </div>
+        </div>
+      </section>
+
+      <section id="understand" class="site-section alt">
+        <div class="wrap">
+          <div class="section-head"><div><div class="eyebrow">Understand</div><h2>Say it. See it. Hear it.</h2></div><p>The MHD glossary is designed for the moments when you heard a term but don’t know how to spell it, pronounce it or explain it.</p></div>
+          <div class="two-col">
+            <div class="panel">
+              <h3>Voice Glossary</h3>
+              <p>Type a term or tap the microphone and say it. Then listen to the word and the plain-English definition.</p>
+              <div class="glossary-controls"><input id="glossaryInput" list="terms" placeholder="Try: anosognosia, psychosis, mania…" onkeydown="if(event.key==='Enter')lookupTerm()" /><button class="mic" id="micBtn" onclick="startVoiceSearch()" title="Speak a term">Speak</button></div>
+              <datalist id="terms"></datalist>
+              <div class="definition" id="definition"><h4>Start with a word.</h4><p class="pronounce">The glossary will show the definition here.</p></div>
+            </div>
+            <div class="panel black">
+              <div class="tag" style="border-color:#555;color:#ddd">Coming deeper in later builds</div>
+              <h3>Ask MHD</h3>
+              <p>Describe what is happening in ordinary language. The future assistant will help organize questions, explain terminology, prepare for appointments and point to resources—without pretending to diagnose.</p>
+              <button class="small-btn" onclick="openModal('ask')">See how Ask MHD will work</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="family" class="site-section">
+        <div class="wrap">
+          <div class="section-head"><div><div class="eyebrow">Family + caregivers</div><h2>When someone you love needs help.</h2></div><p>Built for the questions families actually ask: what can I do, what can I say, what can providers tell me, and what happens when an adult loved one refuses help?</p></div>
+          <div class="feature-grid">
+            <div class="feature"><h3>What am I seeing?</h3><p>Plain-language explanations of behavior changes, warning signs and terms worth learning.</p></div>
+            <div class="feature"><h3>How do I talk about it?</h3><p>Conversation guides designed to reduce escalation and make the next interaction more productive.</p></div>
+            <div class="feature"><h3>Provider Summary Builder</h3><p>Organize observations, sleep, medication history, safety concerns and questions into one clean summary.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="life" class="site-section alt">
+        <div class="wrap">
+          <div class="section-head"><div><div class="eyebrow">Life</div><h2>Mental health does not happen in a vacuum.</h2></div><p>Work, school, housing, relationships, finances, sleep, substance use and community can all become part of the picture.</p></div>
+          <div class="feature-grid">
+            <div class="feature"><h3>Workplace</h3><p>Employee and manager paths for support, communication, leave, accommodations and healthier systems.</p></div>
+            <div class="feature"><h3>School</h3><p>Student support, family questions, transitions and educational navigation.</p></div>
+            <div class="feature"><h3>Daily stability</h3><p>Housing, routines, sleep, food, relationships, transportation and practical supports.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="change" class="site-section">
+        <div class="wrap">
+          <div class="section-head"><div><div class="eyebrow">Change</div><h2>What needs to change around us?</h2></div><p>A future System Lab will translate mental-health policy, research, service gaps and legislation into understandable, source-based explanations.</p></div>
+          <div class="two-col">
+            <div class="panel"><h3>Policy + law</h3><p>State-by-state explainers, family rights, patient rights, crisis systems, insurance, treatment access and legislation tracking.</p><span class="tag">Educational—not legal advice</span></div>
+            <div class="panel"><h3>Research Radar</h3><p>New studies translated into normal English: what researchers studied, what they found, limitations, funding and what the study does—and does not—prove.</p><span class="tag">Evidence separated from opinion</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="discuss" class="site-section alt">
+        <div class="wrap">
+          <div class="section-head"><div><div class="eyebrow">Discuss</div><h2>The super blog.</h2></div><p>Short, direct, highly readable discussions that connect evidence, family experience and the questions people are already asking.</p></div>
+          <div class="blog-grid">
+            <article class="post"><div class="kicker">Family</div><h3>Can someone be mentally ill and not know it?</h3><p>A plain-language look at insight, awareness and why “just convince them” may not work.</p></article>
+            <article class="post"><div class="kicker">Medication</div><h3>Why do people stop taking psychiatric medication?</h3><p>Side effects, insight, access, identity and other reasons worth understanding before judging.</p></article>
+            <article class="post"><div class="kicker">Systems</div><h3>Why is getting help so complicated?</h3><p>A map of the gaps between crisis care, outpatient care, insurance, families and everyday life.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <div id="hubArea">
+        <section class="hub" id="hub-self"><div class="starting-point"><div><strong>Your starting point</strong><br><span>Support for yourself</span></div><div class="starting-actions"><button onclick="returnToLastQuestion()">← Change an answer</button><button class="dark" onclick="backToMain()">Explore full site</button></div></div><div class="hub-head"><div><div class="eyebrow">Your starting point</div><h2>Support for me.</h2><p class="lede" style="margin:0">Start with what you are noticing, what is getting harder, and what kind of help you want next. This path will eventually personalize education and planning without diagnosing you.</p></div><div class="hub-card"><strong>Good first steps</strong><p>Understand symptoms → prepare questions → locate appropriate help → track what changes → review what is working.</p></div></div><div class="hub-tools"><div class="hub-tool"><h4>Understand symptoms</h4><p>Conditions, common signs and what else can look similar.</p></div><div class="hub-tool"><h4>Prepare for care</h4><p>Questions, symptom timeline and appointment prep.</p></div><div class="hub-tool"><h4>Find the next level of help</h4><p>Therapy, psychiatry, primary care, crisis and community support.</p></div></div><button class="outline back-home" onclick="backToMain()">← Back to main site</button></section>
+        <section class="hub" id="hub-family"><div class="starting-point"><div><strong>Your starting point</strong><br><span>Family + caregiver support</span></div><div class="starting-actions"><button onclick="returnToLastQuestion()">← Change an answer</button><button class="dark" onclick="backToMain()">Explore full site</button></div></div><div class="hub-head"><div><div class="eyebrow">Your starting point</div><h2>Family + caregiver.</h2><p class="lede" style="margin:0">Support someone you care about while understanding boundaries, communication, privacy, safety planning and the difference between helping and controlling.</p></div><div class="hub-card"><strong>Built for real family questions</strong><p>“What can I tell the doctor?” “What if they refuse help?” “What should I document?” “What do I do if things get worse?”</p></div></div><div class="hub-tools"><div class="hub-tool"><h4>Conversation guides</h4><p>Lower-conflict ways to approach hard conversations.</p></div><div class="hub-tool"><h4>Provider summary</h4><p>Organize useful observations and history.</p></div><div class="hub-tool"><h4>Family navigation</h4><p>Privacy, crisis, treatment and community-resource explainers.</p></div></div><button class="outline back-home" onclick="backToMain()">← Back to main site</button></section>
+        <section class="hub" id="hub-crisis"><div class="starting-point"><div><strong>Your starting point</strong><br><span>Urgent / crisis support</span></div><div class="starting-actions"><button onclick="returnToLastQuestion()">← Change an answer</button><button class="dark" onclick="backToMain()">Explore full site</button></div></div><div class="hub-head"><div><div class="eyebrow">Urgent support</div><h2>This may need help now.</h2><p class="lede" style="margin:0">If there is immediate danger, a suicide attempt in progress, serious violence, or a medical emergency, contact emergency services now. In the U.S., call or text 988 for crisis support.</p></div><div class="hub-card"><strong>U.S. crisis options</strong><p><a href="tel:988">Call 988</a> · <a href="sms:988">Text 988</a><br>Immediate danger: 911<br><br>Outside the U.S.: use your local emergency or crisis service.</p></div></div><div class="hub-tools"><div class="hub-tool"><h4>Safety first</h4><p>Keep the person and others away from immediate hazards when you can do so safely.</p></div><div class="hub-tool"><h4>Get live help</h4><p>Crisis professionals can help determine the next step.</p></div><div class="hub-tool"><h4>Share key information</h4><p>Recent behavior, medications, substances, threats, medical issues and location.</p></div></div><button class="outline back-home" onclick="backToMain()">← Back to main site</button></section>
+        <section class="hub" id="hub-work"><div class="starting-point"><div><strong>Your starting point</strong><br><span>Work, school + daily life</span></div><div class="starting-actions"><button onclick="returnToLastQuestion()">← Change an answer</button><button class="dark" onclick="backToMain()">Explore full site</button></div></div><div class="hub-head"><div><div class="eyebrow">Your starting point</div><h2>Work, school + daily life.</h2><p class="lede" style="margin:0">When mental health is affecting functioning, the practical problem may be just as important as the diagnostic label.</p></div><div class="hub-card"><strong>Choose the practical problem first</strong><p>Attendance, concentration, communication, burnout, accommodations, leave, school support, housing or routines.</p></div></div><div class="hub-tools"><div class="hub-tool"><h4>Work</h4><p>Employee and manager guidance.</p></div><div class="hub-tool"><h4>School</h4><p>Student and family navigation.</p></div><div class="hub-tool"><h4>Daily stability</h4><p>Routines, sleep, housing and practical support.</p></div></div><button class="outline back-home" onclick="backToMain()">← Back to main site</button></section>
+        <section class="hub" id="hub-learn"><div class="starting-point"><div><strong>Your starting point</strong><br><span>Understand + change</span></div><div class="starting-actions"><button onclick="returnToLastQuestion()">← Change an answer</button><button class="dark" onclick="backToMain()">Explore full site</button></div></div><div class="hub-head"><div><div class="eyebrow">Your starting point</div><h2>Understand + change.</h2><p class="lede" style="margin:0">Learn the conditions, treatments and evidence—then look outward at the policies, institutions and social conditions that shape mental health.</p></div><div class="hub-card"><strong>Two lenses</strong><p><b>Individual:</b> symptoms, treatment and recovery.<br><b>System:</b> access, law, housing, work, schools, insurance and policy.</p></div></div><div class="hub-tools"><div class="hub-tool"><h4>Condition library</h4><p>Consistent plain-language explainers.</p></div><div class="hub-tool"><h4>Research Radar</h4><p>New evidence without the hype.</p></div><div class="hub-tool"><h4>System Lab</h4><p>Policy, law and reform education.</p></div></div><button class="outline back-home" onclick="backToMain()">← Back to main site</button></section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div><div class="wordmark wordmark-footer">Mental Health Discussions</div><div class="footer-copyright">© <span class="footerYear"></span> Mental Health Discussions</div><p class="footer-copy">An independent mental-health education project being built to keep useful public information free and easier to navigate.</p></div>
+      <div class="footer-col"><h4>Project</h4><button onclick="openModal('about')">About</button><button onclick="openModal('funding')">Funding & Transparency</button><button onclick="openModal('nonprofit')">Future 501(c)(3) Roadmap</button><button onclick="openModal('editorial')">Editorial Standards</button></div>
+      <div class="footer-col"><h4>Legal</h4><button onclick="openModal('medical')">Medical Disclaimer</button><button onclick="openModal('privacy')">Privacy</button><button onclick="openModal('terms')">Terms of Use</button><button onclick="openModal('affiliate')">Affiliate Disclosure</button><button onclick="openModal('accessibility')">Accessibility</button></div>
+      <div class="footer-col"><h4>Help</h4><button onclick="showHub('crisis')">Crisis Resources</button><button onclick="openModal('contact')">Contact</button><a href="https://www.youtube.com/@MentalHealthdiscussions/videos" target="_blank" rel="noopener">YouTube</a><button onclick="openModal('support')">Support MHD</button></div>
+    </div>
+    <div class="fineprint">© <span id="year"></span> Mental Health Discussions. <b>Current status:</b> not a 501(c)(3) nonprofit organization. Nothing on this prototype should be interpreted as a tax-deductible charitable solicitation. Target nonprofit planning language is clearly marked as future-facing.</div>
+  </footer>
+</div>
+
+<div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="if(event.target===this)closeModal()"><div class="modal-card"><div class="modal-top"><div><span id="modalBadge" class="future hidden">Future-facing</span><h2 id="modalTitle"></h2></div><button class="close" onclick="closeModal()" aria-label="Close">×</button></div><div id="modalBody"></div></div></div>
+
+<script>
+  const state={answers:{},step:0,recommendation:null};
+  const questions=[
+    {id:'role',title:'What brings you here today?',help:'Choose the closest fit. You can change direction anytime.',choices:[
+      ['🫶','I need help for myself','I’m trying to understand what I’m feeling or what to do next.','self'],
+      ['👨‍👩‍👦','I’m worried about someone','A family member, partner, friend or adult child is concerning me.','family'],
+      ['🧑‍🤝‍🧑','I’m a caregiver or supporter','I’m already helping someone and need better tools.','family'],
+      ['💼','It’s affecting work or school','Functioning, attendance, stress or accommodations are part of it.','work'],
+      ['🧠','I want to learn','Conditions, medication, therapy, research or terminology.','learn'],
+      ['⚖️','I want to change the system','Policy, laws, services, access or advocacy education.','learn']
+    ]},
+    {id:'need',title:'What feels closest to the problem?',help:'You do not need to know a diagnosis.',choices:[
+      ['😟','Mood, anxiety or stress','Sadness, worry, panic, overwhelm, irritability or burnout.','self'],
+      ['🌙','Sleep, energy or unusual changes','Major sleep changes, racing energy, withdrawal or a sudden shift.','self'],
+      ['🌀','Confusion, paranoia or losing touch','Things feel unreal, frightening or very different from usual.','family'],
+      ['💊','Treatment or medication questions','Understanding options, side effects, adherence or appointments.','learn'],
+      ['🏠','Daily-life problems','Work, school, housing, relationships, money or routines.','work'],
+      ['📚','I mostly want information','I’m here to understand a topic before deciding what comes next.','learn']
+    ]},
+    {id:'urgency',title:'How urgent does this feel right now?',help:'This question helps us put safety before everything else.',choices:[
+      ['🚨','Immediate danger or crisis','Someone may be unsafe, suicidal, violent, severely disoriented or medically unstable.','crisis'],
+      ['⏱️','I need help today or very soon','Not an immediate emergency, but waiting weeks feels wrong.','soon'],
+      ['📅','Important, but not immediate','I want to make a thoughtful plan.','plan'],
+      ['🔎','I’m mainly learning','No urgent situation. I want clear information.','learn']
+    ]},
+    {id:'goal',title:'What would help most next?',help:'Last one. We’ll take you straight to the strongest starting point.',choices:[
+      ['🧭','Tell me what to do next','A simple path and the right questions.','self'],
+      ['🗣️','Help me support someone','Communication, family tools and boundaries.','family'],
+      ['🧠','Help me understand what this could mean','Terms, conditions and treatment information.','learn'],
+      ['💼','Help with functioning and daily life','Work, school, routines or practical support.','work'],
+      ['⚖️','Help me understand rights or systems','Policy, law, access and system navigation.','learn'],
+      ['📋','Help me organize information','Prepare for a provider or create a useful summary.','family']
+    ]}
+  ];
+  function transition(fn){
+    const veil=document.getElementById('calmveil');
+    const card=document.getElementById('onboardContent');
+    card?.classList.add('is-leaving');
+    veil.classList.remove('go'); void veil.offsetWidth; veil.classList.add('go');
+    setTimeout(()=>{fn();card?.classList.remove('is-leaving')},300);
+  }
+  function startGuide(){state.step=0;state.answers={};state.recommendation=null;renderQuestion();}
+  function restartGuide(){
+    document.getElementById('site').classList.remove('active');
+    document.getElementById('onboarding').classList.remove('hidden');
+    document.querySelectorAll('.hub').forEach(h=>h.classList.remove('active'));
+    window.scrollTo({top:0,behavior:'smooth'});
+    setTimeout(startGuide,220);
+  }
+  function returnToLastQuestion(){
+    document.getElementById('site').classList.remove('active');
+    document.getElementById('onboarding').classList.remove('hidden');
+    state.step=Math.max(0,Math.min(state.step,questions.length-1));
+    state.recommendation=null;
+    renderQuestion();
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  function renderQuestion(){
+    const q=questions[state.step], content=document.getElementById('onboardContent');
+    const dots=questions.map((_,i)=>`<span class="dot ${i<state.step?'done':''} ${i===state.step?'active':''}"></span>`).join('');
+    content.innerHTML=`<div class="wordmark wordmark-onboard">Mental Health Discussions</div><div class="question-wrap"><div class="question-top"><span>Quick guide · ${state.step+1} of ${questions.length}</span><div class="progress">${dots}</div></div><h2 class="question-title">${q.title}</h2><p class="question-help">${q.help}</p><div class="choices">${q.choices.map((c,i)=>`<button class="choice" onclick="answer(${i})"><strong>${c[1]}</strong><span>${c[2]}</span></button>`).join('')}</div><div class="question-actions">${state.step?'<button class="ghost" onclick="backQuestion()">← Back</button>':''}<button class="ghost" onclick="goSite()">Skip & explore site</button></div></div>`;
+  }
+  function answer(i){const q=questions[state.step],c=q.choices[i];state.answers[q.id]=c[3];if(c[3]==='crisis'){state.recommendation='crisis';finishGuide();return;}state.step++;if(state.step>=questions.length)finishGuide();else transition(renderQuestion)}
+  function backQuestion(){if(state.step>0){state.step--;transition(renderQuestion)}}
+  function finishGuide(){
+    const vals=Object.values(state.answers);let rec=state.recommendation;
+    if(!rec){
+      const counts={self:0,family:0,work:0,learn:0};vals.forEach(v=>{if(counts[v]!==undefined)counts[v]++});
+      if(state.answers.role==='family'||state.answers.goal==='family')counts.family+=2;
+      if(state.answers.role==='work'||state.answers.goal==='work')counts.work+=2;
+      if(state.answers.role==='learn'||state.answers.goal==='learn')counts.learn+=1;
+      rec=Object.entries(counts).sort((a,b)=>b[1]-a[1])[0][0]||'learn';
+    }
+    state.recommendation=rec;transition(()=>showHub(rec,true));
+  }
+  function goSite(){
+    document.getElementById('onboarding').classList.add('hidden');
+    document.getElementById('site').classList.add('active');
+    backToMain(false);
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  function openRecommended(){if(state.recommendation)showHub(state.recommendation)}
+  function showHub(id,fromGuide=false){
+    document.getElementById('onboarding').classList.add('hidden');
+    document.getElementById('site').classList.add('active');
+    document.querySelectorAll('.hub').forEach(h=>h.classList.remove('active'));
+    document.querySelectorAll('.site > section').forEach(el=>el.classList.add('hidden'));
+    const h=document.getElementById('hub-'+id);
+    if(h){h.classList.remove('hidden');h.classList.add('active');document.getElementById('hubArea').classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'});}
+  }
+  function backToMain(doScroll=true){
+    document.querySelectorAll('.hub').forEach(h=>{h.classList.remove('active');h.classList.add('hidden')});
+    document.querySelectorAll('.site > section').forEach(el=>el.classList.remove('hidden'));
+    document.getElementById('hubArea').classList.remove('hidden');
+    if(doScroll)document.getElementById('home')?.scrollIntoView({behavior:'smooth'});
+  }
+  function scrollToId(id){setTimeout(()=>document.getElementById(id)?.scrollIntoView({behavior:'smooth'}),60)}
+
+  const glossary={
+    'anosognosia':{pron:'uh-no-sog-NOH-zee-uh',def:'A lack of awareness or insight that a person has an illness or impairment. In mental health, it can occur in some serious conditions and can affect whether a person recognizes a need for treatment.'},
+    'psychosis':{pron:'sy-KOH-sis',def:'A state in which a person may have difficulty distinguishing what is real from what is not. It can include hallucinations, delusions, disorganized thinking or major changes in behavior.'},
+    'mania':{pron:'MAY-nee-uh',def:'A period of abnormally elevated, irritable or energized mood with changes such as decreased need for sleep, rapid speech, racing thoughts, increased activity or risky behavior.'},
+    'depression':{pron:'dih-PRESH-un',def:'A mental-health condition that can involve persistent low mood or loss of interest along with changes in sleep, appetite, energy, concentration, self-worth or thoughts of death.'},
+    'anxiety':{pron:'ang-ZY-uh-tee',def:'A term for fear, worry or apprehension that can be normal in some situations but may become a mental-health problem when it is excessive, persistent or interferes with daily life.'},
+    'bipolar disorder':{pron:'bye-POH-lur dis-OR-dur',def:'A group of mood disorders involving episodes of depression and episodes of mania or hypomania, with patterns and severity that vary by diagnosis and person.'},
+    'schizophrenia':{pron:'skit-suh-FREE-nee-uh',def:'A chronic mental-health disorder that can affect thinking, perception, emotions and functioning. Symptoms can include psychosis, reduced motivation and cognitive difficulties.'},
+    'ocd':{pron:'O-C-D',def:'Obsessive-compulsive disorder involves recurring intrusive thoughts, urges or images and/or repetitive behaviors or mental acts that a person feels driven to perform.'},
+    'ptsd':{pron:'P-T-S-D',def:'Post-traumatic stress disorder can develop after exposure to trauma and may involve intrusive memories, avoidance, changes in mood or thinking and heightened alertness or reactivity.'},
+    'trauma':{pron:'TRAW-muh',def:'An emotionally or physically harmful experience—or series of experiences—that can have lasting effects on wellbeing and functioning. Not every distressing event leads to a trauma-related disorder.'},
+    'psychiatrist':{pron:'sy-KY-uh-trist',def:'A medical doctor who specializes in mental health. Psychiatrists can evaluate conditions, prescribe medication and may also provide psychotherapy or other treatments.'},
+    'psychologist':{pron:'sy-KOL-uh-jist',def:'A professional trained in psychology who may provide assessment, psychotherapy, research or other services. Licensing and scope of practice vary by jurisdiction.'},
+    'supported decision-making':{pron:'suh-POR-tid dih-SIZH-un MAY-king',def:'A model in which a person keeps their legal decision-making authority while choosing trusted people to help them understand, communicate and carry out decisions.'},
+    'involuntary commitment':{pron:'in-VOL-un-tair-ee kuh-MIT-munt',def:'A legal process that can allow evaluation or treatment without a person’s consent when specific legal criteria are met. The standards and procedures vary by jurisdiction.'}
+  };
+  const dl=document.getElementById('terms');Object.keys(glossary).forEach(k=>{const o=document.createElement('option');o.value=k;dl.appendChild(o)});
+  function normalizeTerm(v){v=v.toLowerCase().trim();if(v==='obsessive compulsive disorder')return'ocd';if(v==='post traumatic stress disorder')return'ptsd';return v}
+  function lookupTerm(term){const input=document.getElementById('glossaryInput');const key=normalizeTerm(term||input.value);const item=glossary[key];const box=document.getElementById('definition');if(!item){box.innerHTML=`<h4>We don’t have that term in Build Four yet.</h4><p class="pronounce">Try one of the suggested terms. The full glossary will be much larger.</p>`;return}input.value=key;box.innerHTML=`<h4>${key.replace(/\b\w/g,m=>m.toUpperCase())}</h4><p class="pronounce">Pronunciation: ${item.pron}</p><p>${item.def}</p><div class="listen-row"><button class="small-btn dark" onclick="speak('${key.replace(/'/g,"\\'")}')">🔊 Hear the word</button><button class="small-btn" onclick="speak(glossary['${key.replace(/'/g,"\\'")}'].def)">🔊 Listen to definition</button></div>`}
+  function speak(text){if(!('speechSynthesis'in window)){alert('Text-to-speech is not available in this browser.');return}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.rate=.92;speechSynthesis.speak(u)}
+  function startVoiceSearch(){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){alert('Voice search is not supported in this browser. You can still type the term.');return}const r=new SR();r.lang='en-US';r.interimResults=false;r.maxAlternatives=3;document.getElementById('micBtn').textContent='…';r.onresult=e=>{const text=e.results[0][0].transcript;document.getElementById('glossaryInput').value=text;lookupTerm(text)};r.onerror=()=>alert('I could not hear that clearly. Try again or type the word.');r.onend=()=>document.getElementById('micBtn').textContent='🎤';r.start()}
+
+  const legal={
+    about:{t:'About Mental Health Discussions',b:`<p>Mental Health Discussions (MHD) is an independent educational project being developed to make mental-health information easier to understand, navigate and discuss.</p><p>The long-term vision includes free educational resources, family and caregiver tools, research translation, system and policy education, a voice-enabled glossary and guided navigation.</p><div class="notice">MHD is currently a project in development and is not presently a 501(c)(3) nonprofit organization.</div>`},
+    funding:{t:'Funding & Transparency',b:`<p>MHD is being designed around a free-access model. Essential educational content and public tools are intended to remain available without a required subscription.</p><h3>Current phase</h3><p>Funding systems are not connected in Build Four. Any future voluntary support, sponsorship or affiliate relationship will be clearly disclosed.</p><h3>Transparency goal</h3><p>As the project grows, MHD intends to publish understandable information about funding sources, major expense categories and material conflicts of interest.</p>`},
+    nonprofit:{t:'Future 501(c)(3) Roadmap',future:true,b:`<div class="notice"><b>Not current status.</b> MHD is not currently recognized as a 501(c)(3), and this page is not a representation that contributions are tax-deductible.</div><p>This section is intentionally built into the site now so the public structure can transition cleanly if MHD later becomes a nonprofit organization.</p><h3>Target direction: 2028</h3><p>The intended future structure would support free mental-health education, family resources, public-interest research translation, community outreach and eligible advocacy education.</p><h3>What would change after approval?</h3><ul><li>The site would identify the legal nonprofit entity and tax-exempt status accurately.</li><li>Donation language and receipts would be updated only after eligibility is established.</li><li>Governance, annual reporting, conflicts and financial transparency information would be published here.</li></ul>`},
+    editorial:{t:'Editorial Standards',b:`<p>MHD aims to separate evidence, professional guidance, lived experience, commentary and advocacy so readers can tell what kind of information they are seeing.</p><ul><li>Health claims should be linked to reliable sources.</li><li>Important pages should show review dates.</li><li>Research summaries should discuss limitations, not only headlines.</li><li>Sponsored or affiliate content should be clearly labeled.</li><li>AI-assisted content should not be presented as individualized diagnosis or treatment.</li></ul>`},
+    medical:{t:'Medical Disclaimer',b:`<p>MHD provides general educational information. It does not diagnose, treat or replace a licensed health professional who can evaluate an individual directly.</p><p>Medication should not be started, stopped or changed solely because of information on this site. Seek appropriate professional guidance for individualized medical decisions.</p><div class="notice">If you or someone else may be in immediate danger in the United States, call 911 or call/text 988. Outside the U.S., contact the appropriate local emergency or crisis service.</div>`},
+    privacy:{t:'Privacy',b:`<p>Build Four does not create user accounts or intentionally store questionnaire answers on a server. The quick guide runs in the browser for demonstration purposes.</p><p>Before launch, a production privacy policy should identify the actual hosting provider, analytics, cookies, forms, account systems, payment processors and any health-related information that is collected.</p><p>MHD should minimize sensitive data collection and avoid collecting information that is not necessary to provide the requested feature.</p>`},
+    terms:{t:'Terms of Use',b:`<p>Site materials are for general educational use and do not create a clinician-patient, attorney-client or other professional relationship.</p><p>Users should not rely on MHD as the sole source for emergency, medical, legal or financial decisions. External resources and laws can change and should be verified with the relevant provider or authority.</p><p>Final launch terms should be reviewed once the actual legal entity, services, data practices and funding systems are known.</p>`},
+    affiliate:{t:'Affiliate Disclosure',b:`<p>MHD may eventually link to carefully selected third-party resources. If MHD can earn compensation from a particular link, the relationship should be clearly disclosed near that recommendation.</p><p>Affiliate compensation should not determine clinical conclusions, research summaries or crisis recommendations. No affiliate relationships are connected in Build Four.</p>`},
+    accessibility:{t:'Accessibility',b:`<p>MHD is being designed for readable contrast, keyboard-friendly controls, scalable text, descriptive labels and reduced-motion preferences.</p><p>Future builds should include formal accessibility testing, captions/transcripts for video content and alternatives for voice-only features.</p>`},
+    contact:{t:'Contact',b:`<p>Contact information will be connected in a later build. The final page can include general inquiries, corrections, research/source questions, media requests and accessibility feedback.</p>`},
+    support:{t:'Support Mental Health Discussions',b:`<p>Payment processing is intentionally not connected in Build Four.</p><p>The planned pre-nonprofit wording is voluntary support for operating this free educational project, with a clear disclosure that MHD is not currently a 501(c)(3) and that support payments are not represented as tax-deductible charitable contributions.</p>`},
+    ask:{t:'How Ask MHD will work',b:`<p>Ask MHD is planned as a guided educational assistant. A visitor will be able to describe a situation in ordinary language and receive organized explanations, questions worth asking and links into the right part of the site.</p><p>It should be especially useful for appointment preparation, family questions, terminology, treatment education, research explanation and navigating resources. Safety-sensitive interactions should prominently route to live crisis or professional help when appropriate.</p>`}
+  };
+  function openModal(id){const x=legal[id];if(!x)return;document.getElementById('modalTitle').textContent=x.t;document.getElementById('modalBody').innerHTML=x.b;document.getElementById('modalBadge').classList.toggle('hidden',!x.future);document.getElementById('modal').classList.add('active');document.body.style.overflow='hidden'}
+  function closeModal(){document.getElementById('modal').classList.remove('active');document.body.style.overflow=''}
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+  document.getElementById('year').textContent=new Date().getFullYear();document.querySelectorAll('.footerYear').forEach(el=>el.textContent=new Date().getFullYear());
+</script>
+
+</body>
+</html>
