@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>MHD Change, Advocacy & Systems Intelligence</title>
+<meta name="description" content="Nonpartisan mental-health policy and advocacy navigation: track legislation and regulations, identify the right decision-maker, evaluate evidence, prepare testimony or public comments, and understand system reform.">
+<style>
+:root{--max:1180px;--line:#cbd3cd}
+*{box-sizing:border-box}body{margin:0;font-family:Georgia,"Times New Roman",serif;line-height:1.55}
+button,input,select,textarea{font:inherit}a{color:inherit}.hidden{display:none!important}
+.wrap{max-width:var(--max);margin:auto;padding:0 22px}.hero{padding:66px 0 48px}
+.hero h1{font-size:clamp(3rem,6.2vw,5.7rem);line-height:.94;letter-spacing:-.055em;margin:10px 0 18px;max-width:1050px}.hero p{max-width:900px;font-size:1.08rem}
+.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;font-weight:800}.section{padding:58px 0}
+.head{display:flex;justify-content:space-between;gap:28px;align-items:end;margin-bottom:24px}.head h2{font-size:clamp(2.2rem,4.7vw,4.3rem);line-height:1;letter-spacing:-.045em;margin:0}.head p{max-width:650px;margin:0}
+.notice{border:1px solid currentColor;border-radius:16px;padding:14px 16px;margin-bottom:18px}
+.system-shell{display:grid;grid-template-columns:350px 1fr;gap:16px}.chooser,.system-result,.card,.builder-card,.source-card,.read-card{border:1px solid var(--line);border-radius:20px;padding:17px}
+.chooser h3,.system-result h3{margin:0 0 8px}.choice-grid{display:grid;gap:7px}.choice{border:1px solid var(--line);border-radius:13px;background:transparent;text-align:left;padding:10px;cursor:pointer}.choice strong{display:block;font-size:.9rem}.choice span{display:block;font-size:.74rem;opacity:.74;margin-top:2px}.choice.active{background:var(--mhd-accent)!important;color:var(--mhd-button-text)!important;border-color:var(--mhd-accent)!important}
+.system-result h2{font-size:2rem;letter-spacing:-.035em;margin:0 0 8px}.system-result ul{padding-left:18px}.system-result li{font-size:.88rem;margin-bottom:5px}
+.route-strip{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}.route-strip a{border:1px solid var(--mhd-border);border-radius:999px;padding:8px 10px;text-decoration:none;font-size:.75rem;font-weight:750}.route-strip a.primary{background:var(--mhd-accent);color:var(--mhd-button-text);border-color:var(--mhd-accent)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.card h3,.source-card h3,.read-card h3{margin:0 0 6px;font-size:1.05rem}.card p,.card li,.source-card p,.read-card p,.read-card li{font-size:.84rem}.card ul,.read-card ul{padding-left:18px}
+.level{font-size:.67rem;text-transform:uppercase;letter-spacing:.1em;font-weight:800;opacity:.68;margin-bottom:5px}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.flow-step{border:1px solid var(--line);border-radius:15px;padding:13px}.flow-step strong{display:block;margin-bottom:4px}.flow-step span{font-size:.77rem;opacity:.78}
+.builder{display:grid;grid-template-columns:.9fr 1.1fr;gap:14px}.field{display:flex;flex-direction:column;gap:5px;margin-bottom:10px}.field label{font-size:.76rem;font-weight:800}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:10px 11px;background:transparent;color:inherit}.field textarea{min-height:80px;resize:vertical}
+.btnrow{display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid currentColor;border-radius:999px;padding:9px 12px;background:transparent;cursor:pointer;font-weight:750}
+.output{white-space:pre-wrap;border:1px solid var(--line);border-radius:14px;padding:12px;min-height:270px;font-size:.84rem}
+.evidence{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.evidence-card{border:1px solid var(--line);border-radius:16px;padding:14px}.evidence-card strong{display:block;margin-bottom:5px}.evidence-card span{font-size:.78rem;opacity:.78}
+.claim-checker{display:grid;grid-template-columns:1fr 1fr;gap:12px}.claim-checker textarea{width:100%;min-height:125px;border:1px solid var(--line);border-radius:14px;padding:11px;background:transparent;color:inherit;resize:vertical}.check-output{border:1px solid var(--line);border-radius:14px;padding:12px;min-height:125px;font-size:.84rem}
+.read-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.read-card .tag{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:3px 7px;font-size:.65rem;margin-bottom:8px}
+.source-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.source-card a{display:inline-block;margin-top:6px;text-decoration:underline;text-underline-offset:3px;font-weight:750;font-size:.8rem}
+.privacy{font-size:.77rem;opacity:.8;margin-top:8px}
+footer{padding:42px 22px}.foot{max-width:var(--max);margin:auto;display:grid;grid-template-columns:1.3fr repeat(2,1fr);gap:28px}.footbrand{font-family:"Segoe Script","Snell Roundhand","Brush Script MT",cursive;font-size:1.35rem}.foot h4{font-size:.86rem;font-weight:800;text-decoration:underline;text-underline-offset:5px}.foot a{display:block;text-decoration:none;padding:4px 0;font-size:.83rem}.fine{max-width:var(--max);margin:24px auto 0;padding-top:14px;border-top:1px solid rgba(255,255,255,.2);font-size:.74rem}
+@media(max-width:960px){.system-shell,.builder,.claim-checker{grid-template-columns:1fr}.grid4,.evidence{grid-template-columns:1fr 1fr}.flow{grid-template-columns:1fr 1fr}.head{display:block}.head p{margin-top:10px}}
+@media(max-width:720px){.grid3,.grid4,.read-grid,.source-grid,.evidence,.flow,.foot{grid-template-columns:1fr}.wrap{padding:0 16px}.hero h1{font-size:3.05rem}}
+</style>
+<link rel="stylesheet" href="mhd-comfort.css?v=20261005o">
+</head>
+<body>
+<div class="crisis"><strong>Need immediate crisis support?</strong> In the U.S., call or text <a href="tel:988">988</a>. If there is immediate danger, call <a href="tel:911">911</a>. MHD does not replace professional care.</div>
+<header class="top"><nav class="nav"><a class="brand" href="index.html">Mental Health Discussions</a><div class="navlinks"><a href="index.html">Home</a><a href="tools.html">Research & Tools</a></div></nav></header>
+
+<section class="hero"><div class="wrap">
+<div class="eyebrow">MHD Change, Advocacy & Systems Intelligence</div>
+<h1>Understand the system before trying to change it.</h1>
+<p>A nonpartisan guide to mental-health policy, legislation, regulation, budgets, insurance rules, public comments, testimony, and community advocacy. Start with the problem, identify who actually controls it, then make a clear evidence-based request.</p>
+</div></section>
+
+<main>
+<section class="section"><div class="wrap">
+<div class="notice"><strong>Advocacy is not the same as diagnosis, treatment, or legal representation.</strong> MHD explains public processes and helps organize communication. Current bill status, regulations, deadlines, agency authority, and state law should always be verified at the official source before action.</div>
+<div class="system-shell">
+<div class="chooser"><h3>What are you trying to change?</h3><div class="choice-grid" id="systemChoices"></div></div>
+<div class="system-result" id="systemResult"></div>
+</div>
+</div></section>
+
+<section class="section alt"><div class="wrap">
+<div class="head"><div><div class="eyebrow">Who Controls What?</div><h2>Send the request to the right door.</h2></div><p>Many advocacy efforts stall because the problem is sent to an official who does not actually control the decision.</p></div>
+<div class="grid4">
+<div class="card"><div class="level">Federal legislation</div><h3>Congress</h3><p>Federal statutes, appropriations, national programs, certain insurance and civil-rights laws, and oversight of federal agencies.</p></div>
+<div class="card"><div class="level">Federal administration</div><h3>Agencies</h3><p>Rules, guidance, grants, program administration, enforcement, data collection, and implementation of laws within agency authority.</p></div>
+<div class="card"><div class="level">State government</div><h3>Legislature + governor + agencies</h3><p>Licensing, Medicaid implementation, civil commitment, state hospitals, insurance regulation, crisis systems, budgets, schools, and many service rules vary by state.</p></div>
+<div class="card"><div class="level">Local government</div><h3>County / city / boards</h3><p>Local budgets, crisis contracts, public hospitals, law-enforcement partnerships, housing, schools, behavioral-health authorities, and community services may be controlled locally.</p></div>
+</div>
+</div></section>
+
+<section class="section"><div class="wrap">
+<div class="head"><div><div class="eyebrow">Policy Path</div><h2>How change usually moves.</h2></div><p>Different processes have different points where public input matters.</p></div>
+<div class="flow">
+<div class="flow-step"><strong>1. Define the problem.</strong><span>Who is affected? What is happening? What evidence shows the gap?</span></div>
+<div class="flow-step"><strong>2. Identify authority.</strong><span>Statute, regulation, budget, agency practice, insurer, county, school, hospital, or court?</span></div>
+<div class="flow-step"><strong>3. Find the live process.</strong><span>Bill, committee, budget hearing, proposed rule, agency docket, board meeting, complaint process.</span></div>
+<div class="flow-step"><strong>4. Make one clear ask.</strong><span>Amend, fund, enforce, study, publish data, change a rule, expand access, or explain a decision.</span></div>
+<div class="flow-step"><strong>5. Track the result.</strong><span>Status, amendments, final rule, appropriation, implementation date, evaluation, and unintended effects.</span></div>
+</div>
+</div></section>
+
+<section class="section alt"><div class="wrap">
+<div class="head"><div><div class="eyebrow">Advocacy Builder</div><h2>Turn concern into a usable request.</h2></div><p>Build a short email, call script, testimony outline, or public-comment draft. MHD does not choose your position for you.</p></div>
+<div class="builder">
+<div class="builder-card">
+<div class="field"><label>Format</label><select id="advFormat"><option>Email / letter to an official</option><option>Phone call script</option><option>Public hearing testimony</option><option>Federal public comment</option><option>Meeting talking points</option></select></div>
+<div class="field"><label>Decision-maker or body</label><input id="advAudience" placeholder="State senator, county council, agency, school board…"></div>
+<div class="field"><label>Problem in one sentence</label><textarea id="advProblem" placeholder="What is happening now?"></textarea></div>
+<div class="field"><label>Your specific ask</label><textarea id="advAsk" placeholder="What exactly do you want this decision-maker to do?"></textarea></div>
+<div class="field"><label>Best evidence or source</label><textarea id="advEvidence" placeholder="Data, official report, study, audit, wait-time data, budget line…"></textarea></div>
+<div class="field"><label>Lived experience or local impact (optional)</label><textarea id="advStory" placeholder="Keep personal health information to the minimum you actually want public."></textarea></div>
+<div class="field"><label>Important concern or tradeoff you want to acknowledge (optional)</label><textarea id="advTradeoff" placeholder="Cost, workforce, privacy, safety, civil rights, implementation burden…"></textarea></div>
+<div class="btnrow"><button class="btn primary" type="button" onclick="buildAdvocacy()">Build draft</button><button class="btn" type="button" onclick="copyAdvocacy()">Copy</button></div>
+<p class="privacy">Public testimony and federal rulemaking comments may become public records. Avoid including private health information you do not want publicly disclosed.</p>
+</div>
+<div class="builder-card"><h3 style="margin-top:0">Draft</h3><div id="advOutput" class="output">Complete the fields and choose “Build draft.”</div></div>
+</div>
+</div></section>
+
+<section class="section"><div class="wrap">
+<div class="head"><div><div class="eyebrow">Bill & Rule Reader</div><h2>Do not stop at the headline.</h2></div><p>A proposal can sound simple while the operative language, funding, exceptions, enforcement, or implementation tells a different story.</p></div>
+<div class="read-grid">
+<div class="read-card"><span class="tag">Legislation</span><h3>Read the status.</h3><ul><li>Bill number and Congress/session</li><li>Sponsor and cosponsors</li><li>Committee referral and hearings</li><li>Latest action and amendments</li><li>Companion bill, if any</li><li>Whether the text actually passed either chamber</li></ul></div>
+<div class="read-card"><span class="tag">Text</span><h3>Read the operative language.</h3><ul><li>Who is covered?</li><li>What is required, allowed, prohibited, or funded?</li><li>Definitions and exceptions</li><li>Effective date</li><li>Funding authorization vs. actual appropriation</li><li>Reporting and enforcement</li></ul></div>
+<div class="read-card"><span class="tag">Rulemaking</span><h3>Read the docket.</h3><ul><li>Proposed rule or notice</li><li>Agency authority</li><li>Comment deadline</li><li>Supporting studies and analyses</li><li>Public comments</li><li>Final rule and agency responses</li></ul></div>
+</div>
+<div class="route-strip"><a class="primary" href="https://www.congress.gov/" target="_blank" rel="noopener">Congress.gov</a><a href="https://www.federalregister.gov/" target="_blank" rel="noopener">Federal Register</a><a href="https://www.regulations.gov/" target="_blank" rel="noopener">Regulations.gov</a></div>
+</div></section>
+
+<section class="section alt"><div class="wrap">
+<div class="head"><div><div class="eyebrow">Evidence Before Advocacy</div><h2>Strong stories need strong facts.</h2></div><p>Lived experience can explain impact. Research and official data help establish scope, cause, costs, and likely effects. They serve different purposes.</p></div>
+<div class="evidence">
+<div class="evidence-card"><strong>Official administrative data</strong><span>Government reports, audits, claims data, budgets, wait times, licensing data, enforcement reports.</span></div>
+<div class="evidence-card"><strong>Systematic evidence</strong><span>Systematic reviews, meta-analyses, major guidelines, well-designed trials or observational studies.</span></div>
+<div class="evidence-card"><strong>Local evidence</strong><span>County data, hospital utilization, workforce shortages, school data, service closures, community needs assessments.</span></div>
+<div class="evidence-card"><strong>Lived experience</strong><span>Shows what implementation feels like, where processes break, and what outcomes matter to people.</span></div>
+</div>
+<div class="claim-checker" style="margin-top:14px">
+<div><textarea id="claimInput" placeholder="Paste or type a policy claim, for example: ‘This bill will guarantee every person a therapist within seven days.’"></textarea><div class="btnrow" style="margin-top:8px"><button class="btn primary" type="button" onclick="checkClaim()">Build verification checklist</button></div></div>
+<div class="check-output" id="claimOutput">Enter a claim and MHD will turn it into questions you can verify against the bill, rule, budget, source data, and implementation authority.</div>
+</div>
+</div></section>
+
+<section class="section"><div class="wrap">
+<div class="head"><div><div class="eyebrow">Public Comment</div><h2>Comments are strongest when they are specific.</h2></div><p>Federal notice-and-comment rulemaking generally allows the public to submit written input on proposed rules. Relevant, substantive comments become part of the rulemaking record.</p></div>
+<div class="grid3">
+<div class="card"><h3>Reference the proposal.</h3><p>Identify the docket, section, definition, requirement, or question you are addressing rather than submitting only a general statement of support or opposition.</p></div>
+<div class="card"><h3>Explain why.</h3><p>Provide evidence, operational experience, data, legal or clinical implications, implementation concerns, or a concrete alternative.</p></div>
+<div class="card"><h3>Protect privacy.</h3><p>Public comments are generally publicly viewable. Do not include health, contact, or other identifying details you do not want disclosed.</p></div>
+</div>
+<div class="route-strip"><a class="primary" href="https://www.regulations.gov/" target="_blank" rel="noopener">Search Regulations.gov</a><a href="https://www.regulations.gov/assets/files/Public-Comment-on-Federal-Regulations_Final.pdf" target="_blank" rel="noopener">Federal public-comment guide</a></div>
+</div></section>
+
+<section class="section alt"><div class="wrap">
+<div class="head"><div><div class="eyebrow">Find the Decision-Maker</div><h2>Federal, state, local, or agency?</h2></div><p>Use official directories rather than relying on an old contact list.</p></div>
+<div class="source-grid">
+<div class="source-card"><h3>USAGov elected officials</h3><p>Find federal, state, and local elected officials and official contact routes.</p><a href="https://www.usa.gov/elected-officials" target="_blank" rel="noopener">Find elected officials</a></div>
+<div class="source-card"><h3>U.S. House</h3><p>Match a ZIP code to the current congressional district and representative.</p><a href="https://www.house.gov/representatives/find-your-representative" target="_blank" rel="noopener">Find your representative</a></div>
+<div class="source-card"><h3>U.S. Senate</h3><p>Find senators, official websites, contact forms, phone numbers, and committee information.</p><a href="https://www.senate.gov/senators/senators-contact.htm" target="_blank" rel="noopener">Contact senators</a></div>
+<div class="source-card"><h3>State government directory</h3><p>Use USAGov to reach governors, state agencies, state legislatures, attorneys general, and other state offices.</p><a href="https://www.usa.gov/state-governments" target="_blank" rel="noopener">Find state government</a></div>
+<div class="source-card"><h3>Federal agency complaint route</h3><p>USAGov explains starting with the agency and escalating unresolved federal issues through appropriate complaint or inspector-general channels.</p><a href="https://www.usa.gov/government-agency-complaints" target="_blank" rel="noopener">Government agency complaints</a></div>
+<div class="source-card"><h3>Behavioral-health policy source</h3><p>SAMHSA develops and communicates national behavioral-health policy, grants, strategies, and program information.</p><a href="https://www.samhsa.gov/about/offices-centers/oipa" target="_blank" rel="noopener">SAMHSA policy office</a></div>
+</div>
+</div></section>
+
+<section class="section"><div class="wrap">
+<div class="head"><div><div class="eyebrow">System Reform Lens</div><h2>Ask what changes after the announcement.</h2></div><p>A policy is not finished when a law is signed, a grant is announced, or an agency publishes guidance.</p></div>
+<div class="grid4">
+<div class="card"><h3>Access</h3><p>Did wait times, geographic access, language access, network adequacy, and affordability actually improve?</p></div>
+<div class="card"><h3>Quality</h3><p>Are services evidence-based, person-centered, culturally responsive, and connected across crisis, hospital, outpatient, family, housing, school, and work systems?</p></div>
+<div class="card"><h3>Rights + safety</h3><p>How are autonomy, due process, privacy, family involvement, discrimination, restraint/seclusion, and crisis safety addressed?</p></div>
+<div class="card"><h3>Accountability</h3><p>Who reports outcomes? What data are public? What happens if implementation fails or produces unintended harm?</p></div>
+</div>
+<div class="route-strip"><a href="https://www.dol.gov/agencies/ebsa/laws-and-regulations/laws/mental-health-and-substance-use-disorder-parity" target="_blank" rel="noopener">Mental-health parity resources</a><a href="https://www.medicaid.gov/medicaid/benefits/behavioral-health-services" target="_blank" rel="noopener">Medicaid behavioral health</a><a href="state-law.html">MHD State Law Intelligence</a></div>
+</div></section>
+</main>
+
+<footer><div class="foot"><div><div class="footbrand">Mental Health Discussions</div><p>Free mental-health education, navigation, and practical tools.</p></div><div><h4>Continue</h4><a href="state-law.html">State Law Intelligence</a><a href="life-guide.html">Work, School & Daily Life</a><a href="find-care.html">Find Care & Access</a></div><div><h4>Legal</h4><a href="legal.html#medical">Medical Disclaimer</a><a href="legal.html#privacy">Privacy</a><a href="legal.html#terms">Terms</a><a href="legal.html#accessibility">Accessibility</a></div></div><div class="fine">Nonpartisan educational information only. MHD does not provide legal representation, lobbying services, campaign advice, or individualized legal advice. Verify current status and deadlines at official government sources.</div></footer>
+
+<script>
+const systems={
+legislation:{label:"A law needs to change",sub:"Federal or state legislation.",title:"Start with the bill, committee, and level of government.",steps:["Identify whether the issue is controlled by federal law, state law, or a local ordinance.","Find the exact bill number or determine whether a bill already exists before writing about it.","Read current text, amendments, committee referral, latest action, funding language, and implementation provisions.","Contact the officials who represent you and, when relevant, the committee handling the bill.","Ask for one concrete action: sponsor, cosponsor, amend, vote, request a hearing, fund, or conduct oversight."],links:[["Congress.gov","https://www.congress.gov/"],["Find elected officials","https://www.usa.gov/elected-officials"],["MHD State Law","state-law.html"]]},
+regulation:{label:"An agency rule needs to change",sub:"Federal or state regulation, implementation, guidance.",title:"Find the rulemaking docket and the agency's legal authority.",steps:["Identify the agency and the statute authorizing the rule.","Find the proposed rule, notice, docket number, supporting materials, and comment deadline.","Read the specific section you want changed and explain the operational or evidentiary reason.","Submit through the official channel and avoid private information you do not want in the public record.","Track the final rule and the agency's response to significant comments."],links:[["Regulations.gov","https://www.regulations.gov/"],["Federal Register","https://www.federalregister.gov/"],["Public-comment guide","https://www.regulations.gov/assets/files/Public-Comment-on-Federal-Regulations_Final.pdf"]]},
+budget:{label:"A service needs funding",sub:"Budget, grant, staffing, beds, crisis teams, housing.",title:"A good program without money may still be only a promise.",steps:["Identify which government level or agency controls the funding source.","Find the current appropriation, budget line, grant program, contract, or proposed budget.","Separate authorization from actual funding.","Estimate who would be served, workforce needs, implementation timeline, and recurring cost.","Ask for a specific appropriation, grant category, budget amendment, or reporting requirement."],links:[["SAMHSA Grants","https://www.samhsa.gov/grants"],["USAGov State Governments","https://www.usa.gov/state-governments"],["SAMHSA policy office","https://www.samhsa.gov/about/offices-centers/oipa"]]},
+access:{label:"People cannot get treatment",sub:"Wait lists, insurance, provider shortages, geography.",title:"Turn an access complaint into measurable system questions.",steps:["Define the access failure: wait time, network shortage, geographic gap, age cutoff, language gap, prior authorization, transportation, or workforce shortage.","Collect reliable measures rather than relying only on anecdotes.","Identify whether the lever is insurer regulation, Medicaid, licensing, workforce funding, reimbursement, grants, or service contracts.","Include lived experience to show impact while protecting private information.","Ask for a change that can be measured after implementation."],links:[["MHD Find Care","find-care.html"],["Mental-health parity resources","https://www.dol.gov/agencies/ebsa/laws-and-regulations/laws/mental-health-and-substance-use-disorder-parity"],["Medicaid behavioral health","https://www.medicaid.gov/medicaid/benefits/behavioral-health-services"]]},
+crisis:{label:"The crisis system needs reform",sub:"988, mobile crisis, hospitals, police response, discharge.",title:"Map the whole crisis pathway before changing one piece.",steps:["Document what happens before, during, and after the crisis: 988, dispatch, mobile crisis, EMS/law enforcement, emergency department, inpatient care, discharge, and follow-up.","Separate safety problems from access, rights, workforce, transportation, capacity, and financing problems.","Identify which organizations control each handoff.","Look for outcome data: repeat crises, boarding, restraint, hospitalization, follow-up, deaths, readmissions, and patient/family experience.","Build reform around both safety and civil rights rather than assuming they are opposites."],links:[["MHD Crisis & Legal","crisis-legal.html"],["MHD State Law","state-law.html"],["SAMHSA 988","https://www.samhsa.gov/find-help/988"]]},
+complaint:{label:"A government program is failing",sub:"Agency complaint, enforcement, oversight, transparency.",title:"Use the complaint and oversight route before assuming a new law is required.",steps:["Identify the agency or program responsible for the decision.","Use the program's complaint, appeal, grievance, or ombuds process when one exists.","Keep dates, documents, names, decisions, and the remedy you requested.","If the matter remains unresolved, identify inspector-general, regulator, elected-official constituent-service, or other oversight routes.","Separate an individual case remedy from the larger policy change you want."],links:[["USAGov agency complaints","https://www.usa.gov/government-agency-complaints"],["Find elected officials","https://www.usa.gov/elected-officials"],["MHD Legal Policies","legal.html"]]},
+local:{label:"My county or city system needs change",sub:"Local behavioral health, schools, hospitals, housing.",title:"Local systems often control the service people actually experience.",steps:["Identify the county/city agency, board, authority, contractor, hospital, school system, or budget office responsible.","Find meeting schedules, agendas, minutes, public-comment rules, budgets, contracts, and performance reports.","Ask who holds the contract and what outcomes are required.","Use local data and direct service experience to define the problem.","Request a concrete action and a date for reporting back on implementation."],links:[["USAGov elected officials","https://www.usa.gov/elected-officials"],["USAGov state/local elections","https://www.usa.gov/state-local-elections"],["MHD Work & School","life-guide.html"]]}
+};
+
+function esc(s){return String(s||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
+function renderSystems(){const box=document.getElementById("systemChoices");box.innerHTML=Object.entries(systems).map(([k,x])=>"<button class='choice' data-system='"+k+"'><strong>"+esc(x.label)+"</strong><span>"+esc(x.sub)+"</span></button>").join("");box.querySelectorAll("[data-system]").forEach(b=>b.onclick=()=>showSystem(b.dataset.system))}
+function showSystem(k){const x=systems[k];if(!x)return;document.querySelectorAll(".choice").forEach(b=>b.classList.toggle("active",b.dataset.system===k));const links=x.links.map((a,i)=>"<a class='"+(i===0?"primary":"")+"' href='"+a[1]+"' "+(a[1].startsWith("http")?"target='_blank' rel='noopener'":"")+">"+esc(a[0])+"</a>").join("");document.getElementById("systemResult").innerHTML="<div class='eyebrow'>Policy route</div><h2>"+esc(x.title)+"</h2><ul>"+x.steps.map(s=>"<li>"+esc(s)+"</li>").join("")+"</ul><div class='route-strip'>"+links+"</div>"}
+function v(id){return document.getElementById(id).value.trim()}
+function buildAdvocacy(){
+ const format=v("advFormat"),aud=v("advAudience")||"[decision-maker]",problem=v("advProblem")||"[describe the problem]",ask=v("advAsk")||"[state one specific action]",evidence=v("advEvidence"),story=v("advStory"),trade=v("advTradeoff");
+ let t="";
+ if(format==="Phone call script")t="Hello. My name is [name], and I am calling for "+aud+".\n\nI’m calling about this mental-health policy issue: "+problem+".\n\nMy specific request is: "+ask+".";
+ else if(format==="Public hearing testimony")t="Chair and members, thank you for the opportunity to speak. My name is [name].\n\nThe issue I want to address is: "+problem+".\n\nI am asking you to: "+ask+".";
+ else if(format==="Federal public comment")t="RE: [docket / proposed rule]\n\nI am submitting this comment regarding: "+problem+".\n\nI recommend that the agency: "+ask+".";
+ else if(format==="Meeting talking points")t="MEETING TALKING POINTS\n\nProblem: "+problem+"\n\nRequest: "+ask+".";
+ else t="Dear "+aud+",\n\nI am writing regarding this mental-health policy issue: "+problem+".\n\nI am asking you to: "+ask+".";
+ if(evidence)t+="\n\nEvidence / basis: "+evidence+".";
+ if(story)t+="\n\nWhy this matters in practice: "+story+".";
+ if(trade)t+="\n\nI also recognize this concern or tradeoff: "+trade+". I would like the final approach to address that issue directly rather than ignore it.";
+ if(format==="Phone call script")t+="\n\nCould you tell me the office’s position or next step on this issue, and whether someone can follow up with me? Thank you.";
+ else if(format==="Public hearing testimony")t+="\n\nPlease include this request in your deliberations and public record. Thank you.";
+ else if(format==="Federal public comment")t+="\n\nPlease address this issue in the final rule and explain how the final approach responds to the evidence and implementation concern described above.";
+ else if(format==="Meeting talking points")t+="\n\nQuestions to ask:\n• Who has authority to make this change?\n• What is the current timeline?\n• What evidence or budget information is still needed?\n• What is the next formal decision point?\n• How will outcomes be measured?";
+ else t+="\n\nPlease let me know what action you plan to take or what the next decision point will be. Thank you for your consideration.";
+ document.getElementById("advOutput").textContent=t;
+}
+function copyAdvocacy(){const t=document.getElementById("advOutput").textContent;if(!t||t.startsWith("Complete"))return;navigator.clipboard?.writeText(t)}
+function checkClaim(){
+ const c=v("claimInput");if(!c){document.getElementById("claimOutput").textContent="Enter a claim first.";return}
+ document.getElementById("claimOutput").innerHTML="<strong>Verify this claim before repeating it:</strong><br><br>“"+esc(c)+"”<br><br>1. What exact bill, rule, budget, program, or official action is being referenced?<br>2. Does the operative text actually require this result, or merely authorize, encourage, study, or fund something?<br>3. Who is covered—and who is excluded?<br>4. Is funding authorized, appropriated, or not specified?<br>5. What agency or government level implements it?<br>6. What effective date, deadline, waiver, exception, or enforcement language applies?<br>7. What source supports any numeric claim?<br>8. Is the claim describing an intended outcome or a demonstrated outcome?<br>9. What credible evidence or perspective would challenge the claim?<br>10. What would you need to observe after implementation to know whether it was true?";
+}
+function init(){renderSystems();showSystem("legislation")}init();
+</script>
+<script src="mhd-comfort.js?v=20261005o"></script>
+</body>
+</html>
