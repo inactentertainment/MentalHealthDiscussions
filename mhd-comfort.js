@@ -135,6 +135,11 @@
     legal.innerHTML='<h4>Legal</h4><a href="legal.html#medical">Medical Disclaimer</a><a href="legal.html#privacy">Privacy</a><a href="legal.html#terms">Terms of Use</a><a href="legal.html#affiliate">Affiliate Disclosure</a><a href="legal.html#copyright">Copyright / DMCA</a><a href="legal.html#accessibility">Accessibility</a>';
     var existing=[].slice.call(grid.querySelectorAll("h4")).some(function(h){return h.textContent.trim().toLowerCase()==="legal"});
     if(!existing)grid.appendChild(legal);
+    if(!footer.querySelector(".mhd-universal-disclaimer")){
+      var d=document.createElement("div");d.className="mhd-universal-disclaimer";
+      d.textContent="General education only. MHD does not diagnose, prescribe, provide emergency response, or replace professional care or individualized legal advice.";
+      footer.appendChild(d);
+    }
   }
   function buildComfort(){
     if(document.getElementById("mhdComfortDock"))return;
