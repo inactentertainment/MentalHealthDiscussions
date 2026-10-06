@@ -976,3 +976,29 @@ body:has(#onboarding.guide-active:not(.hidden)) .mhd-contact-section{display:non
     pointer-events:none!important;
   }
 }
+
+
+/* Shared MHD Trust Layer - final integration */
+.mhd-trust-layer{
+  max-width:1180px;margin:34px auto 0;padding:0 22px;
+}
+.mhd-trust-card{
+  border:1px solid var(--mhd-border);border-radius:18px;padding:14px 16px;
+  background:color-mix(in srgb,var(--mhd-surface) 93%,var(--mhd-wash-a));
+  display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;
+}
+.mhd-trust-mark{
+  font-size:.68rem;font-weight:850;text-transform:uppercase;letter-spacing:.12em;
+  border:1px solid var(--mhd-border);border-radius:999px;padding:5px 8px;white-space:nowrap;
+}
+.mhd-trust-copy strong{display:block;font-size:.84rem;margin-bottom:2px}
+.mhd-trust-copy span{display:block;font-size:.72rem;color:var(--mhd-muted);line-height:1.45}
+.mhd-trust-action{
+  font-size:.72rem;font-weight:760;text-decoration:underline;text-underline-offset:3px;white-space:nowrap
+}
+@media(max-width:720px){
+  .mhd-trust-card{grid-template-columns:1fr;gap:8px}
+  .mhd-trust-mark{width:max-content}
+  .mhd-trust-action{white-space:normal}
+}
+@media print{.mhd-trust-layer{display:none!important}}
