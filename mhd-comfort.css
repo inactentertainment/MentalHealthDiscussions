@@ -554,3 +554,164 @@ html.mhd-universal-header .topbar .nav>.mobile-menu{display:none!important}
   .mhd-page-nav a{font-size:.72rem!important}
   #mhdSiteAssistant{top:166px!important}
 }
+
+
+/* Compact one-line desktop header + Georgia typography */
+html,body{overflow-x:hidden!important}
+body,button,input,textarea,select{
+  font-family:Georgia,"Times New Roman",serif!important;
+}
+.brand,.wordmark,.wordmark-nav,.wordmark-onboard,.wordmark-footer,#mhdComfortToggle{
+  font-family:"Segoe Script","Snell Roundhand","Brush Script MT","Lucida Handwriting",cursive!important;
+}
+html.mhd-universal-header .top .nav,
+html.mhd-universal-header .header .headinner,
+html.mhd-universal-header .topbar .nav{
+  width:100%!important;
+  max-width:1440px!important;
+  margin:0 auto!important;
+  display:grid!important;
+  grid-template-columns:auto minmax(0,1fr) auto!important;
+  grid-template-areas:"brand pages actions"!important;
+  align-items:center!important;
+  gap:12px!important;
+  padding:7px 14px!important;
+  min-height:52px!important;
+  border:0!important;
+}
+html.mhd-universal-header .top .nav>.brand,
+html.mhd-universal-header .header .headinner>.wordmark,
+html.mhd-universal-header .topbar .nav>.brand{
+  grid-area:brand!important;
+  justify-self:start!important;
+  font-size:.92rem!important;
+  line-height:1!important;
+  white-space:nowrap!important;
+}
+html.mhd-universal-header .wordmark-nav{font-size:.92rem!important}
+.mhd-page-nav{
+  grid-area:pages!important;
+  min-width:0!important;
+  width:100%!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:10px!important;
+  padding:0!important;
+  border-top:0!important;
+  overflow-x:auto!important;
+  overflow-y:hidden!important;
+  scrollbar-width:none!important;
+  white-space:nowrap!important;
+}
+.mhd-page-nav a{
+  flex:0 0 auto!important;
+  font-size:.66rem!important;
+  line-height:1!important;
+  font-weight:650!important;
+  padding:5px 0!important;
+  white-space:nowrap!important;
+}
+html.mhd-universal-header .mhd-header-actions{
+  grid-area:actions!important;
+  justify-self:end!important;
+  display:grid!important;
+  grid-template-columns:repeat(3,88px)!important;
+  gap:5px!important;
+  margin:0!important;
+}
+.mhd-header-action{
+  width:88px!important;min-width:88px!important;max-width:88px!important;
+  height:30px!important;min-height:30px!important;
+  padding:0 5px!important;
+  font-size:.61rem!important;
+  line-height:1!important;
+  white-space:nowrap!important;
+}
+@media(max-width:1040px){
+  html.mhd-universal-header .top .nav,
+  html.mhd-universal-header .header .headinner,
+  html.mhd-universal-header .topbar .nav{
+    grid-template-columns:1fr!important;
+    grid-template-areas:"brand" "actions" "pages"!important;
+    gap:6px!important;
+    padding:8px 10px!important;
+  }
+  html.mhd-universal-header .top .nav>.brand,
+  html.mhd-universal-header .header .headinner>.wordmark,
+  html.mhd-universal-header .topbar .nav>.brand{justify-self:center!important}
+  html.mhd-universal-header .mhd-header-actions{justify-self:center!important}
+  .mhd-page-nav{justify-content:flex-start!important;padding-top:5px!important}
+}
+@media(max-width:760px){
+  .mhd-page-nav a{font-size:.69rem!important}
+  #mhdSiteAssistant{top:150px!important}
+}
+
+/* Guide Me: brand on entry only, then questions take over. */
+.wordmark-onboard{
+  font-size:1.12rem!important;
+  margin:0 auto 18px!important;
+  opacity:.72!important;
+}
+.onboarding{padding-top:28px!important}
+.onboarding.guide-active{
+  place-items:start center!important;
+  padding-top:24px!important;
+  min-height:calc(100vh - 44px)!important;
+}
+.onboarding.guide-active .onboard-card{margin-top:0!important}
+.onboarding.guide-active .question-wrap{margin-top:0!important}
+.question-top{margin-bottom:17px!important}
+.question-title{margin-top:0!important}
+
+/* Homepage hero: each phrase stays on one clean line. */
+.hero h1.mhd-home-title{
+  font-size:clamp(2.55rem,4.6vw,5.15rem)!important;
+  line-height:.94!important;
+  letter-spacing:-.052em!important;
+  max-width:100%!important;
+}
+.hero h1.mhd-home-title span{
+  display:block!important;
+  white-space:nowrap!important;
+}
+@media(max-width:620px){
+  .hero h1.mhd-home-title{font-size:clamp(2.2rem,11vw,3.05rem)!important}
+}
+
+/* Footer refinement */
+footer{
+  border-top:1px solid color-mix(in srgb,var(--mhd-border) 55%,transparent)!important;
+  padding-top:44px!important;
+}
+footer .wordmark-footer{
+  color:#F3EEE3!important;
+  font-size:1.18rem!important;
+  opacity:.9!important;
+}
+.footer-grid{gap:28px!important}
+.footer-col h4{
+  font-family:"Segoe Script","Snell Roundhand","Brush Script MT","Lucida Handwriting",cursive!important;
+  text-transform:none!important;
+  letter-spacing:-.01em!important;
+  font-size:1.08rem!important;
+  font-weight:400!important;
+  color:#D9E5DF!important;
+  margin-bottom:10px!important;
+}
+.footer-col a,.footer-col button{
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-size:.82rem!important;
+  color:#F3EEE3!important;
+}
+.footer-support{
+  display:inline-flex!important;
+  width:auto!important;
+  margin-top:5px!important;
+  padding:7px 11px!important;
+  border:1px solid rgba(243,238,227,.45)!important;
+  border-radius:999px!important;
+  background:rgba(255,255,255,.05)!important;
+}
+.footer-copy,.footer-copyright,.fineprint{color:#C4C5BD!important}
