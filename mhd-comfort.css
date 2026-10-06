@@ -915,3 +915,21 @@ footer .foot,footer .footer-grid{
 .mhd-contact-status{font-size:.75rem;color:var(--mhd-muted)}
 .mhd-prepared-message{margin-top:10px;border:1px solid var(--mhd-border);border-radius:12px;padding:11px;background:var(--mhd-surface-2);font-size:.8rem;white-space:pre-wrap}
 @media(max-width:760px){.mhd-contact-card{grid-template-columns:1fr}.mhd-contact-form{grid-template-columns:1fr}.mhd-contact-form .wide{grid-column:auto}}
+
+
+/* Final shared footer/disclaimer + active shimmer visibility */
+.mhd-universal-disclaimer{
+  max-width:1180px;margin:24px auto 0;padding:16px 22px 0;
+  border-top:1px solid rgba(243,238,227,.20);
+  color:#C4C5BD;font-size:.74rem;line-height:1.45;
+}
+html[data-mhd-motion="subtle"] .mhd-header-action:hover::after,
+html[data-mhd-motion="subtle"] .mhd-contact-action:hover::after,
+html[data-mhd-motion="subtle"] .primary:hover::after,
+html[data-mhd-motion="subtle"] .small-btn:hover::after,
+html[data-mhd-motion="subtle"] .smallbtn.dark:hover::after,
+html[data-mhd-motion="subtle"] .nav-cta:hover::after,
+html[data-mhd-motion="subtle"] .footer-support:hover::after{
+  opacity:1!important;
+}
+body:has(#onboarding.guide-active:not(.hidden)) .mhd-contact-section{display:none!important}
