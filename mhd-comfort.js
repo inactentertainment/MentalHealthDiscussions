@@ -82,41 +82,59 @@
   }
 
   function buildHeader(){
-    var target=null,brand=null;
+    var target=null;
     var topbar=document.querySelector(".topbar .nav");
-    if(topbar){target=topbar;brand=topbar.querySelector(".brand")}
-    if(!target){var top=document.querySelector(".top .nav");if(top){target=top;brand=top.querySelector(".brand")}}
-    if(!target){var hi=document.querySelector(".header .headinner");if(hi){target=hi;brand=hi.querySelector(".wordmark")}}
+    if(topbar)target=topbar;
+    if(!target){var top=document.querySelector(".top .nav");if(top)target=top}
+    if(!target){var hi=document.querySelector(".header .headinner");if(hi)target=hi}
     if(!target)return;
+
+    var links=[
+      ["index.html","Home"],["condition-guide.html","Conditions"],["medication-guide.html","Medication"],
+      ["treatment-guide.html","Treatment"],["appointment-builder.html","Appointment"],["family-caregiver.html","Family"],
+      ["crisis-legal.html","Crisis & Legal"],["state-law.html","State Law"]
+    ];
+    var current=(location.pathname.split("/").pop()||"index.html").toLowerCase();
+
+    if(!target.querySelector(".mhd-page-nav")){
+      var pages=document.createElement("div");pages.className="mhd-page-nav";pages.setAttribute("aria-label","Main site pages");
+      pages.innerHTML=links.map(function(x){var here=current===x[0].toLowerCase()?' aria-current="page"':'';return '<a href="'+x[0]+'"'+here+'>'+x[1]+'</a>'}).join("");
+      target.appendChild(pages);
+    }
 
     if(!target.querySelector(".mhd-header-actions")){
       var actions=document.createElement("div");actions.className="mhd-header-actions";
-      actions.innerHTML='<a class="mhd-header-action" href="tools.html">Research & Tools</a><button class="mhd-header-action" type="button" id="mhdGuideButton">Guide Me</button><button class="mhd-header-action" type="button" id="mhdAssistantButton">Site Assistant</button>';
+      actions.innerHTML='<a class="mhd-header-action" href="tools.html">Research & Tools</a>'+
+        '<button class="mhd-header-action" type="button" id="mhdGuideButton">Guide Me</button>'+
+        '<button class="mhd-header-action" type="button" id="mhdAssistantButton">Site Assistant</button>'+
+        '<a class="mhd-header-action mhd-contact-action" href="index.html#contact" aria-label="Contact Us" title="Contact Us" data-tip="Contact Us">✉</a>';
       target.appendChild(actions);
       actions.querySelector("#mhdGuideButton").addEventListener("click",guideMe);
       actions.querySelector("#mhdAssistantButton").addEventListener("click",toggleAssistant);
     }
 
-    if(!target.querySelector(".mhd-page-nav")){
-      var pages=document.createElement("div");pages.className="mhd-page-nav";pages.setAttribute("aria-label","Main site pages");
-      var links=[
-        ["index.html","Home"],
-        ["condition-guide.html","Conditions"],
-        ["medication-guide.html","Medication"],
-        ["treatment-guide.html","Treatment"],
-        ["appointment-builder.html","Appointment"],
-        ["family-caregiver.html","Family"],
-        ["crisis-legal.html","Crisis & Legal"],
-        ["state-law.html","State Law"]
-      ];
-      var current=(location.pathname.split("/").pop()||"index.html").toLowerCase();
-      pages.innerHTML=links.map(function(x){
-        var here=current===x[0].toLowerCase()?' aria-current="page"':'';
-        return '<a href="'+x[0]+'"'+here+'>'+x[1]+'</a>';
-      }).join("");
-      target.appendChild(pages);
+    if(!target.querySelector(".mhd-mobile-toggle")){
+      var toggle=document.createElement("button");toggle.className="mhd-mobile-toggle";toggle.type="button";toggle.setAttribute("aria-label","Open site menu");toggle.setAttribute("aria-expanded","false");
+      toggle.innerHTML="<span></span><span></span><span></span>";target.appendChild(toggle);
+      var menu=document.createElement("div");menu.className="mhd-mobile-menu";menu.hidden=true;
+      menu.innerHTML='<div class="mhd-mobile-pages">'+links.map(function(x){var here=current===x[0].toLowerCase()?' aria-current="page"':'';return '<a href="'+x[0]+'"'+here+'>'+x[1]+'</a>'}).join("")+'</div>'+
+        '<div class="mhd-mobile-tools"><a class="mhd-header-action" href="tools.html">Research & Tools</a><button class="mhd-header-action" type="button" data-mobile-guide>Guide Me</button><button class="mhd-header-action" type="button" data-mobile-assistant>Site Assistant</button><a class="mhd-mobile-contact" href="index.html#contact">✉ Contact Us</a></div>';
+      target.appendChild(menu);
+      toggle.addEventListener("click",function(){menu.hidden=!menu.hidden;toggle.setAttribute("aria-expanded",String(!menu.hidden))});
+      menu.querySelector("[data-mobile-guide]").addEventListener("click",function(){menu.hidden=true;guideMe()});
+      menu.querySelector("[data-mobile-assistant]").addEventListener("click",function(){menu.hidden=true;toggleAssistant()});
+      document.addEventListener("click",function(e){if(!menu.hidden&&!target.contains(e.target)){menu.hidden=true;toggle.setAttribute("aria-expanded","false")}});
     }
     root.classList.add("mhd-universal-header");
+  }
+
+  function buildFooterLegal(){
+    var footer=document.querySelector("footer");if(!footer||footer.querySelector(".mhd-footer-legal"))return;
+    var grid=footer.querySelector(".footer-grid,.foot");if(!grid)return;
+    var legal=document.createElement("div");legal.className="mhd-footer-legal";
+    legal.innerHTML='<h4>Legal</h4><a href="legal.html#medical">Medical Disclaimer</a><a href="legal.html#privacy">Privacy</a><a href="legal.html#terms">Terms of Use</a><a href="legal.html#affiliate">Affiliate Disclosure</a><a href="legal.html#copyright">Copyright / DMCA</a><a href="legal.html#accessibility">Accessibility</a>';
+    var existing=[].slice.call(grid.querySelectorAll("h4")).some(function(h){return h.textContent.trim().toLowerCase()==="legal"});
+    if(!existing)grid.appendChild(legal);
   }
   function buildComfort(){
     if(document.getElementById("mhdComfortDock"))return;
@@ -148,7 +166,7 @@
     try{var q=new URLSearchParams(location.search);if(q.get("guide")==="1"&&typeof window.restartGuide==="function")setTimeout(function(){window.restartGuide()},80)}catch(e){}
   }
 
-  function build(){buildAssistant();buildHeader();buildComfort();apply();setVolume(state.volume);maybeStartGuide()}
+  function build(){buildAssistant();buildHeader();buildFooterLegal();buildComfort();apply();setVolume(state.volume);maybeStartGuide()}
   apply();
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",build);else build();
 })();
