@@ -45,6 +45,7 @@
     if(/family|caregiver|son|daughter|spouse|brother|sister|refus|won't take|wont take|doesn't believe|doesnt believe|anosognosia/.test(s))return {text:"The Family / Caregiver Center is the best starting point, especially for treatment refusal, lack of insight, communication, and family information-sharing.",href:"family-caregiver.html",label:"Open Family / Caregiver Center"};
     if(/hospital|hold|commit|302|5150|baker|tdo|eco|involuntary|emergency petition|legal|law/.test(s))return {text:"The Crisis, Hospital & Legal Center explains emergency evaluation, voluntary and involuntary care, discharge, rights, and state-specific law.",href:"crisis-legal.html",label:"Open Crisis, Hospital & Legal Center"};
     if(/state|maryland|virginia|pennsylvania|district of columbia|dc law/.test(s))return {text:"Use State-by-State Law Intelligence to compare verified emergency-evaluation and civil-commitment rules by jurisdiction.",href:"state-law.html",label:"Open State Law Intelligence"};
+    if(/find care|find help|find a therapist|find therapist|find psychiatrist|find psychologist|provider near|accepting patients|waitlist|wait list|insurance network|in network|out of network|uninsured|low cost|no insurance|need a provider|where do i get help|where can i get help/.test(s))return {text:"The Find Care & Access Center helps you choose a level of care, understand provider credentials, use official treatment locators, handle insurance and wait lists, and prepare the first call.",href:"find-care.html",label:"Open Find Care & Access"};
     if(/glossary|dictionary|define|definition|pronounce|pronunciation|what does .* mean|mental health term|term mean/.test(s))return {text:"The Mental Health Dictionary lets you type or speak a term, hear the pronunciation, listen to the definition, browse A–Z, and jump to related MHD resources.",href:"glossary.html",label:"Open Mental Health Dictionary"};
     if(/work|job|employer|boss|accommodation|fmla|leave|school|college|university|504|iep|idea|class|daily life|routine|return to work|return to school/.test(s))return {text:"The Work, School & Daily Life Center covers accommodations, leave, school supports, disclosure, return after crisis, and everyday functioning.",href:"life-guide.html",label:"Open Work, School & Daily Life"};
     if(/appointment|doctor|psychiatrist|what should i tell|prepare|visit tomorrow/.test(s))return {text:"The Appointment Prep Builder can organize symptoms, timeline, medications, treatment history, family observations, questions, and goals into a provider-ready summary.",href:"appointment-builder.html",label:"Open Appointment Prep"};
@@ -66,7 +67,7 @@
     var p=document.createElement("section");p.id="mhdSiteAssistant";p.hidden=true;p.setAttribute("aria-label","Site Assistant");
     p.innerHTML='<div class="mhd-assistant-head"><div><strong>Site Assistant</strong><span>Tell me what you need and I’ll point you to the right MHD resource.</span></div><button class="mhd-assistant-close" aria-label="Close Site Assistant">×</button></div>'+
       '<div class="mhd-assistant-quick">'+
-      '<button data-route="family">Helping a family member</button><button data-route="appointment">Prepare for an appointment</button>'+
+      '<button data-route="find care">Find care / a provider</button><button data-route="family">Helping a family member</button><button data-route="appointment">Prepare for an appointment</button>'+
       '<button data-route="medication">Medication question</button><button data-route="therapy">Treatment or therapy</button>'+
       '<button data-route="hospital">Hospital / crisis / legal</button><button data-route="condition">Understand symptoms</button>'+
       '</div>'+
@@ -92,7 +93,7 @@
     if(!target)return;
 
     var links=[
-      ["index.html","Home"],["condition-guide.html","Conditions"],["glossary.html","Glossary"],["medication-guide.html","Medication"],
+      ["index.html","Home"],["condition-guide.html","Conditions"],["find-care.html","Find Care"],["glossary.html","Glossary"],["medication-guide.html","Medication"],
       ["treatment-guide.html","Treatment"],["appointment-builder.html","Appointment"],["family-caregiver.html","Family"],
       ["crisis-legal.html","Crisis & Legal"],["state-law.html","State Law"]
     ];
