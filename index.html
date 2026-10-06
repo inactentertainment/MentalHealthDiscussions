@@ -101,7 +101,7 @@
     }
     @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
   </style>
-<link rel="stylesheet" href="mhd-comfort.css?v=20261005f">
+<link rel="stylesheet" href="mhd-comfort.css?v=20261005g">
 </head>
 <body>
 <div class="calmveil" id="calmveil"></div>
@@ -147,7 +147,7 @@
             <div class="hero-actions"><button class="primary" onclick="restartGuide()">Guide me to the right place</button><button class="outline" onclick="scrollToId('understand')">Explore everything</button></div>
           </div>
           <div class="video" id="mhdVideo" aria-label="Mental health in America video">
-            <iframe id="mhdYouTube" src="https://www.youtube.com/embed/7iDb7PaEszM?start=4&rel=0&playsinline=1&controls=1&modestbranding=1" title="Mental Health in America" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="eager"></iframe>
+            <iframe id="mhdYouTube" src="https://www.youtube.com/embed/7iDb7PaEszM?start=4&rel=0&playsinline=1&controls=1&modestbranding=1&enablejsapi=1" title="Mental Health in America" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="eager"></iframe>
           </div>
         </div>
       </section>
@@ -408,6 +408,25 @@
   document.getElementById('year').textContent=new Date().getFullYear();document.querySelectorAll('.footerYear').forEach(el=>el.textContent=new Date().getFullYear());
 </script>
 
-<script src="mhd-comfort.js?v=20261005f"></script>
+<script>
+window.onYouTubeIframeAPIReady=function(){
+  var frame=document.getElementById("mhdYouTube");
+  if(!frame||!window.YT||!YT.Player)return;
+  try{
+    window.mhdHeroPlayer=new YT.Player("mhdYouTube",{events:{onReady:function(e){
+      try{
+        e.target.mute();
+        e.target.seekTo(4,true);
+        e.target.playVideo();
+        setTimeout(function(){
+          try{e.target.pauseVideo();e.target.unMute()}catch(err){}
+        },420);
+      }catch(err){}
+    }}});
+  }catch(err){}
+};
+</script>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="mhd-comfort.js?v=20261005g"></script>
 </body>
 </html>
