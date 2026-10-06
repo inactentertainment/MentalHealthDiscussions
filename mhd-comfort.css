@@ -715,3 +715,14 @@ footer .wordmark-footer{
   background:rgba(255,255,255,.05)!important;
 }
 .footer-copy,.footer-copyright,.fineprint{color:#C4C5BD!important}
+
+
+/* Keep the guided-question experience visually focused. */
+body:has(#onboarding.guide-active:not(.hidden)) footer{
+  display:none!important;
+}
+
+/* Footer headings use the brand's handwritten accent while body copy stays Georgia. */
+footer h4{
+  font-family:"Segoe Script","Snell Roundhand","Brush Script MT","Lucida Handwriting",cursive!important;
+}
