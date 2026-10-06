@@ -437,3 +437,120 @@ html.mhd-universal-header .wordmark-nav{white-space:nowrap!important}
   .mhd-header-actions{grid-template-columns:repeat(3,minmax(0,1fr))!important;width:100%!important;max-width:350px!important;margin:0 auto!important}
   .mhd-header-action{width:100%!important;min-width:0!important;max-width:none!important;font-size:.66rem!important;padding:0 5px!important}
 }
+
+
+/* Navigation restoration + universal announcement bar */
+.crisis,.crisisbar{
+  background:var(--mhd-deep)!important;
+  color:#F5F1E8!important;
+  text-align:center!important;
+  padding:12px 16px!important;
+  font-size:.88rem!important;
+  line-height:1.4!important;
+  font-weight:500!important;
+  border:0!important;
+}
+.crisis strong,.crisisbar strong{
+  color:#FFFDF8!important;
+  font-weight:800!important;
+}
+.crisis a,.crisisbar a{
+  color:#FFFDF8!important;
+  font-weight:850!important;
+  text-decoration:underline!important;
+  text-underline-offset:3px!important;
+}
+@media(max-width:640px){
+  .crisis,.crisisbar{font-size:.78rem!important;padding:10px 12px!important;line-height:1.4!important}
+}
+
+/* Universal header: utilities do not replace site navigation. */
+html.mhd-universal-header .top .nav,
+html.mhd-universal-header .header .headinner,
+html.mhd-universal-header .topbar .nav{
+  display:grid!important;
+  grid-template-columns:auto 1fr auto!important;
+  grid-template-areas:
+    "brand spacer actions"
+    "pages pages pages"!important;
+  gap:8px 14px!important;
+  min-height:auto!important;
+  height:auto!important;
+  padding:10px 20px 9px!important;
+}
+html.mhd-universal-header .top .nav>.brand,
+html.mhd-universal-header .header .headinner>.wordmark,
+html.mhd-universal-header .topbar .nav>.brand{
+  grid-area:brand!important;
+  justify-self:start!important;
+  align-self:center!important;
+}
+html.mhd-universal-header .mhd-header-actions{
+  grid-area:actions!important;
+  justify-self:end!important;
+}
+.mhd-page-nav{
+  grid-area:pages!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:18px!important;
+  width:100%!important;
+  overflow-x:auto!important;
+  overflow-y:hidden!important;
+  padding:7px 4px 2px!important;
+  border-top:1px solid var(--mhd-border)!important;
+  scrollbar-width:none!important;
+  -webkit-overflow-scrolling:touch!important;
+}
+.mhd-page-nav::-webkit-scrollbar{display:none!important}
+.mhd-page-nav a{
+  flex:0 0 auto!important;
+  color:var(--mhd-text)!important;
+  text-decoration:none!important;
+  font-size:.76rem!important;
+  font-weight:680!important;
+  white-space:nowrap!important;
+  padding:4px 1px!important;
+}
+.mhd-page-nav a:hover{
+  color:var(--mhd-link)!important;
+  text-decoration:underline!important;
+  text-underline-offset:4px!important;
+}
+.mhd-page-nav a[aria-current="page"]{
+  color:var(--mhd-link)!important;
+  font-weight:820!important;
+}
+
+/* Keep the original nav hidden because the universal second row now restores all major destinations cleanly. */
+html.mhd-universal-header .top .nav>.navlinks,
+html.mhd-universal-header .header .headinner>.navlinks,
+html.mhd-universal-header .topbar .nav>.nav-group,
+html.mhd-universal-header .topbar .nav>.mobile-menu{display:none!important}
+
+@media(max-width:760px){
+  html.mhd-universal-header .top .nav,
+  html.mhd-universal-header .header .headinner,
+  html.mhd-universal-header .topbar .nav{
+    grid-template-columns:1fr!important;
+    grid-template-areas:"brand" "actions" "pages"!important;
+    gap:7px!important;
+    padding:9px 10px 8px!important;
+  }
+  html.mhd-universal-header .top .nav>.brand,
+  html.mhd-universal-header .header .headinner>.wordmark,
+  html.mhd-universal-header .topbar .nav>.brand{
+    justify-self:center!important;
+  }
+  html.mhd-universal-header .mhd-header-actions{
+    justify-self:center!important;
+  }
+  .mhd-page-nav{
+    justify-content:flex-start!important;
+    gap:15px!important;
+    padding:7px 4px 1px!important;
+  }
+  .mhd-page-nav a{font-size:.72rem!important}
+  #mhdSiteAssistant{top:166px!important}
+}
