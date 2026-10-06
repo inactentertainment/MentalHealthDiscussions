@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>MHD Find Care & Access Center</title>
+<meta name="description" content="Practical mental-health care navigation: choose a level of care, understand provider credentials, find official treatment locators, prepare insurance questions, and build a first-call script.">
+<style>
+:root{--max:1180px;--line:#cbd3cd}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,"Times New Roman",serif;line-height:1.55}
+button,input,select,textarea{font:inherit}a{color:inherit}.hidden{display:none!important}
+.wrap{max-width:var(--max);margin:auto;padding:0 22px}
+.hero{padding:66px 0 48px}
+.hero h1{font-size:clamp(3rem,6.3vw,5.8rem);line-height:.94;letter-spacing:-.055em;margin:10px 0 18px;max-width:1000px}
+.hero p{max-width:880px;font-size:1.08rem}
+.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;font-weight:800}
+.section{padding:58px 0}
+.head{display:flex;justify-content:space-between;gap:28px;align-items:end;margin-bottom:24px}
+.head h2{font-size:clamp(2.2rem,4.7vw,4.3rem);line-height:1;letter-spacing:-.045em;margin:0}
+.head p{max-width:650px;margin:0}
+.notice{border:1px solid currentColor;border-radius:16px;padding:14px 16px;margin-bottom:18px}
+.nav-shell{display:grid;grid-template-columns:360px 1fr;gap:16px}
+.choice-card,.result-card,.provider-card,.level-card,.access-card,.script-card,.resource-card{border:1px solid var(--line);border-radius:20px;padding:17px}
+.choice-card h3,.result-card h3{margin:0 0 8px}
+.choice-grid{display:grid;gap:7px}
+.choice{border:1px solid var(--line);border-radius:13px;background:transparent;text-align:left;padding:10px;cursor:pointer}
+.choice strong{display:block;font-size:.9rem}.choice span{display:block;font-size:.74rem;opacity:.74;margin-top:2px}
+.choice.active{background:var(--mhd-accent)!important;color:var(--mhd-button-text)!important;border-color:var(--mhd-accent)!important}
+.result-card h2{font-size:2rem;letter-spacing:-.035em;margin:0 0 8px}
+.result-card ul{padding-left:18px}.result-card li{font-size:.88rem;margin-bottom:5px}
+.route-strip{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}
+.route-strip a{border:1px solid var(--mhd-border);border-radius:999px;padding:8px 10px;text-decoration:none;font-size:.75rem;font-weight:750}
+.route-strip a.primary{background:var(--mhd-accent);color:var(--mhd-button-text);border-color:var(--mhd-accent)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.provider-card h3,.level-card h3,.resource-card h3{margin:0 0 5px;font-size:1.05rem}
+.provider-card .abbr{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:3px 7px;font-size:.66rem;margin-bottom:8px}
+.provider-card p,.level-card p,.resource-card p,.access-card p{font-size:.84rem}
+.provider-card ul,.level-card ul,.access-card ul{padding-left:18px}.provider-card li,.level-card li,.access-card li{font-size:.82rem;margin-bottom:4px}
+.level-card .intensity{font-size:.68rem;text-transform:uppercase;letter-spacing:.09em;font-weight:800;opacity:.68;margin-bottom:5px}
+.resource-card a{display:inline-block;margin-top:6px;text-decoration:underline;text-underline-offset:3px;font-weight:750;font-size:.8rem}
+.access-shell{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.checklist{display:grid;gap:7px;margin-top:10px}
+.check{display:flex;gap:9px;align-items:flex-start;border-top:1px solid var(--line);padding-top:8px}
+.check input{margin-top:3px}.check span{font-size:.83rem}
+.waitlist{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.wait-step{border:1px solid var(--line);border-radius:15px;padding:13px}
+.wait-step strong{display:block;margin-bottom:4px}.wait-step span{font-size:.78rem;opacity:.78}
+.script-builder{display:grid;grid-template-columns:.9fr 1.1fr;gap:14px}
+.field{display:flex;flex-direction:column;gap:5px;margin-bottom:10px}
+.field label{font-size:.76rem;font-weight:800}
+.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:10px 11px;background:transparent;color:inherit}
+.field textarea{min-height:82px;resize:vertical}
+.btnrow{display:flex;gap:8px;flex-wrap:wrap}
+.btn{border:1px solid currentColor;border-radius:999px;padding:9px 12px;background:transparent;cursor:pointer;font-weight:750}
+.script-output{white-space:pre-wrap;border:1px solid var(--line);border-radius:14px;padding:12px;min-height:240px;font-size:.84rem}
+.cred-search{margin-bottom:14px}.cred-search input{width:100%;border:1px solid var(--line);border-radius:13px;padding:11px 12px;background:transparent}
+.source-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.source-row a{text-decoration:underline;text-underline-offset:3px;font-size:.8rem}
+footer{padding:42px 22px}.foot{max-width:var(--max);margin:auto;display:grid;grid-template-columns:1.3fr repeat(2,1fr);gap:28px}.footbrand{font-family:"Segoe Script","Snell Roundhand","Brush Script MT",cursive;font-size:1.35rem}.foot h4{font-size:.86rem;font-weight:800;text-decoration:underline;text-underline-offset:5px}.foot a{display:block;text-decoration:none;padding:4px 0;font-size:.83rem}.fine{max-width:var(--max);margin:24px auto 0;padding-top:14px;border-top:1px solid rgba(255,255,255,.2);font-size:.74rem}
+@media(max-width:960px){.nav-shell,.script-builder,.access-shell{grid-template-columns:1fr}.grid4{grid-template-columns:1fr 1fr}.waitlist{grid-template-columns:1fr 1fr}.head{display:block}.head p{margin-top:10px}}
+@media(max-width:700px){.grid3,.grid4,.waitlist,.foot{grid-template-columns:1fr}.wrap{padding:0 16px}.hero h1{font-size:3.1rem}}
+</style>
+<link rel="stylesheet" href="mhd-comfort.css?v=20261005m">
+</head>
+<body>
+<div class="crisis"><strong>Need immediate crisis support?</strong> In the U.S., call or text <a href="tel:988">988</a>. If there is immediate danger, call <a href="tel:911">911</a>. MHD does not replace professional care.</div>
+<header class="top"><nav class="nav"><a class="brand" href="index.html">Mental Health Discussions</a><div class="navlinks"><a href="index.html">Home</a><a href="tools.html">Research & Tools</a></div></nav></header>
+
+<section class="hero"><div class="wrap">
+<div class="eyebrow">MHD Find Care & Access Center</div>
+<h1>How do I actually get help?</h1>
+<p>Move from “something is wrong” to a concrete next step. Choose the kind of help you need, understand levels of care and provider credentials, find official treatment locators, prepare insurance questions, and build the call or message that gets the process started.</p>
+</div></section>
+
+<main>
+<section class="section"><div class="wrap">
+<div class="notice"><strong>Start with urgency, not a diagnosis.</strong> If there is immediate danger, a suspected overdose, severe medical instability, or someone cannot stay safe, use emergency/crisis care rather than waiting for a routine outpatient appointment.</div>
+<div class="nav-shell">
+<div class="choice-card"><h3>What are you trying to do?</h3><div class="choice-grid" id="careChoices"></div></div>
+<div class="result-card" id="careResult"></div>
+</div>
+</div></section>
+
+<section class="section alt"><div class="wrap">
+<div class="head"><div><div class="eyebrow">Levels of Care</div><h2>More support does not always mean a hospital.</h2></div><p>Care intensity should match clinical need, safety, functioning, and what can realistically be supported in the community.</p></div>
+<div class="grid4">
+<div class="level-card"><div class="intensity">Routine / lower intensity</div><h3>Standard outpatient</h3><p>Periodic therapy, medication management, primary care, or both while living normally in the community.</p><ul><li>Often weekly, biweekly, monthly, or as needed</li><li>Best when safety and daily functioning can be managed between visits</li></ul></div>
+<div class="level-card"><div class="intensity">Moderate intensity</div><h3>IOP</h3><p>Intensive Outpatient Program: several hours of structured treatment on multiple days each week without overnight stay.</p><ul><li>More structure than ordinary outpatient care</li><li>Can support step-up or step-down care</li></ul></div>
+<div class="level-card"><div class="intensity">Higher daytime intensity</div><h3>PHP</h3><p>Partial Hospitalization Program: highly structured day treatment, commonly several hours per day on multiple days each week.</p><ul><li>No overnight hospital stay</li><li>Often used after inpatient care or when outpatient care is not enough</li></ul></div>
+<div class="level-card"><div class="intensity">24-hour / highest acute intensity</div><h3>Inpatient hospital</h3><p>24-hour hospital-based treatment for serious symptoms requiring intensive safety, medical, or psychiatric monitoring.</p><ul><li>Usually short-term acute stabilization</li><li>Discharge planning should connect to follow-up care</li></ul></div>
+<div class="level-card"><div class="intensity">Specialty early intervention</div><h3>Coordinated Specialty Care</h3><p>Team-based treatment for first-episode psychosis or recent serious mental illness, often combining medication, therapy, family support, case management, peer support, and work/school services.</p></div>
+<div class="level-card"><div class="intensity">Substance-use specialty</div><h3>SUD treatment</h3><p>Can range from outpatient counseling and medication treatment to IOP, residential, opioid treatment programs, withdrawal management, or hospital care.</p></div>
+<div class="level-card"><div class="intensity">Community response</div><h3>Mobile crisis / crisis stabilization</h3><p>Community-based crisis assessment and stabilization may be available without automatically requiring inpatient hospitalization.</p></div>
+<div class="level-card"><div class="intensity">Primary entry point</div><h3>Primary care</h3><p>A primary care clinician can screen for common mental-health concerns, consider medical causes, begin some treatments, and refer to specialty care.</p></div>
+</div>
+</div></section>
+
+<section class="section"><div class="wrap">
+<div class="head"><div><div class="eyebrow">Provider Decoder</div><h2>Who does what?</h2></div><p>Credentials vary by state, but the role matters more than memorizing initials. Use this to understand who may provide therapy, testing, medication, or practical support.</p></div>
+<div class="cred-search"><input id="credSearch" placeholder="Search: psychiatrist, LCSW, medication, testing, therapy…"></div>
+<div class="grid3" id="providerGrid"></div>
+</div></section>
+
+<section class="section alt"><div class="wrap">
+<div class="head"><div><div class="eyebrow">Official Find-Care Routes</div><h2>Start with sources that can actually connect you.</h2></div><p>These are U.S. national starting points. Local availability, insurance participation, wait time, age limits, and services still need to be confirmed directly.</p></div>
+<div class="grid3">
+<div class="resource-card"><h3>SAMHSA FindTreatment.gov</h3><p>Confidential, anonymous national treatment locator for mental-health and substance-use treatment in the United States and territories.</p><a href="https://findtreatment.gov/" target="_blank" rel="noopener">Open FindTreatment.gov</a></div>
+<div class="resource-card"><h3>Early Serious Mental Illness Locator</h3><p>SAMHSA locator for recent-onset serious mental illness programs, including early psychosis and coordinated specialty care programs.</p><a href="https://www.samhsa.gov/find-help/locators/esmi" target="_blank" rel="noopener">Open ESMI locator</a></div>
+<div class="resource-card"><h3>NIMH Find Help</h3><p>Explains routes through primary care, federal locators, insurance, state/county agencies, schools, EAPs, and questions to ask a provider.</p><a href="https://www.nimh.nih.gov/health/find-help" target="_blank" rel="noopener">Open NIMH Find Help</a></div>
+<div class="resource-card"><h3>HRSA Health Centers</h3><p>Find federally supported community health centers. Services vary by center; ask whether behavioral-health or integrated mental-health care is available.</p><a href="https://findahealthcenter.hrsa.gov/" target="_blank" rel="noopener">Find a health center</a></div>
+<div class="resource-card"><h3>Medicare Care Compare</h3><p>For Medicare users, search Medicare-participating clinicians and facilities and confirm mental-health services directly.</p><a href="https://www.medicare.gov/care-compare/" target="_blank" rel="noopener">Open Care Compare</a></div>
+<div class="resource-card"><h3>VA Mental Health</h3><p>Veterans can find VA mental-health services, local facilities, Vet Centers, crisis resources, and tele-mental-health routes.</p><a href="https://www.va.gov/health-care/health-needs-conditions/mental-health/" target="_blank" rel="noopener">Open VA mental-health services</a></div>
+</div>
+</div></section>
+
+<section class="section"><div class="wrap">
+<div class="head"><div><div class="eyebrow">Insurance & Access Checklist</div><h2>Before the first appointment gets expensive.</h2></div><p>Ask these questions before assuming a provider, program, or medication is covered.</p></div>
+<div class="access-shell">
+<div class="access-card"><h3>Call the plan or check the portal</h3><div class="checklist">
+<label class="check"><input type="checkbox"><span>Is this provider or facility currently <strong>in-network</strong> for my exact plan?</span></label>
+<label class="check"><input type="checkbox"><span>What are my outpatient mental-health <strong>copay, coinsurance, and deductible</strong>?</span></label>
+<label class="check"><input type="checkbox"><span>Is <strong>prior authorization</strong> required for therapy, psychological testing, IOP, PHP, inpatient care, TMS, esketamine, or other specialty treatment?</span></label>
+<label class="check"><input type="checkbox"><span>Are there separate rules for <strong>telehealth</strong>?</span></label>
+<label class="check"><input type="checkbox"><span>Does the plan require a <strong>referral</strong> from primary care?</span></label>
+<label class="check"><input type="checkbox"><span>What happens if there is <strong>no in-network provider available</strong> within a reasonable time or distance?</span></label>
+</div></div>
+<div class="access-card"><h3>If you do not have insurance</h3><ul><li>Ask HRSA health centers and local community mental-health agencies about sliding fees or uninsured access.</li><li>Use FindTreatment.gov and ask programs specifically about self-pay, grants, state funding, or reduced-fee care.</li><li>Ask teaching clinics or university training programs whether supervised reduced-fee therapy is available.</li><li>Check Medicaid eligibility in your state if income or disability circumstances may qualify.</li><li>For medications, ask the prescriber or pharmacist about lower-cost generics and legitimate assistance options.</li></ul></div>
+</div>
+</div></section>
+
+<section class="section alt"><div class="wrap">
+<div class="head"><div><div class="eyebrow">When Nobody Is Accepting Patients</div><h2>Do not stop after one “no.”</h2></div><p>Access failures are common enough that the search itself needs a plan.</p></div>
+<div class="waitlist">
+<div class="wait-step"><strong>1. Ask for the wait list.</strong><span>Ask whether cancellations are offered and how often the list is reviewed.</span></div>
+<div class="wait-step"><strong>2. Widen the route.</strong><span>Try primary care, telehealth, community clinics, hospital outpatient programs, and nearby counties.</span></div>
+<div class="wait-step"><strong>3. Ask the insurer to help.</strong><span>Request current in-network names and document when listed providers are not actually available.</span></div>
+<div class="wait-step"><strong>4. Ask for interim care.</strong><span>Primary care, bridge medication visits, group therapy, peer support, or short-term programs may help while waiting.</span></div>
+<div class="wait-step"><strong>5. Escalate if symptoms escalate.</strong><span>If safety or functioning deteriorates, move to crisis, urgent, IOP/PHP, or emergency assessment as appropriate.</span></div>
+</div>
+</div></section>
+
+<section class="section"><div class="wrap">
+<div class="head"><div><div class="eyebrow">First-Call Builder</div><h2>Know what to say before you call.</h2></div><p>Build a short call, voicemail, or portal-message script. Keep it focused on what you need, urgency, insurance, and availability.</p></div>
+<div class="script-builder">
+<div class="script-card">
+<div class="field"><label>Who are you contacting?</label><select id="callTarget"><option>Therapist / counseling practice</option><option>Psychiatry / medication provider</option><option>Primary care</option><option>IOP / PHP program</option><option>Early psychosis / coordinated specialty care program</option><option>Substance-use treatment program</option><option>Insurance company</option></select></div>
+<div class="field"><label>Who needs care?</label><select id="callFor"><option>Me</option><option>My child / teen</option><option>My adult family member</option><option>Someone I support</option></select></div>
+<div class="field"><label>Main concern</label><input id="callConcern" placeholder="Example: depression, panic, first psychosis, medication evaluation…"></div>
+<div class="field"><label>How soon?</label><select id="callUrgency"><option>Routine / first available</option><option>Soon — symptoms are affecting work, school, or daily functioning</option><option>Urgent — symptoms are worsening quickly, but there is no immediate danger</option></select></div>
+<div class="field"><label>Insurance or payment</label><input id="callInsurance" placeholder="Example: BlueCross PPO, Medicaid, Medicare, self-pay, uninsured"></div>
+<div class="field"><label>Important preference or need (optional)</label><input id="callNeed" placeholder="Telehealth, evening appointments, trauma specialist, Spanish-speaking…"></div>
+<div class="btnrow"><button class="btn primary" type="button" onclick="buildCall()">Build script</button><button class="btn" type="button" onclick="copyCall()">Copy</button></div>
+</div>
+<div class="script-card"><h3 style="margin-top:0">Your script</h3><div id="callOutput" class="script-output">Complete the fields and choose “Build script.”</div></div>
+</div>
+</div></section>
+
+<section class="section alt"><div class="wrap">
+<div class="head"><div><div class="eyebrow">Questions Before You Commit</div><h2>“Accepting patients” is only the beginning.</h2></div><p>A good match includes competence, logistics, cost, communication, and a treatment approach that makes sense for the problem.</p></div>
+<div class="grid3">
+<div class="provider-card"><h3>Experience</h3><ul><li>How much experience do you have with this problem?</li><li>What treatment approaches do you usually use?</li><li>How do you measure whether treatment is helping?</li></ul></div>
+<div class="provider-card"><h3>Logistics</h3><ul><li>How soon is the first appointment?</li><li>What happens between visits if symptoms worsen?</li><li>Do you offer telehealth? What is the cancellation policy?</li></ul></div>
+<div class="provider-card"><h3>Cost & coverage</h3><ul><li>Are you in-network for my exact plan?</li><li>What will I owe per visit?</li><li>Are labs, testing, facility fees, or other services billed separately?</li></ul></div>
+</div>
+<div class="source-row"><a href="https://www.nimh.nih.gov/health/find-help" target="_blank" rel="noopener">NIMH Find Help</a><a href="https://www.samhsa.gov/find-help/locators" target="_blank" rel="noopener">SAMHSA Treatment Locators</a><a href="https://www.medicaid.gov/medicaid/benefits/behavioral-health-services" target="_blank" rel="noopener">Medicaid Behavioral Health</a></div>
+</div></section>
+</main>
+
+<footer><div class="foot"><div><div class="footbrand">Mental Health Discussions</div><p>Free mental-health education, navigation, and practical tools.</p></div><div><h4>Continue</h4><a href="appointment-builder.html">Appointment Prep</a><a href="family-caregiver.html">Family / Caregiver</a><a href="crisis-legal.html">Crisis & Legal</a></div><div><h4>Legal</h4><a href="legal.html#medical">Medical Disclaimer</a><a href="legal.html#privacy">Privacy</a><a href="legal.html#terms">Terms</a><a href="legal.html#accessibility">Accessibility</a></div></div><div class="fine">Educational navigation only. Availability, credentials, insurance participation, eligibility, and treatment recommendations must be confirmed directly with the provider, program, insurer, or relevant agency.</div></footer>
+
+<script>
+const routes={
+start:{label:"I do not know where to start",sub:"Help me choose the first door.",title:"Start with the least complicated door that can still answer the question.",steps:["If symptoms are concerning but not an emergency, a primary care clinician can be a practical first stop for screening, medical review, and referral.","If you already know you want talk therapy, contact a therapist or behavioral-health practice directly and ask about the problem they treat, wait time, insurance, and telehealth.","If medication evaluation is a major need, look for psychiatry, a psychiatric nurse practitioner, or another qualified prescriber in your system.","If symptoms are severe, rapidly worsening, psychotic, or making basic functioning very difficult, consider a higher-intensity or specialty route rather than waiting months for ordinary outpatient therapy."],links:[["NIMH Find Help","https://www.nimh.nih.gov/health/find-help"],["FindTreatment.gov","https://findtreatment.gov/"],["MHD Appointment Prep","appointment-builder.html"]]},
+therapy:{label:"I want therapy",sub:"Counseling, psychotherapy, trauma care, OCD treatment, family therapy.",title:"Look for competence with the problem, not just the word “therapist.”",steps:["Search by the actual problem: depression, panic, OCD/ERP, PTSD/trauma-focused therapy, DBT, family therapy, eating disorders, psychosis, grief, or another need.","Ask what treatment approach the clinician uses and how much experience they have with that problem.","Confirm license, state eligibility for telehealth, insurance participation, cost, and wait time.","If the first clinician is not a good fit, changing providers or treatment approach can be reasonable."],links:[["FindTreatment.gov","https://findtreatment.gov/"],["MHD Treatment Guide","treatment-guide.html"],["NIMH Find Help","https://www.nimh.nih.gov/health/find-help"]]},
+meds:{label:"I need medication evaluation",sub:"Psychiatry, medication management, side effects, second opinion.",title:"Find a qualified prescriber and bring an accurate medication history.",steps:["Psychiatrists and psychiatric nurse practitioners commonly provide psychiatric medication evaluation; primary care clinicians also treat many common mental-health conditions.","Ask whether the practice treats your age group and condition and whether laboratory or in-person monitoring is required.","Bring all prescription drugs, over-the-counter medicines, vitamins, herbs, supplements, allergies, serious past reactions, and what has or has not helped before.","Do not stop or rapidly change an existing psychiatric medication solely because a new appointment is delayed; contact the current prescriber, pharmacist, primary care clinician, urgent service, or other appropriate clinical resource."],links:[["MHD Medication Guide","medication-guide.html"],["MHD Appointment Prep","appointment-builder.html"],["NIMH Find Help","https://www.nimh.nih.gov/health/find-help"]]},
+both:{label:"I probably need therapy + medication",sub:"Combined treatment or coordinated care.",title:"Choose a system that communicates.",steps:["Some practices offer both psychotherapy and medication; in other cases the therapist and prescriber are separate.","Ask how the clinicians communicate, who manages refills, and who should be contacted if symptoms worsen.","Primary care can sometimes provide medication while a separate therapist provides psychotherapy.","Use the same medication and treatment history at each appointment to reduce conflicting information."],links:[["MHD Treatment Guide","treatment-guide.html"],["MHD Medication Guide","medication-guide.html"],["MHD Appointment Prep","appointment-builder.html"]]},
+psychosis:{label:"New psychosis / serious mental illness",sub:"Voices, delusions, major confusion, mania, rapid decline.",title:"Recent-onset serious symptoms deserve specialty assessment quickly.",steps:["New or rapidly worsening psychosis needs assessment for psychiatric, substance-related, medication-related, neurological, and other medical causes.","For first-episode psychosis or recent-onset serious mental illness, look specifically for Coordinated Specialty Care or early-intervention programs.","These programs may combine medication, psychotherapy, family support, case management, peer services, and work/school support.","If the person is unsafe, severely confused, unable to meet basic needs, or deteriorating rapidly, use crisis or emergency assessment rather than waiting for a routine specialty intake."],links:[["SAMHSA Early Serious Mental Illness Locator","https://www.samhsa.gov/find-help/locators/esmi"],["MHD Conditions","condition-guide.html"],["MHD Crisis & Legal","crisis-legal.html"]]},
+child:{label:"Help for a child or teen",sub:"Pediatric, school, therapy, psychiatry, family support.",title:"Use both the health-care and school systems when appropriate.",steps:["A pediatrician or primary care clinician can be a first entry point and can screen, consider medical factors, and refer to child/adolescent mental-health care.","Ask prospective providers what ages they treat and whether they work with families, schools, and developmental concerns.","If symptoms affect school access or functioning, the school may also have a Section 504, IDEA, counseling, or student-support pathway.","For urgent safety concerns, do not wait for a school meeting or routine outpatient intake."],links:[["NIMH Find Help","https://www.nimh.nih.gov/health/find-help"],["MHD Work, School & Daily Life","life-guide.html"],["MHD Family Center","family-caregiver.html"]]},
+substance:{label:"Alcohol or drug treatment",sub:"Substance use, opioid treatment, dual diagnosis.",title:"Look for treatment that addresses both substance use and mental health when both are present.",steps:["Use FindTreatment.gov or SAMHSA specialty locators to identify programs that match the substance and needed level of care.","For opioid use disorder, ask specifically about evidence-based medications such as buprenorphine, methadone, or naltrexone when clinically appropriate.","Ask whether the program treats co-occurring psychiatric conditions rather than requiring every mental-health symptom to be handled elsewhere.","Withdrawal from alcohol, benzodiazepines, and some other substances can be medically dangerous; seek medical guidance rather than attempting an unsafe detox."],links:[["FindTreatment.gov","https://findtreatment.gov/"],["SAMHSA Treatment Locators","https://www.samhsa.gov/find-help/locators"],["MHD Reference Library","glossary.html"]]},
+lowcost:{label:"Low-cost / uninsured care",sub:"No insurance, high deductible, limited income.",title:"Use public and community entry points before assuming care is unaffordable.",steps:["Check HRSA-supported community health centers and ask whether behavioral-health services or integrated care are available.","Contact state, county, or local behavioral-health agencies and ask about community mental-health clinics, public programs, sliding fees, or eligibility.","Use FindTreatment.gov and ask each program whether grant-funded, state-funded, Medicaid, reduced-fee, or self-pay options exist.","Teaching clinics and supervised university programs may sometimes provide lower-cost psychotherapy."],links:[["HRSA Find a Health Center","https://findahealthcenter.hrsa.gov/"],["FindTreatment.gov","https://findtreatment.gov/"],["Medicaid Behavioral Health","https://www.medicaid.gov/medicaid/benefits/behavioral-health-services"]]},
+wait:{label:"Nobody is accepting patients",sub:"Waitlists, dead provider lists, repeated rejections.",title:"Treat the search like a multi-lane process.",steps:["Join promising wait lists and ask to be called for cancellations.","Call the insurer and request current in-network options; document names that are closed, unreachable, or not actually accepting patients.","Ask primary care or the current clinician for interim care, bridge treatment, group options, telehealth, or a higher/lower level of care that is available sooner.","Expand geography and telehealth where licensing and clinical needs permit.","If symptoms worsen while waiting, reassess urgency instead of continuing to wait passively."],links:[["NIMH Find Help","https://www.nimh.nih.gov/health/find-help"],["FindTreatment.gov","https://findtreatment.gov/"],["MHD Crisis & Legal","crisis-legal.html"]]},
+veteran:{label:"Veteran / military-connected care",sub:"VA, Vet Centers, crisis and community routes.",title:"VA has mental-health routes beyond one standard clinic appointment.",steps:["VA mental-health services include outpatient, tele-mental health, specialty programs, peer support, and residential options.","Vet Centers can provide confidential counseling and referral services to eligible Veterans, service members, and families.","Veterans in crisis can call 988 and press 1 or text 838255.","If you are unsure what VA service fits, use VA mental-health access resources or a local VA facility."],links:[["VA Mental Health Services","https://www.va.gov/health-care/health-needs-conditions/mental-health/"],["VA Find Local Care","https://www.mentalhealth.va.gov/get-help/local-care.asp"],["Veterans Crisis Line","https://www.veteranscrisisline.net/"]]},
+crisis:{label:"I need urgent or crisis help",sub:"Safety, severe deterioration, emergency evaluation.",title:"Use live support now when safety cannot wait.",steps:["In the U.S., call or text 988 for crisis support.","Call 911 or go to an emergency department for immediate danger or a medical emergency.","If available locally, mobile crisis or crisis-stabilization services may provide another urgent route.","MHD can explain what crisis evaluation and hospitalization may involve, but it cannot assess a real-time emergency."],links:[["Call or text 988","tel:988"],["MHD Crisis & Legal","crisis-legal.html"],["988 Lifeline","https://988lifeline.org/"]]}
+};
+
+const providers=[
+{n:"Psychiatrist",a:"MD / DO",q:"Medication, diagnosis, complex psychiatric care",d:"A physician specializing in psychiatry. Can prescribe medication and may provide psychotherapy, hospital care, consultation, or specialty treatment."},
+{n:"Psychiatric Nurse Practitioner",a:"PMHNP / APRN",q:"Medication, diagnosis, psychiatric follow-up",d:"An advanced practice nurse with psychiatric training. Prescribing authority and supervision requirements vary by state."},
+{n:"Psychologist",a:"PhD / PsyD",q:"Psychotherapy, psychological testing, diagnosis",d:"A doctoral-level psychology professional. Many provide psychotherapy and psychological assessment. Prescribing authority exists only in limited jurisdictions with additional requirements."},
+{n:"Clinical Social Worker",a:"LCSW / LICSW / related state license",q:"Psychotherapy, family work, care coordination",d:"A licensed clinical social worker can provide psychotherapy within state scope and may also have strong systems, family, and resource-navigation expertise."},
+{n:"Professional Counselor",a:"LPC / LCPC / LMHC / related state license",q:"Psychotherapy and counseling",d:"A master's-level licensed counselor. Exact initials and independent-practice rules differ by state."},
+{n:"Marriage & Family Therapist",a:"LMFT",q:"Individual, couple, and family psychotherapy",d:"A licensed therapist with specialized training in relationships and family systems."},
+{n:"Primary Care Clinician",a:"MD / DO / NP / PA",q:"First screening, common conditions, medical causes, referrals",d:"Primary care is often a practical first entry point and can treat many common mental-health conditions while coordinating specialty referrals."},
+{n:"Peer Support Specialist",a:"Certification varies",q:"Recovery support, lived-experience navigation",d:"A trained person who uses lived experience to provide recovery-oriented support. Peer support does not replace licensed clinical diagnosis or prescribing."},
+{n:"Case Manager / Care Coordinator",a:"Role varies",q:"Services, benefits, housing, appointments, system navigation",d:"Helps coordinate practical services and communication across health and social systems. Clinical licensure varies by role."}
+];
+
+function esc(s){return String(s||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
+function renderChoices(){
+ const box=document.getElementById("careChoices");
+ box.innerHTML=Object.entries(routes).map(([k,x])=>"<button class='choice' data-route='"+k+"'><strong>"+esc(x.label)+"</strong><span>"+esc(x.sub)+"</span></button>").join("");
+ box.querySelectorAll("[data-route]").forEach(b=>b.onclick=()=>showRoute(b.dataset.route));
+}
+function showRoute(k){
+ const x=routes[k];if(!x)return;
+ document.querySelectorAll(".choice").forEach(b=>b.classList.toggle("active",b.dataset.route===k));
+ const links=x.links.map((a,i)=>"<a class='"+(i===0?"primary":"")+"' href='"+a[1]+"' "+(a[1].startsWith("http")?"target='_blank' rel='noopener'":"")+">"+esc(a[0])+"</a>").join("");
+ document.getElementById("careResult").innerHTML="<div class='eyebrow'>Suggested route</div><h2>"+esc(x.title)+"</h2><ul>"+x.steps.map(s=>"<li>"+esc(s)+"</li>").join("")+"</ul><div class='route-strip'>"+links+"</div>";
+}
+function renderProviders(){
+ const q=document.getElementById("credSearch").value.toLowerCase().trim();
+ const arr=providers.filter(p=>!q||(p.n+" "+p.a+" "+p.q+" "+p.d).toLowerCase().includes(q));
+ document.getElementById("providerGrid").innerHTML=arr.map(p=>"<div class='provider-card'><span class='abbr'>"+esc(p.a)+"</span><h3>"+esc(p.n)+"</h3><p><strong>Often useful for:</strong> "+esc(p.q)+"</p><p>"+esc(p.d)+"</p></div>").join("")||"<p>No matching role yet.</p>";
+}
+function v(id){return document.getElementById(id).value.trim()}
+function buildCall(){
+ const target=v("callTarget"),who=v("callFor"),concern=v("callConcern")||"mental-health concerns",urgency=v("callUrgency"),insurance=v("callInsurance")||"my payment or insurance situation",need=v("callNeed");
+ let s="Hello, I’m contacting you because I’m looking for "+target.toLowerCase()+" for "+who.toLowerCase()+".\n\nThe main concern is "+concern+". The timing is: "+urgency.toLowerCase()+".\n\nMy insurance/payment situation is: "+insurance+".";
+ if(need)s+="\n\nAn important preference or access need is: "+need+".";
+ s+="\n\nAre you currently accepting new patients for this type of need? If so, what is the soonest intake appointment, and what information or referral do you need from me? Please also let me know whether you are in-network for my plan or what the expected self-pay cost would be.\n\nThank you.";
+ document.getElementById("callOutput").textContent=s;
+}
+function copyCall(){const t=document.getElementById("callOutput").textContent;if(!t||t.startsWith("Complete"))return;navigator.clipboard?.writeText(t)}
+function init(){renderChoices();showRoute("start");renderProviders();document.getElementById("credSearch").addEventListener("input",renderProviders)}
+init();
+</script>
+<script src="mhd-comfort.js?v=20261005m"></script>
+</body>
+</html>
