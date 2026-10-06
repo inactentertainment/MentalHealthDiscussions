@@ -147,7 +147,7 @@
             <div class="hero-actions"><button class="primary" onclick="restartGuide()">Guide me to the right place</button><button class="outline" onclick="scrollToId('understand')">Explore everything</button></div>
           </div>
           <div class="video" id="mhdVideo" aria-label="Mental health in America video">
-            <iframe id="mhdYouTube" src="https://www.youtube.com/embed/7iDb7PaEszM?start=4&rel=0&playsinline=1&controls=1&modestbranding=1&enablejsapi=1" title="Mental Health in America" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="eager"></iframe>
+            <iframe id="mhdYouTube" src="https://www.youtube.com/embed/7iDb7PaEszM?start=4&rel=0&playsinline=1&controls=1&modestbranding=1&enablejsapi=1" title="Mental Health in America" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="eager"></iframe><button class="mhd-video-play" id="mhdVideoPlay" type="button">Play video</button>
           </div>
         </div>
       </section>
@@ -253,6 +253,18 @@
     </div>
   </main>
 
+<section id="contact" class="mhd-contact-section"><div class="mhd-contact-wrap"><div class="mhd-contact-card">
+    <div class="mhd-contact-copy"><div class="eyebrow">Get in touch</div><h2>How can MHD help?</h2><p>Questions, corrections, organization inquiries, accessibility feedback, resource ideas, and potential partnerships are welcome. Choose what your message is about so it can eventually reach the right lane.</p><p class="micro">This form does not collect crisis requests. If you need immediate crisis support in the U.S., call or text 988.</p></div>
+    <form class="mhd-contact-form" id="mhdContactForm" onsubmit="prepareContact(event)">
+      <label>Name<input id="contactName" autocomplete="name" required></label>
+      <label>Email<input id="contactEmail" type="email" autocomplete="email" required></label>
+      <label class="wide">What is this about?<select id="contactTopic" required><option value="">Choose a topic</option><option>General question</option><option>Correction or source question</option><option>Organization / partnership</option><option>Media / interview</option><option>Accessibility feedback</option><option>Website or tool issue</option><option>Family / caregiver resource</option><option>Legal / policy resource</option><option>Support / funding</option><option>Other</option></select></label>
+      <label class="wide">Organization (optional)<input id="contactOrg" autocomplete="organization"></label>
+      <label class="wide">Message<textarea id="contactMessage" required placeholder="Tell us what you need, what you noticed, or what you would like to discuss."></textarea></label>
+      <div class="wide mhd-contact-actions"><button class="primary" type="submit">Prepare message</button><button class="outline" type="button" id="copyContact" onclick="copyPreparedContact()" disabled>Copy message</button><span class="mhd-contact-status" id="contactStatus">Direct delivery will be connected after the public MHD contact address is finalized.</span></div>
+      <div class="wide mhd-prepared-message hidden" id="preparedContact"></div>
+    </form>
+  </div></div></section>
   <footer>
     <div class="footer-grid">
       <div><div class="wordmark wordmark-footer">Mental Health Discussions</div><div class="footer-copyright">© <span class="footerYear"></span> Mental Health Discussions</div><p class="footer-copy">An independent mental-health education project being built to keep useful public information free and easier to navigate.</p></div>
@@ -402,6 +414,16 @@
     support:{t:'Support Mental Health Discussions',b:`<p>Payment processing is intentionally not connected in Build Five.</p><p>The planned pre-nonprofit wording is voluntary support for operating this free educational project, with a clear disclosure that MHD is not currently a 501(c)(3) and that support payments are not represented as tax-deductible charitable contributions.</p>`},
     ask:{t:'How Ask MHD will work',b:`<p>Ask MHD is planned as a guided educational assistant. A visitor will be able to describe a situation in ordinary language and receive organized explanations, questions worth asking and links into the right part of the site.</p><p>It should be especially useful for appointment preparation, family questions, terminology, treatment education, research explanation and navigating resources. Safety-sensitive interactions should prominently route to live crisis or professional help when appropriate.</p>`}
   };
+  function prepareContact(e){
+    e.preventDefault();
+    const name=document.getElementById('contactName').value.trim(),email=document.getElementById('contactEmail').value.trim(),topic=document.getElementById('contactTopic').value,org=document.getElementById('contactOrg').value.trim(),msg=document.getElementById('contactMessage').value.trim();
+    const text=['MHD CONTACT INQUIRY','Topic: '+topic,'Name: '+name,'Email: '+email,org?'Organization: '+org:'','',msg].filter(Boolean).join('\n');
+    const out=document.getElementById('preparedContact');out.textContent=text;out.classList.remove('hidden');document.getElementById('copyContact').disabled=false;document.getElementById('contactStatus').textContent='Message prepared. You can copy it now; direct form delivery is the next connection step.';
+  }
+  function copyPreparedContact(){
+    const t=document.getElementById('preparedContact').textContent;if(!t)return;
+    navigator.clipboard?.writeText(t).then(()=>{document.getElementById('contactStatus').textContent='Copied.'}).catch(()=>{document.getElementById('contactStatus').textContent='Select the prepared message and copy it manually.'});
+  }
   function openModal(id){const x=legal[id];if(!x)return;document.getElementById('modalTitle').textContent=x.t;document.getElementById('modalBody').innerHTML=x.b;document.getElementById('modalBadge').classList.toggle('hidden',!x.future);document.getElementById('modal').classList.add('active');document.body.style.overflow='hidden'}
   function closeModal(){document.getElementById('modal').classList.remove('active');document.body.style.overflow=''}
   document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
@@ -410,20 +432,29 @@
 
 <script>
 window.onYouTubeIframeAPIReady=function(){
-  var frame=document.getElementById("mhdYouTube");
-  if(!frame||!window.YT||!YT.Player)return;
+  var frame=document.getElementById("mhdYouTube"),wrap=document.getElementById("mhdVideo"),play=document.getElementById("mhdVideoPlay");
+  if(!frame||!wrap||!window.YT||!YT.Player)return;
   try{
-    window.mhdHeroPlayer=new YT.Player("mhdYouTube",{events:{onReady:function(e){
-      try{
-        e.target.mute();
-        e.target.seekTo(4,true);
-        e.target.playVideo();
-        setTimeout(function(){
-          try{e.target.pauseVideo();e.target.unMute()}catch(err){}
-        },420);
-      }catch(err){}
-    }}});
-  }catch(err){}
+    window.mhdHeroPlayer=new YT.Player("mhdYouTube",{events:{
+      onReady:function(e){
+        var reveal=function(){wrap.classList.add("mhd-cued")};
+        try{
+          e.target.mute();
+          e.target.seekTo(4,true);
+          e.target.playVideo();
+          setTimeout(function(){try{e.target.pauseVideo();e.target.unMute()}catch(err){} reveal()},500);
+          setTimeout(reveal,1500);
+        }catch(err){reveal()}
+        if(play)play.onclick=function(){
+          wrap.classList.add("mhd-playing","mhd-cued");
+          try{e.target.seekTo(4,true);e.target.playVideo()}catch(err){}
+        };
+      },
+      onStateChange:function(e){
+        if(e.data===YT.PlayerState.PLAYING)wrap.classList.add("mhd-playing");
+      }
+    }});
+  }catch(err){wrap.classList.add("mhd-cued")}
 };
 </script>
 <script src="https://www.youtube.com/iframe_api"></script>
