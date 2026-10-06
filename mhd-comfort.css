@@ -3,62 +3,71 @@
    preserve readable contrast, minimize distraction, and give users control. */
 
 :root{
-  --mhd-bg:#F4F1EA;
-  --mhd-surface:#FBF8F2;
-  --mhd-surface-2:#E8EEE9;
-  --mhd-text:#303735;
-  --mhd-muted:#59635E;
-  --mhd-border:#C9D2CC;
-  --mhd-link:#35594D;
-  --mhd-accent-light:#405A4F;
-  --mhd-accent-dark:#8EAA9D;
-  --mhd-deep-light:#344541;
-  --mhd-deep-dark:#293B35;
+  --mhd-bg:#EEF3EC;
+  --mhd-surface:#FAF6EE;
+  --mhd-surface-2:#E6EFEC;
+  --mhd-wash-a:#EEF3EC;
+  --mhd-wash-b:#F4EDE1;
+  --mhd-wash-c:#E7EFF1;
+  --mhd-text:#39413E;
+  --mhd-muted:#606A65;
+  --mhd-border:#C7D0CA;
+  --mhd-link:#3D6255;
+  --mhd-accent-light:#587466;
+  --mhd-accent-dark:#A3BDB1;
+  --mhd-deep-light:#3E5049;
+  --mhd-deep-dark:#26332F;
   --mhd-accent:var(--mhd-accent-light);
   --mhd-deep:var(--mhd-deep-light);
-  --mhd-button-text:#F7F3EA;
-  --mhd-focus:#6D887D;
-  --mhd-shadow:0 16px 42px rgba(48,55,53,.08);
+  --mhd-button-text:#F7F1E6;
+  --mhd-focus:#789287;
+  --mhd-shadow:0 16px 42px rgba(57,65,62,.09);
 }
 
 /* User-selectable calming palettes. These are preferences, not diagnosis labels. */
 html[data-mhd-theme="mist"]{
-  --mhd-bg:#EEF4F4;--mhd-surface:#F7FAF9;--mhd-surface-2:#E2ECEE;
-  --mhd-text:#304047;--mhd-muted:#58686D;--mhd-border:#C5D5D9;--mhd-link:#315D6A;
-  --mhd-accent-light:#3E6472;--mhd-accent-dark:#91B5BF;
-  --mhd-deep-light:#334E58;--mhd-deep-dark:#25383F;--mhd-focus:#6D8E98;
+  --mhd-bg:#EAF2F3;--mhd-surface:#F6F8F4;--mhd-surface-2:#DFEBEE;
+  --mhd-wash-a:#EAF2F3;--mhd-wash-b:#EFF3EA;--mhd-wash-c:#F2ECE4;
+  --mhd-text:#38474B;--mhd-muted:#627176;--mhd-border:#C5D4D7;--mhd-link:#3B6672;
+  --mhd-accent-light:#537785;--mhd-accent-dark:#9DBEC7;
+  --mhd-deep-light:#405A63;--mhd-deep-dark:#27393F;--mhd-focus:#7997A0;
 }
 html[data-mhd-theme="linen"]{
-  --mhd-bg:#F6F0E6;--mhd-surface:#FBF7EF;--mhd-surface-2:#EEE5D8;
-  --mhd-text:#423B36;--mhd-muted:#675F58;--mhd-border:#D8CCBD;--mhd-link:#6A5142;
-  --mhd-accent-light:#735C4C;--mhd-accent-dark:#C1AA93;
-  --mhd-deep-light:#59483D;--mhd-deep-dark:#3D312B;--mhd-focus:#917765;
+  --mhd-bg:#F3EBDD;--mhd-surface:#FBF6ED;--mhd-surface-2:#EBE1D2;
+  --mhd-wash-a:#F3EBDD;--mhd-wash-b:#EDE9DE;--mhd-wash-c:#E9F0EA;
+  --mhd-text:#4A433D;--mhd-muted:#6D655D;--mhd-border:#D6CABC;--mhd-link:#735C4B;
+  --mhd-accent-light:#806958;--mhd-accent-dark:#C8B39D;
+  --mhd-deep-light:#5C4E45;--mhd-deep-dark:#3C322C;--mhd-focus:#957C6A;
 }
 html[data-mhd-theme="slate"]{
-  --mhd-bg:#EFF2F0;--mhd-surface:#F8F9F7;--mhd-surface-2:#E4EAE7;
-  --mhd-text:#343D3A;--mhd-muted:#5D6864;--mhd-border:#C7D1CD;--mhd-link:#405F56;
-  --mhd-accent-light:#4B625C;--mhd-accent-dark:#94AAA4;
-  --mhd-deep-light:#3B4D48;--mhd-deep-dark:#293532;--mhd-focus:#728C84;
+  --mhd-bg:#E9EFEC;--mhd-surface:#F5F7F3;--mhd-surface-2:#DDE7E3;
+  --mhd-wash-a:#E9EFEC;--mhd-wash-b:#E5EBEF;--mhd-wash-c:#F0EADF;
+  --mhd-text:#3A4541;--mhd-muted:#65706C;--mhd-border:#C5D0CC;--mhd-link:#46685E;
+  --mhd-accent-light:#5B706A;--mhd-accent-dark:#9BAFAA;
+  --mhd-deep-light:#465651;--mhd-deep-dark:#2B3733;--mhd-focus:#7A918A;
 }
 html[data-mhd-theme="contrast"]{
-  --mhd-bg:#F4F5F1;--mhd-surface:#FAFBF8;--mhd-surface-2:#E5E9E5;
-  --mhd-text:#202827;--mhd-muted:#46514E;--mhd-border:#AAB8B3;--mhd-link:#244F42;
-  --mhd-accent-light:#2D5146;--mhd-accent-dark:#B0CCC2;
-  --mhd-deep-light:#28433B;--mhd-deep-dark:#1E2D29;--mhd-focus:#58786E;
+  --mhd-bg:#F2F3EE;--mhd-surface:#FAFAF6;--mhd-surface-2:#E5E9E4;
+  --mhd-wash-a:#F2F3EE;--mhd-wash-b:#ECEFEA;--mhd-wash-c:#F4EFE7;
+  --mhd-text:#242C2A;--mhd-muted:#4C5753;--mhd-border:#AAB8B3;--mhd-link:#285247;
+  --mhd-accent-light:#35594D;--mhd-accent-dark:#B4CEC4;
+  --mhd-deep-light:#2D453D;--mhd-deep-dark:#1F2D29;--mhd-focus:#5E7E73;
 }
 
 /* Light level: Lights On = soft, warm light. Lights Low = dim. Lights Off = very dark charcoal, never pure black. */
 html[data-mhd-mode="low"]{
-  --mhd-bg:#2B3331;--mhd-surface:#343D3A;--mhd-surface-2:#303835;
-  --mhd-text:#E7E8E2;--mhd-muted:#C5CCC8;--mhd-border:#55615D;--mhd-link:#B8D4CA;
-  --mhd-accent:var(--mhd-accent-dark);--mhd-deep:var(--mhd-deep-dark);--mhd-button-text:#F5F2E9;
-  --mhd-focus:#9CB7AD;--mhd-shadow:0 16px 42px rgba(0,0,0,.18);
+  --mhd-bg:#303836;--mhd-surface:#39423F;--mhd-surface-2:#343D3A;
+  --mhd-wash-a:#303836;--mhd-wash-b:#373A34;--mhd-wash-c:#303A3D;
+  --mhd-text:#E7E2D8;--mhd-muted:#C6C8C0;--mhd-border:#59635F;--mhd-link:#BDD7CD;
+  --mhd-accent:var(--mhd-accent-dark);--mhd-deep:#26332F;--mhd-button-text:#F4EEE3;
+  --mhd-focus:#AAC2B8;--mhd-shadow:0 16px 42px rgba(0,0,0,.18);
 }
 html[data-mhd-mode="off"]{
-  --mhd-bg:#171C1B;--mhd-surface:#202625;--mhd-surface-2:#1B2220;
-  --mhd-text:#E2E8E4;--mhd-muted:#B9C3BE;--mhd-border:#414C48;--mhd-link:#B6D8CD;
-  --mhd-accent:var(--mhd-accent-dark);--mhd-deep:#23332E;--mhd-button-text:#F4F0E7;
-  --mhd-focus:#A1BEB4;--mhd-shadow:0 16px 42px rgba(0,0,0,.24);
+  --mhd-bg:#181D1C;--mhd-surface:#222927;--mhd-surface-2:#1E2523;
+  --mhd-wash-a:#181D1C;--mhd-wash-b:#211F1B;--mhd-wash-c:#192225;
+  --mhd-text:#E2DDD3;--mhd-muted:#B9BDB5;--mhd-border:#424C48;--mhd-link:#B8D9CE;
+  --mhd-accent:var(--mhd-accent-dark);--mhd-deep:#202D29;--mhd-button-text:#F2EBDD;
+  --mhd-focus:#A6C0B6;--mhd-shadow:0 16px 42px rgba(0,0,0,.26);
 }
 
 html{background:var(--mhd-bg)!important;color-scheme:light}
@@ -213,3 +222,99 @@ html[data-mhd-motion="quiet"] *,html[data-mhd-motion="quiet"] *::before,html[dat
   .mhd-segment.five{grid-template-columns:repeat(3,1fr)}
 }
 @media print{#mhdComfortDock{display:none!important}}
+
+
+/* V2: make the calm palette unmistakable across older white-first page styles. */
+body{padding-bottom:84px!important}
+.topbar,.top,.nav,header,.header{background:var(--mhd-surface)!important}
+.onboarding{
+  background:
+    radial-gradient(circle at 18% 20%,color-mix(in srgb,var(--mhd-wash-c) 78%,transparent),transparent 36%),
+    radial-gradient(circle at 82% 70%,color-mix(in srgb,var(--mhd-wash-b) 84%,transparent),transparent 34%),
+    linear-gradient(135deg,var(--mhd-wash-a),var(--mhd-surface))!important;
+}
+.site-section:nth-of-type(3n+1),main>.section:nth-of-type(3n+1){background:var(--mhd-wash-a)!important}
+.site-section:nth-of-type(3n+2),main>.section:nth-of-type(3n+2){background:var(--mhd-wash-b)!important}
+.site-section:nth-of-type(3n),main>.section:nth-of-type(3n){background:var(--mhd-wash-c)!important}
+.hero{
+  background:
+    linear-gradient(120deg,color-mix(in srgb,var(--mhd-wash-a) 92%,var(--mhd-surface)),
+    color-mix(in srgb,var(--mhd-wash-c) 82%,var(--mhd-surface)))!important;
+}
+.choice,.panel,.card,.feature,.top-card,.content,.med-item,.rule,.right,.flow-step,.pack-card,.transition-card,.discharge-card{
+  background:color-mix(in srgb,var(--mhd-surface) 91%,var(--mhd-wash-a))!important;
+}
+.wordmark,.wordmark-nav,.wordmark-onboard{color:var(--mhd-text)!important}
+.eyebrow{color:var(--mhd-muted)!important}
+.dot{background:var(--mhd-border)!important}.dot.active{background:var(--mhd-accent)!important}.dot.done{background:color-mix(in srgb,var(--mhd-accent) 62%,var(--mhd-border))!important}
+.calmveil{background:color-mix(in srgb,var(--mhd-wash-c) 25%,transparent)!important}
+
+/* Gentle visible transition when lighting or comfort color changes. */
+html.mhd-theme-changing body,
+html.mhd-theme-changing header,
+html.mhd-theme-changing nav,
+html.mhd-theme-changing section,
+html.mhd-theme-changing main,
+html.mhd-theme-changing footer,
+html.mhd-theme-changing .panel,
+html.mhd-theme-changing .card,
+html.mhd-theme-changing .feature{
+  transition:background-color .38s ease,color .38s ease,border-color .38s ease,box-shadow .38s ease!important;
+}
+
+/* Always-visible comfort rail — light level and sound should never be hidden. */
+#mhdComfortRail{
+  position:fixed;left:50%;bottom:12px;transform:translateX(-50%);z-index:10001;
+  width:min(1120px,calc(100vw - 24px));
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  background:color-mix(in srgb,var(--mhd-surface) 94%,transparent)!important;
+  color:var(--mhd-text)!important;border:1px solid var(--mhd-border)!important;
+  border-radius:18px;padding:9px 11px;
+  box-shadow:0 15px 42px rgba(30,42,38,.16);
+  backdrop-filter:blur(14px);
+}
+.mhd-rail-title{font-size:.75rem;font-weight:850;letter-spacing:.08em;text-transform:uppercase;margin-right:2px}
+.mhd-rail-group{display:flex;align-items:center;gap:5px}
+.mhd-rail-label{font-size:.67rem;color:var(--mhd-muted);font-weight:750}
+#mhdComfortRail button,#mhdComfortRail label{
+  border:1px solid var(--mhd-border)!important;background:var(--mhd-surface)!important;color:var(--mhd-text)!important;
+  border-radius:999px;padding:7px 9px;font-size:.7rem;cursor:pointer;white-space:nowrap;
+}
+#mhdComfortRail button[aria-pressed="true"]{
+  background:var(--mhd-accent)!important;color:var(--mhd-button-text)!important;border-color:var(--mhd-accent)!important;
+}
+#mhdComfortRail input[type="range"]{width:90px;accent-color:var(--mhd-accent)}
+#mhdRailFile{display:none}
+#mhdRailTrack{max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:.67rem;color:var(--mhd-muted)}
+#mhdComfortRail .mhd-more{margin-left:auto;background:var(--mhd-deep)!important;color:var(--mhd-button-text)!important}
+html[data-mhd-mode="low"] #mhdComfortRail,html[data-mhd-mode="off"] #mhdComfortRail{
+  background:color-mix(in srgb,var(--mhd-surface) 94%,transparent)!important;
+}
+
+/* Make the older floating Comfort button secondary now that the rail is visible. */
+#mhdComfortDock{bottom:78px}
+#mhdComfortToggle{opacity:.88}
+
+/* Warm, light-gray copy instead of black/white visual aggression. */
+body{font-weight:400}
+h1,h2,h3,h4,h5,h6{font-weight:650}
+.primary,.small-btn,.nav-cta,.btn:not(.secondary):not(.soft):not(.danger){
+  background:
+    linear-gradient(150deg,rgba(255,255,255,.17),rgba(255,255,255,0) 42%),
+    linear-gradient(180deg,color-mix(in srgb,var(--mhd-accent) 90%,#fff),var(--mhd-accent))!important;
+}
+html[data-mhd-mode="off"] .wordmark-footer,
+html[data-mhd-mode="low"] .wordmark-footer{color:var(--mhd-button-text)!important}
+
+@media(max-width:780px){
+  body{padding-bottom:128px!important}
+  #mhdComfortRail{bottom:7px;padding:8px;gap:6px;max-height:116px;overflow:auto}
+  .mhd-rail-title{width:100%;font-size:.68rem}
+  .mhd-rail-group{gap:4px}
+  #mhdComfortRail button,#mhdComfortRail label{font-size:.65rem;padding:6px 7px}
+  #mhdComfortRail .mhd-more{margin-left:0}
+  #mhdComfortDock{bottom:128px}
+}
+@media(prefers-reduced-motion:reduce){
+  html.mhd-theme-changing *{transition:none!important}
+}
