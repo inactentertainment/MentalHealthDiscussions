@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>MHD Work, School & Daily Life Intelligence</title>
+<meta name="description" content="Mental-health navigation for work, school, accommodations, leave, disclosure, return after crisis, and daily-life functioning.">
+<style>
+:root{--max:1180px;--line:#ccd3cd}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,"Times New Roman",serif;line-height:1.55}
+button,input,textarea,select{font:inherit}a{color:inherit}.hidden{display:none!important}
+.wrap{max-width:var(--max);margin:auto;padding:0 22px}
+.hero{padding:68px 0 50px}
+.hero h1{font-size:clamp(3rem,6.4vw,5.8rem);line-height:.94;letter-spacing:-.055em;margin:10px 0 18px;max-width:1000px}
+.hero p{max-width:850px;font-size:1.08rem}
+.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;font-weight:800}
+.section{padding:58px 0}
+.head{display:flex;justify-content:space-between;gap:28px;align-items:end;margin-bottom:24px}
+.head h2{font-size:clamp(2.2rem,4.6vw,4.2rem);line-height:1;letter-spacing:-.045em;margin:0}
+.head p{max-width:650px;margin:0}
+.notice{border:1px solid currentColor;border-radius:16px;padding:14px 16px;margin-bottom:18px}
+.lanes{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.lane{border:1px solid var(--line);border-radius:18px;padding:16px;background:transparent;cursor:pointer;text-align:left}
+.lane strong{display:block;font-size:1rem;margin-bottom:4px}.lane span{font-size:.8rem;opacity:.75}
+.lane.active{background:var(--mhd-accent)!important;color:var(--mhd-button-text)!important;border-color:var(--mhd-accent)!important}
+.lane-panel{margin-top:14px;border:1px solid var(--line);border-radius:22px;padding:20px}
+.lane-panel h3{font-size:1.65rem;margin:0 0 8px}.lane-panel p,.lane-panel li{font-size:.9rem}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.card{border:1px solid var(--line);border-radius:18px;padding:17px}
+.card h3{margin:0 0 7px;font-size:1.08rem}.card p,.card li{font-size:.86rem}.card ul{padding-left:18px}
+.builder{display:grid;grid-template-columns:.9fr 1.1fr;gap:16px}
+.form,.preview{border:1px solid var(--line);border-radius:22px;padding:19px}
+.field{display:flex;flex-direction:column;gap:5px;margin-bottom:10px}
+.field label{font-size:.76rem;font-weight:800}.field input,.field textarea,.field select{border:1px solid var(--line);border-radius:12px;padding:10px 11px;background:transparent}
+.field textarea{min-height:85px;resize:vertical}
+.btnrow{display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid currentColor;border-radius:999px;padding:9px 12px;background:transparent;cursor:pointer;font-weight:750}
+.preview h3{margin:0 0 7px;font-size:1.35rem}.preview p{font-size:.86rem}.script{white-space:pre-wrap;border:1px solid var(--line);border-radius:13px;padding:11px;margin-top:10px}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.compare-card{border:1px solid var(--line);border-radius:18px;padding:17px}.compare-card h3{margin:0 0 7px}.compare-card li{font-size:.86rem}
+.return-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.step{border:1px solid var(--line);border-radius:16px;padding:14px}.step strong{display:block;margin-bottom:5px}.step span{font-size:.8rem;opacity:.78}
+.source-list a{display:block;padding:5px 0;text-decoration:underline;text-underline-offset:3px;font-size:.84rem}
+footer{padding:42px 22px}.foot{max-width:var(--max);margin:auto;display:grid;grid-template-columns:1.3fr repeat(2,1fr);gap:28px}.footbrand{font-family:"Segoe Script","Snell Roundhand","Brush Script MT",cursive;font-size:1.35rem}.foot h4{font-size:.86rem;font-weight:800;text-decoration:underline;text-underline-offset:5px}.foot a{display:block;text-decoration:none;padding:4px 0;font-size:.83rem}.fine{max-width:var(--max);margin:24px auto 0;padding-top:14px;border-top:1px solid rgba(255,255,255,.2);font-size:.74rem}
+@media(max-width:900px){.head{display:block}.head p{margin-top:10px}.lanes,.return-grid{grid-template-columns:1fr 1fr}.builder,.compare{grid-template-columns:1fr}}
+@media(max-width:640px){.wrap{padding:0 16px}.hero h1{font-size:3.1rem}.lanes,.grid3,.return-grid,.foot{grid-template-columns:1fr}}
+</style>
+<link rel="stylesheet" href="mhd-comfort.css?v=20261005j">
+</head>
+<body>
+<div class="crisis"><strong>Need immediate crisis support?</strong> In the U.S., call or text <a href="tel:988">988</a>. If there is immediate danger, call <a href="tel:911">911</a>. MHD does not replace professional care.</div>
+<header class="top"><nav class="nav"><a class="brand" href="index.html">Mental Health Discussions</a><div class="navlinks"><a href="index.html">Home</a><a href="tools.html">Research & Tools</a></div></nav></header>
+
+<section class="hero"><div class="wrap"><div class="eyebrow">Work, School & Daily Life Intelligence</div><h1>When mental health affects everyday life.</h1><p>Understand accommodations, leave, disclosure, school supports, return after crisis, and practical ways to keep work, learning, routines, and responsibilities from becoming one more source of confusion.</p></div></section>
+
+<main>
+<section class="section"><div class="wrap">
+<div class="head"><div><div class="eyebrow">Choose the pressure point</div><h2>Where is life getting harder?</h2></div><p>Start with the setting. MHD will separate legal rights, practical supports, and treatment questions instead of treating every problem as the same thing.</p></div>
+<div class="lanes">
+<button class="lane active" data-lane="work" onclick="showLane('work',this)"><strong>Work</strong><span>Performance, accommodations, leave, privacy</span></button>
+<button class="lane" data-lane="school" onclick="showLane('school',this)"><strong>School</strong><span>K–12, college, attendance, testing, disability supports</span></button>
+<button class="lane" data-lane="daily" onclick="showLane('daily',this)"><strong>Daily life</strong><span>Routines, appointments, money, housing, transportation</span></button>
+<button class="lane" data-lane="return" onclick="showLane('return',this)"><strong>Returning after crisis</strong><span>Hospitalization, leave, re-entry, workload</span></button>
+</div>
+<div class="lane-panel" id="lanePanel"></div>
+</div></section>
+
+<section class="section alt"><div class="wrap">
+<div class="head"><div><div class="eyebrow">Workplace Rights</div><h2>Accommodation is about function.</h2></div><p>Under the ADA, qualifying mental-health conditions can support reasonable accommodations. FMLA can separately provide job-protected leave for eligible workers of covered employers when a serious mental-health condition meets the law's requirements.</p></div>
+<div class="grid3">
+<div class="card"><h3>Possible accommodations</h3><ul><li>Modified schedules or breaks</li><li>Time for treatment appointments</li><li>Quiet or reduced-distraction workspace</li><li>Written instructions or changes in supervisory communication</li><li>Telework in appropriate jobs</li><li>Other individualized changes tied to functional limitations</li></ul></div>
+<div class="card"><h3>What you may need to say</h3><p>You generally do not need magic words. A request can communicate that you need a change at work because of a medical condition. The employer may ask for reasonable documentation when the disability or need is not obvious.</p></div>
+<div class="card"><h3>What accommodation does not automatically do</h3><p>The ADA does not require an employer to remove essential job functions or excuse all performance problems. The goal is an effective, reasonable change that helps the worker perform the job.</p></div>
+</div>
+<div class="notice" style="margin-top:16px"><strong>FMLA is different from ADA accommodation.</strong> Eligible employees may use FMLA leave for their own qualifying serious mental-health condition or, in some circumstances, to care for a spouse, child, or parent with a qualifying serious health condition. Coverage and eligibility rules matter.</div>
+</div></section>
+
+<section class="section"><div class="wrap">
+<div class="head"><div><div class="eyebrow">Accommodation Builder</div><h2>Turn “I’m struggling” into a usable request.</h2></div><p>This builder focuses on the barrier, the change that may help, and a simple way to start the conversation. It does not decide whether an accommodation is legally required.</p></div>
+<div class="builder">
+<div class="form">
+<div class="field"><label>Setting</label><select id="abSetting"><option>Work</option><option>College / university</option><option>K–12 school</option></select></div>
+<div class="field"><label>What task or situation is difficult?</label><textarea id="abBarrier" placeholder="Example: concentrating in a noisy open office, attending early classes after medication-related morning sedation..."></textarea></div>
+<div class="field"><label>What change might help?</label><textarea id="abChange" placeholder="Example: quieter workspace, adjusted start time, reduced-distraction testing..."></textarea></div>
+<div class="field"><label>Who are you asking?</label><input id="abWho" placeholder="HR, supervisor, disability services, 504 coordinator..."></div>
+<div class="field"><label>Optional supporting context</label><textarea id="abContext" placeholder="Keep this focused on the functional need."></textarea></div>
+<div class="btnrow"><button class="btn primary" onclick="buildRequest()">Build request</button><button class="btn" onclick="copyRequest()">Copy</button></div>
+</div>
+<div class="preview"><h3>Draft request</h3><p>This is a starting script, not a legal form.</p><div class="script" id="abOutput">Complete the fields and choose “Build request.”</div></div>
+</div>
+</div></section>
+
+<section class="section alt"><div class="wrap">
+<div class="head"><div><div class="eyebrow">School Supports</div><h2>K–12 and college are not the same system.</h2></div><p>Section 504, Title II, IDEA, and postsecondary disability-service procedures can overlap, but the responsibilities and process change as students move from K–12 into college.</p></div>
+<div class="compare">
+<div class="compare-card"><h3>K–12</h3><ul><li>Section 504 can protect students whose physical or mental impairment substantially limits a major life activity.</li><li>IDEA can provide special education and related services when a student meets an IDEA disability category and needs special education because of it.</li><li>Mental-health conditions may affect attendance, concentration, behavior, testing, stamina, or access to instruction.</li><li>Families can ask the school how to request an evaluation under Section 504 and/or IDEA.</li></ul></div>
+<div class="compare-card"><h3>College / university</h3><ul><li>Students generally need to identify their disability-related need and request academic adjustments or auxiliary aids through the institution's process.</li><li>Possible modifications can include reduced-distraction testing, extended time, reduced course load, make-up work, disability-related absences, or medical leave when appropriate.</li><li>Accommodations are individualized; a diagnosis alone does not dictate one standard package.</li></ul></div>
+</div>
+</div></section>
+
+<section class="section"><div class="wrap">
+<div class="head"><div><div class="eyebrow">Disclosure Decision</div><h2>How much do you actually need to tell?</h2></div><p>Disclosure can be useful when it is needed to request support, but more information is not always better. Think in terms of purpose, recipient, and minimum necessary detail.</p></div>
+<div class="grid3">
+<div class="card"><h3>At work</h3><p>For an accommodation request, focus on the medical-condition-related limitation and the workplace change you need. Medical information obtained through the accommodation process is generally subject to ADA confidentiality rules.</p></div>
+<div class="card"><h3>At school</h3><p>Use the school's disability/504/special-education process rather than repeatedly explaining your condition to every teacher or professor when a formal accommodation process is available.</p></div>
+<div class="card"><h3>With coworkers or classmates</h3><p>You may choose to share more personally, but that is different from what an employer, school, or disability office needs to evaluate an accommodation request.</p></div>
+</div>
+</div></section>
+
+<section class="section alt"><div class="wrap">
+<div class="head"><div><div class="eyebrow">Return After Crisis</div><h2>Re-entry should be a plan, not a cliff.</h2></div><p>After hospitalization, intensive treatment, or a major episode, the transition back to work or school can be as important as the discharge itself.</p></div>
+<div class="return-grid">
+<div class="step"><strong>1. Clarify readiness</strong><span>What can you realistically do now? What still needs treatment, rest, or monitoring?</span></div>
+<div class="step"><strong>2. Identify barriers</strong><span>Schedule, workload, concentration, sleep, transportation, medication effects, social stress.</span></div>
+<div class="step"><strong>3. Arrange supports</strong><span>Accommodation, leave, reduced load, follow-up appointments, check-ins, case management.</span></div>
+<div class="step"><strong>4. Set a relapse plan</strong><span>Warning signs, whom to contact, what happens if functioning drops again, and when urgent help is needed.</span></div>
+</div>
+</div></section>
+
+<section class="section"><div class="wrap">
+<div class="head"><div><div class="eyebrow">Daily Life</div><h2>Functioning is part of mental health.</h2></div><p>Sometimes the most useful next step is not another label—it is reducing the number of things that can fall apart at once.</p></div>
+<div class="grid3">
+<div class="card"><h3>Make the day visible</h3><p>Use one calendar or task list for medication, appointments, transportation, work/school deadlines, meals, bills, and sleep instead of relying on memory when symptoms are high.</p></div>
+<div class="card"><h3>Simplify decisions</h3><p>Reduce unnecessary choices during difficult periods: repeat meals, set medication reminders, automate bills where safe, prepare transportation in advance, and break tasks into smaller steps.</p></div>
+<div class="card"><h3>Notice the functional warning signs</h3><p>Missed work or class, unopened mail, unpaid bills, poor hygiene, sleep reversal, isolation, unsafe driving, or inability to keep appointments can be important changes to discuss with a treatment team.</p></div>
+</div>
+</div></section>
+
+<section class="section alt"><div class="wrap">
+<div class="head"><div><div class="eyebrow">Primary U.S. Sources</div><h2>Where the rights information comes from.</h2></div><p>MHD separates federal-rights information from practical suggestions and links directly to the responsible agencies.</p></div>
+<div class="source-list">
+<a href="https://www.eeoc.gov/laws/guidance/depression-ptsd-other-mental-health-conditions-workplace-your-legal-rights" target="_blank" rel="noopener">EEOC — Depression, PTSD & Other Mental Health Conditions in the Workplace</a>
+<a href="https://www.dol.gov/agencies/whd/fmla/mental-health" target="_blank" rel="noopener">U.S. Department of Labor — Mental Health and the FMLA</a>
+<a href="https://askjan.org/mental_health_hub/" target="_blank" rel="noopener">Job Accommodation Network — Mental Health Hub</a>
+<a href="https://www.ed.gov/laws-and-policy/civil-rights-laws/disability-discrimination" target="_blank" rel="noopener">U.S. Department of Education OCR — Disability Discrimination / Section 504</a>
+<a href="https://sites.ed.gov/idea/regs/b/a/300.8" target="_blank" rel="noopener">IDEA — Child With a Disability</a>
+</div>
+</div></section>
+</main>
+
+<footer><div class="foot"><div><div class="footbrand">Mental Health Discussions</div><p>Free mental-health education, navigation, and practical tools.</p></div><div><h4>Continue</h4><a href="appointment-builder.html">Appointment Prep</a><a href="family-caregiver.html">Family / Caregiver</a><a href="crisis-legal.html">Crisis & Legal</a></div><div><h4>Legal</h4><a href="legal.html#medical">Medical Disclaimer</a><a href="legal.html#privacy">Privacy</a><a href="legal.html#terms">Terms</a><a href="legal.html#accessibility">Accessibility</a></div></div><div class="fine">General education only. Employment and education rights depend on the facts, employer or school, eligibility, jurisdiction, and current law. MHD does not provide individualized legal advice.</div></footer>
+
+<script>
+const lanes={
+work:{title:"Work",text:"Separate three questions: What is the job barrier? Is leave needed? Is an accommodation needed? Then decide who needs the information—usually HR, a supervisor, or the employer's accommodation process.",points:["Document the functional problem, not just the diagnosis.","Ask before a performance problem becomes harder to unwind when possible.","Keep accommodation and leave questions separate; ADA and FMLA are different laws.","Use JAN for accommodation ideas tailored to the limitation and job."]},
+school:{title:"School",text:"Start with the student's setting and age. K–12 schools have evaluation and disability-service obligations that differ from postsecondary education, where the student usually needs to request adjustments through the institution's process.",points:["Ask who the Section 504 coordinator or disability-services contact is.","Describe how the condition affects access, attendance, concentration, behavior, testing, or stamina.","Do not assume a diagnosis automatically determines the accommodation.","For K–12, ask whether Section 504 and/or IDEA evaluation is appropriate."]},
+daily:{title:"Daily life",text:"Functioning problems can become the first visible sign that symptoms are worsening. Build systems that reduce memory load and make changes from baseline easier to see.",points:["One calendar, one medication list, one place for appointments.","Automate safe repetitive tasks where possible.","Track sleep, transportation, missed obligations, bills, self-care, and isolation when those areas are changing.","Bring functional changes into treatment conversations."]},
+return:{title:"Returning after crisis",text:"A return to work or school after hospitalization or intensive treatment should connect the discharge plan with real-world demands.",points:["Know the next treatment appointment before returning.","Identify medication side effects or sleep changes that affect schedule or concentration.","Ask whether temporary accommodations, reduced load, or leave are appropriate.","Create a specific plan for what happens if symptoms worsen again."]}
+};
+function esc(s){return String(s||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
+function showLane(k,b){document.querySelectorAll(".lane").forEach(x=>x.classList.remove("active"));if(b)b.classList.add("active");const x=lanes[k];document.getElementById("lanePanel").innerHTML="<h3>"+esc(x.title)+"</h3><p>"+esc(x.text)+"</p><ul>"+x.points.map(p=>"<li>"+esc(p)+"</li>").join("")+"</ul>"}
+function val(id){return document.getElementById(id).value.trim()}
+function buildRequest(){const setting=val("abSetting"),barrier=val("abBarrier"),change=val("abChange"),who=val("abWho")||"the appropriate contact",context=val("abContext");let text="";
+if(setting==="Work"){text="Hello "+who+",\n\nI am requesting a workplace change related to a medical condition. I am having difficulty with: "+(barrier||"[describe the work-related barrier]")+".\n\nA change that may help me perform my job is: "+(change||"[describe the accommodation you want to discuss]")+"."}
+else if(setting==="College / university"){text="Hello "+who+",\n\nI would like to request disability-related academic adjustments. The barrier I am experiencing is: "+(barrier||"[describe the access barrier]")+".\n\nAn adjustment I would like to discuss is: "+(change||"[describe the requested modification]")+"."}
+else{text="Hello "+who+",\n\nI would like to discuss whether my student needs an evaluation or support related to a health/disability concern. The school-related difficulty is: "+(barrier||"[describe the educational impact]")+".\n\nA support I would like to discuss is: "+(change||"[describe the support or evaluation question]")+"."}
+if(context)text+="\n\nAdditional context: "+context;text+="\n\nPlease let me know the next step in your accommodation or evaluation process.\n\nThank you.";document.getElementById("abOutput").textContent=text}
+function copyRequest(){const t=document.getElementById("abOutput").textContent;if(!t||t.startsWith("Complete"))return;navigator.clipboard?.writeText(t)}
+document.getElementById("year")?.remove;showLane("work",document.querySelector('[data-lane="work"]'));
+</script>
+<script src="mhd-comfort.js?v=20261005j"></script>
+</body></html>
