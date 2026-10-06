@@ -27,7 +27,7 @@ footer{background:#111;color:#fff;padding:46px 22px}.foot{max-width:var(--max);m
 @media(max-width:640px){.wrap{padding-left:16px;padding-right:16px}.hero h1{font-size:3.15rem}.flow,.grid3,.pack,.md-grid,.rights,.discharge{grid-template-columns:1fr}.nav{padding:12px 14px;flex-wrap:wrap}.brand{font-size:1.05rem}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
-<link rel="stylesheet" href="mhd-comfort.css?v=20261005j">
+<link rel="stylesheet" href="mhd-comfort.css?v=20261005k">
 </head>
 <body>
 <div class="crisis"><strong>Need immediate crisis support?</strong> In the U.S., call or text <a href="tel:988">988</a>. If there is immediate danger, call <a href="tel:911">911</a>. MHD does not replace professional care.</div>
@@ -142,6 +142,6 @@ function setLane(key,btn){currentLane=key;document.querySelectorAll(".switcher b
 function showLaneItem(i,btn){document.querySelectorAll("#laneMenu button").forEach(b=>b.classList.remove("active"));if(btn)btn.classList.add("active");const x=lanes[currentLane][i];document.getElementById("laneDetail").innerHTML="<h3>"+esc(x.title)+"</h3><p>"+esc(x.body)+"</p>"+list(x.points)+"<div class='source'><strong>Source note:</strong> "+esc(x.source)+"</div>"}
 document.getElementById("year").textContent=new Date().getFullYear();setLane("voluntary",document.querySelector(".switcher button"));
 </script>
-<script src="mhd-comfort.js?v=20261005j"></script>
+<script src="mhd-comfort.js?v=20261005k"></script>
 </body>
 </html>
