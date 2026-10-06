@@ -47,6 +47,7 @@
     if(/state|maryland|virginia|pennsylvania|district of columbia|dc law/.test(s))return {text:"Use State-by-State Law Intelligence to compare verified emergency-evaluation and civil-commitment rules by jurisdiction.",href:"state-law.html",label:"Open State Law Intelligence"};
     if(/find care|find help|find a therapist|find therapist|find psychiatrist|find psychologist|provider near|accepting patients|waitlist|wait list|insurance network|in network|out of network|uninsured|low cost|no insurance|need a provider|where do i get help|where can i get help/.test(s))return {text:"The Find Care & Access Center helps you choose a level of care, understand provider credentials, use official treatment locators, handle insurance and wait lists, and prepare the first call.",href:"find-care.html",label:"Open Find Care & Access"};
     if(/glossary|dictionary|define|definition|pronounce|pronunciation|what does .* mean|mental health term|term mean/.test(s))return {text:"The Mental Health Dictionary lets you type or speak a term, hear the pronunciation, listen to the definition, browse A–Z, and jump to related MHD resources.",href:"glossary.html",label:"Open Mental Health Dictionary"};
+    if(/evidence hub|research update|research radar|youtube|video|interview|lived experience|article|articles|evidence level|source type|what does the research say|discussion/.test(s))return {text:"The Evidence, Experience & Discussion Hub brings together MHD articles, YouTube, research explainers, lived experience, source types, evidence levels, and editorial trust standards.",href:"discuss-evidence.html",label:"Open Evidence & Discussion"};
     if(/advocacy|policy|legislation|legislator|bill|congress|public comment|regulation|rulemaking|testimony|representative|senator|government policy|system reform|change the law|contact my representative/.test(s))return {text:"The Change, Advocacy & Systems Center explains who controls a policy decision, how to track bills or rules, how to prepare testimony or public comments, and how to build an evidence-based request.",href:"advocacy-guide.html",label:"Open Change & Advocacy"};
     if(/work|job|employer|boss|accommodation|fmla|leave|school|college|university|504|iep|idea|class|daily life|routine|return to work|return to school/.test(s))return {text:"The Work, School & Daily Life Center covers accommodations, leave, school supports, disclosure, return after crisis, and everyday functioning.",href:"life-guide.html",label:"Open Work, School & Daily Life"};
     if(/appointment|doctor|psychiatrist|what should i tell|prepare|visit tomorrow/.test(s))return {text:"The Appointment Prep Builder can organize symptoms, timeline, medications, treatment history, family observations, questions, and goals into a provider-ready summary.",href:"appointment-builder.html",label:"Open Appointment Prep"};
@@ -96,7 +97,7 @@
     var links=[
       ["index.html","Home"],["condition-guide.html","Conditions"],["find-care.html","Find Care"],["glossary.html","Glossary"],["medication-guide.html","Medication"],
       ["treatment-guide.html","Treatment"],["appointment-builder.html","Appointment"],["family-caregiver.html","Family"],
-      ["crisis-legal.html","Crisis & Legal"],["state-law.html","State Law"],["advocacy-guide.html","Change"]
+      ["crisis-legal.html","Crisis & Legal"],["state-law.html","State Law"],["advocacy-guide.html","Change"],["discuss-evidence.html","Discuss"]
     ];
     var current=(location.pathname.split("/").pop()||"index.html").toLowerCase();
 
@@ -145,6 +146,33 @@
       footer.appendChild(d);
     }
   }
+  function buildTrustLayer(){
+    if(document.querySelector(".mhd-trust-layer"))return;
+    var footer=document.querySelector("footer");if(!footer)return;
+    var file=(location.pathname.split("/").pop()||"index.html").toLowerCase();
+    var map={
+      "index.html":["Project overview","Mixed educational source types; use linked guides for claim-level sourcing."],
+      "tools.html":["Research & tools","Clinical, regulatory, public-health, complementary, and lived-experience evidence are labeled separately."],
+      "condition-guide.html":["Conditions & symptoms","Clinical overview oriented to NIMH / MedlinePlus and condition-specific sources."],
+      "glossary.html":["Reference library","NLM MeSH, NIMH, MedlinePlus, and domain-specific official sources; plain-language MHD definitions."],
+      "medication-guide.html":["Medication intelligence","NIMH / FDA / MedlinePlus oriented; drug-specific decisions require current prescribing guidance."],
+      "treatment-guide.html":["Treatment intelligence","NIMH, VA PTSD, FDA, SAMHSA, NCCIH, and condition-specific treatment sources."],
+      "appointment-builder.html":["Organizational tool","No treatment ranking; user-entered information should be verified with the appropriate clinician."],
+      "family-caregiver.html":["Family / caregiver","Clinical, privacy, communication, and systems guidance; rights vary by setting and jurisdiction."],
+      "crisis-legal.html":["Crisis / hospital / legal","Official crisis, hospital, rights, and legal sources; urgent situations need live assessment."],
+      "state-law.html":["State law","Official statutes and agency sources; verify current jurisdiction-specific law before relying on it."],
+      "life-guide.html":["Work / school / daily life","EEOC, DOL, U.S. Department of Education, JAN, and practical functioning guidance."],
+      "find-care.html":["Find care","NIMH, SAMHSA, HRSA, Medicare, VA, and other official access routes; availability must be confirmed."],
+      "advocacy-guide.html":["Policy / advocacy","Official government process sources; nonpartisan educational guidance, not legal representation."],
+      "discuss-evidence.html":["Evidence / discussion","Each content item labels source type, evidence level, review date, and related tools."],
+      "legal.html":["Legal / policies","MHD project policies and boundaries; not individualized legal advice."]
+    };
+    var item=map[file]||["MHD educational page","Source type and evidence strength vary by section; use linked primary or official sources where available."];
+    var wrap=document.createElement("div");wrap.className="mhd-trust-layer";
+    wrap.innerHTML='<div class="mhd-trust-card"><div class="mhd-trust-mark">MHD Trust Layer</div><div class="mhd-trust-copy"><strong>'+item[0]+' · reviewed October 6, 2026</strong><span>'+item[1]+'</span></div><a class="mhd-trust-action" href="index.html#contact">Report a correction or source concern</a></div>';
+    footer.parentNode.insertBefore(wrap,footer);
+  }
+
   function buildComfort(){
     if(document.getElementById("mhdComfortDock"))return;
     var dock=document.createElement("div");dock.id="mhdComfortDock";
@@ -175,7 +203,7 @@
     try{var q=new URLSearchParams(location.search);if(q.get("guide")==="1"&&typeof window.restartGuide==="function")setTimeout(function(){window.restartGuide()},80)}catch(e){}
   }
 
-  function build(){buildAssistant();buildHeader();buildFooterLegal();buildComfort();apply();setVolume(state.volume);maybeStartGuide()}
+  function build(){buildAssistant();buildHeader();buildFooterLegal();buildTrustLayer();buildComfort();apply();setVolume(state.volume);maybeStartGuide()}
   apply();
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",build);else build();
 })();
