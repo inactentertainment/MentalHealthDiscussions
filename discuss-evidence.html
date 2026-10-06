@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>MHD Evidence, Experience & Discussion Hub</title>
+<meta name="description" content="Mental Health Discussions evidence explainers, YouTube, interviews, lived experience, research literacy, and source-labeled public discussion.">
+<style>
+:root{--max:1180px;--line:#cbd3cd}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,"Times New Roman",serif;line-height:1.55}
+button,input,select,textarea{font:inherit}a{color:inherit}.hidden{display:none!important}
+.wrap{max-width:var(--max);margin:auto;padding:0 22px}
+.hero{padding:66px 0 48px}
+.hero h1{font-size:clamp(3rem,6.2vw,5.8rem);line-height:.94;letter-spacing:-.055em;margin:10px 0 18px;max-width:1040px}
+.hero p{max-width:900px;font-size:1.08rem}
+.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;font-weight:800}
+.section{padding:58px 0}
+.head{display:flex;justify-content:space-between;gap:28px;align-items:end;margin-bottom:24px}
+.head h2{font-size:clamp(2.2rem,4.7vw,4.3rem);line-height:1;letter-spacing:-.045em;margin:0}
+.head p{max-width:650px;margin:0}
+.notice{border:1px solid currentColor;border-radius:16px;padding:14px 16px;margin-bottom:18px}
+.legend{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.legend-card,.article,.video-card,.radar-card,.standards-card,.detail{border:1px solid var(--line);border-radius:18px;padding:15px}
+.legend-card strong{display:block;font-size:.82rem;margin-bottom:4px}.legend-card span{font-size:.74rem;opacity:.76}
+.filterrow{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.filterrow button{border:1px solid var(--line);background:transparent;border-radius:999px;padding:7px 10px;font-size:.72rem;cursor:pointer}
+.filterrow button.active{background:var(--mhd-accent);color:var(--mhd-button-text);border-color:var(--mhd-accent)}
+.article-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.article{cursor:pointer;text-align:left;background:transparent;color:inherit}
+.article:hover{transform:translateY(-1px)}
+.article .meta{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:9px}
+.badge{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:3px 7px;font-size:.62rem}
+.article h3{font-size:1.08rem;margin:0 0 6px}.article p{font-size:.82rem;margin:0;opacity:.85}
+.detail{margin-top:12px;padding:20px}
+.detail h3{font-size:2rem;letter-spacing:-.035em;margin:4px 0 8px}.detail p,.detail li{font-size:.88rem}.detail ul{padding-left:18px}
+.detail-top{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+.detail button{border:1px solid var(--line);background:transparent;border-radius:999px;padding:7px 10px;cursor:pointer}
+.detail-sources{border-top:1px solid var(--line);padding-top:11px;margin-top:14px}.detail-sources a{display:inline-block;margin:4px 10px 4px 0;text-decoration:underline;text-underline-offset:3px;font-size:.78rem}
+.video-shell{display:grid;grid-template-columns:1.25fr .75fr;gap:14px}
+.video-frame{position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:#000}.video-frame iframe{width:100%;height:100%;border:0}
+.video-card h3{margin:0 0 7px;font-size:1.2rem}.video-card p{font-size:.84rem}
+.video-card a{display:inline-block;margin-top:8px;text-decoration:underline;text-underline-offset:3px;font-size:.8rem;font-weight:750}
+.radar{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.radar-card h3{margin:0 0 6px;font-size:1.05rem}.radar-card p{font-size:.82rem}.radar-card a{font-size:.78rem;font-weight:750;text-decoration:underline;text-underline-offset:3px}
+.standards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.standards-card h3{font-size:1rem;margin:0 0 6px}.standards-card p{font-size:.82rem}
+.interview-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.interview-grid .standards-card{padding:18px}
+.route-strip{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}.route-strip a{border:1px solid var(--line);border-radius:999px;padding:8px 10px;text-decoration:none;font-size:.75rem;font-weight:750}.route-strip a.primary{background:var(--mhd-accent);color:var(--mhd-button-text);border-color:var(--mhd-accent)}
+footer{padding:42px 22px}.foot{max-width:var(--max);margin:auto;display:grid;grid-template-columns:1.3fr repeat(2,1fr);gap:28px}.footbrand{font-family:"Segoe Script","Snell Roundhand","Brush Script MT",cursive;font-size:1.35rem}.foot h4{font-size:.86rem;font-weight:800;text-decoration:underline;text-underline-offset:5px}.foot a{display:block;text-decoration:none;padding:4px 0;font-size:.83rem}.fine{max-width:var(--max);margin:24px auto 0;padding-top:14px;border-top:1px solid rgba(255,255,255,.2);font-size:.74rem}
+@media(max-width:960px){.article-grid,.radar,.standards-grid{grid-template-columns:1fr 1fr}.video-shell,.interview-grid{grid-template-columns:1fr}.legend{grid-template-columns:1fr 1fr}.head{display:block}.head p{margin-top:10px}}
+@media(max-width:680px){.article-grid,.radar,.standards-grid,.legend,.foot{grid-template-columns:1fr}.wrap{padding:0 16px}.hero h1{font-size:3.05rem}}
+</style>
+<link rel="stylesheet" href="mhd-comfort.css?v=20261006a">
+</head>
+<body>
+<div class="crisis"><strong>Need immediate crisis support?</strong> In the U.S., call or text <a href="tel:988">988</a>. If there is immediate danger, call <a href="tel:911">911</a>. MHD does not replace professional care.</div>
+<header class="top"><nav class="nav"><a class="brand" href="index.html">Mental Health Discussions</a><div class="navlinks"><a href="index.html">Home</a><a href="tools.html">Research & Tools</a></div></nav></header>
+
+<section class="hero"><div class="wrap">
+<div class="eyebrow">MHD Evidence, Experience & Discussion</div>
+<h1>What do we know, what do people experience, and what still needs better answers?</h1>
+<p>Articles, research explainers, YouTube, future interviews, lived experience, and public discussion - clearly labeled so evidence, opinion, personal experience, and emerging research do not blur into one another.</p>
+</div></section>
+
+<main>
+<section class="section"><div class="wrap">
+<div class="notice"><strong>MHD trust rule:</strong> a personal story can be important without proving a treatment works, and a study can be useful without answering every real-life question. This hub labels the kind of information being presented and the strength of the evidence behind it.</div>
+<div class="legend">
+<div class="legend-card"><strong>Established / standard</strong><span>Strongly supported for a specific use or broadly accepted clinical practice.</span></div>
+<div class="legend-card"><strong>Condition-specific evidence</strong><span>Good evidence exists, but only for particular diagnoses, populations, or treatment situations.</span></div>
+<div class="legend-card"><strong>Mixed / uncertain</strong><span>Research is inconsistent, limited, indirect, or still evolving.</span></div>
+<div class="legend-card"><strong>System / policy evidence</strong><span>Administrative data, law, budgets, service research, access data, or implementation evidence.</span></div>
+<div class="legend-card"><strong>Lived experience</strong><span>Personal or family experience that can illuminate impact but does not establish clinical effectiveness.</span></div>
+</div>
+</div></section>
+
+<section class="section alt"><div class="wrap">
+<div class="head"><div><div class="eyebrow">Evidence Explainers</div><h2>Short reads with the labels visible.</h2></div><p>Each discussion shows source type, evidence level, review date, related MHD tools, and authoritative starting sources.</p></div>
+<div class="filterrow" id="filters"></div>
+<div class="article-grid" id="articleGrid"></div>
+<div class="detail hidden" id="articleDetail"></div>
+</div></section>
+
+<section class="section"><div class="wrap">
+<div class="head"><div><div class="eyebrow">Watch MHD</div><h2>Video belongs inside the evidence system too.</h2></div><p>Videos can introduce a question, tell a story, or explain a system. The same sourcing and correction standards should apply to video as to written content.</p></div>
+<div class="video-shell">
+<div class="video-frame"><iframe src="https://www.youtube.com/embed/7iDb7PaEszM?rel=0&playsinline=1&controls=1&modestbranding=1" title="Mental Health Discussions video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+<div class="video-card"><div class="eyebrow">Mental Health Discussions YouTube</div><h3>Use video to start the discussion, not end it.</h3><p>The MHD video library can connect directly to condition guides, medication and treatment intelligence, family resources, crisis navigation, and policy explainers so viewers can move from a video into sourced reference material.</p><p><strong>Video trust label:</strong> educational discussion. Clinical or policy claims should link back to the relevant MHD source page or primary source.</p><a href="https://www.youtube.com/@MentalHealthdiscussions/videos" target="_blank" rel="noopener">Open the MHD YouTube channel</a></div>
+</div>
+</div></section>
+
+<section class="section alt"><div class="wrap">
+<div class="head"><div><div class="eyebrow">Interview & Lived-Experience Standard</div><h2>Real voices without turning stories into proof.</h2></div><p>The interview library is now structurally ready even before a large catalog of interviews exists.</p></div>
+<div class="interview-grid">
+<div class="standards-card"><h3>Interview label</h3><p>Every interview should identify the speaker's role: lived experience, family/caregiver, clinician, researcher, advocate, public official, system leader, or other relevant role.</p></div>
+<div class="standards-card"><h3>Evidence boundary</h3><p>Personal experience should be labeled as experience. Clinical claims made during interviews should be linked to supporting evidence or clearly identified as opinion, uncertainty, or an area needing verification.</p></div>
+<div class="standards-card"><h3>Privacy + dignity</h3><p>Do not require unnecessary diagnostic details, trauma details, medication history, legal history, or family information to make someone's story meaningful.</p></div>
+<div class="standards-card"><h3>Corrections + context</h3><p>If an interview contains an important factual error, MHD can preserve the conversation while adding a visible correction or context note rather than silently rewriting what was said.</p></div>
+</div>
+<div class="route-strip"><a class="primary" href="index.html#contact">Contact MHD about an interview</a><a href="legal.html">Editorial & legal standards</a></div>
+</div></section>
+
+<section class="section"><div class="wrap">
+<div class="head"><div><div class="eyebrow">Research Radar</div><h2>Places MHD should keep watching.</h2></div><p>Research Radar is not a list of headlines. It is a source map for new findings, safety updates, public-health data, and major evidence reviews.</p></div>
+<div class="radar">
+<div class="radar-card"><h3>NIMH</h3><p>Mental-health research, clinical topics, statistics, and federal research updates.</p><a href="https://www.nimh.nih.gov/" target="_blank" rel="noopener">Open NIMH</a></div>
+<div class="radar-card"><h3>PubMed / NLM</h3><p>Search biomedical literature and trace claims back to the actual published study.</p><a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">Open PubMed</a></div>
+<div class="radar-card"><h3>FDA Drug Safety</h3><p>Medication labeling, safety communications, approvals, warnings, and regulatory information.</p><a href="https://www.fda.gov/drugs/drug-safety-and-availability" target="_blank" rel="noopener">Open FDA Drug Safety</a></div>
+<div class="radar-card"><h3>SAMHSA</h3><p>Behavioral-health data, service systems, treatment locators, grants, policy, and recovery resources.</p><a href="https://www.samhsa.gov/" target="_blank" rel="noopener">Open SAMHSA</a></div>
+<div class="radar-card"><h3>VA National Center for PTSD</h3><p>PTSD assessment, evidence-based psychotherapy, research translation, and professional resources.</p><a href="https://www.ptsd.va.gov/" target="_blank" rel="noopener">Open VA PTSD</a></div>
+<div class="radar-card"><h3>NCCIH</h3><p>Complementary and integrative health evidence, safety, herbs, mind-body approaches, and research context.</p><a href="https://www.nccih.nih.gov/health" target="_blank" rel="noopener">Open NCCIH</a></div>
+</div>
+</div></section>
+
+<section class="section alt"><div class="wrap">
+<div class="head"><div><div class="eyebrow">MHD Editorial Trust Layer</div><h2>What every major content item should tell you.</h2></div><p>This is now the standard used by the hub and the shared trust strip used across major MHD pages.</p></div>
+<div class="standards-grid">
+<div class="standards-card"><h3>Source type</h3><p>Clinical guidance, regulatory source, statute, public-health data, peer-reviewed research, administrative data, or lived experience.</p></div>
+<div class="standards-card"><h3>Evidence level</h3><p>Established, condition-specific, mixed/uncertain, emerging, system/policy, safety caution, or lived experience.</p></div>
+<div class="standards-card"><h3>Last reviewed</h3><p>A visible date tells visitors when MHD last checked the page or content item against its source base.</p></div>
+<div class="standards-card"><h3>Corrections</h3><p>Visitors should have a direct route to report a source, wording, accessibility, legal, or factual concern for review.</p></div>
+<div class="standards-card"><h3>Related tools</h3><p>Evidence explainers should connect to the useful next action: medication, treatment, family, appointment prep, find care, crisis, law, or advocacy.</p></div>
+<div class="standards-card"><h3>No false balance</h3><p>Popularity and controversy do not automatically deserve equal weight with strong evidence. Uncertainty should be described rather than hidden.</p></div>
+<div class="standards-card"><h3>Medical boundaries</h3><p>Educational summaries never become personalized diagnosis, prescribing, or emergency assessment.</p></div>
+<div class="standards-card"><h3>Policy boundaries</h3><p>MHD can explain policy and advocacy mechanics without selecting a partisan position or presenting advocacy as individualized legal advice.</p></div>
+</div>
+</div></section>
+</main>
+
+<footer><div class="foot"><div><div class="footbrand">Mental Health Discussions</div><p>Free mental-health education, navigation, research translation, and public discussion.</p></div><div><h4>Continue</h4><a href="glossary.html">Reference Library</a><a href="find-care.html">Find Care</a><a href="advocacy-guide.html">Change & Advocacy</a></div><div><h4>Legal</h4><a href="legal.html#medical">Medical Disclaimer</a><a href="legal.html#privacy">Privacy</a><a href="legal.html#terms">Terms</a><a href="index.html#contact">Report a correction</a></div></div><div class="fine">Educational discussion only. Evidence labels summarize the strength and type of support for a claim; they do not replace individualized medical, legal, or emergency advice.</div></footer>
+
+<script>
+const ARTICLES=[
+{id:"insight",cat:"Family",title:"Can someone be mentally ill and not know it?",summary:"A plain-language look at insight, anosognosia, disagreement, and why repeated argument may not produce awareness.",source:"Clinical overview",level:"Established clinical concept",reviewed:"October 6, 2026",body:["Insight can vary greatly across mental-health conditions and across time. A person may recognize some symptoms but not others, or may interpret experiences very differently from family members or clinicians.","Anosognosia refers to impaired awareness of illness and is not simply a synonym for stubbornness or ordinary denial. It is especially discussed in some psychotic and neurological conditions.","For families, the practical question is often not 'How do I force agreement?' but 'How do I communicate, document changes, reduce conflict, and respond to safety or functional decline?'"],sources:[["MHD Family / Caregiver Center","family-caregiver.html"],["NIMH Schizophrenia","https://www.nimh.nih.gov/health/topics/schizophrenia"]],related:[["Family / Caregiver","family-caregiver.html"],["Reference Library: Anosognosia","glossary.html#anosognosia"]]},
+{id:"med-stop",cat:"Medication",title:"Why do people stop taking psychiatric medication?",summary:"Side effects, access, cost, identity, insight, stigma, benefit, withdrawal concerns, and treatment preferences can all matter.",source:"Clinical + patient-safety synthesis",level:"Established multi-factor issue",reviewed:"October 6, 2026",body:["There is no single explanation for medication discontinuation. People may stop because of side effects, limited benefit, cost, access barriers, pregnancy concerns, stigma, difficulty remembering doses, changing goals, lack of insight, or a desire to manage symptoms differently.","Some medications can produce withdrawal or discontinuation symptoms if stopped abruptly. Others require monitoring or specialized tapering. That is why 'just stop taking it' is not a safe universal instruction.","A better discussion asks what the medication was intended to treat, whether it helped, what made it difficult to continue, what alternatives exist, and how to change it safely if a change is appropriate."],sources:[["NIMH Mental Health Medications","https://www.nimh.nih.gov/health/topics/mental-health-medications"],["MHD Medication Guide","medication-guide.html"]],related:[["Medication Guide","medication-guide.html"],["Appointment Prep","appointment-builder.html"]]},
+{id:"access",cat:"Systems",title:"Why is getting mental-health help so complicated?",summary:"The problem is often not one broken doorway but several disconnected systems with different rules.",source:"System / access synthesis",level:"System / policy evidence",reviewed:"October 6, 2026",body:["Mental-health access can involve insurance networks, primary care, independent clinicians, hospitals, public behavioral-health agencies, schools, disability systems, pharmacies, crisis services, and social supports.","A person can be clinically appropriate for care and still face a separate access problem: no appointment, wrong insurance network, prior authorization, geographic shortage, age cutoff, transportation, or a level-of-care mismatch.","That is why MHD separates 'What treatment makes sense?' from 'How do I actually access it?' and provides a dedicated Find Care & Access Center."],sources:[["NIMH Find Help","https://www.nimh.nih.gov/health/find-help"],["SAMHSA FindTreatment.gov","https://findtreatment.gov/"]],related:[["Find Care & Access","find-care.html"],["Work, School & Daily Life","life-guide.html"]]},
+{id:"trd",cat:"Treatment",title:"What does treatment-resistant depression actually mean?",summary:"The phrase sounds absolute, but definitions vary and treatment history has to be examined carefully.",source:"Clinical treatment synthesis",level:"Condition-specific evidence",reviewed:"October 6, 2026",body:["Treatment-resistant depression is generally used when depression has not improved enough after adequate treatment attempts, but the exact number and definition of 'adequate' can differ across research and clinical settings.","Before concluding that depression is resistant, clinicians may review diagnosis, dose, duration, adherence, co-occurring conditions, substances, sleep, medical contributors, and whether prior treatments were actually completed.","Specialty options can include medication strategies, psychotherapy changes, TMS, ECT, esketamine, and other approaches depending on the individual clinical situation."],sources:[["NIMH Depression","https://www.nimh.nih.gov/health/topics/depression"],["MHD Treatment Guide","treatment-guide.html"]],related:[["Treatment Guide","treatment-guide.html"],["Medication Guide","medication-guide.html"]]},
+{id:"fep",cat:"Conditions",title:"Why first-episode psychosis deserves its own care pathway",summary:"Early psychosis is a symptom state with multiple possible causes and benefits from rapid, coordinated assessment.",source:"Clinical + service-model synthesis",level:"Established specialty-care model",reviewed:"October 6, 2026",body:["Psychosis can appear in schizophrenia-spectrum disorders, bipolar disorder, severe depression, substance intoxication or withdrawal, medication effects, neurological illness, delirium, and other medical conditions.","For recent-onset psychosis, Coordinated Specialty Care programs combine multiple services rather than relying on medication alone. Typical components can include psychotherapy, medication management, family education, case management, and support for work or school.","New or rapidly worsening psychosis can also require urgent assessment, particularly when there is severe confusion, unsafe behavior, inability to meet basic needs, or possible medical or substance-related causes."],sources:[["NIMH Understanding Psychosis","https://www.nimh.nih.gov/health/publications/understanding-psychosis"],["SAMHSA Early Serious Mental Illness Locator","https://www.samhsa.gov/find-help/locators/esmi"]],related:[["Conditions & Symptoms","condition-guide.html"],["Find Care","find-care.html"],["Crisis & Legal","crisis-legal.html"]]},
+{id:"research",cat:"Research",title:"What does one study actually prove?",summary:"A headline can make a study sound definitive when the design, sample, effect size, and replication tell a more limited story.",source:"Research-literacy explainer",level:"Methods / evidence interpretation",reviewed:"October 6, 2026",body:["Different study designs answer different questions. Randomized trials can be powerful for treatment effects, while observational studies are often essential for harms, prevalence, long-term outcomes, and real-world systems questions.","Statistical significance is not the same as clinical importance. Effect size, confidence intervals, study quality, attrition, funding, comparison group, and whether the finding has been replicated all matter.","Systematic reviews and meta-analyses can summarize multiple studies, but their conclusions still depend on the quality and comparability of the underlying evidence."],sources:[["PubMed","https://pubmed.ncbi.nlm.nih.gov/"],["MHD Reference Library - Research terms","glossary.html"]],related:[["Reference Library","glossary.html"],["Change & Advocacy","advocacy-guide.html"]]},
+{id:"sideeffects",cat:"Medication",title:"Is this a medication side effect or the illness getting worse?",summary:"Timing helps, but symptoms, side effects, withdrawal, interactions, and medical problems can overlap.",source:"Medication-safety explainer",level:"Safety caution",reviewed:"October 6, 2026",body:["Restlessness, sleep changes, fatigue, confusion, mood changes, tremor, appetite changes, and sexual problems can have multiple causes. A new symptom after a medication change is important, but timing alone does not prove causation.","Medication reconciliation, dose history, missed doses, supplements, alcohol or other substances, physical illness, and the underlying psychiatric condition may all need review.","Urgent symptoms such as severe confusion, seizure, breathing difficulty, overdose, severe allergic reaction, or potentially serious syndromes should not wait for routine follow-up."],sources:[["FDA Drug Safety","https://www.fda.gov/drugs/drug-safety-and-availability"],["MHD Medication Guide","medication-guide.html"]],related:[["Medication Guide","medication-guide.html"],["Appointment Prep","appointment-builder.html"]]},
+{id:"complementary",cat:"Treatment",title:"How should we talk about complementary mental-health approaches?",summary:"Interest, plausibility, personal experience, and clinical evidence are different things and should be labeled separately.",source:"Clinical + integrative-health synthesis",level:"Mixed / approach-specific",reviewed:"October 6, 2026",body:["Exercise, sleep support, mindfulness, yoga, supplements, acupuncture, psychedelic research, and other approaches do not all have the same evidence or risk profile.","MHD separates established or supportive approaches from uncertain evidence, emerging research, and safety cautions. This prevents both extremes: dismissing everything outside conventional treatment and presenting weak evidence as proven therapy.","Herbs and supplements can interact with prescription medications, and delaying effective care can be risky for severe symptoms."],sources:[["NCCIH Mental Health resources","https://www.nccih.nih.gov/health"],["MHD Research & Tools","tools.html#approaches"]],related:[["Research & Tools","tools.html#approaches"],["Medication Guide","medication-guide.html"]]}
+];
+const cats=["All",...new Set(ARTICLES.map(a=>a.cat))];let active="All";
+function esc(s){return String(s||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
+function renderFilters(){document.getElementById("filters").innerHTML=cats.map(c=>"<button class='"+(c===active?"active":"")+"' data-cat='"+c+"'>"+c+"</button>").join("");document.querySelectorAll("[data-cat]").forEach(b=>b.onclick=()=>{active=b.dataset.cat;renderFilters();renderArticles()})}
+function renderArticles(){const arr=ARTICLES.filter(a=>active==="All"||a.cat===active);document.getElementById("articleGrid").innerHTML=arr.map(a=>"<button class='article' data-id='"+a.id+"'><div class='meta'><span class='badge'>"+esc(a.cat)+"</span><span class='badge'>"+esc(a.level)+"</span></div><h3>"+esc(a.title)+"</h3><p>"+esc(a.summary)+"</p></button>").join("");document.querySelectorAll("[data-id]").forEach(b=>b.onclick=()=>openArticle(b.dataset.id))}
+function openArticle(id){const a=ARTICLES.find(x=>x.id===id);if(!a)return;const d=document.getElementById("articleDetail");const sources=a.sources.map(s=>"<a href='"+s[1]+"' "+(s[1].startsWith("http")?"target='_blank' rel='noopener'":"")+">"+esc(s[0])+"</a>").join("");const related=a.related.map(s=>"<a href='"+s[1]+"'>"+esc(s[0])+"</a>").join("");d.classList.remove("hidden");d.innerHTML="<div class='detail-top'><div><div class='eyebrow'>"+esc(a.cat)+" · "+esc(a.source)+"</div><h3>"+esc(a.title)+"</h3><div class='meta'><span class='badge'>Evidence: "+esc(a.level)+"</span><span class='badge'>Reviewed: "+esc(a.reviewed)+"</span></div></div><button type='button' onclick='closeArticle()'>Close</button></div>"+a.body.map(p=>"<p>"+esc(p)+"</p>").join("")+"<div class='detail-sources'><strong>Sources / starting points</strong><br>"+sources+"<br><strong>Related MHD tools</strong><br>"+related+"</div>";d.scrollIntoView({behavior:"smooth",block:"nearest"})}
+function closeArticle(){document.getElementById("articleDetail").classList.add("hidden")}
+renderFilters();renderArticles();
+</script>
+<script src="mhd-comfort.js?v=20261006a"></script>
+</body>
+</html>
