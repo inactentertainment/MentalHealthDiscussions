@@ -23,7 +23,7 @@ footer{background:#111;color:#fff;padding:44px 22px}.foot{max-width:var(--max);m
 @media(max-width:640px){.wrap{padding-left:16px;padding-right:16px}.hero h1{font-size:3rem}.panel{padding:18px}.grid2,.grid3,.checks,.summary{grid-template-columns:1fr}.card.full{grid-column:auto}.record-row{grid-template-columns:1fr}.remove{grid-column:1;justify-self:end}.nav{padding:12px 14px;flex-wrap:wrap}.brand{font-size:1.05rem}}
 @media print{body>*:not(#printSheet){display:none!important}#printSheet{display:block!important;color:#000;background:#fff;font:10.5pt Arial,sans-serif}#printSheet h1{font-size:22pt}#printSheet h2{font-size:15pt;border-bottom:1px solid #000;margin-top:13pt}#printSheet p,#printSheet li{font-size:9.5pt;line-height:1.35}#printSheet ul{padding-left:16pt}#printSheet .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:9pt}#printSheet .pbox{border:1px solid #bbb;padding:7pt;break-inside:avoid}#printSheet .wide{grid-column:1/-1}#printSheet .small{font-size:8pt;color:#444}}
 </style>
-<link rel="stylesheet" href="mhd-comfort.css?v=20261005j">
+<link rel="stylesheet" href="mhd-comfort.css?v=20261005k">
 </head>
 <body>
 <div class="crisis"><strong>Need immediate crisis support?</strong> In the U.S., call or text <a href="tel:988">988</a>. If there is immediate danger, call <a href="tel:911">911</a>. MHD does not replace professional care.</div>
@@ -125,5 +125,5 @@ function prefill(){var q=new URLSearchParams(location.search);var m=q.get("med")
 function init(){el("year").textContent=new Date().getFullYear();addMed();addTx();prefill();fields.forEach(function(id){if(el(id))el(id).addEventListener("input",function(){if(stepNow===6)renderSummary()})});checkIds.forEach(function(id){if(el(id))el(id).addEventListener("change",function(){if(stepNow===6)renderSummary()})})}
 init();
 </script>
-<script src="mhd-comfort.js?v=20261005j"></script>
+<script src="mhd-comfort.js?v=20261005k"></script>
 </body></html>
