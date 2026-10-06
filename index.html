@@ -106,7 +106,7 @@
 <body>
 <div class="calmveil" id="calmveil"></div>
 <div class="shell">
-  <div class="crisisbar"><strong>Need immediate mental-health crisis support?</strong> In the U.S., call or text <a href="tel:988">988</a> now. If there is immediate danger, call <a href="tel:911">911</a>. This site does not replace professional care.</div>
+  <div class="crisis"><strong>Need immediate crisis support?</strong> In the U.S., call or text <a href="tel:988">988</a>. If there is immediate danger, call <a href="tel:911">911</a>. MHD does not replace professional care.</div>
 
   <main>
     <section id="onboarding" class="onboarding" aria-live="polite">
@@ -142,12 +142,12 @@
         <div class="hero-grid">
           <div>
             <div class="eyebrow">Mental Health Discussions</div>
-            <h1>Understand it.<br>Navigate it.<br>Change it.</h1>
+            <h1 class="mhd-home-title"><span>Understand it.</span><span>Navigate it.</span><span>Change it.</span></h1>
             <p>Mental health can feel complicated. This site is being built to make the information, next steps, family questions, research and system issues easier to understand—without putting essential information behind a paywall.</p>
             <div class="hero-actions"><button class="primary" onclick="restartGuide()">Guide me to the right place</button><button class="outline" onclick="scrollToId('understand')">Explore everything</button></div>
           </div>
           <div class="video" id="mhdVideo" aria-label="Mental health in America video">
-            <iframe id="mhdYouTube" src="https://www.youtube.com/embed/7iDb7PaEszM?rel=0&playsinline=1&controls=1&modestbranding=1" title="Mental Health in America" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="eager"></iframe>
+            <iframe id="mhdYouTube" src="https://www.youtube.com/embed/7iDb7PaEszM?start=4&rel=0&playsinline=1&controls=1&modestbranding=1" title="Mental Health in America" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="eager"></iframe>
           </div>
         </div>
       </section>
@@ -258,7 +258,7 @@
       <div><div class="wordmark wordmark-footer">Mental Health Discussions</div><div class="footer-copyright">© <span class="footerYear"></span> Mental Health Discussions</div><p class="footer-copy">An independent mental-health education project being built to keep useful public information free and easier to navigate.</p></div>
       <div class="footer-col"><h4>Project</h4><button onclick="openModal('about')">About</button><button onclick="openModal('funding')">Funding & Transparency</button><button onclick="openModal('nonprofit')">Future 501(c)(3) Roadmap</button><button onclick="openModal('editorial')">Editorial Standards</button></div>
       <div class="footer-col"><h4>Legal</h4><button onclick="openModal('medical')">Medical Disclaimer</button><button onclick="openModal('privacy')">Privacy</button><button onclick="openModal('terms')">Terms of Use</button><button onclick="openModal('affiliate')">Affiliate Disclosure</button><button onclick="openModal('accessibility')">Accessibility</button></div>
-      <div class="footer-col"><h4>Help</h4><button onclick="showHub('crisis')">Crisis Resources</button><button onclick="openModal('contact')">Contact</button><a href="https://www.youtube.com/@MentalHealthdiscussions/videos" target="_blank" rel="noopener">YouTube</a><button onclick="openModal('support')">Support MHD</button></div>
+      <div class="footer-col"><h4>Help</h4><button onclick="showHub('crisis')">Crisis Resources</button><button onclick="openModal('contact')">Contact</button><a href="https://www.youtube.com/@MentalHealthdiscussions/videos" target="_blank" rel="noopener">YouTube</a><button class="footer-support" onclick="openModal('support')">Support MHD</button></div>
     </div>
     <div class="fineprint">© <span id="year"></span> Mental Health Discussions. <b>Current status:</b> not a 501(c)(3) nonprofit organization. Nothing on this prototype should be interpreted as a tax-deductible charitable solicitation. Target nonprofit planning language is clearly marked as future-facing.</div>
   </footer>
@@ -307,7 +307,7 @@
     veil.classList.remove('go'); void veil.offsetWidth; veil.classList.add('go');
     setTimeout(()=>{fn();card?.classList.remove('is-leaving')},300);
   }
-  function startGuide(){state.step=0;state.answers={};state.recommendation=null;renderQuestion();}
+  function startGuide(){state.step=0;state.answers={};state.recommendation=null;document.getElementById("onboarding").classList.add("guide-active");renderQuestion();}
   function restartGuide(){
     document.getElementById('site').classList.remove('active');
     document.getElementById('onboarding').classList.remove('hidden');
@@ -318,6 +318,7 @@
   function returnToLastQuestion(){
     document.getElementById('site').classList.remove('active');
     document.getElementById('onboarding').classList.remove('hidden');
+    document.getElementById('onboarding').classList.add('guide-active');
     state.step=Math.max(0,Math.min(state.step,questions.length-1));
     state.recommendation=null;
     renderQuestion();
@@ -326,7 +327,7 @@
   function renderQuestion(){
     const q=questions[state.step], content=document.getElementById('onboardContent');
     const dots=questions.map((_,i)=>`<span class="dot ${i<state.step?'done':''} ${i===state.step?'active':''}"></span>`).join('');
-    content.innerHTML=`<div class="wordmark wordmark-onboard">Mental Health Discussions</div><div class="question-wrap"><div class="question-top"><span>Quick guide · ${state.step+1} of ${questions.length}</span><div class="progress">${dots}</div></div><h2 class="question-title">${q.title}</h2><p class="question-help">${q.help}</p><div class="choices">${q.choices.map((c,i)=>`<button class="choice" onclick="answer(${i})"><strong>${c[1]}</strong><span>${c[2]}</span></button>`).join('')}</div><div class="question-actions">${state.step?'<button class="ghost" onclick="backQuestion()">← Back</button>':''}<button class="ghost" onclick="goSite()">Skip & explore site</button></div></div>`;
+    content.innerHTML=`<div class="question-wrap"><div class="question-top"><span>Quick guide · ${state.step+1} of ${questions.length}</span><div class="progress">${dots}</div></div><h2 class="question-title">${q.title}</h2><p class="question-help">${q.help}</p><div class="choices">${q.choices.map((c,i)=>`<button class="choice" onclick="answer(${i})"><strong>${c[1]}</strong><span>${c[2]}</span></button>`).join('')}</div><div class="question-actions">${state.step?'<button class="ghost" onclick="backQuestion()">← Back</button>':''}<button class="ghost" onclick="goSite()">Skip & explore site</button></div></div>`;
   }
   function answer(i){const q=questions[state.step],c=q.choices[i];state.answers[q.id]=c[3];if(c[3]==='crisis'){state.recommendation='crisis';finishGuide();return;}state.step++;if(state.step>=questions.length)finishGuide();else transition(renderQuestion)}
   function backQuestion(){if(state.step>0){state.step--;transition(renderQuestion)}}
@@ -342,6 +343,7 @@
     state.recommendation=rec;transition(()=>showHub(rec,true));
   }
   function goSite(){
+    document.getElementById('onboarding').classList.remove('guide-active');
     document.getElementById('onboarding').classList.add('hidden');
     document.getElementById('site').classList.add('active');
     backToMain(false);
