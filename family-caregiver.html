@@ -29,7 +29,7 @@ footer{background:#111;color:#fff;padding:46px 22px}.foot{max-width:var(--max);m
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media print{body>*:not(#printSheet){display:none!important}#printSheet{display:block!important;color:#000;background:#fff;font:10.5pt Arial,sans-serif}#printSheet h1{font-size:22pt}#printSheet h2{font-size:15pt;border-bottom:1px solid #000}#printSheet p,#printSheet li{font-size:9.5pt;line-height:1.35}#printSheet ul{padding-left:16pt}.small{font-size:8pt;color:#444}}
 </style>
-<link rel="stylesheet" href="mhd-comfort.css?v=20261005i">
+<link rel="stylesheet" href="mhd-comfort.css?v=20261005j">
 </head>
 <body>
 <div class="crisis"><strong>Need immediate crisis support?</strong> In the U.S., call or text <a href="tel:988">988</a>. If there is immediate danger, call <a href="tel:911">911</a>. MHD does not replace professional care.</div>
@@ -120,5 +120,5 @@ function buildObservation(){const p=document.getElementById("obsPreview");const 
 function printObservation(){buildObservation();const html=document.getElementById("obsPreview").innerHTML;document.getElementById("printSheet").innerHTML="<h1>Mental Health Discussions</h1><h2>Family / Caregiver Observation Note</h2>"+html+"<hr><p class='small'>General educational organization tool. This note is not a diagnosis or legal document. If there is immediate danger, use live emergency resources.</p>";window.print()}
 document.getElementById("year").textContent=new Date().getFullYear();showRefusal("adult",document.querySelector('[data-refusal="adult"]'));
 </script>
-<script src="mhd-comfort.js?v=20261005i"></script>
+<script src="mhd-comfort.js?v=20261005j"></script>
 </body></html>
