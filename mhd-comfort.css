@@ -933,3 +933,46 @@ html[data-mhd-motion="subtle"] .footer-support:hover::after{
   opacity:1!important;
 }
 body:has(#onboarding.guide-active:not(.hidden)) .mhd-contact-section{display:none!important}
+
+
+/* Desktop utility alignment refinement */
+@media(min-width:901px){
+  html.mhd-universal-header .top .nav,
+  html.mhd-universal-header .header .headinner,
+  html.mhd-universal-header .topbar .nav{
+    align-items:center!important;
+  }
+  .mhd-page-nav{
+    align-self:center!important;
+    gap:14px!important;
+  }
+  .mhd-page-nav a{
+    font-size:.77rem!important;
+    line-height:34px!important;
+    padding:0!important;
+  }
+  html.mhd-universal-header .mhd-header-actions{
+    align-self:center!important;
+    justify-self:end!important;
+    grid-template-columns:repeat(3,118px) 36px!important;
+    gap:10px!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  .mhd-header-action{
+    width:118px!important;min-width:118px!important;max-width:118px!important;
+    height:36px!important;min-height:36px!important;
+    font-size:.70rem!important;padding:0 11px!important;
+  }
+  .mhd-contact-action{
+    width:36px!important;min-width:36px!important;max-width:36px!important;
+    height:36px!important;min-height:36px!important;padding:0!important;
+    overflow:visible!important;
+  }
+  .mhd-contact-action[data-tip]:hover:before{
+    top:auto!important;bottom:calc(100% + 9px)!important;
+    right:50%!important;transform:translateX(50%)!important;
+    padding:5px 8px!important;z-index:10010!important;
+    pointer-events:none!important;
+  }
+}
