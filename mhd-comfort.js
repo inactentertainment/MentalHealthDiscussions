@@ -101,11 +101,11 @@
       var pages=document.createElement("div");pages.className="mhd-page-nav";pages.setAttribute("aria-label","Main site pages");
       var links=[
         ["index.html","Home"],
-        ["condition-guide.html","Conditions & Symptoms"],
+        ["condition-guide.html","Conditions"],
         ["medication-guide.html","Medication"],
-        ["treatment-guide.html","Treatment & Therapy"],
-        ["appointment-builder.html","Appointment Prep"],
-        ["family-caregiver.html","Family / Caregiver"],
+        ["treatment-guide.html","Treatment"],
+        ["appointment-builder.html","Appointment"],
+        ["family-caregiver.html","Family"],
         ["crisis-legal.html","Crisis & Legal"],
         ["state-law.html","State Law"]
       ];
