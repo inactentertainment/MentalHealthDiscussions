@@ -429,3 +429,11 @@ html.mhd-universal-header .wordmark-nav{white-space:nowrap!important}
 @media print{
   #mhdComfortDock,#mhdSiteAssistant,.mhd-header-actions{display:none!important}
 }
+
+/* Equal-width one-line header buttons */
+.mhd-header-actions{display:grid!important;grid-template-columns:repeat(3,112px)!important;gap:7px!important;width:auto!important}
+.mhd-header-action{width:112px!important;min-width:112px!important;max-width:112px!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:clip!important;font-size:.70rem!important}
+@media(max-width:760px){
+  .mhd-header-actions{grid-template-columns:repeat(3,minmax(0,1fr))!important;width:100%!important;max-width:350px!important;margin:0 auto!important}
+  .mhd-header-action{width:100%!important;min-width:0!important;max-width:none!important;font-size:.66rem!important;padding:0 5px!important}
+}
