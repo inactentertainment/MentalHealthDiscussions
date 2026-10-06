@@ -87,15 +87,37 @@
     if(topbar){target=topbar;brand=topbar.querySelector(".brand")}
     if(!target){var top=document.querySelector(".top .nav");if(top){target=top;brand=top.querySelector(".brand")}}
     if(!target){var hi=document.querySelector(".header .headinner");if(hi){target=hi;brand=hi.querySelector(".wordmark")}}
-    if(!target||target.querySelector(".mhd-header-actions"))return;
-    var actions=document.createElement("div");actions.className="mhd-header-actions";
-    actions.innerHTML='<a class="mhd-header-action" href="tools.html">Research & Tools</a><button class="mhd-header-action" type="button" id="mhdGuideButton">Guide Me</button><button class="mhd-header-action" type="button" id="mhdAssistantButton">Site Assistant</button>';
-    target.appendChild(actions);
-    actions.querySelector("#mhdGuideButton").addEventListener("click",guideMe);
-    actions.querySelector("#mhdAssistantButton").addEventListener("click",toggleAssistant);
+    if(!target)return;
+
+    if(!target.querySelector(".mhd-header-actions")){
+      var actions=document.createElement("div");actions.className="mhd-header-actions";
+      actions.innerHTML='<a class="mhd-header-action" href="tools.html">Research & Tools</a><button class="mhd-header-action" type="button" id="mhdGuideButton">Guide Me</button><button class="mhd-header-action" type="button" id="mhdAssistantButton">Site Assistant</button>';
+      target.appendChild(actions);
+      actions.querySelector("#mhdGuideButton").addEventListener("click",guideMe);
+      actions.querySelector("#mhdAssistantButton").addEventListener("click",toggleAssistant);
+    }
+
+    if(!target.querySelector(".mhd-page-nav")){
+      var pages=document.createElement("div");pages.className="mhd-page-nav";pages.setAttribute("aria-label","Main site pages");
+      var links=[
+        ["index.html","Home"],
+        ["condition-guide.html","Conditions & Symptoms"],
+        ["medication-guide.html","Medication"],
+        ["treatment-guide.html","Treatment & Therapy"],
+        ["appointment-builder.html","Appointment Prep"],
+        ["family-caregiver.html","Family / Caregiver"],
+        ["crisis-legal.html","Crisis & Legal"],
+        ["state-law.html","State Law"]
+      ];
+      var current=(location.pathname.split("/").pop()||"index.html").toLowerCase();
+      pages.innerHTML=links.map(function(x){
+        var here=current===x[0].toLowerCase()?' aria-current="page"':'';
+        return '<a href="'+x[0]+'"'+here+'>'+x[1]+'</a>';
+      }).join("");
+      target.appendChild(pages);
+    }
     root.classList.add("mhd-universal-header");
   }
-
   function buildComfort(){
     if(document.getElementById("mhdComfortDock"))return;
     var dock=document.createElement("div");dock.id="mhdComfortDock";
