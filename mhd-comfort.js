@@ -47,6 +47,7 @@
     if(/state|maryland|virginia|pennsylvania|district of columbia|dc law/.test(s))return {text:"Use State-by-State Law Intelligence to compare verified emergency-evaluation and civil-commitment rules by jurisdiction.",href:"state-law.html",label:"Open State Law Intelligence"};
     if(/find care|find help|find a therapist|find therapist|find psychiatrist|find psychologist|provider near|accepting patients|waitlist|wait list|insurance network|in network|out of network|uninsured|low cost|no insurance|need a provider|where do i get help|where can i get help/.test(s))return {text:"The Find Care & Access Center helps you choose a level of care, understand provider credentials, use official treatment locators, handle insurance and wait lists, and prepare the first call.",href:"find-care.html",label:"Open Find Care & Access"};
     if(/glossary|dictionary|define|definition|pronounce|pronunciation|what does .* mean|mental health term|term mean/.test(s))return {text:"The Mental Health Dictionary lets you type or speak a term, hear the pronunciation, listen to the definition, browse A–Z, and jump to related MHD resources.",href:"glossary.html",label:"Open Mental Health Dictionary"};
+    if(/advocacy|policy|legislation|legislator|bill|congress|public comment|regulation|rulemaking|testimony|representative|senator|government policy|system reform|change the law|contact my representative/.test(s))return {text:"The Change, Advocacy & Systems Center explains who controls a policy decision, how to track bills or rules, how to prepare testimony or public comments, and how to build an evidence-based request.",href:"advocacy-guide.html",label:"Open Change & Advocacy"};
     if(/work|job|employer|boss|accommodation|fmla|leave|school|college|university|504|iep|idea|class|daily life|routine|return to work|return to school/.test(s))return {text:"The Work, School & Daily Life Center covers accommodations, leave, school supports, disclosure, return after crisis, and everyday functioning.",href:"life-guide.html",label:"Open Work, School & Daily Life"};
     if(/appointment|doctor|psychiatrist|what should i tell|prepare|visit tomorrow/.test(s))return {text:"The Appointment Prep Builder can organize symptoms, timeline, medications, treatment history, family observations, questions, and goals into a provider-ready summary.",href:"appointment-builder.html",label:"Open Appointment Prep"};
     if(/medicat|drug|pill|side effect|interaction|zoloft|prozac|lithium|abilify|seroquel|xanax/.test(s))return {text:"The Medication Guide is the best starting point for uses, side effects, monitoring, questions for a prescriber, family watch-points, and comparisons.",href:"medication-guide.html",label:"Open Medication Guide"};
@@ -95,7 +96,7 @@
     var links=[
       ["index.html","Home"],["condition-guide.html","Conditions"],["find-care.html","Find Care"],["glossary.html","Glossary"],["medication-guide.html","Medication"],
       ["treatment-guide.html","Treatment"],["appointment-builder.html","Appointment"],["family-caregiver.html","Family"],
-      ["crisis-legal.html","Crisis & Legal"],["state-law.html","State Law"]
+      ["crisis-legal.html","Crisis & Legal"],["state-law.html","State Law"],["advocacy-guide.html","Change"]
     ];
     var current=(location.pathname.split("/").pop()||"index.html").toLowerCase();
 
