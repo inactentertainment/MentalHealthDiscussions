@@ -45,6 +45,7 @@
     if(/family|caregiver|son|daughter|spouse|brother|sister|refus|won't take|wont take|doesn't believe|doesnt believe|anosognosia/.test(s))return {text:"The Family / Caregiver Center is the best starting point, especially for treatment refusal, lack of insight, communication, and family information-sharing.",href:"family-caregiver.html",label:"Open Family / Caregiver Center"};
     if(/hospital|hold|commit|302|5150|baker|tdo|eco|involuntary|emergency petition|legal|law/.test(s))return {text:"The Crisis, Hospital & Legal Center explains emergency evaluation, voluntary and involuntary care, discharge, rights, and state-specific law.",href:"crisis-legal.html",label:"Open Crisis, Hospital & Legal Center"};
     if(/state|maryland|virginia|pennsylvania|district of columbia|dc law/.test(s))return {text:"Use State-by-State Law Intelligence to compare verified emergency-evaluation and civil-commitment rules by jurisdiction.",href:"state-law.html",label:"Open State Law Intelligence"};
+    if(/glossary|dictionary|define|definition|pronounce|pronunciation|what does .* mean|mental health term|term mean/.test(s))return {text:"The Mental Health Dictionary lets you type or speak a term, hear the pronunciation, listen to the definition, browse A–Z, and jump to related MHD resources.",href:"glossary.html",label:"Open Mental Health Dictionary"};
     if(/work|job|employer|boss|accommodation|fmla|leave|school|college|university|504|iep|idea|class|daily life|routine|return to work|return to school/.test(s))return {text:"The Work, School & Daily Life Center covers accommodations, leave, school supports, disclosure, return after crisis, and everyday functioning.",href:"life-guide.html",label:"Open Work, School & Daily Life"};
     if(/appointment|doctor|psychiatrist|what should i tell|prepare|visit tomorrow/.test(s))return {text:"The Appointment Prep Builder can organize symptoms, timeline, medications, treatment history, family observations, questions, and goals into a provider-ready summary.",href:"appointment-builder.html",label:"Open Appointment Prep"};
     if(/medicat|drug|pill|side effect|interaction|zoloft|prozac|lithium|abilify|seroquel|xanax/.test(s))return {text:"The Medication Guide is the best starting point for uses, side effects, monitoring, questions for a prescriber, family watch-points, and comparisons.",href:"medication-guide.html",label:"Open Medication Guide"};
@@ -91,7 +92,7 @@
     if(!target)return;
 
     var links=[
-      ["index.html","Home"],["condition-guide.html","Conditions"],["medication-guide.html","Medication"],
+      ["index.html","Home"],["condition-guide.html","Conditions"],["glossary.html","Glossary"],["medication-guide.html","Medication"],
       ["treatment-guide.html","Treatment"],["appointment-builder.html","Appointment"],["family-caregiver.html","Family"],
       ["crisis-legal.html","Crisis & Legal"],["state-law.html","State Law"]
     ];
