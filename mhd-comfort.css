@@ -1,0 +1,215 @@
+/* Mental Health Discussions — Comfort & Accessibility Layer
+   Research-led design goals: avoid pure-white/pure-black glare by default,
+   preserve readable contrast, minimize distraction, and give users control. */
+
+:root{
+  --mhd-bg:#F4F1EA;
+  --mhd-surface:#FBF8F2;
+  --mhd-surface-2:#E8EEE9;
+  --mhd-text:#303735;
+  --mhd-muted:#59635E;
+  --mhd-border:#C9D2CC;
+  --mhd-link:#35594D;
+  --mhd-accent-light:#405A4F;
+  --mhd-accent-dark:#8EAA9D;
+  --mhd-deep-light:#344541;
+  --mhd-deep-dark:#293B35;
+  --mhd-accent:var(--mhd-accent-light);
+  --mhd-deep:var(--mhd-deep-light);
+  --mhd-button-text:#F7F3EA;
+  --mhd-focus:#6D887D;
+  --mhd-shadow:0 16px 42px rgba(48,55,53,.08);
+}
+
+/* User-selectable calming palettes. These are preferences, not diagnosis labels. */
+html[data-mhd-theme="mist"]{
+  --mhd-bg:#EEF4F4;--mhd-surface:#F7FAF9;--mhd-surface-2:#E2ECEE;
+  --mhd-text:#304047;--mhd-muted:#58686D;--mhd-border:#C5D5D9;--mhd-link:#315D6A;
+  --mhd-accent-light:#3E6472;--mhd-accent-dark:#91B5BF;
+  --mhd-deep-light:#334E58;--mhd-deep-dark:#25383F;--mhd-focus:#6D8E98;
+}
+html[data-mhd-theme="linen"]{
+  --mhd-bg:#F6F0E6;--mhd-surface:#FBF7EF;--mhd-surface-2:#EEE5D8;
+  --mhd-text:#423B36;--mhd-muted:#675F58;--mhd-border:#D8CCBD;--mhd-link:#6A5142;
+  --mhd-accent-light:#735C4C;--mhd-accent-dark:#C1AA93;
+  --mhd-deep-light:#59483D;--mhd-deep-dark:#3D312B;--mhd-focus:#917765;
+}
+html[data-mhd-theme="slate"]{
+  --mhd-bg:#EFF2F0;--mhd-surface:#F8F9F7;--mhd-surface-2:#E4EAE7;
+  --mhd-text:#343D3A;--mhd-muted:#5D6864;--mhd-border:#C7D1CD;--mhd-link:#405F56;
+  --mhd-accent-light:#4B625C;--mhd-accent-dark:#94AAA4;
+  --mhd-deep-light:#3B4D48;--mhd-deep-dark:#293532;--mhd-focus:#728C84;
+}
+html[data-mhd-theme="contrast"]{
+  --mhd-bg:#F4F5F1;--mhd-surface:#FAFBF8;--mhd-surface-2:#E5E9E5;
+  --mhd-text:#202827;--mhd-muted:#46514E;--mhd-border:#AAB8B3;--mhd-link:#244F42;
+  --mhd-accent-light:#2D5146;--mhd-accent-dark:#B0CCC2;
+  --mhd-deep-light:#28433B;--mhd-deep-dark:#1E2D29;--mhd-focus:#58786E;
+}
+
+/* Light level: Lights On = soft, warm light. Lights Low = dim. Lights Off = very dark charcoal, never pure black. */
+html[data-mhd-mode="low"]{
+  --mhd-bg:#2B3331;--mhd-surface:#343D3A;--mhd-surface-2:#303835;
+  --mhd-text:#E7E8E2;--mhd-muted:#C5CCC8;--mhd-border:#55615D;--mhd-link:#B8D4CA;
+  --mhd-accent:var(--mhd-accent-dark);--mhd-deep:var(--mhd-deep-dark);--mhd-button-text:#F5F2E9;
+  --mhd-focus:#9CB7AD;--mhd-shadow:0 16px 42px rgba(0,0,0,.18);
+}
+html[data-mhd-mode="off"]{
+  --mhd-bg:#171C1B;--mhd-surface:#202625;--mhd-surface-2:#1B2220;
+  --mhd-text:#E2E8E4;--mhd-muted:#B9C3BE;--mhd-border:#414C48;--mhd-link:#B6D8CD;
+  --mhd-accent:var(--mhd-accent-dark);--mhd-deep:#23332E;--mhd-button-text:#F4F0E7;
+  --mhd-focus:#A1BEB4;--mhd-shadow:0 16px 42px rgba(0,0,0,.24);
+}
+
+html{background:var(--mhd-bg)!important;color-scheme:light}
+html[data-mhd-mode="low"],html[data-mhd-mode="off"]{color-scheme:dark}
+body{background:var(--mhd-bg)!important;color:var(--mhd-text)!important}
+body,button,input,textarea,select{color:var(--mhd-text)}
+body,.section,.site-section,.hero,.app,.page,.main{background-color:var(--mhd-bg)!important}
+.alt,.section.alt,.site-section.alt{background:var(--mhd-surface-2)!important}
+
+/* Text */
+p,li,.sub,.intro,.small-muted,.muted,.source,.fine,.tagline,
+.feature p,.panel p,.card p,.card li,.mini p,.mini li,.rule p,.right p,
+.transition-card li,.discharge-card li,.flow-step p,.detail p,.detail li,
+.qcard li,.q li,.ev p,.summary-card p,.summary-card li,.med-item span,.definition,
+.approach p,.topic-card p,.statehead p{
+  color:var(--mhd-muted)!important;
+}
+h1,h2,h3,h4,h5,h6,strong,label,.eyebrow{color:var(--mhd-text)}
+a{color:var(--mhd-link)}
+hr{border-color:var(--mhd-border)!important}
+
+/* Surfaces */
+header,.top,.nav,nav,.header{
+  background:var(--mhd-surface)!important;
+  border-color:var(--mhd-border)!important;
+}
+.panel,.card,.feature,.info,.mini,.rule,.right,.transition-card,.discharge-card,
+.flow-step,.choicebox,.result,.pane,.form,.preview,.statebox,.md-card,.qcard,.q,.ev,
+.top-card,.content,.med-item,.approach,.topic-card,.definition,.glossary-card,.ask-card,
+.summary-card,.section-card,.record-row,.steps,.evidence-card,.family-lane,.med-fact,
+.med-inset,.comparison-scroll,.table-wrap,.pack-card,.transition-card,.discharge-card,
+.right,.menu,.detail,.statecontent,.toolbox>div{
+  background:var(--mhd-surface)!important;
+  border-color:var(--mhd-border)!important;
+}
+input,textarea,select{
+  background:var(--mhd-surface)!important;
+  color:var(--mhd-text)!important;
+  border-color:var(--mhd-border)!important;
+}
+input::placeholder,textarea::placeholder{color:var(--mhd-muted)!important;opacity:.78}
+
+/* Deep surfaces: use charcoal/colored-charcoal rather than black. */
+.panel.black,.black,.dark,.rule.dark,.right.dark,.family-lane.emergency,.note.dark,
+.statehead,.crisis,footer,.footer{
+  background:var(--mhd-deep)!important;
+  color:var(--mhd-button-text)!important;
+  border-color:var(--mhd-deep)!important;
+}
+.panel.black h1,.panel.black h2,.panel.black h3,.panel.black h4,
+.black h1,.black h2,.black h3,.black h4,.dark h1,.dark h2,.dark h3,.dark h4,
+.rule.dark h3,.right.dark h3,.statehead h3,.crisis strong,footer h1,footer h2,footer h3,footer h4,
+footer .footbrand{
+  color:var(--mhd-button-text)!important;
+}
+.panel.black p,.black p,.dark p,.rule.dark p,.right.dark p,.family-lane.emergency li,
+.note.dark p,.statehead p,footer p,footer .fine,.crisis{
+  color:#DEDCD5!important;
+}
+footer a,.crisis a{color:#F3F0E8!important}
+
+/* Buttons retain the elegant glossy treatment, without continuous animation. */
+button,.btn,.primary,.small-btn,.smallbtn,.nav-cta,.choice.active,.step.active,
+.filter-row button.active,.tab.active,.tab[aria-selected="true"],.filters button.active{
+  border-color:var(--mhd-accent)!important;
+}
+.btn:not(.secondary):not(.soft):not(.danger),
+.primary,.small-btn,.smallbtn.dark,.nav-cta,.choice.active,.step.active,
+.filter-row button.active,.tab.active,.tab[aria-selected="true"],.filters button.active{
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,0) 42%),
+    var(--mhd-accent)!important;
+  color:var(--mhd-button-text)!important;
+  box-shadow:inset 0 1px rgba(255,255,255,.16),0 7px 18px rgba(37,55,49,.12)!important;
+}
+.btn.secondary,.btn.soft,.btn.danger,.smallbtn:not(.dark),.outline,.presets button,
+.nav-steps button:not(.active),.filter-row button:not(.active),.filters button:not(.active){
+  background:var(--mhd-surface)!important;color:var(--mhd-text)!important;border-color:var(--mhd-border)!important;
+}
+button,.btn,.primary,.small-btn,.smallbtn,.nav-cta{transition:transform .16s ease,box-shadow .16s ease,filter .16s ease}
+html[data-mhd-motion="subtle"] button:hover,
+html[data-mhd-motion="subtle"] .btn:hover,
+html[data-mhd-motion="subtle"] .primary:hover,
+html[data-mhd-motion="subtle"] .small-btn:hover,
+html[data-mhd-motion="subtle"] .nav-cta:hover{transform:translateY(-2px);filter:brightness(1.03)}
+.btn.shine:after,.nav-cta:after,.primary:after{animation:none!important;opacity:0!important}
+
+/* Tables */
+table,.comparison-table,.compare-table{color:var(--mhd-text)!important}
+table th,.comparison-table th,.compare-table th,
+table td:first-child,.comparison-table td:first-child,.compare-table td:first-child{
+  background:var(--mhd-surface-2)!important;color:var(--mhd-text)!important;border-color:var(--mhd-border)!important;
+}
+table td,.comparison-table td,.compare-table td{background:var(--mhd-surface)!important;border-color:var(--mhd-border)!important}
+
+/* Focus must stay visible. */
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{
+  outline:3px solid var(--mhd-focus)!important;outline-offset:3px!important;
+}
+
+/* Comfort dock */
+#mhdComfortDock{position:fixed;right:16px;bottom:16px;z-index:9999;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+#mhdComfortToggle{
+  border:1px solid var(--mhd-border)!important;background:var(--mhd-deep)!important;color:var(--mhd-button-text)!important;
+  border-radius:999px;padding:10px 14px;font-weight:800;box-shadow:var(--mhd-shadow)!important;cursor:pointer;
+}
+#mhdComfortPanel{
+  position:absolute;right:0;bottom:52px;width:min(360px,calc(100vw - 32px));max-height:min(72vh,620px);overflow:auto;
+  background:var(--mhd-surface)!important;color:var(--mhd-text)!important;border:1px solid var(--mhd-border)!important;
+  border-radius:20px;padding:16px;box-shadow:0 18px 50px rgba(20,30,27,.20);
+}
+#mhdComfortPanel[hidden]{display:none}
+.mhd-comfort-head{display:flex;justify-content:space-between;gap:15px;align-items:start;border-bottom:1px solid var(--mhd-border);padding-bottom:11px;margin-bottom:12px}
+.mhd-comfort-head strong{font-size:1rem}.mhd-comfort-head span{display:block;font-size:.72rem;color:var(--mhd-muted);margin-top:2px}
+.mhd-comfort-close{border:0!important;background:transparent!important;color:var(--mhd-text)!important;font-size:1.25rem;line-height:1;cursor:pointer}
+.mhd-control-group{border-top:1px solid var(--mhd-border);padding-top:12px;margin-top:12px}
+.mhd-control-group:first-of-type{border-top:0;padding-top:0;margin-top:0}
+.mhd-control-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:var(--mhd-muted);margin-bottom:7px}
+.mhd-segment{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.mhd-segment.five{grid-template-columns:repeat(5,1fr)}
+.mhd-segment button{
+  border:1px solid var(--mhd-border)!important;background:var(--mhd-surface)!important;color:var(--mhd-text)!important;
+  border-radius:11px;padding:8px 5px;font-size:.72rem;cursor:pointer;
+}
+.mhd-segment button[aria-pressed="true"]{
+  background:var(--mhd-accent)!important;color:var(--mhd-button-text)!important;border-color:var(--mhd-accent)!important;
+}
+.mhd-audio-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.mhd-audio-row input[type="range"]{width:112px;accent-color:var(--mhd-accent)}
+.mhd-audio-row label,.mhd-audio-row button{
+  border:1px solid var(--mhd-border)!important;background:var(--mhd-surface)!important;color:var(--mhd-text)!important;
+  border-radius:999px;padding:7px 10px;font-size:.75rem;cursor:pointer;
+}
+.mhd-audio-file{display:none}
+.mhd-audio-name{font-size:.72rem;color:var(--mhd-muted);margin-top:7px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mhd-radio-list{display:grid;gap:6px;margin-top:8px}
+.mhd-radio-list a{display:flex;justify-content:space-between;gap:10px;text-decoration:none;border:1px solid var(--mhd-border);border-radius:12px;padding:9px 10px;background:var(--mhd-surface-2);font-size:.78rem}
+.mhd-radio-list small{color:var(--mhd-muted)}
+.mhd-comfort-note{font-size:.68rem;color:var(--mhd-muted);margin:8px 0 0}
+#mhdComfortPanel audio{width:100%;height:36px;margin-top:8px}
+
+/* Quiet-motion default. */
+html[data-mhd-motion="quiet"] *,html[data-mhd-motion="quiet"] *::before,html[data-mhd-motion="quiet"] *::after{
+  animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}
+}
+@media(max-width:620px){
+  #mhdComfortDock{right:10px;bottom:10px}
+  #mhdComfortPanel{width:calc(100vw - 20px)}
+  .mhd-segment.five{grid-template-columns:repeat(3,1fr)}
+}
+@media print{#mhdComfortDock{display:none!important}}
