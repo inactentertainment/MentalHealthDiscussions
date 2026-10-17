@@ -113,6 +113,15 @@
 <script defer src="app-assets/install.js?v=20261017-jukebox-save-all"></script>
 <link rel="icon" type="image/png" sizes="64x64" href="app-assets/icon-64-large-20261015.png">
 <link rel="apple-touch-icon" sizes="180x180" href="app-assets/icon-180-large-20261015.png">
+<style>
+.mhd-frontdesk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.mhd-frontdesk-grid .path{min-height:168px;text-align:left}
+.mhd-roadmap-callout{margin-top:18px;border:1px solid var(--mhd-border,#cfd7d1);border-radius:22px;padding:20px;background:var(--mhd-surface,#fbfaf5);display:flex;align-items:center;justify-content:space-between;gap:20px}
+.mhd-roadmap-callout h3{margin:4px 0 5px;font-size:1.45rem}.mhd-roadmap-callout p{margin:0;color:var(--mhd-muted,#68716e);max-width:690px}
+.mhd-system-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:950px){.mhd-frontdesk-grid{grid-template-columns:1fr 1fr}.mhd-system-grid{grid-template-columns:1fr 1fr}.mhd-roadmap-callout{display:block}.mhd-roadmap-callout .listen-row{margin-top:14px}}
+@media(max-width:620px){.mhd-frontdesk-grid,.mhd-system-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <div class="calmveil" id="calmveil"></div>
@@ -169,14 +178,32 @@
 
       <section id="start" class="site-section">
         <div class="wrap">
-          <div class="section-head"><div><div class="eyebrow">Start where you are</div><h2>Five ways in.</h2></div><p>You don’t need to know a diagnosis or the “right” mental-health term. Pick what sounds closest to what you need today.</p></div>
-          <div class="path-grid">
-            <button class="path" onclick="showHub('self')"><h3>I need support for myself</h3><p>Symptoms, treatment questions, appointments, coping and next steps.</p></button>
-            <button class="path" onclick="showHub('family')"><h3>I’m supporting someone</h3><p>Adult loved ones, caregiver questions, communication, privacy and planning.</p></button>
-            <button class="path" onclick="showHub('crisis')"><h3>This feels urgent</h3><p>Immediate safety, crisis planning and what to do right now.</p></button>
-            <button class="path" onclick="showHub('work')"><h3>Work, school or daily life</h3><p>Functioning, accommodations, stress, communication and support.</p></button>
-            <button class="path" onclick="showHub('learn')"><h3>I want to understand or change it</h3><p>Conditions, treatments, research, laws, systems and advocacy education.</p></button>
+          <div class="section-head"><div><div class="eyebrow">Start with the question</div><h2>What do you need help navigating right now?</h2></div><p>You do not need a diagnosis or the “right” mental-health term. Pick the situation that sounds closest, or build a Personal Roadmap if you are not sure where to start.</p></div>
+          <div class="mhd-frontdesk-grid">
+            <button class="path" onclick="showHub('self')"><h3>Help for myself</h3><p>Symptoms, next steps, treatment questions, daily functioning, or figuring out where to begin.</p></button>
+            <button class="path" onclick="showHub('family')"><h3>Help for someone I care about</h3><p>Family questions, treatment refusal, communication, privacy, observations, and planning.</p></button>
+            <button class="path" onclick="location.href='roadmap.html?focus=meds'"><h3>Medication or treatment questions</h3><p>Understand what was prescribed, compare treatment approaches, prepare questions, and organize what matters.</p></button>
+            <button class="path" onclick="location.href='appointment-builder.html'"><h3>Preparing for an appointment</h3><p>Turn symptoms, timeline, medications, observations, questions, and goals into a provider-ready summary.</p></button>
+            <button class="path" onclick="location.href='crisis-legal.html'"><h3>Crisis, hospital, or legal situation</h3><p>Understand evaluation, hospitalization, discharge, rights, state rules, and what may happen next.</p></button>
+            <button class="path" onclick="location.href='roadmap.html?focus=system'"><h3>I’m trying to understand the system</h3><p>Find care, rights, state law, policy, access barriers, work or school systems, and advocacy routes.</p></button>
           </div>
+          <div class="mhd-roadmap-callout">
+            <div><div class="eyebrow">Not sure which door?</div><h3>Build your Personal Roadmap.</h3><p>Four practical questions route you to the strongest next MHD tool without asking you to diagnose yourself.</p></div>
+            <div class="listen-row"><a class="small-btn" href="roadmap.html" style="text-decoration:none">Build my roadmap</a><button class="small-btn" onclick="restartGuide()">Use the quick Guide Me flow</button></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="site-section alt" id="navigation-system">
+        <div class="wrap">
+          <div class="section-head"><div><div class="eyebrow">The MHD Navigation System</div><h2>Understand. Prepare. Navigate. Change.</h2></div><p>MHD is being built as the layer between “I know something is wrong” and “I know what to do next.” The tools connect information to preparation, navigation, and system change.</p></div>
+          <div class="mhd-system-grid">
+            <div class="feature"><span class="tag">01</span><h3>Understand</h3><p>Conditions, symptoms, medications, treatments, terminology, research, and system rules in plain language.</p></div>
+            <div class="feature"><span class="tag">02</span><h3>Prepare</h3><p>Organize timelines, observations, medication history, questions, goals, and records before the next conversation.</p></div>
+            <div class="feature"><span class="tag">03</span><h3>Navigate</h3><p>Move between providers, hospitals, insurers, families, state rules, work or school, and community resources.</p></div>
+            <div class="feature"><span class="tag">04</span><h3>Change</h3><p>When the problem is bigger than one person, understand policy, evidence, rights, public systems, and advocacy routes.</p></div>
+          </div>
+          <div class="listen-row" style="margin-top:20px"><a class="small-btn" href="roadmap.html" style="text-decoration:none">Personal Roadmap</a><a class="small-btn" href="programs.html" style="text-decoration:none">Programs & Partnerships</a><a class="small-btn" href="standards.html" style="text-decoration:none">Trust & Standards</a></div>
         </div>
       </section>
 
@@ -286,9 +313,9 @@
   <footer>
     <div class="footer-grid">
       <div><div class="wordmark wordmark-footer">Mental Health Discussions</div><div class="footer-copyright">© <span class="footerYear"></span> Mental Health Discussions</div><p class="footer-copy">An independent mental-health education project being built to keep useful public information free and easier to navigate.</p></div>
-      <div class="footer-col"><h4>Project</h4><button onclick="openModal('about')">About</button><button onclick="openModal('funding')">Funding & Transparency</button><button onclick="openModal('nonprofit')">Future 501(c)(3) Roadmap</button><button onclick="openModal('editorial')">Editorial Standards</button></div>
+      <div class="footer-col"><h4>Project</h4><button onclick="openModal('about')">About</button><a href="programs.html">Programs & Partnerships</a><a href="standards.html">Trust & Standards</a><button onclick="openModal('funding')">Funding & Transparency</button><button onclick="openModal('nonprofit')">Future 501(c)(3) Roadmap</button><button onclick="openModal('editorial')">Editorial Standards</button></div>
       <div class="footer-col"><h4>Legal</h4><button onclick="openModal('medical')">Medical Disclaimer</button><button onclick="openModal('privacy')">Privacy</button><button onclick="openModal('terms')">Terms of Use</button><button onclick="openModal('affiliate')">Affiliate Disclosure</button><button onclick="openModal('accessibility')">Accessibility</button></div>
-      <div class="footer-col"><h4>Help</h4><button onclick="showHub('crisis')">Crisis Resources</button><a href="#contact">Contact</a><a href="https://www.youtube.com/@MentalHealthdiscussions/videos" target="_blank" rel="noopener">YouTube</a><a class="footer-support" href="support.html">Support MHD</a></div>
+      <div class="footer-col"><h4>Help</h4><a href="roadmap.html">Personal Roadmap</a><button onclick="showHub('crisis')">Crisis Resources</button><a href="#contact">Contact</a><a href="https://www.youtube.com/@MentalHealthdiscussions/videos" target="_blank" rel="noopener">YouTube</a><a class="footer-support" href="support.html">Support MHD</a></div>
     </div>
     <div class="fineprint">© <span id="year"></span> Mental Health Discussions. <b>Current status:</b> not a 501(c)(3) nonprofit organization. Nothing on this prototype should be interpreted as a tax-deductible charitable solicitation. Target nonprofit planning language is clearly marked as future-facing.</div>
   </footer>
