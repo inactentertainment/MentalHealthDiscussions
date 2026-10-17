@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#edf2ed">
+<title>MHD Trust & Standards | Mental Health Discussions</title>
+<meta name="description" content="How Mental Health Discussions handles sources, evidence, review dates, corrections, safety boundaries, lived experience, privacy, accessibility, and partnerships.">
+<style>
+:root{--ink:#26302d;--muted:#68716e;--paper:#f2f1eb;--sage:#e5eee7;--surface:#fbfaf5;--line:#cfd7d1;--deep:#2e443b;--max:1120px;--shadow:0 16px 42px rgba(40,58,50,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.55}a{color:inherit}.crisis{background:#2a2d2c;color:#f7f3e8;text-align:center;padding:11px 16px;font-size:.84rem}.crisis a{font-weight:800}
+.top{position:sticky;top:0;z-index:40;background:rgba(242,241,235,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav{max-width:var(--max);height:74px;margin:auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-family:"Segoe Script","Snell Roundhand","Brush Script MT",cursive;font-size:1.3rem;text-decoration:none}.navlinks{display:flex;gap:8px;flex-wrap:wrap}.navlinks a{text-decoration:none;border-radius:999px;padding:8px 10px;font-size:.84rem}.navlinks a:hover{background:var(--sage)}
+.hero{padding:72px 22px 54px;background:linear-gradient(180deg,var(--sage),var(--paper));border-bottom:1px solid var(--line)}.wrap{max-width:var(--max);margin:auto}.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.68rem;font-weight:800;color:#496258}.hero h1{font-size:clamp(3rem,7vw,6rem);line-height:.94;letter-spacing:-.045em;margin:10px 0 15px;max-width:940px}.hero p{max-width:800px;color:var(--muted);font-size:1.08rem}
+.section{padding:62px 22px}.section.alt{background:#e8eee8}.head{display:flex;justify-content:space-between;gap:28px;align-items:end;margin-bottom:24px}.head h2{font-size:clamp(2.2rem,4vw,4rem);line-height:1;letter-spacing:-.035em;margin:5px 0}.head p{max-width:540px;color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:var(--shadow)}.card h3{margin:7px 0}.card p,.card li{font-size:.86rem;color:var(--muted)}.card ul{padding-left:18px}.card li+li{margin-top:5px}.label{display:inline-flex;border:1px solid #9aae9f;border-radius:999px;padding:4px 8px;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:#496258}
+.evidence{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.evidence div{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:15px}.evidence strong{display:block;margin-bottom:5px}.evidence span{font-size:.79rem;color:var(--muted)}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.step{border-top:2px solid #506a5e;padding:14px 4px}.step b{display:block;font-size:.72rem;color:#5b7368}.step h3{margin:5px 0}.step p{font-size:.83rem;color:var(--muted)}
+.boundary{background:#2e443b;color:#f5f1e7;border-radius:24px;padding:26px}.boundary h2{font-size:2rem;margin:0 0 10px}.boundary p{color:#d3dcd6}.boundary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}.boundary-grid div{border:1px solid #60776c;border-radius:16px;padding:14px}.boundary-grid strong{display:block;margin-bottom:5px}.boundary-grid span{font-size:.8rem;color:#d6ddd9}
+.btnrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.btn{display:inline-flex;border:1px solid var(--deep);border-radius:999px;padding:9px 12px;text-decoration:none;font-size:.8rem;font-weight:800}.btn.primary{background:linear-gradient(135deg,#2e443b,#3e5a4e,#294036);color:#fff}.boundary .btn{border-color:#f3efe4;color:#f3efe4}.boundary .btn.primary{background:#f3efe4;color:#2e443b}
+footer{background:#2a2d2c;color:#f3efe4;padding:42px 22px}.foot{max-width:var(--max);margin:auto;display:grid;grid-template-columns:1.3fr repeat(2,1fr);gap:28px}.footbrand{font-family:"Segoe Script","Snell Roundhand","Brush Script MT",cursive;font-size:1.35rem}.foot h4{font-size:.82rem;text-decoration:underline;text-underline-offset:4px}.foot a{display:block;text-decoration:none;padding:4px 0;font-size:.82rem}.fine{max-width:var(--max);margin:24px auto 0;padding-top:14px;border-top:1px solid #555;font-size:.72rem;color:#c9c4b9}
+@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}.evidence{grid-template-columns:1fr 1fr}.process{grid-template-columns:1fr 1fr}.boundary-grid{grid-template-columns:1fr}.head{display:block}.head p{margin-top:10px}.navlinks{display:none}}
+@media(max-width:600px){.section,.hero{padding-left:16px;padding-right:16px}.grid,.evidence,.process,.foot{grid-template-columns:1fr}.hero h1{font-size:3.1rem}}
+</style>
+<link rel="stylesheet" href="mhd-comfort.css?v=20261017-video-only-1">
+<link rel="manifest" href="manifest.webmanifest" type="application/manifest+json">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="MHD">
+<script defer src="app-assets/install.js?v=20261017-jukebox-save-all"></script>
+<link rel="icon" type="image/png" sizes="64x64" href="app-assets/icon-64-large-20261015.png">
+<link rel="apple-touch-icon" sizes="180x180" href="app-assets/icon-180-large-20261015.png">
+</head>
+<body>
+<div class="crisis"><strong>Need immediate crisis support?</strong> In the U.S., call or text <a href="tel:988">988</a>. If there is immediate danger, call <a href="tel:911">911</a>. MHD does not replace professional care.</div>
+<header class="top"><nav class="nav"><a class="brand" href="index.html">Mental Health Discussions</a><div class="navlinks"><a href="index.html">Home</a><a href="roadmap.html">Personal Roadmap</a><a href="programs.html">Programs & Partnerships</a><a href="discuss-evidence.html">Evidence Hub</a></div></nav></header>
+<section class="hero"><div class="wrap">
+<div class="eyebrow">Trust & Standards</div>
+<h1>Useful information needs visible boundaries.</h1>
+<p>MHD is designed to make complicated mental-health information easier to navigate without pretending that a website can replace a clinician, attorney, crisis professional, peer-support relationship, or local community organization. These standards explain how the project should earn trust as it grows.</p>
+</div></section>
+<main>
+<section class="section"><div class="wrap">
+<div class="head"><div><div class="eyebrow">What MHD is</div><h2>A navigation and education layer.</h2></div><p>The strongest MHD pages help visitors understand a question, prepare useful information, identify the right system or professional, and move to the next step.</p></div>
+<div class="grid">
+<div class="card"><span class="label">Education</span><h3>Translate complexity</h3><p>Explain conditions, treatments, medications, rights, systems, and research in plain language while preserving uncertainty and important limitations.</p></div>
+<div class="card"><span class="label">Preparation</span><h3>Organize before the conversation</h3><p>Help visitors prepare timelines, medication lists, observations, questions, goals, records, and decision points before appointments or system interactions.</p></div>
+<div class="card"><span class="label">Navigation</span><h3>Connect the doors</h3><p>Make it easier to move among families, providers, hospitals, insurers, work/school systems, state rules, crisis services, public agencies, and community resources.</p></div>
+</div>
+</div></section>
+
+<section class="section alt"><div class="wrap">
+<div class="head"><div><div class="eyebrow">Evidence labels</div><h2>Not every source proves the same thing.</h2></div><p>MHD should tell visitors what kind of information they are looking at rather than flattening research, policy, professional guidance, and lived experience into one category.</p></div>
+<div class="evidence">
+<div><strong>Established / standard</strong><span>Broadly accepted clinical practice or strong support for a specific use.</span></div>
+<div><strong>Condition-specific</strong><span>Evidence applies to particular diagnoses, populations, or treatment contexts.</span></div>
+<div><strong>Mixed / emerging</strong><span>Research is limited, inconsistent, indirect, or still developing.</span></div>
+<div><strong>System / policy</strong><span>Law, regulation, budgets, administrative data, service research, access, or implementation.</span></div>
+<div><strong>Lived experience</strong><span>Personal or family experience that can illuminate impact but does not establish effectiveness.</span></div>
+</div>
+</div></section>
+
+<section class="section"><div class="wrap">
+<div class="head"><div><div class="eyebrow">Source hierarchy</div><h2>Start as close to the source as practical.</h2></div><p>The best source depends on the question. MHD should prefer authoritative primary or high-quality synthesis sources and clearly identify when a page uses interpretation or secondary reporting.</p></div>
+<div class="grid">
+<div class="card"><span class="label">Clinical / scientific</span><h3>Research and professional guidance</h3><ul><li>Government health agencies and official safety communications</li><li>Peer-reviewed research and systematic reviews</li><li>Professional guidelines and consensus documents when relevant</li><li>Direct links to supporting material where practical</li></ul></div>
+<div class="card"><span class="label">Law / policy</span><h3>Official legal and government sources</h3><ul><li>Statutes, regulations, court or agency materials</li><li>Official state/federal websites</li><li>Budgets, program rules, dockets, notices, and public reports</li><li>Secondary explanations labeled as explanations—not law itself</li></ul></div>
+<div class="card"><span class="label">Experience</span><h3>Stories with the right label</h3><ul><li>Lived experience can show consequences and practical realities</li><li>Stories do not prove that a treatment works</li><li>Personal accounts should protect privacy and avoid false universality</li><li>Opinion should remain distinguishable from evidence</li></ul></div>
+</div>
+</div></section>
+
+<section class="section alt"><div class="wrap">
+<div class="head"><div><div class="eyebrow">Content lifecycle</div><h2>Publish. Review. Correct. Improve.</h2></div><p>A trustworthy resource needs a visible process after publication—not just good intentions at launch.</p></div>
+<div class="process">
+<div class="step"><b>01</b><h3>Define the question</h3><p>State what the page is trying to answer and what it is not designed to answer.</p></div>
+<div class="step"><b>02</b><h3>Use traceable sources</h3><p>Prefer authoritative sources and preserve links so claims can be rechecked later.</p></div>
+<div class="step"><b>03</b><h3>Label limits</h3><p>Make uncertainty, scope, evidence level, jurisdiction, and safety boundaries visible.</p></div>
+<div class="step"><b>04</b><h3>Review and correct</h3><p>Show review dates where feasible and provide a route to report factual, source, accessibility, or wording concerns.</p></div>
+</div>
+</div></section>
+
+<section class="section"><div class="wrap">
+<div class="boundary">
+<div class="eyebrow" style="color:#bfd0c7">Safety boundaries</div><h2>MHD should be helpful without crossing into roles it does not hold.</h2>
+<p>These lines are part of the product—not fine print that disappears when a tool becomes convenient.</p>
+<div class="boundary-grid">
+<div><strong>No diagnosis</strong><span>MHD can explain conditions and symptom patterns but does not determine what diagnosis a visitor has.</span></div>
+<div><strong>No prescribing</strong><span>MHD can explain medication information and questions to ask but does not choose a drug, dose, taper, or treatment plan.</span></div>
+<div><strong>No emergency assessment</strong><span>Immediate danger, overdose, severe medical instability, or inability to stay safe should move to live crisis or emergency support.</span></div>
+<div><strong>No individualized legal advice</strong><span>MHD can explain laws, rights, procedures, and public systems but does not represent a person or give case-specific legal advice.</span></div>
+<div><strong>No invented partnership claims</strong><span>MHD should not imply endorsement, affiliation, clinical review, or joint programming without an actual agreement.</span></div>
+<div><strong>No false certainty</strong><span>When evidence is mixed, a law is jurisdiction-specific, or a system varies locally, the page should say so.</span></div>
+</div>
+<div class="btnrow"><a class="btn primary" href="roadmap.html">Try the Navigation System</a><a class="btn" href="legal.html">Legal & Privacy Policies</a></div>
+</div>
+</div></section>
+
+<section class="section alt"><div class="wrap">
+<div class="head"><div><div class="eyebrow">Partnership standards</div><h2>Complement strong organizations instead of copying them.</h2></div><p>MHD partnerships should make navigation easier while preserving the partner’s own professional, clinical, peer-support, community, or institutional role.</p></div>
+<div class="grid">
+<div class="card"><span class="label">Clear roles</span><h3>Know who is responsible for what</h3><p>MHD provides educational navigation. Partners retain responsibility for their clinical care, peer support, crisis response, employment/school decisions, legal services, or organizational programs.</p></div>
+<div class="card"><span class="label">Transparent status</span><h3>Say whether something is live, pilot-ready, or future</h3><p>Program status should be explicit so ambition is not mistaken for current capacity.</p></div>
+<div class="card"><span class="label">Data restraint</span><h3>Collect less, protect more</h3><p>Future analytics, surveys, or systems research should collect only what is necessary, minimize sensitive data, and establish appropriate privacy and governance before publication.</p></div>
+</div>
+<div class="btnrow"><a class="btn primary" href="programs.html">View Programs & Partnerships</a><a class="btn" href="index.html#contact">Report a correction or discuss a partnership</a></div>
+</div></section>
+</main>
+<footer><div class="foot"><div><div class="footbrand">Mental Health Discussions</div><p>Free mental-health education, navigation, research translation, and practical tools.</p></div><div><h4>Continue</h4><a href="roadmap.html">Personal Roadmap</a><a href="programs.html">Programs & Partnerships</a><a href="discuss-evidence.html">Evidence & Discussion</a></div><div><h4>Policies</h4><a href="legal.html#medical">Medical Disclaimer</a><a href="legal.html#privacy">Privacy</a><a href="legal.html#terms">Terms</a><a href="index.html#contact">Corrections / Contact</a></div></div><div class="fine">These standards describe the intended operating principles of MHD as the project grows. They do not imply external accreditation, clinical certification, nonprofit tax-exempt status, or endorsement by another organization.</div></footer>
+<script src="mhd-comfort.js?v=20261006b"></script>
+</body>
+</html>
