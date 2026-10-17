@@ -1161,3 +1161,36 @@ body .mhd-comfort-panel button:not(.secondary):not(.ghost):hover{
   body button.path::after,body .mhd-assistant-send::after,
   body .mhd-comfort-panel button:not(.secondary):not(.ghost)::after{animation:none!important}
 }
+
+
+/* MHD hero video reliability fix — native YouTube controls only */
+.video#mhdVideo{
+  position:relative!important;
+  width:100%!important;
+  aspect-ratio:16/9!important;
+  min-height:0!important;
+  overflow:hidden!important;
+  background:#000!important;
+  border:0!important;
+  border-left:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  padding:0!important;
+}
+.video#mhdVideo iframe{
+  position:absolute!important;
+  inset:0!important;
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  min-height:0!important;
+  opacity:1!important;
+  visibility:visible!important;
+  pointer-events:auto!important;
+  background:#000!important;
+  border:0!important;
+  border-left:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+}
+.video#mhdVideo .mhd-video-play{display:none!important}
