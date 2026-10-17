@@ -1032,3 +1032,19 @@ html.mhd-universal-header .mhd-contact-action{min-width:40px!important;width:40p
  html.mhd-universal-header .mhd-header-actions .mhd-header-action{display:none!important}
  html.mhd-universal-header .mhd-header-actions .mhd-contact-action{display:inline-flex!important}
 }
+
+html.mhd-universal-header .topbar .nav,
+html.mhd-universal-header .top .nav,
+html.mhd-universal-header .header .headinner{
+  display:flex!important;align-items:center!important;gap:8px!important;
+}
+html.mhd-universal-header .topbar .nav>.brand,
+html.mhd-universal-header .top .nav>.brand,
+html.mhd-universal-header .header .headinner>.wordmark{
+  flex:0 0 auto!important;margin-right:auto!important;
+}
+html.mhd-universal-header .mhd-header-actions{
+  flex:0 1 auto!important;margin-left:auto!important;margin-right:2px!important;
+}
+html.mhd-universal-header .x-mhd-soundbars{margin-left:4px!important}
+html.mhd-universal-header .x-menu-toggle{margin-left:0!important}
