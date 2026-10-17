@@ -104,7 +104,7 @@
     }
     @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
   </style>
-<link rel="stylesheet" href="mhd-comfort.css?v=20261017-hero-locked">
+<link rel="stylesheet" href="mhd-comfort.css?v=20261017-video-only-1">
 <link rel="manifest" href="manifest.webmanifest" type="application/manifest+json">
 
 <meta name="mobile-web-app-capable" content="yes">
@@ -161,7 +161,7 @@
             <div class="mhd-video-kicker">Why this work matters</div>
             <h2 class="mhd-video-title">America is in a mental health crisis. What do we do now?</h2>
             <div class="video" id="mhdVideo" aria-label="Mental health in America video">
-              <iframe id="mhdYouTube" src="https://www.youtube.com/embed/7iDb7PaEszM?start=4&rel=0&playsinline=1&controls=1&modestbranding=1&enablejsapi=1" title="Mental Health in America" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="eager"></iframe><button class="mhd-video-play" id="mhdVideoPlay" type="button">Play video</button>
+              <iframe id="mhdYouTube" src="https://www.youtube.com/embed/7iDb7PaEszM?start=4&autoplay=1&mute=1&rel=0&playsinline=1&controls=0&modestbranding=1&enablejsapi=1&iv_load_policy=3" title="Mental Health in America" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="eager"></iframe><button class="mhd-video-play" id="mhdVideoPlay" type="button">Play video</button>
             </div>
           </div>
         </div>
@@ -449,33 +449,67 @@
 </script>
 
 <script>
-/* LOCKED MHD HERO VIDEO — proven working implementation from 2026-10-05.
-   Preserve this player markup/cue behavior when editing surrounding title or copy.
-   Video: 7iDb7PaEszM | resting/play cue: 4 seconds. */
+/* LOCKED MHD HERO VIDEO
+   Scope: player behavior only. Do not change surrounding title, navigation, or page layout.
+   Video: 7iDb7PaEszM | cue/play point: 4 seconds. */
 window.onYouTubeIframeAPIReady=function(){
-  var frame=document.getElementById("mhdYouTube"),wrap=document.getElementById("mhdVideo"),play=document.getElementById("mhdVideoPlay");
-  if(!frame||!wrap||!window.YT||!YT.Player)return;
+  var wrap=document.getElementById("mhdVideo");
+  var play=document.getElementById("mhdVideoPlay");
+  if(!wrap||!play||!window.YT||!YT.Player)return;
+
+  var cueing=true, cueTimer=null;
+
   try{
     window.mhdHeroPlayer=new YT.Player("mhdYouTube",{events:{
       onReady:function(e){
-        var reveal=function(){wrap.classList.add("mhd-cued")};
+        play.onclick=function(){
+          cueing=false;
+          if(cueTimer)clearTimeout(cueTimer);
+          wrap.classList.add("mhd-cued","mhd-playing");
+          try{
+            e.target.seekTo(4,true);
+            e.target.unMute();
+            e.target.playVideo();
+          }catch(err){}
+        };
+
+        /* Start muted only to load the real 4-second brain frame.
+           If YouTube blocks the preview, the iframe still remains visible/playable. */
         try{
           e.target.mute();
           e.target.seekTo(4,true);
           e.target.playVideo();
-          setTimeout(function(){try{e.target.pauseVideo();e.target.unMute()}catch(err){} reveal()},500);
-          setTimeout(reveal,1500);
-        }catch(err){reveal()}
-        if(play)play.onclick=function(){
-          wrap.classList.add("mhd-playing","mhd-cued");
-          try{e.target.seekTo(4,true);e.target.playVideo()}catch(err){}
-        };
+        }catch(err){
+          wrap.classList.add("mhd-cued");
+        }
+
+        setTimeout(function(){wrap.classList.add("mhd-cued")},1800);
       },
+
       onStateChange:function(e){
-        if(e.data===YT.PlayerState.PLAYING)wrap.classList.add("mhd-playing");
+        if(cueing && e.data===YT.PlayerState.PLAYING){
+          if(cueTimer)clearTimeout(cueTimer);
+          cueTimer=setTimeout(function(){
+            try{
+              e.target.pauseVideo();
+              e.target.unMute();
+            }catch(err){}
+            wrap.classList.add("mhd-cued");
+          },450);
+          return;
+        }
+
+        if(!cueing && e.data===YT.PlayerState.PLAYING){
+          wrap.classList.add("mhd-playing","mhd-cued");
+        }
+        if(!cueing && (e.data===YT.PlayerState.PAUSED || e.data===YT.PlayerState.ENDED)){
+          wrap.classList.remove("mhd-playing");
+        }
       }
     }});
-  }catch(err){wrap.classList.add("mhd-cued")}
+  }catch(err){
+    wrap.classList.add("mhd-cued");
+  }
 };
 </script>
 <script src="https://www.youtube.com/iframe_api"></script>
