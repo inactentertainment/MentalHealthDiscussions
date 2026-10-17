@@ -219,6 +219,14 @@ function init(){
  function syncTheme(){const m=getComputedStyle(document.body).color.match(/[\d.]+/g)||[240,240,240];const light=cfg.slug!=='ie'&&(+m[0]*.2126 + +m[1]*.7152 + +m[2]*.0722)<145;body.style.setProperty('--x-panel',light?'#f1eee7':'#0c100f');body.style.setProperty('--x-text',light?'#262923':'#eee');}
  syncTheme();for(const n of [document.body,document.documentElement])new MutationObserver(syncTheme).observe(n,{attributes:true,attributeFilter:['class','data-theme']});
  addMenu();brandNative();genericPlayer();
+ if(cfg.slug==='MentalHealthDiscussions'){
+   requestAnimationFrame(()=>{
+     const host=$(cfg.header)||$('header')||document.body;
+     const menu=host.querySelector('.x-menu-toggle');
+     const music=host.querySelector('.x-mhd-soundbars');
+     if(music&&menu){host.append(music);host.append(menu);}
+   });
+ }
  // ETP creates its jukebox on demand, so apply the same branding when it appears.
  if(cfg.slug==='examine-the-past-home')new MutationObserver(()=>{if($('.etp-jukebox-card:not(.x-native-panel)'))brandNative();}).observe(document.body,{childList:true,subtree:true});
 }
