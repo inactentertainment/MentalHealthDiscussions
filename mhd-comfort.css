@@ -1194,3 +1194,44 @@ body .mhd-comfort-panel button:not(.secondary):not(.ghost):hover{
   box-shadow:none!important;
 }
 .video#mhdVideo .mhd-video-play{display:none!important}
+
+
+/* Restore proven cued hero-video behavior */
+.video#mhdVideo{
+  position:relative!important;
+  width:100%!important;
+  aspect-ratio:16/9!important;
+  min-height:0!important;
+  overflow:hidden!important;
+  background:transparent!important;
+  border:0!important;
+  border-left:0!important;
+  box-shadow:none!important;
+  padding:0!important;
+}
+.video#mhdVideo iframe{
+  position:absolute!important;
+  inset:0!important;
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  min-height:0!important;
+  opacity:1!important;
+  visibility:visible!important;
+  pointer-events:auto!important;
+  background:#000!important;
+  border:0!important;
+  border-left:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+  transform:none!important;
+  filter:none!important;
+}
+.video#mhdVideo .mhd-video-play{
+  position:absolute!important;
+  left:50%!important;
+  top:50%!important;
+  transform:translate(-50%,-50%)!important;
+  z-index:5!important;
+}
+.video#mhdVideo.mhd-playing .mhd-video-play{display:none!important}
