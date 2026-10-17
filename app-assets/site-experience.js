@@ -127,7 +127,7 @@ async function genericPlayer(){
  panel.insertBefore(divider(cfg.divider),panel.children[1]||null);
  const back=action('‹ Back',()=>goBack());back.hidden=true;const view=el('div','x-player-view');panel.append(back,view);
  const mini=el('div','x-mini');mini.hidden=true;document.body.append(mini);
- const key='ie-'+cfg.slug+'-jukebox-v1';let saved=[];try{const parsed=JSON.parse(localStorage.getItem(key)||'[]');if(Array.isArray(parsed))saved=parsed.filter(t=>t&&(/^[\w-]{11}$/.test(t.videoId||'')||/^[\w-]{10,100}$/.test(t.listId||'')));}catch{}
+ const key='ie-'+cfg.slug+'-jukebox-v1';let saved=[];try{const parsed=JSON.parse(localStorage.getItem(key)||'[]');if(Array.isArray(parsed))saved=parsed.filter(t=>t&&(/^[\w-]{11}$/.test(t.videoId||'')||/^[\w-]{10,100}$/.test(t.listId||'')||/^https?:\/\//.test(t.externalUrl||'')));}catch{}
  let stack=[],screen={type:'root'},queue=[],current=null,index=-1,yt=null,ready=false,epoch=0,shuffle=false,repeat=false,audio=null,playing=false,apiPromise=null,local=[],timer;
  const status=el('p','x-status');status.setAttribute('role','status');
  function stopOther(){all('audio').forEach(a=>{if(a!==audio&&!a.paused)a.pause();});all('iframe[src*="youtube"]').forEach(f=>{if(!panel.contains(f))f.contentWindow?.postMessage(JSON.stringify({event:'command',func:'pauseVideo',args:[]}),'*');});}
@@ -169,7 +169,7 @@ async function genericPlayer(){
      const track=action(label,()=>{if(t.externalUrl){window.open(t.externalUrl,'_blank','noopener');return;}queue=screen.items.filter(x=>!x.externalUrl);index=queue.indexOf(t);navigate({type:'player'});play(t);},'x-track');
      if(t.externalUrl)track.title='Opens trusted resource or YouTube collection in a new tab';
      row.append(track);
-     if(t.videoId){const exists=saved.some(x=>x.videoId===t.videoId);const save=action(exists?'✓':'+',()=>{saved=exists?saved.filter(x=>x.videoId!==t.videoId):[...saved,t];persist();render();},'x-save');save.setAttribute('aria-label',(exists?'Remove from':'Save to')+' My playlist');row.append(save);}
+     if(t.videoId||t.listId||t.externalUrl){const same=x=>(t.videoId&&x.videoId===t.videoId)||(t.listId&&x.listId===t.listId)||(t.externalUrl&&x.externalUrl===t.externalUrl);const exists=saved.some(same);const save=action(exists?'✓':'+',()=>{saved=exists?saved.filter(x=>!same(x)):[...saved,t];persist();render();},'x-save');save.setAttribute('aria-label',(exists?'Remove from':'Save to')+' My playlist');row.append(save);}
      view.append(row);
    });view.append(status);return;
   }
