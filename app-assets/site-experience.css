@@ -47,3 +47,34 @@ body[data-site-app-installed] footer button.site-app-footer-text.site-app-footer
  .x-mini{bottom:70px;right:8px;max-width:calc(100vw - 16px)}
  .x-mini-title{max-width:115px}
 }
+
+
+/* Mental Health Discussions — compact universal header/menu */
+body[data-site-slug="MentalHealthDiscussions"] .x-menu-toggle{
+  width:40px!important;height:40px!important;padding:9px!important;
+  background:var(--mhd-deep,#3E5049)!important;color:#F7F1E6!important;
+  border-color:var(--mhd-deep,#3E5049)!important;border-radius:12px!important;
+}
+body[data-site-slug="MentalHealthDiscussions"] .x-menu-toggle svg{stroke:currentColor!important}
+body[data-site-slug="MentalHealthDiscussions"] dialog.x-menu{
+  border-color:var(--mhd-accent,#587466)!important;background:var(--mhd-surface,#FAF6EE)!important;color:var(--mhd-text,#39413E)!important;
+}
+body[data-site-slug="MentalHealthDiscussions"] .x-menu-items{gap:2px!important}
+body[data-site-slug="MentalHealthDiscussions"] .x-menu-item{
+  min-height:38px!important;padding:8px 10px!important;gap:9px!important;
+  font-size:13px!important;line-height:1.25!important;
+}
+body[data-site-slug="MentalHealthDiscussions"] .x-menu-item svg{stroke:var(--mhd-deep,#3E5049)!important;width:18px!important;height:18px!important}
+body[data-site-slug="MentalHealthDiscussions"] .x-mhd-soundbars{
+  width:40px!important;height:40px!important;padding:8px!important;gap:3px!important;
+  background:var(--mhd-deep,#3E5049)!important;color:#F7F1E6!important;border-color:var(--mhd-deep,#3E5049)!important;
+}
+body[data-site-slug="MentalHealthDiscussions"] .x-mhd-soundbars::after{display:none!important}
+body[data-site-slug="MentalHealthDiscussions"] .x-mhd-soundbars span{
+  width:3px;height:16px;border-radius:3px;background:currentColor;display:block;transform-origin:center bottom;
+  animation:mhd-soundbar 1.05s ease-in-out infinite;
+}
+body[data-site-slug="MentalHealthDiscussions"] .x-mhd-soundbars span:nth-child(2){animation-delay:.16s}
+body[data-site-slug="MentalHealthDiscussions"] .x-mhd-soundbars span:nth-child(3){animation-delay:.32s}
+@keyframes mhd-soundbar{0%,100%{transform:scaleY(.45)}50%{transform:scaleY(1)}}
+@media(prefers-reduced-motion:reduce){body[data-site-slug="MentalHealthDiscussions"] .x-mhd-soundbars span{animation:none!important}}
