@@ -1161,12 +1161,14 @@ body .mhd-comfort-panel button:not(.secondary):not(.ghost):hover{
   outline:0!important;
   box-shadow:none!important;
   background:transparent!important;
-  opacity:0!important;
-  transition:opacity .28s ease!important;
+  opacity:1!important;
+  visibility:visible!important;
+  transition:none!important;
   transform:none!important;
   filter:none!important;
+  pointer-events:none!important;
 }
-.video#mhdVideo.mhd-cued iframe{opacity:1!important}
+.video#mhdVideo.mhd-playing iframe{pointer-events:auto!important}
 .mhd-video-play{
   position:absolute!important;
   left:50%!important;
