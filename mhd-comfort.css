@@ -1321,3 +1321,53 @@ body .mhd-comfort-panel button:not(.secondary):not(.ghost):hover{
   .mhd-video-column{order:-1!important}
   .mhd-video-title{font-size:1.2rem!important}
 }
+
+
+/* Final hero-video cleanup: borderless, blended, smaller title */
+.mhd-video-column{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  padding:0!important;
+}
+.mhd-video-kicker{
+  font-size:.56rem!important;
+  letter-spacing:.12em!important;
+  margin-bottom:3px!important;
+}
+.mhd-video-title{
+  font-size:clamp(1.02rem,1.55vw,1.32rem)!important;
+  line-height:1.12!important;
+  margin-bottom:10px!important;
+  max-width:520px!important;
+}
+.video#mhdVideo{
+  position:relative!important;
+  width:100%!important;
+  aspect-ratio:16/9!important;
+  min-height:0!important;
+  background:transparent!important;
+  border:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+  overflow:hidden!important;
+  padding:0!important;
+}
+.video#mhdVideo,
+.video#mhdVideo *{
+  border-color:transparent!important;
+}
+.video#mhdVideo iframe{
+  position:absolute!important;
+  inset:-1px!important;
+  width:calc(100% + 2px)!important;
+  height:calc(100% + 2px)!important;
+  min-height:0!important;
+  border:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+  background:transparent!important;
+}
+.video#mhdVideo.mhd-cued iframe{
+  opacity:1!important;
+}
