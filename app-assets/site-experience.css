@@ -78,3 +78,51 @@ body[data-site-slug="MentalHealthDiscussions"] .x-mhd-soundbars span:nth-child(2
 body[data-site-slug="MentalHealthDiscussions"] .x-mhd-soundbars span:nth-child(3){animation-delay:.32s}
 @keyframes mhd-soundbar{0%,100%{transform:scaleY(.45)}50%{transform:scaleY(1)}}
 @media(prefers-reduced-motion:reduce){body[data-site-slug="MentalHealthDiscussions"] .x-mhd-soundbars span{animation:none!important}}
+
+
+/* MHD menu identity + simpler controls */
+body[data-site-slug="MentalHealthDiscussions"] .x-menu .x-dialog-heading{
+  align-items:flex-start!important;
+}
+body[data-site-slug="MentalHealthDiscussions"] .x-mhd-menu-wordmark{
+  font-family:"Segoe Script","Snell Roundhand","Brush Script MT","Lucida Handwriting",cursive!important;
+  font-size:1rem!important;line-height:1.15!important;font-weight:400!important;
+  color:var(--mhd-deep,#3E5049)!important;margin:0 0 2px!important;white-space:nowrap;
+}
+body[data-site-slug="MentalHealthDiscussions"] .x-menu .x-dialog-heading h2{
+  font:500 20px/1.1 Georgia,serif!important;margin:0!important;color:var(--mhd-text,#39413E)!important;
+}
+body[data-site-slug="MentalHealthDiscussions"] .x-mhd-menu-close{
+  background:transparent!important;background-image:none!important;border:0!important;
+  box-shadow:none!important;color:var(--mhd-text,#39413E)!important;-webkit-text-fill-color:currentColor!important;
+  width:30px!important;min-width:30px!important;height:30px!important;min-height:30px!important;padding:0!important;
+  font:400 26px/1 Georgia,serif!important;animation:none!important;overflow:visible!important;
+}
+body[data-site-slug="MentalHealthDiscussions"] .x-mhd-menu-close::after,
+body[data-site-slug="MentalHealthDiscussions"] .x-mhd-menu-close::before{display:none!important}
+body[data-site-slug="MentalHealthDiscussions"] .x-mhd-menu-close:hover,
+body[data-site-slug="MentalHealthDiscussions"] .x-mhd-menu-close:focus-visible{
+  background:transparent!important;box-shadow:none!important;transform:none!important;outline:1px solid var(--mhd-border,#C7D0CA)!important;outline-offset:2px!important;
+}
+body[data-site-slug="MentalHealthDiscussions"] .x-menu-toggle,
+body[data-site-slug="MentalHealthDiscussions"] .x-mhd-soundbars{position:relative!important;overflow:visible!important;flex:0 0 auto!important}
+body[data-site-slug="MentalHealthDiscussions"] .x-menu-toggle::before,
+body[data-site-slug="MentalHealthDiscussions"] .x-mhd-soundbars::before{
+  content:attr(data-tip);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);
+  background:var(--mhd-deep,#3E5049);color:#F7F1E6;padding:5px 8px;border-radius:7px;
+  font:600 11px/1 Georgia,serif;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .16s ease;
+  box-shadow:0 4px 12px rgba(0,0,0,.18);z-index:2147482000;
+}
+body[data-site-slug="MentalHealthDiscussions"] .x-menu-toggle:hover::before,
+body[data-site-slug="MentalHealthDiscussions"] .x-menu-toggle:focus-visible::before,
+body[data-site-slug="MentalHealthDiscussions"] .x-mhd-soundbars:hover::before,
+body[data-site-slug="MentalHealthDiscussions"] .x-mhd-soundbars:focus-visible::before{opacity:1}
+body[data-site-slug="MentalHealthDiscussions"] .x-mhd-soundbars{
+  background:transparent!important;background-image:none!important;border:0!important;box-shadow:none!important;
+  color:var(--mhd-deep,#3E5049)!important;width:34px!important;height:40px!important;padding:8px 5px!important;
+}
+body[data-site-slug="MentalHealthDiscussions"] .x-mhd-soundbars:hover,
+body[data-site-slug="MentalHealthDiscussions"] .x-mhd-soundbars:focus-visible{
+  background:transparent!important;box-shadow:none!important;outline:1px solid var(--mhd-border,#C7D0CA)!important;outline-offset:2px!important;
+}
+body[data-site-slug="MentalHealthDiscussions"] .x-mhd-soundbars span{background:var(--mhd-deep,#3E5049)!important}
