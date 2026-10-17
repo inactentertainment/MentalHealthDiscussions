@@ -58,8 +58,16 @@ function brandNative(){
 }
 async function genericPlayer(){
  if(!cfg.generic)return;
- const catalog=await fetch(asset('media-library.json')).then(r=>{if(!r.ok)throw Error();return r.json();}).catch(()=>({music:[],motivation:[],movies:[],quiet:[],failed:true}));
- const panel=dialog('x-jukebox','Jukebox');panel.id='site-shared-jukebox';panel.insertBefore(divider(cfg.divider),panel.children[1]||null);
+ const catalog=await fetch(asset('media-library.json?v=20261017-mhd')).then(r=>{if(!r.ok)throw Error();return r.json();}).catch(()=>({music:[],motivation:[],movies:[],meditation:[],podcasts:[],quiet:[],failed:true}));
+ const panel=dialog('x-jukebox','Jukebox');panel.id='site-shared-jukebox';
+ if(cfg.slug==='MentalHealthDiscussions'){
+   panel.classList.add('x-mhd-jukebox');
+   const head=panel.querySelector('.x-dialog-heading'),copy=head?.querySelector('div'),img=head?.querySelector('img'),close=head?.querySelector('button:last-child');
+   img?.remove();
+   if(copy){copy.replaceChildren(el('h2','','Mental Health Discussions Jukebox'));}
+   if(head&&close){const minimize=action('—',()=>panel.close());minimize.classList.add('x-minimize');minimize.setAttribute('aria-label','Minimize player');minimize.title='Minimize player';head.insertBefore(minimize,close);}
+ }
+ panel.insertBefore(divider(cfg.divider),panel.children[1]||null);
  const back=action('‹ Back',()=>goBack());back.hidden=true;const view=el('div','x-player-view');panel.append(back,view);
  const mini=el('div','x-mini');mini.hidden=true;document.body.append(mini);
  const key='ie-'+cfg.slug+'-jukebox-v1';let saved=[];try{const parsed=JSON.parse(localStorage.getItem(key)||'[]');if(Array.isArray(parsed))saved=parsed.filter(t=>t&&(/^[\w-]{11}$/.test(t.videoId||'')||/^[\w-]{10,100}$/.test(t.listId||'')));}catch{}
@@ -77,6 +85,19 @@ async function genericPlayer(){
  function render(){view.replaceChildren();back.hidden=screen.type==='root';status.textContent='';
   if(screen.type==='root'){
    const grid=el('div','x-root-grid');const siteTracks=nativeTracks();
+   if(cfg.slug==='MentalHealthDiscussions'){
+     grid.append(
+       action('Music',()=>navigate({type:'genres'})),
+       action('Motivation',()=>navigate({type:'list',title:'Mental Health Motivation',items:catalog.motivation||[]})),
+       action('Movies',()=>navigate({type:'list',title:'Mental Health Films & Trailers',items:catalog.movies||[]})),
+       action('Meditation',()=>navigate({type:'list',title:'Meditation · Mindfulness · Grounding',items:catalog.meditation||[]}))
+     );
+     if(catalog.failed)status.textContent='The media collection could not load. Refresh to try again.';
+     view.append(grid,rootPlaylists());
+     const podcasts=action('Mental Health Podcasts',()=>navigate({type:'list',title:'Mental Health Podcasts',items:catalog.podcasts||[]}));
+     podcasts.classList.add('x-wide','x-podcasts');
+     view.append(podcasts,status);return;
+   }
    if(siteTracks.length)grid.append(action(cfg.slug==='ie-casino-games'?'Casino Tunes':'Site soundtrack',()=>navigate({type:'list',title:cfg.name+' music',items:siteTracks})));
    if(cfg.slug==='livefit-info'){grid.append(action('Workout Music',()=>navigate({type:'genres'})),action('Recovery Music',()=>navigate({type:'list',title:'Recovery Music',items:catalog.quiet})),action('Quiet Listening',()=>navigate({type:'list',title:'Quiet Listening',items:catalog.quiet})));}else{grid.append(action('Music',()=>navigate({type:'genres'})),action('Motivation',()=>navigate({type:'list',title:'Motivation',items:catalog.motivation})),action('Movies',()=>navigate({type:'list',title:'Movie trailers',items:catalog.movies})));}
    if(catalog.failed)status.textContent='The media collection could not load. Refresh to try again, or use a site soundtrack or your own audio.';view.append(grid,rootPlaylists());const explore=el('a','x-action x-wide','Explore '+cfg.name);explore.href=new URL('../',base).href;view.append(explore,status);return;
@@ -86,14 +107,23 @@ async function genericPlayer(){
   }
   if(screen.type==='list'){
    view.append(el('h3','',screen.title));if(!screen.items.length)view.append(el('p','','Save a selection or add local audio in My playlists.'));
-   screen.items.forEach((t,i)=>{const row=el('div','x-row');row.append(action(t.artist+' · '+t.title,()=>{queue=screen.items;index=i;navigate({type:'player'});play(t);},'x-track'));if(t.videoId){const exists=saved.some(x=>x.videoId===t.videoId);const save=action(exists?'✓':'+',()=>{saved=exists?saved.filter(x=>x.videoId!==t.videoId):[...saved,t];persist();render();},'x-save');save.setAttribute('aria-label',(exists?'Remove from':'Save to')+' My playlist');row.append(save);}view.append(row);});view.append(status);return;
+   screen.items.forEach((t,i)=>{const row=el('div','x-row');
+     const label=(t.artist?t.artist+' · ':'')+t.title;
+     const track=action(label,()=>{if(t.externalUrl){window.open(t.externalUrl,'_blank','noopener');return;}queue=screen.items.filter(x=>!x.externalUrl);index=queue.indexOf(t);navigate({type:'player'});play(t);},'x-track');
+     if(t.externalUrl)track.title='Opens trusted resource or YouTube collection in a new tab';
+     row.append(track);
+     if(t.videoId){const exists=saved.some(x=>x.videoId===t.videoId);const save=action(exists?'✓':'+',()=>{saved=exists?saved.filter(x=>x.videoId!==t.videoId):[...saved,t];persist();render();},'x-save');save.setAttribute('aria-label',(exists?'Remove from':'Save to')+' My playlist');row.append(save);}
+     view.append(row);
+   });view.append(status);return;
   }
   if(screen.type==='player'){drawPlayer();}
  }
  function api(){if(window.YT?.Player)return Promise.resolve(window.YT);if(apiPromise)return apiPromise;apiPromise=new Promise((resolve,reject)=>{const old=window.onYouTubeIframeAPIReady;const timeout=setTimeout(()=>{apiPromise=null;reject(Error('Video controls could not connect. Try again.'));},12000);window.onYouTubeIframeAPIReady=()=>{old?.();clearTimeout(timeout);resolve(window.YT);};if(!document.querySelector('script[src*="youtube.com/iframe_api"]')){const s=el('script');s.src='https://www.youtube.com/iframe_api';document.head.append(s);}});return apiPromise;}
  function pause(){if(audio)audio.pause();try{yt?.pauseVideo();}catch{}playing=false;sync();}
  function stop(){pause();if(audio)try{audio.currentTime=0;}catch{}try{yt?.stopVideo();}catch{}sync();}
- function sync(){const b=panel.querySelector('[data-x-play]');if(b)b.textContent=playing?'Pause':'Play';mini.hidden=panel.open||!playing;mini.replaceChildren(action('Pause',pause),action('Open',()=>{if(!panel.open)panel.showModal();mini.hidden=true;}),action('Stop',stop));}
+ function sync(){const b=panel.querySelector('[data-x-play]');if(b)b.textContent=playing?'Pause':'Play';mini.hidden=panel.open||!playing;
+   const now=current?el('span','x-mini-title',current.title):null;
+   mini.replaceChildren(...(now?[now]:[]),action('Pause',pause),action('Open',()=>{if(!panel.open)panel.showModal();mini.hidden=true;}),action('Stop',stop));}
  function drawPlayer(){
   view.append(el('h3','',current?current.artist+' · '+current.title:'Loading selection…'));
   const video=el('div','x-video');video.id='x-media-video';view.append(video);
