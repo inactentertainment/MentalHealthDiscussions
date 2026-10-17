@@ -157,8 +157,12 @@
             <p>Mental health can feel complicated. This site is being built to make the information, next steps, family questions, research and system issues easier to understand—without putting essential information behind a paywall.</p>
             <div class="hero-actions"><button class="primary" onclick="restartGuide()">Guide me to the right place</button><button class="outline" onclick="scrollToId('understand')">Explore everything</button></div>
           </div>
-          <div class="video" id="mhdVideo" aria-label="Mental health in America video">
-            <iframe id="mhdYouTube" src="https://www.youtube.com/embed/7iDb7PaEszM?start=4&rel=0&playsinline=1&controls=1&modestbranding=1&enablejsapi=1" title="Mental Health in America" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="eager"></iframe><button class="mhd-video-play" id="mhdVideoPlay" type="button">Play video</button>
+          <div class="mhd-video-column">
+            <div class="mhd-video-kicker">Why this work matters</div>
+            <h2 class="mhd-video-title">America is in a mental health crisis. What do we do now?</h2>
+            <div class="video" id="mhdVideo" aria-label="Mental health in America video">
+              <iframe id="mhdYouTube" src="https://www.youtube.com/embed/7iDb7PaEszM?start=4&rel=0&playsinline=1&controls=1&modestbranding=1&enablejsapi=1" title="Mental Health in America" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="eager"></iframe><button class="mhd-video-play" id="mhdVideoPlay" type="button">Play video</button>
+            </div>
           </div>
         </div>
       </section>
@@ -284,7 +288,7 @@
       <div><div class="wordmark wordmark-footer">Mental Health Discussions</div><div class="footer-copyright">© <span class="footerYear"></span> Mental Health Discussions</div><p class="footer-copy">An independent mental-health education project being built to keep useful public information free and easier to navigate.</p></div>
       <div class="footer-col"><h4>Project</h4><button onclick="openModal('about')">About</button><button onclick="openModal('funding')">Funding & Transparency</button><button onclick="openModal('nonprofit')">Future 501(c)(3) Roadmap</button><button onclick="openModal('editorial')">Editorial Standards</button></div>
       <div class="footer-col"><h4>Legal</h4><button onclick="openModal('medical')">Medical Disclaimer</button><button onclick="openModal('privacy')">Privacy</button><button onclick="openModal('terms')">Terms of Use</button><button onclick="openModal('affiliate')">Affiliate Disclosure</button><button onclick="openModal('accessibility')">Accessibility</button></div>
-      <div class="footer-col"><h4>Help</h4><button onclick="showHub('crisis')">Crisis Resources</button><a href="#contact">Contact</a><a href="https://www.youtube.com/@MentalHealthdiscussions/videos" target="_blank" rel="noopener">YouTube</a><a class="footer-support" href="support.html">Help Keep MHD Free</a></div>
+      <div class="footer-col"><h4>Help</h4><button onclick="showHub('crisis')">Crisis Resources</button><a href="#contact">Contact</a><a href="https://www.youtube.com/@MentalHealthdiscussions/videos" target="_blank" rel="noopener">YouTube</a><a class="footer-support" href="support.html">Support MHD</a></div>
     </div>
     <div class="fineprint">© <span id="year"></span> Mental Health Discussions. <b>Current status:</b> not a 501(c)(3) nonprofit organization. Nothing on this prototype should be interpreted as a tax-deductible charitable solicitation. Target nonprofit planning language is clearly marked as future-facing.</div>
   </footer>
