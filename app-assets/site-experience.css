@@ -32,3 +32,18 @@ body footer button.site-app-footer-text.site-app-footer-text.site-app-footer-tex
 body footer button.site-app-footer-text.site-app-footer-text.site-app-footer-text.site-app-footer-text:is(:hover,:focus-visible){background:none!important;background-image:none!important;box-shadow:none!important;animation:none!important;transform:none!important;translate:none!important;text-decoration:none!important}
 body footer button.site-app-footer-text.site-app-footer-text.site-app-footer-text.site-app-footer-text::before,body footer button.site-app-footer-text.site-app-footer-text.site-app-footer-text.site-app-footer-text::after{content:none!important;display:none!important}
 body[data-site-app-installed] footer button.site-app-footer-text.site-app-footer-text.site-app-footer-text.site-app-footer-text{display:none!important}
+
+/* MHD jukebox refinement */
+.x-mhd-jukebox .x-dialog-heading{align-items:center}
+.x-mhd-jukebox .x-dialog-heading>div{min-width:0}
+.x-mhd-jukebox .x-dialog-heading h2{font-size:21px;line-height:1.15;margin:0;white-space:normal}
+.x-mhd-jukebox .x-dialog-heading .x-minimize,
+.x-mhd-jukebox .x-dialog-heading .x-minimize + .x-action{width:34px;min-width:34px;height:34px;padding:0;flex:0 0 34px}
+.x-mhd-jukebox .x-podcasts{justify-content:center!important;font-weight:700}
+.x-mini{display:flex;align-items:center;gap:5px;flex-wrap:wrap;max-width:min(330px,calc(100vw - 24px))}
+.x-mini-title{font:12px/1.25 Georgia,serif;max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:0 5px}
+@media(max-width:520px){
+ .x-mhd-jukebox .x-dialog-heading h2{font-size:18px}
+ .x-mini{bottom:70px;right:8px;max-width:calc(100vw - 16px)}
+ .x-mini-title{max-width:115px}
+}
