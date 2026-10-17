@@ -169,3 +169,34 @@ body[data-site-slug="MentalHealthDiscussions"] .x-mhd-menu-close{
 }
 body[data-site-slug="MentalHealthDiscussions"] .x-mhd-menu-close::before,
 body[data-site-slug="MentalHealthDiscussions"] .x-mhd-menu-close::after{display:none!important}
+
+
+/* MHD jukebox uses the same dark-green button language */
+body[data-site-slug="MentalHealthDiscussions"] .x-jukebox .x-action,
+body[data-site-slug="MentalHealthDiscussions"] .x-jukebox button,
+body[data-site-slug="MentalHealthDiscussions"] .x-mini .x-action{
+  position:relative!important;overflow:hidden!important;
+  background:linear-gradient(135deg,#2E443B 0%,#3E5A4E 52%,#294036 100%)!important;
+  background-image:linear-gradient(135deg,#2E443B 0%,#3E5A4E 52%,#294036 100%)!important;
+  color:#F8F5EE!important;-webkit-text-fill-color:#F8F5EE!important;
+  border:1px solid #506D60!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 5px 15px rgba(33,52,45,.16)!important;
+}
+body[data-site-slug="MentalHealthDiscussions"] .x-jukebox .x-action::after,
+body[data-site-slug="MentalHealthDiscussions"] .x-mini .x-action::after{
+  content:""!important;position:absolute!important;inset:-55% auto -55% -65%!important;width:34%!important;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.32),transparent)!important;
+  transform:skewX(-20deg)!important;animation:x-shine 6.2s ease-in-out infinite!important;pointer-events:none!important;
+}
+body[data-site-slug="MentalHealthDiscussions"] .x-jukebox .x-action:hover,
+body[data-site-slug="MentalHealthDiscussions"] .x-jukebox button:hover,
+body[data-site-slug="MentalHealthDiscussions"] .x-mini .x-action:hover{
+  animation:x-touch .48s ease!important;transform:translateY(-1px)!important;
+}
+body[data-site-slug="MentalHealthDiscussions"] .x-jukebox .x-dialog-heading .x-action,
+body[data-site-slug="MentalHealthDiscussions"] .x-jukebox .x-minimize{
+  min-width:34px!important;width:34px!important;height:34px!important;padding:0!important;border-radius:999px!important;
+}
+body[data-site-slug="MentalHealthDiscussions"] .x-root-grid .x-action{
+  min-height:44px!important;border-radius:12px!important;
+}
