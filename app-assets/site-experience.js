@@ -19,6 +19,52 @@ function addMenu(){
  const menu=dialog('x-menu','Menu'),items=el('nav','x-menu-items');items.setAttribute('aria-label',cfg.name+' navigation');menu.append(items);menu.addEventListener('close',()=>{all('.x-menu-toggle').forEach(b=>b.setAttribute('aria-expanded','false'));});
  function refresh(){
   items.replaceChildren();const seen=new Set(),members=[];
+  if(cfg.slug==='MentalHealthDiscussions'){
+   const icons={
+    guide:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="8"/></svg>',
+    home:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5V21h-6v-6H9v6H3z"/></svg>',
+    understand:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 22h4M8.5 14.5C6.9 13.3 6 11.5 6 9.5A6 6 0 0 1 18 9.5c0 2-.9 3.8-2.5 5-1 .8-1.5 1.6-1.5 2.5h-4c0-.9-.5-1.7-1.5-2.5z"/></svg>',
+    tools:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h16"/><circle cx="8" cy="5" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="10" cy="19" r="2"/></svg>',
+    care:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.4-7 10-7 10z"/></svg>',
+    family:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 21c.4-4.2 2.3-6.5 5.5-6.5S13.1 16.8 13.5 21M14 21c.2-3 1.4-4.8 3.8-4.8 2.2 0 3.5 1.6 3.7 4.8"/></svg>',
+    life:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M6 20V9h12v11M9 9V5h6v4M9 14h2M13 14h2"/></svg>',
+    discuss:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg>',
+    book:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6a4 4 0 0 1 4 4v12a4 4 0 0 0-4-4H4z"/><path d="M20 4h-6a4 4 0 0 0-4 4v12a4 4 0 0 1 4-4h6z"/></svg>',
+    med:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h8v16H8z"/><path d="M10 8h4M12 6v4"/></svg>',
+    treatment:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M12 4v16"/><circle cx="12" cy="12" r="9"/></svg>',
+    appointment:'<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18M8 15h3M13 15h3"/></svg>',
+    crisis:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.8 20h18.4z"/><path d="M12 9v5M12 17h.01"/></svg>',
+    law:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 7h14M7 7l-4 7h8zM17 7l-4 7h8zM7 21h10"/></svg>',
+    change:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17 17 4l3 3L7 20H4z"/><path d="M14 7l3 3"/></svg>',
+    contact:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3z"/><path d="m3 6 9 7 9-7"/></svg>',
+    install:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m-4-4 4 4 4-4M5 15v5h14v-5"/></svg>'
+   };
+   const add=(label,href,key,handler)=>{
+    const b=el(href?'a':'button','x-menu-item');if(href)b.href=href;else b.type='button';
+    b.innerHTML=(icons[key]||icons.tools)+'<span>'+label+'</span>';
+    b.addEventListener('click',e=>{if(handler){e.preventDefault();menu.close();handler();}else menu.close();});
+    items.append(b);
+   };
+   add('Guide Me',null,'guide',()=>{if(typeof window.restartGuide==='function')window.restartGuide();else location.href='index.html?guide=1';});
+   add('Start Here','index.html#start','home');
+   add('Understand','index.html#understand','understand');
+   add('Research & Tools','tools.html','tools');
+   add('Find Care','find-care.html','care');
+   add('Conditions & Symptoms','condition-guide.html','understand');
+   add('Glossary','glossary.html','book');
+   add('Medication','medication-guide.html','med');
+   add('Treatment & Therapy','treatment-guide.html','treatment');
+   add('Appointment Prep','appointment-builder.html','appointment');
+   add('Family & Caregivers','family-caregiver.html','family');
+   add('Life & Daily Living','life-guide.html','life');
+   add('Crisis, Hospital & Legal','crisis-legal.html','crisis');
+   add('State Law','state-law.html','law');
+   add('Change & Advocacy','advocacy-guide.html','change');
+   add('Discuss & Evidence','discuss-evidence.html','discuss');
+   add('Contact','index.html#contact','contact');
+   add('Install Web App',null,'install',()=>window.siteInstallApp?.());
+   return;
+  }
   for(const source of sources)for(const n of source.querySelectorAll('a[href],button')){
    if(n.closest('.site-app-button')||n.matches('.site-app-button,.x-menu-toggle,.drop-toggle')||n.matches(cfg.mediaTrigger||'[data-no-media]')||/theme|sound|music|light|announcement/i.test(n.id+' '+n.getAttribute('data-etp-action')))continue;
    const label=n.getAttribute('data-label')||n.querySelector('.label,.nav-label,.wdw-sr-only')?.textContent||n.closest('.etp-nav-item')?.querySelector('.etp-tip')?.textContent||n.getAttribute('aria-label')||n.querySelector('span:last-child')?.textContent||n.textContent;
@@ -40,7 +86,7 @@ function addMenu(){
  // The Basketball Brilliance entry screen intentionally has no header.
  if(cfg.slug==='basketball-brilliance'&&$('#entryStage')){const dock=el('div','x-entry-menu');dock.style.cssText='position:absolute;left:12px;top:12px;z-index:6';dock.append(toggle());$('#entryStage').append(dock);}
  // Keep install access outside the navigation containers that were collapsed.
- const top=$('.site-app-desktop');if(top&&!host.contains(top))host.insertBefore(top,host.lastElementChild);
+ const top=$('.site-app-desktop');if(top&&cfg.slug!=='MentalHealthDiscussions'&&!host.contains(top))host.insertBefore(top,host.lastElementChild);
 }
 function brandNative(){
  const panel=$(cfg.nativePanel||'[data-no-native]');if(!panel)return;
@@ -142,7 +188,13 @@ async function genericPlayer(){
  panel.addEventListener('close',sync);const updateClock=()=>{const seek=panel.querySelector('[data-x-seek]');if(!seek)return;let duration=0,time=0;try{duration=audio?audio.duration:ready?yt.getDuration():0;time=audio?audio.currentTime:ready?yt.getCurrentTime():0;}catch{}seek.disabled=!Number.isFinite(duration)||duration<=0;seek.max=String(Number.isFinite(duration)?duration:1);if(document.activeElement!==seek)seek.value=String(time||0);};timer=setInterval(updateClock,750);
  function open(){if(current&&playing&&screen.type==='player'){if(!panel.open)panel.showModal();mini.hidden=true;return;}stack=[];screen={type:'root'};render();if(!panel.open)panel.showModal();mini.hidden=true;}
  document.addEventListener('click',e=>{const trigger=e.target.closest?.(cfg.mediaTrigger||'[data-no-media]');if(trigger){e.preventDefault();e.stopImmediatePropagation();open();}},true);
- if(!$(cfg.mediaTrigger||'[data-no-media]')){const b=action('♫',open);b.setAttribute('aria-label','Open '+cfg.name+' Jukebox');($(cfg.header)||$('header')||document.body).append(b);}
+ if(!$(cfg.mediaTrigger||'[data-no-media]')){
+  const b=action('',open);b.setAttribute('aria-label','Open '+cfg.name+' Jukebox');b.title='Jukebox';
+  if(cfg.slug==='MentalHealthDiscussions'){
+   b.classList.add('x-mhd-soundbars');b.innerHTML='<span></span><span></span><span></span>';
+  }else b.textContent='♫';
+  ($(cfg.header)||$('header')||document.body).append(b);
+ }
  all(cfg.replacePanel||'[data-no-panel]').forEach(n=>{n.classList.add('x-hidden-nav');n.style.setProperty('display','none','important');});
  window.addEventListener('pagehide',()=>{clearInterval(timer);stop();epoch++;try{yt?.destroy();}catch{}yt=null;ready=false;local.forEach(t=>URL.revokeObjectURL(t.src));local=[];});
  window.addEventListener('pageshow',e=>{if(e.persisted){stack=[];screen={type:'root'};queue=queue.filter(t=>!t.local);if(current?.local)current=null;render();timer=setInterval(updateClock,750);}});
