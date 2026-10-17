@@ -17,6 +17,17 @@ function addMenu(){
  if(!sources.length)return;
  const host=$(cfg.header)||sources[0].parentElement;
  const menu=dialog('x-menu','Menu'),items=el('nav','x-menu-items');items.setAttribute('aria-label',cfg.name+' navigation');menu.append(items);menu.addEventListener('close',()=>{all('.x-menu-toggle').forEach(b=>b.setAttribute('aria-expanded','false'));});
+ if(cfg.slug==='MentalHealthDiscussions'){
+   const head=menu.querySelector('.x-dialog-heading'),img=head?.querySelector('img'),copy=head?.querySelector('div'),close=head?.querySelector('button:last-child');
+   img?.remove();
+   if(copy){
+     copy.replaceChildren(el('div','x-mhd-menu-wordmark','Mental Health Discussions'),el('h2','','Menu'));
+   }
+   if(close){
+     close.classList.add('x-mhd-menu-close');
+     close.textContent='×';
+   }
+ }
  function refresh(){
   items.replaceChildren();const seen=new Set(),members=[];
   if(cfg.slug==='MentalHealthDiscussions'){
@@ -81,7 +92,7 @@ function addMenu(){
  all(cfg.preserve||'[data-no-preserve]').forEach(n=>{if(sources.some(s=>s.contains(n)))host.append(n);});
  sources.forEach(n=>{n.classList.add('x-hidden-nav');n.style.setProperty('display','none','important');new MutationObserver(refresh).observe(n,{childList:true,subtree:true});});refresh();
  all(cfg.oldMenuTriggers||'[data-no-old-menu]').forEach(n=>{n.classList.add('x-hidden-nav');n.style.setProperty('display','none','important');});
- function toggle(){const b=el('button','x-menu-toggle');b.type='button';b.setAttribute('aria-label','Open '+cfg.name+' navigation');b.setAttribute('aria-haspopup','dialog');b.setAttribute('aria-expanded','false');b.setAttribute('aria-controls','site-experience-menu');b.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16M17 4v16"/></svg>';b.onclick=()=>{refresh();menu.showModal();b.setAttribute('aria-expanded','true');};return b;}
+ function toggle(){const b=el('button','x-menu-toggle');b.type='button';b.setAttribute('aria-label','Open '+cfg.name+' navigation');b.setAttribute('aria-haspopup','dialog');b.setAttribute('aria-expanded','false');b.setAttribute('aria-controls','site-experience-menu');b.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16M17 4v16"/></svg>';if(cfg.slug==='MentalHealthDiscussions'){b.dataset.tip='Main Menu';b.title='Main Menu';}b.onclick=()=>{refresh();menu.showModal();b.setAttribute('aria-expanded','true');};return b;}
  menu.id='site-experience-menu';host.append(toggle());
  // The Basketball Brilliance entry screen intentionally has no header.
  if(cfg.slug==='basketball-brilliance'&&$('#entryStage')){const dock=el('div','x-entry-menu');dock.style.cssText='position:absolute;left:12px;top:12px;z-index:6';dock.append(toggle());$('#entryStage').append(dock);}
@@ -191,9 +202,11 @@ async function genericPlayer(){
  if(!$(cfg.mediaTrigger||'[data-no-media]')){
   const b=action('',open);b.setAttribute('aria-label','Open '+cfg.name+' Jukebox');b.title='Jukebox';
   if(cfg.slug==='MentalHealthDiscussions'){
-   b.classList.add('x-mhd-soundbars');b.innerHTML='<span></span><span></span><span></span>';
+   b.classList.add('x-mhd-soundbars');b.innerHTML='<span></span><span></span><span></span>';b.dataset.tip='Jukebox';b.title='Jukebox';
   }else b.textContent='♫';
-  ($(cfg.header)||$('header')||document.body).append(b);
+  const mediaHost=$(cfg.header)||$('header')||document.body;
+  const menuToggle=cfg.slug==='MentalHealthDiscussions'?mediaHost.querySelector('.x-menu-toggle'):null;
+  if(menuToggle)mediaHost.insertBefore(b,menuToggle);else mediaHost.append(b);
  }
  all(cfg.replacePanel||'[data-no-panel]').forEach(n=>{n.classList.add('x-hidden-nav');n.style.setProperty('display','none','important');});
  window.addEventListener('pagehide',()=>{clearInterval(timer);stop();epoch++;try{yt?.destroy();}catch{}yt=null;ready=false;local.forEach(t=>URL.revokeObjectURL(t.src));local=[];});
