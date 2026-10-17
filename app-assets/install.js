@@ -65,7 +65,7 @@
   }
   window.siteInstallApp=install;
   window.__siteExperienceConfig=brand;
-  const experience=document.createElement("script");experience.src=new URL("site-experience.js?v=20261017-jukebox",document.currentScript.src).href;document.head.append(experience);
+  const experience=document.createElement("script");experience.src=new URL("site-experience.js?v=20261017-jukebox-save-all",document.currentScript.src).href;document.head.append(experience);
   function init() {
     const desktopHost = document.querySelector(brand.desktop);
     const desktop = makeButton('Install Web App','site-app-desktop');
