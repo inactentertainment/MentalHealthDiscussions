@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#edf2ed">
+<title>MHD Personal Roadmap | Mental Health Discussions</title>
+<meta name="description" content="Build a free, non-diagnostic mental-health navigation roadmap with practical next steps and links to MHD tools.">
+<style>
+:root{--ink:#26302d;--muted:#68716e;--paper:#f2f1eb;--sage:#e5eee7;--surface:#fbfaf5;--line:#cfd7d1;--deep:#2e443b;--max:1120px;--shadow:0 16px 42px rgba(40,58,50,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.55}a{color:inherit}button,select,input,textarea{font:inherit}.crisis{background:#2a2d2c;color:#f7f3e8;text-align:center;padding:11px 16px;font-size:.84rem}.crisis a{font-weight:800}
+.top{position:sticky;top:0;z-index:40;background:rgba(242,241,235,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav{max-width:var(--max);height:74px;margin:auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-family:"Segoe Script","Snell Roundhand","Brush Script MT",cursive;font-size:1.3rem;text-decoration:none}.navlinks{display:flex;gap:8px;flex-wrap:wrap}.navlinks a{text-decoration:none;border-radius:999px;padding:8px 10px;font-size:.84rem}.navlinks a:hover{background:var(--sage)}
+.hero{padding:70px 22px 52px;background:linear-gradient(180deg,var(--sage),var(--paper));border-bottom:1px solid var(--line)}.wrap{max-width:var(--max);margin:auto}.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.68rem;font-weight:800;color:#496258}.hero h1{font-size:clamp(3rem,7vw,6rem);line-height:.94;letter-spacing:-.045em;margin:10px 0 15px;max-width:900px}.hero p{max-width:780px;color:var(--muted);font-size:1.08rem}.badge{display:inline-flex;border:1px solid #8fa598;border-radius:999px;padding:5px 9px;font-size:.72rem;font-weight:800;background:#eef5ef}
+.section{padding:62px 22px}.section.alt{background:#e8eee8}.grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;align-items:start}.card{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:var(--shadow)}.card h2,.card h3{margin-top:0}.field{display:grid;gap:6px;margin-bottom:14px}.field label{font-size:.78rem;font-weight:800}.field select,.field input,.field textarea{width:100%;border:1px solid #b8c5bd;border-radius:12px;padding:11px 12px;background:#fff;color:var(--ink)}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.btn{border:1px solid var(--deep);border-radius:999px;padding:10px 14px;text-decoration:none;cursor:pointer;font-weight:800;background:transparent;color:var(--deep)}.btn.primary{background:linear-gradient(135deg,#2e443b,#3e5a4e,#294036);color:#fff}.note{font-size:.78rem;color:var(--muted);margin-top:12px}.result{min-height:440px}.result-empty{display:grid;place-items:center;text-align:center;min-height:370px;color:var(--muted);border:1px dashed #aebcb3;border-radius:18px;padding:20px}.result h2{font-size:2rem;line-height:1.05}.steps{display:grid;gap:10px;margin:18px 0}.step{border:1px solid var(--line);border-radius:15px;padding:14px;background:#fff}.step strong{display:block;margin-bottom:4px}.route-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.route-links a{border:1px solid var(--deep);border-radius:999px;padding:9px 11px;text-decoration:none;font-size:.8rem;font-weight:800}.route-links a:first-child{background:var(--deep);color:#fff}.system-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.system-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px}.system-card h3{margin:6px 0}.system-card p{font-size:.86rem;color:var(--muted);margin:0}.system-card .num{font-weight:800;font-size:.72rem;color:#557064}.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.trust>div{border-top:2px solid #506a5e;padding-top:12px}.trust h3{font-size:1.05rem;margin:0 0 6px}.trust p{font-size:.86rem;color:var(--muted);margin:0}
+footer{background:#2a2d2c;color:#f3efe4;padding:42px 22px}.foot{max-width:var(--max);margin:auto;display:grid;grid-template-columns:1.3fr repeat(2,1fr);gap:28px}.footbrand{font-family:"Segoe Script","Snell Roundhand","Brush Script MT",cursive;font-size:1.35rem}.foot h4{font-size:.82rem;text-decoration:underline;text-underline-offset:4px}.foot a{display:block;text-decoration:none;padding:4px 0;font-size:.82rem}.fine{max-width:var(--max);margin:24px auto 0;padding-top:14px;border-top:1px solid #555;font-size:.72rem;color:#c9c4b9}
+@media(max-width:900px){.grid{grid-template-columns:1fr}.system-grid{grid-template-columns:1fr 1fr}.trust{grid-template-columns:1fr}.navlinks{display:none}}
+@media(max-width:600px){.section,.hero{padding-left:16px;padding-right:16px}.system-grid,.foot{grid-template-columns:1fr}.hero h1{font-size:3.15rem}.card{padding:19px}}
+</style>
+<link rel="stylesheet" href="mhd-comfort.css?v=20261017-video-only-1">
+<link rel="manifest" href="manifest.webmanifest" type="application/manifest+json">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="MHD">
+<script defer src="app-assets/install.js?v=20261017-jukebox-save-all"></script>
+<link rel="icon" type="image/png" sizes="64x64" href="app-assets/icon-64-large-20261015.png">
+<link rel="apple-touch-icon" sizes="180x180" href="app-assets/icon-180-large-20261015.png">
+</head>
+<body>
+<div class="crisis"><strong>Need immediate crisis support?</strong> In the U.S., call or text <a href="tel:988">988</a>. If there is immediate danger, call <a href="tel:911">911</a>. MHD does not replace professional care.</div>
+<header class="top"><nav class="nav"><a class="brand" href="index.html">Mental Health Discussions</a><div class="navlinks"><a href="index.html">Home</a><a href="tools.html">Research & Tools</a><a href="programs.html">Programs & Partnerships</a><a href="standards.html">Trust & Standards</a></div></nav></header>
+<section class="hero"><div class="wrap">
+<span class="badge">MHD Navigation System</span>
+<div class="eyebrow" style="margin-top:15px">Personal Roadmap</div>
+<h1>Figure out what to do next.</h1>
+<p>You do not need to know a diagnosis or the right clinical language. Answer four practical questions and MHD will organize the strongest starting route through the tools already on this site. No account. No diagnosis. No treatment recommendation.</p>
+</div></section>
+<main>
+<section class="section"><div class="wrap grid">
+<div class="card">
+<div class="eyebrow">Build your roadmap</div><h2>Start with the situation, not the label.</h2>
+<div class="field"><label for="who">Who are you trying to help?</label><select id="who"><option value="self">Myself</option><option value="family">Someone I care about</option><option value="caregiver">Someone I already support or care for</option><option value="work">A student, employee, or someone dealing with daily-life impact</option></select></div>
+<div class="field"><label for="urgency">How urgent does this feel?</label><select id="urgency"><option value="plan">Important, but I can make a thoughtful plan</option><option value="soon">I need help today or very soon</option><option value="crisis">Immediate danger, severe confusion, overdose, or someone cannot stay safe</option><option value="learn">I am mainly learning right now</option></select></div>
+<div class="field"><label for="focus">What do you need help navigating?</label><select id="focus">
+<option value="care">Finding care or choosing a provider</option>
+<option value="meds">Medication, side effects, or what was prescribed</option>
+<option value="treatment">Therapy or treatment options</option>
+<option value="appointment">Preparing for an appointment</option>
+<option value="family">Supporting someone or treatment refusal</option>
+<option value="hospital">Crisis, hospital, discharge, or legal questions</option>
+<option value="life">Work, school, accommodations, or daily life</option>
+<option value="understand">Conditions, symptoms, or terminology</option>
+<option value="system">Rights, state law, policy, or changing the system</option>
+</select></div>
+<div class="field"><label for="goal">What would be most useful when you leave this page?</label><select id="goal"><option value="steps">A short next-step plan</option><option value="questions">Questions to bring to a professional</option><option value="organize">A way to organize information</option><option value="resource">The strongest MHD resource to open next</option></select></div>
+<div class="actions"><button class="btn primary" type="button" onclick="buildRoadmap()">Build my roadmap</button><button class="btn" type="button" onclick="resetRoadmap()">Start over</button></div>
+<p class="note">This tool routes information. It does not diagnose, prescribe, assess an emergency, or replace a licensed professional.</p>
+</div>
+<div class="card result" id="result"><div class="result-empty"><div><div class="eyebrow">Your next-step roadmap</div><h2>Four answers. One clearer starting point.</h2><p>Your plan will appear here with a suggested first action, preparation steps, and direct links to the relevant MHD tools.</p></div></div></div>
+</div></section>
+
+<section class="section alt"><div class="wrap">
+<div class="eyebrow">How the MHD Navigation System works</div><h2 style="font-size:clamp(2.2rem,4vw,4rem);margin:8px 0 24px">From confusion to a usable next step.</h2>
+<div class="system-grid">
+<div class="system-card"><div class="num">01</div><h3>Understand</h3><p>Translate symptoms, terminology, treatment options, medication language, and system rules into plain English.</p></div>
+<div class="system-card"><div class="num">02</div><h3>Prepare</h3><p>Organize observations, medication history, questions, timelines, and goals before a call, appointment, meeting, or discharge.</p></div>
+<div class="system-card"><div class="num">03</div><h3>Navigate</h3><p>Move between providers, hospitals, insurers, family questions, state rules, work or school, and community resources.</p></div>
+<div class="system-card"><div class="num">04</div><h3>Change</h3><p>When the problem is bigger than one person, understand policy, rights, evidence, public systems, and advocacy routes.</p></div>
+</div>
+</div></section>
+
+<section class="section"><div class="wrap">
+<div class="eyebrow">Navigation boundaries</div><h2 style="font-size:clamp(2rem,3.5vw,3.5rem);margin:8px 0 22px">Useful without pretending to be your clinician.</h2>
+<div class="trust">
+<div><h3>No diagnosis</h3><p>MHD can help explain symptom patterns and questions to ask, but it does not tell you what diagnosis you have.</p></div>
+<div><h3>No prescribing</h3><p>Medication pages explain common uses, monitoring, side effects, and provider questions—not personalized dosing or medication changes.</p></div>
+<div><h3>Safety first</h3><p>Immediate danger, overdose, severe medical instability, or inability to stay safe should move to live crisis or emergency support rather than a website workflow.</p></div>
+</div>
+<div class="actions" style="margin-top:26px"><a class="btn primary" href="standards.html">Read MHD Trust & Standards</a><a class="btn" href="programs.html">Programs & Partnerships</a></div>
+</div></section>
+</main>
+<footer><div class="foot"><div><div class="footbrand">Mental Health Discussions</div><p>Free mental-health education, navigation, and practical tools.</p></div><div><h4>Navigate</h4><a href="find-care.html">Find Care</a><a href="appointment-builder.html">Appointment Prep</a><a href="family-caregiver.html">Family & Caregivers</a><a href="crisis-legal.html">Crisis, Hospital & Legal</a></div><div><h4>About the work</h4><a href="programs.html">Programs & Partnerships</a><a href="standards.html">Trust & Standards</a><a href="support.html">Support MHD</a><a href="index.html#contact">Contact</a></div></div><div class="fine">Educational navigation only. MHD does not provide diagnosis, treatment, emergency assessment, legal representation, or individualized medical or legal advice.</div></footer>
+<script>
+const routes={
+care:{title:"Start with access: identify the right level of care and a provider you can actually reach.",steps:["Use the Find Care & Access Center to choose the provider type or level of care that fits the situation.","Write down the main concern, timing, insurance/payment situation, and any access needs before making calls.","If wait lists are long, use multiple routes at once rather than relying on one referral.","Bring the same concise history to each new provider so important information does not get lost."],links:[["Open Find Care & Access","find-care.html"],["Prepare for the appointment","appointment-builder.html"],["Understand conditions & symptoms","condition-guide.html"]]},
+meds:{title:"Start by organizing the medication question before trying to answer it.",steps:["List the exact medication name, dose if known, when it started, what it was intended to treat, and any recent changes.","Separate possible side effects, missed doses, withdrawal concerns, and changes in the underlying condition.","Use MHD to build questions for the prescriber or pharmacist rather than changing medication based on a website.","Bring the medication list into Appointment Prep so it becomes part of a provider-ready summary."],links:[["Open Medication Guide","medication-guide.html"],["Open Appointment Prep","appointment-builder.html"],["Treatment & Therapy Guide","treatment-guide.html"]]},
+treatment:{title:"Start by comparing what the treatments actually involve.",steps:["Identify the problem or goal the treatment is intended to address.","Compare what a therapy or treatment requires, how it is delivered, common evidence-based uses, and practical tradeoffs.","Ask the provider how they will know whether it is helping and what happens if it does not.","Keep treatment questions together with medication history and appointment goals."],links:[["Open Treatment & Therapy","treatment-guide.html"],["Conditions & Symptoms","condition-guide.html"],["Appointment Prep","appointment-builder.html"]]},
+appointment:{title:"Turn what you know into something a provider can use.",steps:["Build a timeline: what changed, when it started, and what has made it better or worse.","List medications, supplements, prior treatments, major side effects, and what helped or did not help.","Add the questions you do not want to forget, including family observations when appropriate.","Bring or print the organized summary rather than trying to remember everything in the room."],links:[["Open Appointment Prep","appointment-builder.html"],["Medication Guide","medication-guide.html"],["Family & Caregiver Center","family-caregiver.html"]]},
+family:{title:"Start with communication, observation, and the limits of what you can control.",steps:["Write down specific changes you have observed rather than relying only on labels or arguments about diagnosis.","Learn how insight, privacy rules, treatment refusal, and crisis thresholds can affect what families can do.","Prepare concise information for clinicians even when they cannot disclose protected information back to you.","If safety or severe deterioration is becoming the issue, switch from ordinary family communication to crisis navigation."],links:[["Open Family & Caregiver Center","family-caregiver.html"],["Crisis, Hospital & Legal","crisis-legal.html"],["State Law Intelligence","state-law.html"]]},
+hospital:{title:"Start with the exact stage of the crisis or hospital process.",steps:["Identify whether the question is about getting an evaluation, voluntary or involuntary care, what happens in the hospital, discharge, or what family can do next.","Keep names, dates, medication changes, discharge instructions, follow-up appointments, and unanswered questions together.","Use state-specific law resources for legal standards rather than assuming one state's rules apply everywhere.","After discharge, convert the plan into appointments, medication questions, warning signs, and who is responsible for each follow-up step."],links:[["Open Crisis, Hospital & Legal","crisis-legal.html"],["State Law Intelligence","state-law.html"],["Appointment Prep","appointment-builder.html"]]},
+life:{title:"Start with the part of daily life that is breaking down.",steps:["Name the practical impact: attendance, concentration, sleep, routine, leave, accommodations, housing, transportation, finances, or relationships.","Separate what needs immediate stabilization from what can be handled through work, school, or community supports.","Document functional impact in concrete terms rather than only naming a diagnosis.","Use the relevant work/school route and bring clinical questions back to a provider when needed."],links:[["Open Work, School & Daily Life","life-guide.html"],["Find Care & Access","find-care.html"],["Appointment Prep","appointment-builder.html"]]},
+understand:{title:"Start by learning enough to ask better questions—not by trying to diagnose yourself.",steps:["Use Conditions & Symptoms to understand patterns clinicians may consider and what else may need to be ruled out.","Use the glossary when terminology is getting in the way.","Separate established evidence from lived experience, headlines, and emerging research.","When the question becomes personal, convert what you learned into questions for a qualified professional."],links:[["Conditions & Symptoms","condition-guide.html"],["Mental Health Dictionary","glossary.html"],["Evidence & Discussion","discuss-evidence.html"]]},
+system:{title:"Start by identifying who actually controls the rule or decision.",steps:["Decide whether the issue is an individual rights question, state law, an agency rule, legislation, funding, insurance, or a local service problem.","Use official sources to verify what the current rule actually says.","Separate an individual remedy from the larger system change you want.","Turn the problem into a specific request that can be tracked and measured."],links:[["Change & Advocacy Center","advocacy-guide.html"],["State Law Intelligence","state-law.html"],["Evidence & Discussion","discuss-evidence.html"]]}
+};
+function esc(s){return String(s||"").replace(/[&<>"']/g,function(m){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]})}
+function buildRoadmap(){
+ const urgency=document.getElementById("urgency").value;
+ const focus=document.getElementById("focus").value;
+ const who=document.getElementById("who").value;
+ const route=routes[focus];
+ const result=document.getElementById("result");
+ if(urgency==="crisis"){
+   result.innerHTML="<div class='eyebrow'>Safety first</div><h2>Use live crisis or emergency support now.</h2><p>This roadmap should not slow down help when there is immediate danger, suspected overdose, severe medical instability, or someone cannot stay safe.</p><div class='steps'><div class='step'><strong>United States</strong>Call or text 988 for crisis support. Call 911 or go to an emergency department for immediate danger or a medical emergency.</div><div class='step'><strong>Then use MHD for navigation</strong>Once immediate safety is being handled, the Crisis, Hospital & Legal Center can help explain what may happen next.</div></div><div class='route-links'><a href='tel:988'>Call 988</a><a href='crisis-legal.html'>Open Crisis, Hospital & Legal</a></div>";return;
+ }
+ let context=who==="family"||who==="caregiver"?"You are navigating this for someone you care about. Keep observations specific and protect the other person's privacy where possible.":who==="work"?"Keep the practical effect on work, school, or daily functioning visible alongside the clinical question.":"Keep the plan focused on the next useful action rather than trying to solve everything at once.";
+ result.innerHTML="<div class='eyebrow'>Your MHD roadmap</div><h2>"+esc(route.title)+"</h2><p>"+esc(context)+"</p><div class='steps'>"+route.steps.map(function(s,i){return "<div class='step'><strong>Step "+(i+1)+"</strong>"+esc(s)+"</div>"}).join("")+"</div><div class='route-links'>"+route.links.map(function(x){return "<a href='"+x[1]+"'>"+esc(x[0])+"</a>"}).join("")+"</div><p class='note'>This roadmap is educational navigation, not individualized medical or legal advice.</p>";
+ result.scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+function resetRoadmap(){document.getElementById("who").selectedIndex=0;document.getElementById("urgency").selectedIndex=0;document.getElementById("focus").selectedIndex=0;document.getElementById("goal").selectedIndex=0;document.getElementById("result").innerHTML="<div class='result-empty'><div><div class='eyebrow'>Your next-step roadmap</div><h2>Four answers. One clearer starting point.</h2><p>Your plan will appear here with a suggested first action, preparation steps, and direct links to the relevant MHD tools.</p></div></div>"}
+const q=new URLSearchParams(location.search).get("focus");if(q&&routes[q])document.getElementById("focus").value=q;
+</script>
+<script src="mhd-comfort.js?v=20261006b"></script>
+</body>
+</html>
