@@ -1235,3 +1235,89 @@ body .mhd-comfort-panel button:not(.secondary):not(.ghost):hover{
   z-index:5!important;
 }
 .video#mhdVideo.mhd-playing .mhd-video-play{display:none!important}
+
+
+/* LOCKED MHD HERO VIDEO PRESENTATION — exact proven Oct 5 behavior.
+   Do not alter when changing surrounding title/copy. */
+.mhd-video-column{
+  display:flex!important;
+  flex-direction:column!important;
+  align-self:start!important;
+}
+.mhd-video-kicker{
+  text-transform:uppercase!important;
+  letter-spacing:.14em!important;
+  font-size:.64rem!important;
+  font-weight:800!important;
+  color:var(--mhd-link)!important;
+  margin:0 0 4px!important;
+}
+.mhd-video-title{
+  font-size:clamp(1.15rem,1.9vw,1.55rem)!important;
+  line-height:1.12!important;
+  letter-spacing:-.02em!important;
+  margin:0 0 12px!important;
+  max-width:560px!important;
+}
+.video#mhdVideo{
+  position:relative!important;
+  border:0!important;
+  border-left:0!important;
+  border-right:0!important;
+  border-top:0!important;
+  border-bottom:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  overflow:hidden!important;
+  padding:0!important;
+  margin:0!important;
+}
+.video#mhdVideo::before,
+.video#mhdVideo::after{
+  content:none!important;
+  display:none!important;
+}
+.video#mhdVideo iframe{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  border:0!important;
+  border-left:0!important;
+  border-right:0!important;
+  border-top:0!important;
+  border-bottom:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+  background:transparent!important;
+  opacity:0!important;
+  transition:opacity .28s ease!important;
+  transform:none!important;
+  filter:none!important;
+}
+.video#mhdVideo.mhd-cued iframe{opacity:1!important}
+.mhd-video-play{
+  position:absolute!important;
+  left:50%!important;
+  top:50%!important;
+  transform:translate(-50%,-50%)!important;
+  z-index:4!important;
+  border:1px solid rgba(255,255,255,.65)!important;
+  border-radius:999px!important;
+  padding:10px 16px!important;
+  background:rgba(61,91,79,.92)!important;
+  background-image:none!important;
+  color:#FFF9EE!important;
+  -webkit-text-fill-color:#FFF9EE!important;
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-size:.78rem!important;
+  font-weight:700!important;
+  box-shadow:0 8px 24px rgba(34,49,43,.24)!important;
+  cursor:pointer!important;
+  backdrop-filter:blur(5px)!important;
+}
+.video#mhdVideo.mhd-playing .mhd-video-play{display:none!important}
+@media(max-width:950px){
+  .mhd-video-column{order:-1!important}
+  .mhd-video-title{font-size:1.2rem!important}
+}
