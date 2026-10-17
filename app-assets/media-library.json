@@ -1,1 +1,785 @@
-{"music": [{"genre": "Hip-Hop", "artist": "Nas", "title": "One Mic", "videoId": "JCOURZ-yx4E", "theme": "A focused voice, conviction, and storytelling.", "alternates": []}, {"genre": "Afrobeats", "artist": "2Baba", "title": "African Queen", "videoId": "_A0fWBHu9pM", "alternates": ["713jhG0us1k"], "theme": "A warm Afropop classic celebrating connection."}, {"genre": "Ambient", "artist": "Brian Eno", "title": "An Ending (Ascent)", "videoId": "OlaTeXX3uH8", "alternates": ["OnAS7efua64"], "theme": "Instrumental space for reflection and focused work.", "instrumental": true}, {"genre": "Blues", "artist": "B.B. King", "title": "The Thrill Is Gone", "videoId": "SgXSomPE_FY", "alternates": ["kpC69qIe02E"], "theme": "A classic live performance with expressive musical craft."}, {"genre": "Classical", "artist": "Lang Lang · Beethoven", "title": "Für Elise", "videoId": "s71I_EWJk7I", "alternates": ["FW_KCau2iTI"], "theme": "A familiar piano piece for a quieter learning moment.", "instrumental": true}, {"genre": "Country", "artist": "Dolly Parton", "title": "9 to 5", "videoId": "UbxUSsFXYo4", "alternates": [], "theme": "Work, ambition, and the everyday push to make something happen."}, {"genre": "EDM", "artist": "Avicii", "title": "Wake Me Up", "videoId": "IcrbM1l_BoI", "alternates": ["5y_KJAg8bHI"], "theme": "Discovery, growing, and finding your own direction."}, {"genre": "Experimental", "artist": "Herbie Hancock", "title": "Rockit", "videoId": "GHhD4PD75zY", "alternates": [], "theme": "An instrumental crossover where technology meets musical invention.", "instrumental": true}, {"genre": "Funk", "artist": "Earth, Wind & Fire", "title": "September", "videoId": "Gs069dndIYk", "alternates": ["3cKtSlsYVEU"], "theme": "Shared joy, movement, and a timeless groove."}, {"genre": "Gospel", "artist": "Kirk Franklin", "title": "I Smile", "videoId": "Z8SPwT3nQZ8", "alternates": ["S174winqP2g"], "theme": "Encouragement and finding a little light in a difficult day."}, {"genre": "House / Club", "artist": "Daft Punk", "title": "One More Time", "videoId": "FGBhQbmPwH8", "alternates": ["fa5IWHDbftI"], "theme": "A classic celebration of rhythm and the joy of creating."}, {"genre": "Jazz", "artist": "Louis Armstrong", "title": "What a Wonderful World", "videoId": "rBrd_3VMC3c", "alternates": ["CaCSuzR4DwM"], "theme": "A familiar vocal standard about noticing the world around us."}, {"genre": "Latin", "artist": "Celia Cruz", "title": "La Vida Es Un Carnaval", "videoId": "x4oN50uhSII", "alternates": ["t8pjh1URlXs", "7Ho86ggAVrY"], "theme": "An uplifting salsa classic about living through life's difficult moments."}, {"genre": "Lo-Fi", "artist": "Nujabes", "title": "Aruarian Dance", "videoId": "qYcoJpqCha4", "alternates": [], "theme": "Instrumental jazz-hop for a calm creative flow.", "instrumental": true}, {"genre": "Pop", "artist": "Whitney Houston", "title": "I Wanna Dance with Somebody", "videoId": "eH3giaIzONA", "alternates": [], "theme": "A recognizable pop favorite full of energy and connection."}, {"genre": "R&B", "artist": "Bill Withers", "title": "Lovely Day", "videoId": "bEeaS6fuUoA", "alternates": ["QCgeitX5xg0"], "theme": "A brighter mood for the next idea and the next useful step."}, {"genre": "Reggae", "artist": "Bob Marley & The Wailers", "title": "Three Little Birds", "videoId": "HNBCVM4KbUM", "alternates": [], "theme": "A gentle reminder to breathe and keep moving."}, {"genre": "Rock", "artist": "Journey", "title": "Don't Stop Believin'", "videoId": "1k8craCGpgs", "alternates": ["VcjzHMhBtf0", "mM3Vmn4pdog"], "theme": "A classic about keeping possibility in view."}, {"genre": "Soul", "artist": "Simply Red", "title": "Holding Back the Years", "videoId": "yG07WSu7Q9w", "alternates": [], "theme": "Reflection, memory, and an unhurried soulful groove."}, {"genre": "Soundtracks", "artist": "Vangelis", "title": "Chariots of Fire", "videoId": "8a-HfNE3EIo", "alternates": [], "theme": "An instrumental theme with a sense of purpose and forward motion.", "instrumental": true}, {"genre": "Soul", "artist": "James Brown & Luciano Pavarotti", "title": "It's a Man's Man's Man's World · Live", "videoId": "GaB9F3R9cIY", "alternates": [], "theme": "A powerful historic duet about achievement and the importance of partnership.", "lyricsUrl": "https://music.apple.com/us/song/1743396597"}, {"genre": "Jazz", "artist": "John Coltrane", "title": "My Favorite Things", "videoId": "rqpriUFsMQQ", "alternates": ["ej6gfL4yF4E"], "theme": "An instrumental jazz exploration for listening, reflection, and creative work.", "instrumental": true}, {"genre": "Jazz", "artist": "Miles Davis", "title": "So What · Official live video", "videoId": "zqNTltOGh5c", "alternates": [], "theme": "Instrumental musical craft, conversation, and space to think.", "instrumental": true}, {"genre": "Hip-Hop", "artist": "2Pac", "title": "Keep Ya Head Up", "videoId": "SHVzWMFMH6Y", "theme": "Resilience, dignity, and community support.", "alternates": []}, {"genre": "Hip-Hop", "artist": "The Notorious B.I.G.", "title": "Juicy", "videoId": "_JZom_gVfuw", "theme": "Ambition and a story of changed circumstances.", "alternates": []}, {"genre": "Hip-Hop", "artist": "JAY-Z", "title": "Blueprint (Momma Loves Me)", "videoId": "PU0El0sLWbg", "theme": "Family, formative experiences, and personal history. Official lyric video; explicit language.", "alternates": ["dKvgphSdG84"], "contentNote": "Explicit language · official lyric video"}, {"genre": "Jazz", "artist": "Miles Davis", "title": "Flamenco Sketches", "videoId": "nTwp1sgUJrM", "theme": "Space, patient listening, and reflective focus.", "alternates": [], "instrumental": true}, {"genre": "Jazz", "artist": "John Coltrane", "title": "Naima", "videoId": "bPAC6zt_1ZM", "theme": "A lyrical instrumental for calm concentration.", "alternates": [], "instrumental": true}, {"genre": "Soul", "artist": "James Brown", "title": "The Payback", "videoId": "D7ks03zsg1o", "theme": "An enduring funk groove; the story concerns betrayal and revenge.", "alternates": []}, {"genre": "R&B", "artist": "Bill Withers", "title": "Can We Pretend", "videoId": "qiSmeCIi3Lo", "theme": "Reflection and the wish to begin again.", "alternates": []}, {"genre": "R&B", "artist": "Sade", "title": "Smooth Operator", "videoId": "4TYv2PhG89A", "theme": "An elegant groove and a cautionary portrait.", "alternates": []}, {"genre": "R&B", "artist": "Sade", "title": "No Ordinary Love", "videoId": "_WcWHZc8s2I", "theme": "Atmosphere, devotion, and emotional depth.", "alternates": []}, {"genre": "R&B", "artist": "Sade", "title": "By Your Side", "videoId": "C8QJmI_V3j4", "theme": "Support, steadiness, and care.", "alternates": []}, {"genre": "R&B", "artist": "Erykah Badu", "title": "Didn't Cha Know", "videoId": "Np21rH7Ldto", "theme": "Finding direction and learning through uncertainty.", "alternates": []}, {"genre": "R&B", "artist": "Erykah Badu", "title": "Bag Lady", "videoId": "OqN0jsSeqPo", "theme": "Letting go of burdens and making room to move forward.", "alternates": []}, {"genre": "R&B", "artist": "Erykah Badu", "title": "On & On (Remix Edit)", "videoId": "-CPCs7vVz6s", "theme": "A reflective groove with an independent point of view.", "alternates": []}, {"genre": "Hip-Hop / R&B", "artist": "Erykah Badu feat. Common", "title": "Love of My Life (An Ode to Hip Hop)", "videoId": "dNk3R23Twgw", "theme": "A creative conversation between hip-hop and soul.", "alternates": []}, {"genre": "R&B", "artist": "Luther Vandross", "title": "Luther Vandross - Never Too Much", "videoId": "pNj9bXKGOiI", "theme": "Luther Vandross · R&B selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=pNj9bXKGOiI", "publisher": "https://www.youtube.com/@LutherVandrossVEVO", "publisherName": "LutherVandrossVEVO", "instrumental": false}, {"genre": "R&B", "artist": "Anita Baker", "title": "Sweet Love", "videoId": "2w6udgiojlE", "theme": "Anita Baker · R&B selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=2w6udgiojlE", "publisher": "https://www.youtube.com/channel/UC6C-K094bqDtp3G_A3eNcRQ", "publisherName": "Anita Baker - Topic", "instrumental": false}, {"genre": "Pop", "artist": "Michael Jackson", "title": "Michael Jackson - P.Y.T. (Pretty Young Thing)", "videoId": "1ZZQuj6htF4", "theme": "Michael Jackson · R&B selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=1ZZQuj6htF4", "publisher": "https://www.youtube.com/@michaeljacksonVEVO", "publisherName": "michaeljacksonVEVO", "instrumental": false}, {"genre": "R&B", "artist": "Whitney Houston", "title": "Whitney Houston - I Have Nothing", "videoId": "FxYw0XPEoKE", "theme": "Whitney Houston · R&B selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=FxYw0XPEoKE", "publisher": "https://www.youtube.com/@whitneyhoustonVEVO", "publisherName": "whitneyhoustonVEVO", "instrumental": false}, {"genre": "R&B", "artist": "Whitney Houston", "title": "Whitney Houston - I'm Your Baby Tonight", "videoId": "i0oRnyXxIrY", "theme": "Whitney Houston · R&B selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=i0oRnyXxIrY", "publisher": "https://www.youtube.com/@whitneyhoustonVEVO", "publisherName": "whitneyhoustonVEVO", "instrumental": false}, {"genre": "R&B", "artist": "Whitney Houston", "title": "Whitney Houston - I Will Always Love You", "videoId": "3JWTaaS7LdU", "theme": "Whitney Houston · R&B selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=3JWTaaS7LdU", "publisher": "https://www.youtube.com/@whitneyhoustonVEVO", "publisherName": "whitneyhoustonVEVO", "instrumental": false}, {"genre": "R&B", "artist": "Whitney Houston", "title": "Whitney Houston - I Look to You", "videoId": "5Pze_mdbOK8", "theme": "Whitney Houston · R&B selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=5Pze_mdbOK8", "publisher": "https://www.youtube.com/@whitneyhoustonVEVO", "publisherName": "whitneyhoustonVEVO", "instrumental": false}, {"genre": "R&B", "artist": "Mariah Carey", "title": "Mariah Carey - We Belong Together", "videoId": "0habxsuXW4g", "theme": "Mariah Carey · R&B selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=0habxsuXW4g", "publisher": "https://www.youtube.com/@MariahCareyVEVO", "publisherName": "MariahCareyVEVO", "instrumental": false}, {"genre": "Pop", "artist": "Michael Jackson", "title": "Michael Jackson - Billie Jean", "videoId": "Zi_XLOBDo_Y", "theme": "Michael Jackson · Pop selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y", "publisher": "https://www.youtube.com/@michaeljacksonVEVO", "publisherName": "michaeljacksonVEVO", "instrumental": false}, {"genre": "Pop", "artist": "Michael Jackson", "title": "Michael Jackson - Smooth Criminal", "videoId": "h_D3VFfhvs4", "theme": "Michael Jackson · Pop selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=h_D3VFfhvs4", "publisher": "https://www.youtube.com/@michaeljacksonVEVO", "publisherName": "michaeljacksonVEVO", "instrumental": false}, {"genre": "Pop", "artist": "Michael Jackson", "title": "Michael Jackson - Thriller", "videoId": "sOnqjkJTMaA", "theme": "Michael Jackson · Pop selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=sOnqjkJTMaA", "publisher": "https://www.youtube.com/@michaeljacksonVEVO", "publisherName": "michaeljacksonVEVO", "instrumental": false}, {"genre": "Pop", "artist": "Michael Jackson", "title": "Michael Jackson - Black Or White", "videoId": "F2AitTPI5U0", "theme": "Michael Jackson · Pop selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=F2AitTPI5U0", "publisher": "https://www.youtube.com/@michaeljacksonVEVO", "publisherName": "michaeljacksonVEVO", "instrumental": false}, {"genre": "Pop", "artist": "Michael Jackson", "title": "Michael Jackson - You Are Not Alone", "videoId": "pAyKJAtDNCw", "theme": "Michael Jackson · Pop selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=pAyKJAtDNCw", "publisher": "https://www.youtube.com/@michaeljacksonVEVO", "publisherName": "michaeljacksonVEVO", "instrumental": false}, {"genre": "Pop", "artist": "Prince", "title": "Prince and the Revolution - Kiss", "videoId": "H9tEvfIsDyo", "theme": "Prince · Pop selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=H9tEvfIsDyo", "publisher": "https://www.youtube.com/@prince", "publisherName": "Prince", "instrumental": false}, {"genre": "Pop", "artist": "Prince", "title": "Prince and the Revolution - When Doves Cry", "videoId": "UG3VcCAlUgE", "theme": "Prince · Pop selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=UG3VcCAlUgE", "publisher": "https://www.youtube.com/@prince", "publisherName": "Prince", "instrumental": false}, {"genre": "Pop", "artist": "Prince", "title": "Prince & The New Power Generation - Cream", "videoId": "rrbFQEcpJ3A", "theme": "Prince · Pop selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=rrbFQEcpJ3A", "publisher": "https://www.youtube.com/@prince", "publisherName": "Prince", "instrumental": false}, {"genre": "Country", "artist": "Dolly Parton", "title": "Dolly Parton - Jolene", "videoId": "Ixrje2rXLMA", "theme": "Dolly Parton · Country selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=Ixrje2rXLMA", "publisher": "https://www.youtube.com/@DollyPartonVEVO", "publisherName": "DollyPartonVEVO", "instrumental": false}, {"genre": "Country", "artist": "John Denver", "title": "John Denver - Take Me Home, Country Roads", "videoId": "1vrEljMfXYo", "theme": "John Denver · Country selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=1vrEljMfXYo", "publisher": "https://www.youtube.com/@JohnDenverVEVO", "publisherName": "JohnDenverVEVO", "instrumental": false}, {"genre": "Country", "artist": "Johnny Cash", "title": "[Ghost] Riders in the Sky", "videoId": "3LtmZM0OWO8", "theme": "Johnny Cash · Country selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=3LtmZM0OWO8", "publisher": "https://www.youtube.com/channel/UCiGs21G3KeE2tpbbMPzn9Qg", "publisherName": "Johnny Cash - Topic", "instrumental": false}, {"genre": "Country", "artist": "Kenny Rogers", "title": "Kenny Rogers - The Gambler", "videoId": "7hx4gdlfamo", "theme": "Kenny Rogers · Country selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=7hx4gdlfamo", "publisher": "https://www.youtube.com/@KennyRogersVEVO", "publisherName": "KennyRogersVEVO", "instrumental": false}, {"genre": "Country", "artist": "Charley Pride", "title": "Kiss an Angel Good Mornin'", "videoId": "rouSFhnQapE", "theme": "Charley Pride · Country selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=rouSFhnQapE", "publisher": "https://www.youtube.com/channel/UCeYo1Vdj0i2rvZ7A60I4NuQ", "publisherName": "Charley Pride - Topic", "instrumental": false}, {"genre": "Classical", "artist": "Lang Lang", "title": "Lang Lang - Cornfield Chase (from \"Interstellar\")", "videoId": "gGYZc5Pc4Qc", "theme": "Lang Lang · Classical selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=gGYZc5Pc4Qc", "publisher": "https://www.youtube.com/@LangLangVEVO", "publisherName": "LangLangVEVO", "instrumental": true}, {"videoId": "WrfcbNCqH40", "title": "Anita Baker - Caught Up In The Rapture", "artist": "Anita Baker", "publisher": "https://www.youtube.com/@anitabaker", "genre": "R&B", "theme": "Anita Baker · R&B selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=WrfcbNCqH40", "publisherName": "Anita Baker", "instrumental": false}, {"videoId": "dBN86y30Ufc", "title": "Willie Nelson - On The Road Again", "artist": "Willie Nelson", "publisher": "https://www.youtube.com/@WillieNelsonVEVO", "genre": "Country", "theme": "Willie Nelson · Country selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=dBN86y30Ufc", "publisherName": "WillieNelsonVEVO", "instrumental": false}, {"videoId": "Ptk_1Dc2iPY", "title": "Canon in D (Pachelbel's Canon) - Cello & Piano [BEST WEDDING VERSION]", "artist": "Brooklyn Duo", "publisher": "https://www.youtube.com/@BrooklynDuo", "genre": "Classical", "theme": "Brooklyn Duo · Classical selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=Ptk_1Dc2iPY", "publisherName": "Brooklyn Duo", "instrumental": true}, {"videoId": "WNIPqafd4As", "title": "Céline Dion - My Heart Will Go On (from the 2007 DVD \"Live In Las Vegas - A New Day...\")", "artist": "Céline Dion", "publisher": "https://www.youtube.com/@CelineDionVEVO", "genre": "Pop", "theme": "Céline Dion · Pop selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=WNIPqafd4As", "publisherName": "CelineDionVEVO", "instrumental": false}, {"videoId": "fJ9rUzIMcZQ", "title": "Queen – Bohemian Rhapsody", "artist": "Queen", "publisher": "https://www.youtube.com/@Queen", "genre": "Pop", "theme": "Queen · Pop selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=fJ9rUzIMcZQ", "publisherName": "Queen Official", "instrumental": false}, {"videoId": "BxX1obB9GKk", "title": "Yuja Wang, Gustavo Dudamel, LA Philharmonic – Rachmaninoff: Piano Concerto No.2: II.Adagio sostenuto", "artist": "Yuja Wang · Gustavo Dudamel · LA Philharmonic", "publisher": "https://www.youtube.com/@deutschegrammophon", "genre": "Classical", "theme": "Yuja Wang · Gustavo Dudamel · LA Philharmonic · Classical selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=BxX1obB9GKk", "publisherName": "Deutsche Grammophon - DG", "instrumental": true}, {"videoId": "PZoaEmxrsZQ", "title": "Hilary Hahn - Bach, J.S.: Sonata for Violin Solo No. 1 in G Minor, BWV 1001: 4. Presto", "artist": "Hilary Hahn", "publisher": "https://www.youtube.com/@HilaryHahnVEVO", "genre": "Classical", "theme": "Hilary Hahn · Classical selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=PZoaEmxrsZQ", "publisherName": "HilaryHahnVEVO", "instrumental": true}, {"videoId": "1prweT95Mo0", "title": "Yo-Yo Ma - Bach: Cello Suite No. 1 in G Major, Prélude", "artist": "Yo-Yo Ma", "publisher": "https://www.youtube.com/@YoYoMaVEVO", "genre": "Classical", "theme": "Yo-Yo Ma · Classical selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=1prweT95Mo0", "publisherName": "YoYoMaVEVO", "instrumental": true}, {"videoId": "sOH6WSbPdIw", "title": "Lang Lang - Einaudi: Fly (Top Shot Performance)", "artist": "Lang Lang", "publisher": "https://www.youtube.com/@LangLangVEVO", "genre": "Classical", "theme": "Lang Lang · Classical selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=sOH6WSbPdIw", "publisherName": "LangLangVEVO", "instrumental": true}, {"videoId": "jlSUjTBC3mA", "title": "Lang Lang - Joe Hisaishi: Spring (Visualizer)", "artist": "Lang Lang", "publisher": "https://www.youtube.com/@LangLangVEVO", "genre": "Classical", "theme": "Lang Lang · Classical selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=jlSUjTBC3mA", "publisherName": "LangLangVEVO", "instrumental": true}, {"videoId": "tnIbvlLhAXU", "title": "Lang Lang - Beethoven: Rondo a capriccio, Op. 129 \"Rage over a Lost Penny\" (Excerpt)", "artist": "Lang Lang", "publisher": "https://www.youtube.com/@LangLangVEVO", "genre": "Classical", "theme": "Lang Lang · Classical selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=tnIbvlLhAXU", "publisherName": "LangLangVEVO", "instrumental": true}, {"videoId": "EvNsPyp5O2I", "title": "Lang Lang - Chopin: Nocturne No. 2 in E-Flat Major, Op. 9 No. 2", "artist": "Lang Lang", "publisher": "https://www.youtube.com/@LangLangVEVO", "genre": "Classical", "theme": "Lang Lang · Classical selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=EvNsPyp5O2I", "publisherName": "LangLangVEVO", "instrumental": true}, {"videoId": "Xv0Ai_rYa00", "title": "Lang Lang - Liszt: Consolations, S. 172: No. 2 in E Major. Un poco più mosso", "artist": "Lang Lang", "publisher": "https://www.youtube.com/@LangLangVEVO", "genre": "Classical", "theme": "Lang Lang · Classical selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=Xv0Ai_rYa00", "publisherName": "LangLangVEVO", "instrumental": true}, {"videoId": "1uQWUcTXWOg", "title": "Saint-Saëns: Piano Concerto No. 2: III. Presto (Live from the Notre-Dame Reopening Concert)", "artist": "Lang Lang", "publisher": "https://www.youtube.com/@langlang", "genre": "Classical", "theme": "Lang Lang · Classical selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=1uQWUcTXWOg", "publisherName": "Lang Lang", "instrumental": true}, {"videoId": "xR4IElye7eg", "title": "Yo-Yo Ma - Bach: Cello Suite No. 3 in C Major, Bourrée I and II", "artist": "Yo-Yo Ma", "publisher": "https://www.youtube.com/@YoYoMaVEVO", "genre": "Classical", "theme": "Yo-Yo Ma · Classical selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=xR4IElye7eg", "publisherName": "YoYoMaVEVO", "instrumental": true}, {"videoId": "kn1gcjuhlhg", "title": "HAUSER - Adagio (Albinoni)", "artist": "HAUSER", "publisher": "https://www.youtube.com/@HAUSERmusic", "genre": "Classical", "theme": "HAUSER · Classical selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=kn1gcjuhlhg", "publisherName": "HAUSER", "instrumental": true}, {"videoId": "On2luLSf7XI", "title": "Chevalier de Saint-Georges - Violin Concerto in A Major - Royal Scottish National Orchestra", "artist": "Royal Scottish National Orchestra", "publisher": "https://www.youtube.com/@TheRSNO", "genre": "Classical", "theme": "Royal Scottish National Orchestra · Classical selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=On2luLSf7XI", "publisherName": "Royal Scottish National Orchestra", "instrumental": true}, {"videoId": "CH8zsdkPhAE", "title": "Florence Price - Symphony No.1 Finale | Classic FM", "artist": "Chineke! Orchestra · Florence Price", "publisher": "https://www.youtube.com/@ClassicFMOfficial", "genre": "Classical", "theme": "Florence Price · Chineke! Orchestra · Classical selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=CH8zsdkPhAE", "publisherName": "Classic FM", "instrumental": true}, {"videoId": "R2d2spnXyLA", "title": "Lang Lang  — Chopin, “Raindrop” Prelude on the Steinway & Sons Spirio | r", "artist": "Steinway & Sons", "publisher": "https://www.youtube.com/@steinway", "genre": "Classical", "theme": "Steinway & Sons · Classical selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=R2d2spnXyLA", "publisherName": "Steinway & Sons", "instrumental": true}, {"videoId": "4m1EFMoRFvY", "title": "Beyoncé - Single Ladies (Put a Ring on It)", "artist": "Beyoncé", "publisher": "https://www.youtube.com/@beyonceVEVO", "genre": "Pop", "theme": "Beyoncé · Pop selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=4m1EFMoRFvY", "publisherName": "BeyoncéVEVO", "instrumental": false}, {"videoId": "HaMq2nn5ac0", "title": "Sam Smith - Lay Me Down", "artist": "Sam Smith", "publisher": "https://www.youtube.com/@SamSmithWorldVEVO", "genre": "R&B", "theme": "Sam Smith · R&B selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=HaMq2nn5ac0", "publisherName": "SamSmithVEVO", "instrumental": false}, {"videoId": "3KL9mRus19o", "title": "Blackstreet - No Diggity ft. Dr. Dre, Queen Pen", "artist": "Blackstreet feat. Dr. Dre & Queen Pen", "publisher": "https://www.youtube.com/@BlackstreetVEVO", "genre": "Hip-Hop / R&B", "theme": "Blackstreet feat. Dr. Dre & Queen Pen · Hip-Hop / R&B selection.", "alternates": [], "source": "https://www.youtube.com/watch?v=3KL9mRus19o", "publisherName": "BlackstreetVEVO", "instrumental": false}], "motivation": [{"artist": "Motiversity", "title": "The Power of Gratitude & Perspective", "videoId": "syuCEfkup28", "genre": "Motivation", "category": "Motivation", "theme": "Morning encouragement, focus, and personal growth.", "alternates": []}, {"artist": "Motiversity", "title": "Best of 2025 · Speakers compilation", "videoId": "SkQ-eoBo1Q4", "genre": "Motivation", "category": "Motivation", "theme": "Morning encouragement, focus, and personal growth.", "alternates": []}, {"artist": "Les Brown · MotivationHub", "title": "It’s Time to Get Over It", "videoId": "ffXKVfUcQE8", "genre": "Motivation", "category": "Motivation", "theme": "Morning encouragement, focus, and personal growth.", "alternates": []}, {"artist": "Les Brown", "title": "Commit Yourself", "videoId": "gVo-vFan3X8", "genre": "Motivation", "category": "Motivation", "theme": "Morning encouragement, focus, and personal growth.", "alternates": []}, {"artist": "Eric Thomas", "title": "You Owe You", "videoId": "7Oxz060iedY", "genre": "Motivation", "category": "Motivation", "theme": "Morning encouragement, focus, and personal growth.", "alternates": []}, {"artist": "Motiversity", "title": "Morning Motivation · Start Your Day Right", "videoId": "GXftq9TnhaA", "genre": "Motivation", "category": "Motivation", "theme": "Morning encouragement, focus, and personal growth.", "alternates": []}, {"artist": "Eric Thomas", "title": "You Owe It to Yourself · Compilation", "videoId": "iqJpJLOyaoY", "genre": "Motivation", "category": "Motivation", "theme": "Morning encouragement, focus, and personal growth.", "alternates": []}, {"artist": "Motiversity", "title": "The Best Morning Motivation", "videoId": "dDdiPA8PFhc", "genre": "Motivation", "category": "Motivation", "theme": "Morning encouragement, focus, and personal growth.", "alternates": []}, {"artist": "Motiversity", "title": "Believe in Yourself · Morning Motivation", "videoId": "4Bnfmgm3jZg", "genre": "Motivation", "category": "Motivation", "theme": "Morning encouragement, focus, and personal growth.", "alternates": []}, {"artist": "Les Brown", "title": "Change Your Life · Morning Motivation", "videoId": "ZTHy7KhudkM", "genre": "Motivation", "category": "Motivation", "theme": "Morning encouragement, focus, and personal growth.", "alternates": []}, {"artist": "Tony Robbins", "title": "Focus on Yourself · Morning Motivation", "videoId": "IRmMDkbEySA", "genre": "Motivation", "category": "Motivation", "theme": "Morning encouragement, focus, and personal growth.", "alternates": []}, {"artist": "Eric Thomas", "title": "You Owe It to You", "videoId": "jPpRo3RKcn0", "genre": "Motivation", "category": "Motivation", "theme": "Morning encouragement, focus, and personal growth.", "alternates": []}], "movies": [{"title": "Daughters of the Dust", "artist": "Julie Dash", "videoId": "zdMxR2M_ddM", "genre": "History & Biography"}, {"title": "Moonlight", "artist": "Barry Jenkins", "videoId": "9NJj12tJzqc", "genre": "Drama & Family"}, {"title": "Malcolm X", "artist": "Spike Lee", "videoId": "jNMWdwvZjsw", "genre": "History & Biography"}, {"title": "Do the Right Thing", "artist": "Spike Lee", "videoId": "5Ny631yQ-DM", "genre": "Drama & Family"}, {"title": "Black Panther", "artist": "Ryan Coogler", "videoId": "xjDjIWPwcPU", "genre": "Sci-Fi & Fantasy"}, {"title": "Hidden Figures", "artist": "Theodore Melfi", "videoId": "5wfrDhgUMGI", "genre": "Drama & Family"}, {"title": "Love & Basketball", "artist": "Gina Prince-Bythewood", "videoId": "Ur83i6_BjbE", "genre": "Romance"}, {"title": "Selma", "artist": "Ava DuVernay", "videoId": "kPgs2zshD9Y", "genre": "History & Biography"}, {"title": "A Raisin in the Sun", "artist": "Daniel Petrie", "videoId": "g4nRjTRDo6E", "genre": "Drama & Family"}, {"title": "Killer of Sheep", "artist": "Charles Burnett", "videoId": "bORJQ8dF9tQ", "genre": "Drama & Family"}, {"title": "The Watermelon Woman", "artist": "Cheryl Dunye", "videoId": "mtU6Wo29VXI", "genre": "Drama & Family"}, {"title": "Crooklyn", "artist": "Spike Lee", "videoId": "HYVHCtw3DdQ", "genre": "History & Biography"}, {"title": "Eve's Bayou", "artist": "Kasi Lemmons", "videoId": "6mXU9qVFRpM", "genre": "Horror & Mystery"}, {"title": "If Beale Street Could Talk", "artist": "Barry Jenkins", "videoId": "tx2H_ulR84o", "genre": "Romance"}, {"title": "The Great Debaters", "artist": "Denzel Washington", "videoId": "ucSkqnGBBnU", "genre": "Drama & Family"}, {"title": "Queen of Katwe", "artist": "Mira Nair", "videoId": "YuXBik7EciQ", "genre": "Drama & Family"}, {"title": "Soul", "artist": "Pete Docter; co-directed by Kemp Powers", "videoId": "xOsLIiBStEs", "genre": "Animation"}, {"title": "Summer of Soul", "artist": "Ahmir Questlove Thompson", "videoId": "slFiJpAxZyQ", "genre": "Documentary"}, {"title": "The Last Black Man in San Francisco", "artist": "Joe Talbot", "videoId": "C0FnJDhY9-0", "genre": "Drama & Family"}, {"title": "Sounder", "artist": "Martin Ritt", "videoId": "N_arLbvbsFo", "genre": "History & Biography"}], "quiet": [{"genre": "Ambient", "artist": "Brian Eno", "title": "An Ending (Ascent)", "videoId": "OlaTeXX3uH8", "alternates": ["OnAS7efua64"], "theme": "Instrumental space for reflection and focused work.", "instrumental": true}, {"genre": "Classical", "artist": "Lang Lang · Beethoven", "title": "Für Elise", "videoId": "s71I_EWJk7I", "alternates": ["FW_KCau2iTI"], "theme": "A familiar piano piece for a quieter learning moment.", "instrumental": true}, {"genre": "Jazz", "artist": "Louis Armstrong", "title": "What a Wonderful World", "videoId": "rBrd_3VMC3c", "alternates": ["CaCSuzR4DwM"], "theme": "A familiar vocal standard about noticing the world around us."}, {"genre": "Lo-Fi", "artist": "Nujabes", "title": "Aruarian Dance", "videoId": "qYcoJpqCha4", "alternates": [], "theme": "Instrumental jazz-hop for a calm creative flow.", "instrumental": true}, {"genre": "Jazz", "artist": "John Coltrane", "title": "My Favorite Things", "videoId": "rqpriUFsMQQ", "alternates": ["ej6gfL4yF4E"], "theme": "An instrumental jazz exploration for listening, reflection, and creative work.", "instrumental": true}, {"genre": "Jazz", "artist": "Miles Davis", "title": "So What · Official live video", "videoId": "zqNTltOGh5c", "alternates": [], "theme": "Instrumental musical craft, conversation, and space to think.", "instrumental": true}, {"genre": "Jazz", "artist": "Miles Davis", "title": "Flamenco Sketches", "videoId": "nTwp1sgUJrM", "theme": "Space, patient listening, and reflective focus.", "alternates": [], "instrumental": true}, {"genre": "Jazz", "artist": "John Coltrane", "title": "Naima", "videoId": "bPAC6zt_1ZM", "theme": "A lyrical instrumental for calm concentration.", "alternates": [], "instrumental": true}]}
+{
+  "music": [
+    {
+      "genre": "Hip Hop/R&B",
+      "artist": "Fasol Prod",
+      "title": "Soul / Jazz Instrumental Long Mix · 1h20",
+      "videoId": "YfQYmBSOGxU",
+      "theme": "Long instrumental soul, jazz and R&B-flavored listening for calm focus.",
+      "instrumental": true,
+      "longForm": true
+    },
+    {
+      "genre": "Hip Hop/R&B",
+      "artist": "Lofi Coding Music",
+      "title": "Rainy Window Workspace · 1 Hour",
+      "videoId": "E9apPZ0tGiU",
+      "theme": "Lo-fi hip-hop instrumental background for focus and quiet work.",
+      "instrumental": true,
+      "longForm": true
+    },
+    {
+      "genre": "Jazz",
+      "artist": "Relaxing Jazz",
+      "title": "Relaxing Jazz Instrumental · 1 Hour",
+      "videoId": "JRw8zG1dPJI",
+      "theme": "Extended jazz instrumental listening for a slower pace.",
+      "instrumental": true,
+      "longForm": true
+    },
+    {
+      "genre": "Jazz",
+      "artist": "John Coltrane",
+      "title": "My Favorite Things",
+      "videoId": "rqpriUFsMQQ",
+      "theme": "Instrumental jazz exploration.",
+      "instrumental": true
+    },
+    {
+      "genre": "Classical",
+      "artist": "Rain Whisper Classics",
+      "title": "Bach · Peaceful Piano & Orchestra · 1 Hour",
+      "videoId": "EdS22-yUp4Q",
+      "theme": "Extended classical instrumental music for reading, reflection and rest.",
+      "instrumental": true,
+      "longForm": true
+    },
+    {
+      "genre": "Classical",
+      "artist": "Cellofeggio",
+      "title": "Cello & Piano · 1 Hour",
+      "videoId": "dXrPkbYil-4",
+      "theme": "One hour of cello and piano instrumentals.",
+      "instrumental": true,
+      "longForm": true
+    },
+    {
+      "genre": "Reggae",
+      "artist": "Riddims by KennyMuziq",
+      "title": "Reggae Instrumentals Mixtape · 3 Hours",
+      "videoId": "W4arzqY8cF8",
+      "theme": "Long-form reggae riddims without vocals.",
+      "instrumental": true,
+      "longForm": true
+    },
+    {
+      "genre": "Blues",
+      "artist": "Muddy Strings",
+      "title": "Relaxing Slow Blues Instrumental · 1 Hour",
+      "videoId": "GObYqBMqqB4",
+      "theme": "Slow blues guitar instrumentals for unwinding.",
+      "instrumental": true,
+      "longForm": true
+    },
+    {
+      "genre": "Ambient",
+      "artist": "SOMNIA",
+      "title": "Rain on Window Ambient · 1 Hour",
+      "videoId": "BRiRU1xiVLM",
+      "theme": "Soft ambient instrumental soundscape with rain.",
+      "instrumental": true,
+      "longForm": true
+    },
+    {
+      "genre": "Ambient",
+      "artist": "Brian Eno",
+      "title": "An Ending (Ascent)",
+      "videoId": "OlaTeXX3uH8",
+      "theme": "Spacious ambient instrumental.",
+      "instrumental": true
+    },
+    {
+      "genre": "Lo-Fi",
+      "artist": "Lofi Coding Music",
+      "title": "Rainy Window Workspace · 1 Hour",
+      "videoId": "E9apPZ0tGiU",
+      "theme": "Long lo-fi instrumental listening.",
+      "instrumental": true,
+      "longForm": true
+    },
+    {
+      "genre": "Lo-Fi",
+      "artist": "Nujabes",
+      "title": "Aruarian Dance",
+      "videoId": "qYcoJpqCha4",
+      "theme": "Instrumental jazz-hop for a calm creative flow.",
+      "instrumental": true
+    },
+    {
+      "genre": "House / EDM",
+      "artist": "Progressive House Chill",
+      "title": "Instrumental Night Drive · 1 Hour",
+      "videoId": "AF-zYRug8dA",
+      "theme": "One-hour progressive house instrumental mix.",
+      "instrumental": true,
+      "longForm": true
+    },
+    {
+      "genre": "Soul",
+      "artist": "Fasol Prod",
+      "title": "Soul / Jazz Instrumental Long Mix · 1h20",
+      "videoId": "YfQYmBSOGxU",
+      "theme": "Long instrumental soul mix.",
+      "instrumental": true,
+      "longForm": true
+    },
+    {
+      "genre": "World",
+      "artist": "World Jazz Lounge",
+      "title": "Persian / Turkish / Arabic Jazz Lounge · 1 Hour",
+      "videoId": "5TujWCAzYa4",
+      "theme": "Instrumental world-jazz lounge.",
+      "instrumental": true,
+      "longForm": true
+    },
+    {
+      "genre": "World",
+      "artist": "Persian Jazz",
+      "title": "Persian Jazz Instrumental · 1 Hour",
+      "videoId": "27NY5eDKIwM",
+      "theme": "Extended Persian-jazz instrumental listening.",
+      "instrumental": true,
+      "longForm": true
+    },
+    {
+      "genre": "Latin",
+      "artist": "Havana Soul Beats",
+      "title": "Cuban Instrumental Music for Relax & Work",
+      "videoId": "VmoJy1sgDRI",
+      "theme": "Cuban and Latin instrumental background music.",
+      "instrumental": true,
+      "longForm": true
+    },
+    {
+      "genre": "Latin",
+      "artist": "Desert Rhythm",
+      "title": "Cuban Lounge · Calm Latin Instrumental",
+      "videoId": "PZBRGET694k",
+      "theme": "Latin lounge instrumentals for a calmer atmosphere.",
+      "instrumental": true,
+      "longForm": true
+    },
+    {
+      "genre": "Gospel / Spiritual",
+      "artist": "The Jesus Playlist",
+      "title": "Quiet Time · Gospel Piano Instrumental · 1 Hour",
+      "videoId": "9CJYjbYxeJs",
+      "theme": "One hour of instrumental gospel piano for quiet reflection.",
+      "instrumental": true,
+      "longForm": true
+    },
+    {
+      "genre": "Acoustic",
+      "artist": "Relaxing Instrumentals",
+      "title": "Relaxing Instrumental Music · 2 Hours",
+      "videoId": "YfNijxW6b5Y",
+      "theme": "Long acoustic-leaning instrumental background listening.",
+      "instrumental": true,
+      "longForm": true
+    },
+    {
+      "genre": "Soundtracks / Cinematic",
+      "artist": "Vangelis",
+      "title": "Chariots of Fire",
+      "videoId": "8a-HfNE3EIo",
+      "theme": "Instrumental cinematic theme.",
+      "instrumental": true
+    },
+    {
+      "genre": "Soundtracks / Cinematic",
+      "artist": "Lang Lang",
+      "title": "Cornfield Chase · Interstellar",
+      "videoId": "gGYZc5Pc4Qc",
+      "theme": "Instrumental cinematic piano.",
+      "instrumental": true
+    },
+    {
+      "genre": "Funk",
+      "artist": "Deep Funk",
+      "title": "Chill Funk Deep Bass · 1 Hour Instrumental",
+      "videoId": "oOS9mGundo0",
+      "theme": "Retro-inspired instrumental funk for relaxed movement and focus.",
+      "instrumental": true,
+      "longForm": true
+    },
+    {
+      "genre": "Experimental",
+      "artist": "Herbie Hancock",
+      "title": "Rockit",
+      "videoId": "GHhD4PD75zY",
+      "theme": "Instrumental electronic-funk experimentation.",
+      "instrumental": true
+    }
+  ],
+  "motivation": [
+    {
+      "artist": "The Mel Robbins Podcast · Dr. Russell Kennedy",
+      "title": "The Truth About Anxiety and How to Heal It",
+      "videoId": "RdM596wLz00",
+      "genre": "Mental Health Motivation",
+      "category": "Motivation",
+      "theme": "Long-form conversation about understanding anxiety, the body and recovery."
+    },
+    {
+      "artist": "The Mel Robbins Podcast",
+      "title": "Surprising Signs of Anxiety and How to Heal It",
+      "videoId": "yuy9VVY2Snc",
+      "genre": "Mental Health Motivation",
+      "category": "Motivation",
+      "theme": "Mental-health-focused conversation about anxiety patterns and practical next steps."
+    },
+    {
+      "artist": "NAMI",
+      "title": "NAMI Man · My Mental Health Superpower",
+      "videoId": "tq8hNoauxFU",
+      "genre": "Mental Health Motivation",
+      "category": "Motivation",
+      "theme": "A lived-experience story about moving from despair toward recovery and advocacy."
+    },
+    {
+      "artist": "NAMI",
+      "title": "Welcome to NAMI · Hope, Support & Recovery",
+      "videoId": "BZNw3Ldtxrg",
+      "genre": "Mental Health Motivation",
+      "category": "Motivation",
+      "theme": "Mental-health support, education and the reminder that people do not have to navigate alone."
+    },
+    {
+      "artist": "Lancashire & South Cumbria NHS Foundation Trust",
+      "title": "Living with Schizophrenia · Recovery Story",
+      "videoId": "s9O3ml62xk4",
+      "genre": "Mental Health Motivation",
+      "category": "Motivation",
+      "theme": "Lived experience of trauma, schizophrenia, treatment and recovery.",
+      "contentNote": "Discusses distressing mental-health themes."
+    },
+    {
+      "artist": "NAMI / CBS",
+      "title": "Stop the Stigma · A Conversation About Mental Health",
+      "videoId": "lnCA1dF-Yfw",
+      "genre": "Mental Health Motivation",
+      "category": "Motivation",
+      "theme": "Mental-health conversation focused on stigma, understanding and support."
+    },
+    {
+      "artist": "Motiversity",
+      "title": "The Power of Gratitude & Perspective",
+      "videoId": "syuCEfkup28",
+      "genre": "Motivation",
+      "category": "Motivation",
+      "theme": "Morning encouragement, focus, and personal growth.",
+      "alternates": []
+    },
+    {
+      "artist": "Motiversity",
+      "title": "Best of 2025 · Speakers compilation",
+      "videoId": "SkQ-eoBo1Q4",
+      "genre": "Motivation",
+      "category": "Motivation",
+      "theme": "Morning encouragement, focus, and personal growth.",
+      "alternates": []
+    },
+    {
+      "artist": "Les Brown · MotivationHub",
+      "title": "It’s Time to Get Over It",
+      "videoId": "ffXKVfUcQE8",
+      "genre": "Motivation",
+      "category": "Motivation",
+      "theme": "Morning encouragement, focus, and personal growth.",
+      "alternates": []
+    },
+    {
+      "artist": "Les Brown",
+      "title": "Commit Yourself",
+      "videoId": "gVo-vFan3X8",
+      "genre": "Motivation",
+      "category": "Motivation",
+      "theme": "Morning encouragement, focus, and personal growth.",
+      "alternates": []
+    },
+    {
+      "artist": "Eric Thomas",
+      "title": "You Owe You",
+      "videoId": "7Oxz060iedY",
+      "genre": "Motivation",
+      "category": "Motivation",
+      "theme": "Morning encouragement, focus, and personal growth.",
+      "alternates": []
+    },
+    {
+      "artist": "Motiversity",
+      "title": "Morning Motivation · Start Your Day Right",
+      "videoId": "GXftq9TnhaA",
+      "genre": "Motivation",
+      "category": "Motivation",
+      "theme": "Morning encouragement, focus, and personal growth.",
+      "alternates": []
+    },
+    {
+      "artist": "Eric Thomas",
+      "title": "You Owe It to Yourself · Compilation",
+      "videoId": "iqJpJLOyaoY",
+      "genre": "Motivation",
+      "category": "Motivation",
+      "theme": "Morning encouragement, focus, and personal growth.",
+      "alternates": []
+    },
+    {
+      "artist": "Motiversity",
+      "title": "The Best Morning Motivation",
+      "videoId": "dDdiPA8PFhc",
+      "genre": "Motivation",
+      "category": "Motivation",
+      "theme": "Morning encouragement, focus, and personal growth.",
+      "alternates": []
+    },
+    {
+      "artist": "Motiversity",
+      "title": "Believe in Yourself · Morning Motivation",
+      "videoId": "4Bnfmgm3jZg",
+      "genre": "Motivation",
+      "category": "Motivation",
+      "theme": "Morning encouragement, focus, and personal growth.",
+      "alternates": []
+    },
+    {
+      "artist": "Les Brown",
+      "title": "Change Your Life · Morning Motivation",
+      "videoId": "ZTHy7KhudkM",
+      "genre": "Motivation",
+      "category": "Motivation",
+      "theme": "Morning encouragement, focus, and personal growth.",
+      "alternates": []
+    },
+    {
+      "artist": "Tony Robbins",
+      "title": "Focus on Yourself · Morning Motivation",
+      "videoId": "IRmMDkbEySA",
+      "genre": "Motivation",
+      "category": "Motivation",
+      "theme": "Morning encouragement, focus, and personal growth.",
+      "alternates": []
+    },
+    {
+      "artist": "Eric Thomas",
+      "title": "You Owe It to You",
+      "videoId": "jPpRo3RKcn0",
+      "genre": "Motivation",
+      "category": "Motivation",
+      "theme": "Morning encouragement, focus, and personal growth.",
+      "alternates": []
+    }
+  ],
+  "movies": [
+    {
+      "title": "It's Kind of a Funny Story · Official Trailer",
+      "artist": "Focus Features",
+      "videoId": "0dSk92CbuFE",
+      "genre": "Depression / Hospitalization",
+      "theme": "Teen depression, suicidal thoughts, psychiatric hospitalization, peer connection and recovery.",
+      "contentNote": "Trailer · suicidal thoughts and psychiatric hospitalization."
+    },
+    {
+      "title": "To the Bone · Official Trailer",
+      "artist": "Netflix",
+      "videoId": "705yRfs6Dbs",
+      "genre": "Eating Disorders",
+      "theme": "Eating-disorder treatment, family strain and recovery.",
+      "contentNote": "Trailer · eating-disorder themes."
+    },
+    {
+      "title": "Words on Bathroom Walls · Official Trailer",
+      "artist": "RoadsideFlix",
+      "videoId": "4E1-RnpOe8Q",
+      "genre": "Psychosis / Schizophrenia",
+      "theme": "A teenager living with schizophrenia, treatment, school and relationships.",
+      "contentNote": "Trailer · hallucinations and serious mental illness."
+    },
+    {
+      "title": "Silver Linings Playbook · Official Trailer",
+      "artist": "The Weinstein Company / trailer source",
+      "videoId": "Lj5_FhLaaQQ",
+      "genre": "Bipolar / Recovery",
+      "theme": "Mental illness, family, relationships, treatment and rebuilding life.",
+      "contentNote": "Trailer · psychiatric treatment and mood-disorder themes."
+    },
+    {
+      "title": "A Beautiful Mind · Trailer",
+      "artist": "Universal / trailer source",
+      "videoId": "aS_d0Ayjw4o",
+      "genre": "Schizophrenia / Biography",
+      "theme": "Dramatized story of John Nash, psychosis, relationships and long-term adaptation.",
+      "contentNote": "Trailer · dramatized portrayal of schizophrenia."
+    },
+    {
+      "title": "Beautiful Boy · Official Trailer",
+      "artist": "Amazon Studios",
+      "videoId": "y23HyopQxEg",
+      "genre": "Addiction / Family",
+      "theme": "Substance-use disorder, relapse, recovery and family impact.",
+      "contentNote": "Trailer · addiction and relapse."
+    },
+    {
+      "title": "Short Term 12 · Official Trailer",
+      "artist": "Cineverse / Cinedigm",
+      "videoId": "Cook_OOKWlw",
+      "genre": "Trauma / Youth",
+      "theme": "Trauma, self-harm, caregiving, group-home life and connection.",
+      "contentNote": "Trailer · trauma and self-harm themes."
+    },
+    {
+      "title": "Take Shelter · Official Trailer",
+      "artist": "Sony Pictures Classics",
+      "videoId": "hUraDx3oFVg",
+      "genre": "Psychosis / Family",
+      "theme": "Disturbing visions, fear of mental illness, family strain and help-seeking.",
+      "contentNote": "Trailer · possible psychosis and intense distress."
+    },
+    {
+      "title": "All the Bright Places · Official Trailer",
+      "artist": "Netflix",
+      "videoId": "zfQXKVCudec",
+      "genre": "Grief / Depression",
+      "theme": "Grief, emotional pain, connection and mental illness.",
+      "contentNote": "Trailer · suicide and grief themes."
+    },
+    {
+      "title": "The Skeleton Twins · Trailer",
+      "artist": "Cineworld / film distributor",
+      "videoId": "kUr2yXAAV3E",
+      "genre": "Depression / Family",
+      "theme": "Estranged siblings reconnect after mental-health crises.",
+      "contentNote": "Trailer · suicide-related themes."
+    },
+    {
+      "title": "One Flew Over the Cuckoo's Nest · Trailer",
+      "artist": "Trailer archive",
+      "videoId": "2WSyJgydTsA",
+      "genre": "Psychiatric Hospital / Ethics",
+      "theme": "A classic fictional portrayal of institutional psychiatry, power and patient rights.",
+      "contentNote": "Historic film depiction; not a model of modern psychiatric care."
+    },
+    {
+      "title": "OCD: The War Inside · Full Documentary",
+      "artist": "National Film Board of Canada",
+      "videoId": "bKiu1IZcEF0",
+      "genre": "OCD Documentary",
+      "theme": "Feature documentary following people living with obsessive-compulsive disorder.",
+      "contentNote": "Full documentary · OCD themes."
+    },
+    {
+      "title": "NAMI Man · My Mental Health Superpower",
+      "artist": "NAMI",
+      "videoId": "tq8hNoauxFU",
+      "genre": "Recovery Short",
+      "theme": "A short lived-experience film about despair, recovery and mental-health advocacy."
+    },
+    {
+      "title": "Living with Schizophrenia",
+      "artist": "Lancashire & South Cumbria NHS Foundation Trust",
+      "videoId": "s9O3ml62xk4",
+      "genre": "Schizophrenia Story",
+      "theme": "A first-person mental-health story about schizophrenia, trauma, medication and therapy.",
+      "contentNote": "References distressing experiences."
+    },
+    {
+      "title": "Living with Schizophrenia · Ashley's Story",
+      "artist": "Patient education source",
+      "videoId": "ZHpKvmTJOhA",
+      "genre": "Schizophrenia Story",
+      "theme": "A lived-experience video about schizophrenia and recovery."
+    },
+    {
+      "title": "Mental Health and Black Men · Panel Discussion",
+      "artist": "Motivo / American Counseling Association",
+      "videoId": "VsZcDstfUQc",
+      "genre": "Community Discussion",
+      "theme": "Clinicians discuss Black men's mental health, stigma and treatment."
+    },
+    {
+      "title": "Treating Mental Health in the Black Community",
+      "artist": "SimplePractice",
+      "videoId": "JzLqce2GpkU",
+      "genre": "Community Discussion",
+      "theme": "Conversation about culturally responsive mental-health treatment in Black communities."
+    },
+    {
+      "title": "Stop the Stigma · Mental Health Conversation",
+      "artist": "NAMI / CBS",
+      "videoId": "lnCA1dF-Yfw",
+      "genre": "Mental Health Discussion",
+      "theme": "Public conversation about stigma and mental-health support."
+    },
+    {
+      "title": "Welcome to NAMI · Mental Health Support",
+      "artist": "NAMI",
+      "videoId": "BZNw3Ldtxrg",
+      "genre": "Mental Health Short",
+      "theme": "Short overview of mental-health education, support and community resources."
+    },
+    {
+      "title": "Living with Schizophrenia · Ashley's Story",
+      "artist": "Care Coordination Education",
+      "videoId": "C7Jl9_59tfY",
+      "genre": "Schizophrenia Story",
+      "theme": "Lived-experience perspective on schizophrenia and navigating care.",
+      "contentNote": "Mental illness discussion."
+    }
+  ],
+  "meditation": [
+    {
+      "artist": "Sunnybrook Hospital",
+      "title": "Box Breathing · Calm Stress or Anxiety",
+      "videoId": "tEmt1Znux58",
+      "genre": "Breathing",
+      "theme": "Learn and practice box breathing as a short relaxation skill."
+    },
+    {
+      "artist": "The Partnership in Education",
+      "title": "5-4-3-2-1 Grounding Exercise",
+      "videoId": "30VMIEmA114",
+      "genre": "Grounding",
+      "theme": "A sensory grounding method for returning attention to the present."
+    },
+    {
+      "artist": "Guided Relaxation",
+      "title": "Progressive Muscle Relaxation",
+      "videoId": "ClqPtWzozXs",
+      "genre": "Body Relaxation",
+      "theme": "A guided progressive muscle relaxation practice."
+    },
+    {
+      "artist": "Guided Visualization",
+      "title": "Guided Visualization for Stress",
+      "videoId": "t1rRo6cgM_E",
+      "genre": "Visualization",
+      "theme": "A guided visualization exercise for slowing down and refocusing."
+    },
+    {
+      "artist": "NewYork-Presbyterian",
+      "title": "Diaphragmatic Breathing",
+      "videoId": "WUumD29uvmq",
+      "genre": "Breathing",
+      "theme": "Instruction in diaphragmatic breathing."
+    },
+    {
+      "artist": "TED · Andy Puddicombe",
+      "title": "All It Takes Is 10 Mindful Minutes",
+      "videoId": "qzR62JJCMBQ",
+      "genre": "Learn Meditation",
+      "theme": "A beginner-friendly explanation of making room for mindfulness without trying to force thoughts away."
+    },
+    {
+      "artist": "UCLA Mindful",
+      "title": "Guided Meditations Library",
+      "externalUrl": "https://www.uclahealth.org/uclamindful/guided-meditations",
+      "genre": "Guided Meditation Library",
+      "theme": "UCLA's free guided practices include breathing, body scan, loving kindness, working with difficulties and multilingual options."
+    },
+    {
+      "artist": "UCLA Mindful",
+      "title": "Getting Started with Mindfulness",
+      "externalUrl": "https://www.uclahealth.org/programs/uclamindful/free-guided-meditations/getting-started",
+      "genre": "Learn Meditation",
+      "theme": "Official UCLA beginner guidance on posture, choosing a practice and understanding mindfulness."
+    },
+    {
+      "artist": "Oxford / Mindfulness resources",
+      "title": "3-Step Breathing Space · Find on YouTube",
+      "externalUrl": "https://www.youtube.com/results?search_query=Oxford+Mindfulness+3-Step+Breathing+Space",
+      "genre": "Breathing",
+      "theme": "A short breathing-space practice used in mindfulness-based approaches."
+    },
+    {
+      "artist": "Mark Williams / Oxford Mindfulness",
+      "title": "Guided Body Scan · Find on YouTube",
+      "externalUrl": "https://www.youtube.com/results?search_query=Mark+Williams+guided+body+scan+meditation",
+      "genre": "Body Scan",
+      "theme": "Longer body-scan practice for learning attention to physical sensations."
+    },
+    {
+      "artist": "Headspace",
+      "title": "Meditation for Beginners · Video Library",
+      "externalUrl": "https://www.youtube.com/results?search_query=Headspace+guided+meditation+for+beginners",
+      "genre": "Learn Meditation",
+      "theme": "Short beginner-friendly guided meditations and mindfulness explainers."
+    },
+    {
+      "artist": "The Mindful Movement",
+      "title": "Guided Meditation for Being Present · Video Library",
+      "externalUrl": "https://www.youtube.com/results?search_query=The+Mindful+Movement+meditation+being+present",
+      "genre": "Mindfulness",
+      "theme": "Guided mindfulness and embodied relaxation practices."
+    }
+  ],
+  "podcasts": [
+    {
+      "artist": "Therapy for Black Girls",
+      "title": "This Week in Therapy for Black Girls",
+      "videoId": "jOX4Qz4jhtg",
+      "genre": "Black Women's Mental Health",
+      "theme": "Mental-health and personal-development conversation led by psychologist Dr. Joy Harden Bradford."
+    },
+    {
+      "artist": "Latinx Therapy",
+      "title": "Introduction to Latinx Therapy",
+      "videoId": "2FPmBlrONmY",
+      "genre": "Latinx Mental Health",
+      "theme": "Culturally responsive mental-health conversation and education."
+    },
+    {
+      "artist": "The Mel Robbins Podcast · Dr. Russell Kennedy",
+      "title": "The Truth About Anxiety and How to Heal It",
+      "videoId": "RdM596wLz00",
+      "genre": "Anxiety",
+      "theme": "Long-form mental-health conversation about anxiety and recovery."
+    },
+    {
+      "artist": "The Mel Robbins Podcast",
+      "title": "Surprising Signs of Anxiety and How to Heal It",
+      "videoId": "yuy9VVY2Snc",
+      "genre": "Anxiety",
+      "theme": "Long-form mental-health discussion about recognizing and responding to anxiety."
+    },
+    {
+      "artist": "Motivo / ACA",
+      "title": "Mental Health and Black Men · Panel Discussion",
+      "videoId": "VsZcDstfUQc",
+      "genre": "Black Men's Mental Health",
+      "theme": "Clinician panel on Black men's mental health and treatment."
+    },
+    {
+      "artist": "SimplePractice",
+      "title": "Treating Mental Health in the Black Community",
+      "videoId": "JzLqce2GpkU",
+      "genre": "Black Mental Health",
+      "theme": "Clinical and community discussion about culturally responsive care."
+    },
+    {
+      "artist": "NAMI / CBS",
+      "title": "Stop the Stigma · A Conversation About Mental Health",
+      "videoId": "lnCA1dF-Yfw",
+      "genre": "Community Mental Health",
+      "theme": "Public mental-health discussion about stigma, lived experience and support."
+    },
+    {
+      "artist": "Therapy for Black Girls",
+      "title": "Browse Video Podcast Episodes",
+      "externalUrl": "https://www.youtube.com/results?search_query=Therapy+for+Black+Girls+podcast",
+      "genre": "Black Women's Mental Health",
+      "theme": "Browse current Therapy for Black Girls video episodes on YouTube."
+    },
+    {
+      "artist": "Asian Mental Health Collective",
+      "title": "Mental Health Mukbang & Video Conversations",
+      "externalUrl": "https://www.youtube.com/@AsianMentalHealthCollective/videos",
+      "genre": "Asian Mental Health",
+      "theme": "Mental-health conversations centering Asian communities."
+    },
+    {
+      "artist": "Shapes and Sounds",
+      "title": "Asian Mental Health Podcast · Video Episodes",
+      "externalUrl": "https://www.youtube.com/results?search_query=Shapes+and+Sounds+Asian+Mental+Health+Podcast",
+      "genre": "Asian Mental Health",
+      "theme": "Video podcast conversations normalizing mental health in Asian communities."
+    },
+    {
+      "artist": "Black Men's Mental Health Podcast",
+      "title": "Browse Video Episodes",
+      "externalUrl": "https://www.youtube.com/results?search_query=Black+Men%27s+Mental+Health+Podcast",
+      "genre": "Black Men's Mental Health",
+      "theme": "Video conversations focused on Black men's mental health and emotional wellbeing."
+    },
+    {
+      "artist": "All Black Men Need Therapy",
+      "title": "Browse Video Episodes",
+      "externalUrl": "https://www.youtube.com/results?search_query=All+Black+Men+Need+Therapy+podcast",
+      "genre": "Black Men's Mental Health",
+      "theme": "Candid conversations about mental health, relationships and growth."
+    },
+    {
+      "artist": "Latinx Therapy",
+      "title": "Browse Video Episodes",
+      "externalUrl": "https://www.youtube.com/results?search_query=Latinx+Therapy+podcast",
+      "genre": "Latinx Mental Health",
+      "theme": "Browse Latinx Therapy video conversations on YouTube."
+    },
+    {
+      "artist": "Mayim Bialik's Breakdown",
+      "title": "Mental Health Video Podcast",
+      "externalUrl": "https://www.youtube.com/results?search_query=Mayim+Bialik%27s+Breakdown+mental+health",
+      "genre": "General Mental Health",
+      "theme": "Long-form conversations about mental health, neuroscience and lived experience."
+    },
+    {
+      "artist": "NAMI",
+      "title": "Mental Health Video Resource Library",
+      "externalUrl": "https://www.youtube.com/@NAMI/videos",
+      "genre": "Community / Lived Experience",
+      "theme": "NAMI video conversations, lived-experience stories and mental-health education."
+    }
+  ],
+  "quiet": [
+    {
+      "genre": "Classical",
+      "artist": "Rain Whisper Classics",
+      "title": "Bach · Peaceful Piano & Orchestra · 1 Hour",
+      "videoId": "EdS22-yUp4Q",
+      "theme": "Extended classical instrumental music for reading, reflection and rest.",
+      "instrumental": true,
+      "longForm": true
+    },
+    {
+      "genre": "Classical",
+      "artist": "Cellofeggio",
+      "title": "Cello & Piano · 1 Hour",
+      "videoId": "dXrPkbYil-4",
+      "theme": "One hour of cello and piano instrumentals.",
+      "instrumental": true,
+      "longForm": true
+    },
+    {
+      "genre": "Ambient",
+      "artist": "SOMNIA",
+      "title": "Rain on Window Ambient · 1 Hour",
+      "videoId": "BRiRU1xiVLM",
+      "theme": "Soft ambient instrumental soundscape with rain.",
+      "instrumental": true,
+      "longForm": true
+    },
+    {
+      "genre": "Ambient",
+      "artist": "Brian Eno",
+      "title": "An Ending (Ascent)",
+      "videoId": "OlaTeXX3uH8",
+      "theme": "Spacious ambient instrumental.",
+      "instrumental": true
+    },
+    {
+      "genre": "Lo-Fi",
+      "artist": "Lofi Coding Music",
+      "title": "Rainy Window Workspace · 1 Hour",
+      "videoId": "E9apPZ0tGiU",
+      "theme": "Long lo-fi instrumental listening.",
+      "instrumental": true,
+      "longForm": true
+    },
+    {
+      "genre": "Lo-Fi",
+      "artist": "Nujabes",
+      "title": "Aruarian Dance",
+      "videoId": "qYcoJpqCha4",
+      "theme": "Instrumental jazz-hop for a calm creative flow.",
+      "instrumental": true
+    },
+    {
+      "genre": "Acoustic",
+      "artist": "Relaxing Instrumentals",
+      "title": "Relaxing Instrumental Music · 2 Hours",
+      "videoId": "YfNijxW6b5Y",
+      "theme": "Long acoustic-leaning instrumental background listening.",
+      "instrumental": true,
+      "longForm": true
+    }
+  ]
+}
