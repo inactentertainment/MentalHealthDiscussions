@@ -1002,3 +1002,33 @@ body:has(#onboarding.guide-active:not(.hidden)) .mhd-contact-section{display:non
   .mhd-trust-action{white-space:normal}
 }
 @media print{.mhd-trust-layer{display:none!important}}
+
+
+/* 2026-10-17 navigation consolidation */
+html.mhd-universal-header .mhd-page-nav,
+html.mhd-universal-header .mhd-mobile-toggle,
+body[data-site-slug="MentalHealthDiscussions"] .site-app-desktop,
+body[data-site-slug="MentalHealthDiscussions"] .site-app-mobile-rail.site-app-mobile-slot{
+  display:none!important;
+}
+html.mhd-universal-header .topbar .nav,
+html.mhd-universal-header .top .nav,
+html.mhd-universal-header .header .headinner{
+  grid-template-columns:auto 1fr auto!important;
+  gap:10px!important;
+}
+html.mhd-universal-header .mhd-header-actions{
+  display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:7px!important;flex-wrap:nowrap!important;
+}
+html.mhd-universal-header .mhd-header-action{
+  background:var(--mhd-deep)!important;color:var(--mhd-button-text)!important;border-color:var(--mhd-deep)!important;
+}
+html.mhd-universal-header .mhd-contact-action{min-width:40px!important;width:40px!important;padding-inline:0!important}
+@media(max-width:900px){
+ html.mhd-universal-header .mhd-header-actions{gap:5px!important}
+ html.mhd-universal-header .mhd-header-action{padding:8px 9px!important;font-size:.72rem!important}
+}
+@media(max-width:680px){
+ html.mhd-universal-header .mhd-header-actions .mhd-header-action{display:none!important}
+ html.mhd-universal-header .mhd-header-actions .mhd-contact-action{display:inline-flex!important}
+}
