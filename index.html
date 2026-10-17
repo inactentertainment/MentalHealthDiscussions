@@ -104,7 +104,7 @@
     }
     @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
   </style>
-<link rel="stylesheet" href="mhd-comfort.css?v=20261006b">
+<link rel="stylesheet" href="mhd-comfort.css?v=20261017-hero-locked">
 <link rel="manifest" href="manifest.webmanifest" type="application/manifest+json">
 
 <meta name="mobile-web-app-capable" content="yes">
@@ -161,8 +161,7 @@
             <div class="mhd-video-kicker">Why this work matters</div>
             <h2 class="mhd-video-title">America is in a mental health crisis. What do we do now?</h2>
             <div class="video" id="mhdVideo" aria-label="Mental health in America video">
-              <iframe id="mhdYouTube" src="https://www.youtube.com/embed/7iDb7PaEszM?start=4&rel=0&playsinline=1&controls=1&modestbranding=1&enablejsapi=1" title="Mental Health in America" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="eager"></iframe>
-              <button class="mhd-video-play" id="mhdVideoPlay" type="button">Play video</button>
+              <iframe id="mhdYouTube" src="https://www.youtube.com/embed/7iDb7PaEszM?start=4&rel=0&playsinline=1&controls=1&modestbranding=1&enablejsapi=1" title="Mental Health in America" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="eager"></iframe><button class="mhd-video-play" id="mhdVideoPlay" type="button">Play video</button>
             </div>
           </div>
         </div>
@@ -450,11 +449,9 @@
 </script>
 
 <script>
-/* LOCKED MHD HERO VIDEO CUE
-   Proven working build: 2026-10-05
-   Video: 7iDb7PaEszM
-   Resting frame / start point: 4 seconds (brain + question mark).
-   Keep this timing unless intentionally re-QA'd against the live video. */
+/* LOCKED MHD HERO VIDEO — proven working implementation from 2026-10-05.
+   Preserve this player markup/cue behavior when editing surrounding title or copy.
+   Video: 7iDb7PaEszM | resting/play cue: 4 seconds. */
 window.onYouTubeIframeAPIReady=function(){
   var frame=document.getElementById("mhdYouTube"),wrap=document.getElementById("mhdVideo"),play=document.getElementById("mhdVideoPlay");
   if(!frame||!wrap||!window.YT||!YT.Player)return;
