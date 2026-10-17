@@ -161,7 +161,7 @@
             <div class="mhd-video-kicker">Why this work matters</div>
             <h2 class="mhd-video-title">America is in a mental health crisis. What do we do now?</h2>
             <div class="video" id="mhdVideo" aria-label="Mental health in America video">
-              <iframe id="mhdYouTube" src="https://www.youtube.com/embed/7iDb7PaEszM?rel=0&playsinline=1&controls=1&modestbranding=1&enablejsapi=1" title="Mental Health in America" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="eager"></iframe>
+              <iframe id="mhdYouTube" src="https://www.youtube.com/embed/7iDb7PaEszM?start=4&rel=0&playsinline=1&controls=1&modestbranding=1&enablejsapi=1" title="Mental Health in America" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="eager"></iframe>
               <button class="mhd-video-play" id="mhdVideoPlay" type="button">Play video</button>
             </div>
           </div>
@@ -450,37 +450,32 @@
 </script>
 
 <script>
+/* LOCKED MHD HERO VIDEO CUE
+   Proven working build: 2026-10-05
+   Video: 7iDb7PaEszM
+   Resting frame / start point: 4 seconds (brain + question mark).
+   Keep this timing unless intentionally re-QA'd against the live video. */
 window.onYouTubeIframeAPIReady=function(){
-  var wrap=document.getElementById("mhdVideo");
-  var play=document.getElementById("mhdVideoPlay");
-  if(!wrap||!window.YT||!YT.Player)return;
+  var frame=document.getElementById("mhdYouTube"),wrap=document.getElementById("mhdVideo"),play=document.getElementById("mhdVideoPlay");
+  if(!frame||!wrap||!window.YT||!YT.Player)return;
   try{
     window.mhdHeroPlayer=new YT.Player("mhdYouTube",{events:{
       onReady:function(e){
+        var reveal=function(){wrap.classList.add("mhd-cued")};
         try{
           e.target.mute();
           e.target.seekTo(4,true);
-          setTimeout(function(){
-            try{
-              e.target.pauseVideo();
-              e.target.unMute();
-              wrap.classList.add("mhd-cued");
-            }catch(err){wrap.classList.add("mhd-cued")}
-          },650);
-        }catch(err){wrap.classList.add("mhd-cued")}
-        if(play){
-          play.onclick=function(){
-            wrap.classList.add("mhd-playing","mhd-cued");
-            try{
-              e.target.seekTo(4,true);
-              e.target.playVideo();
-            }catch(err){}
-          };
-        }
+          e.target.playVideo();
+          setTimeout(function(){try{e.target.pauseVideo();e.target.unMute()}catch(err){} reveal()},500);
+          setTimeout(reveal,1500);
+        }catch(err){reveal()}
+        if(play)play.onclick=function(){
+          wrap.classList.add("mhd-playing","mhd-cued");
+          try{e.target.seekTo(4,true);e.target.playVideo()}catch(err){}
+        };
       },
       onStateChange:function(e){
         if(e.data===YT.PlayerState.PLAYING)wrap.classList.add("mhd-playing");
-        if(e.data===YT.PlayerState.PAUSED&&wrap.classList.contains("mhd-playing"))wrap.classList.remove("mhd-playing");
       }
     }});
   }catch(err){wrap.classList.add("mhd-cued")}
