@@ -54,11 +54,11 @@
     const event = pending; pending = null;
     try { await event.prompt(); await event.userChoice; } catch (_) { guide(); }
   }
-  function makeButton(label = 'Install App', kind = '') {
+  function makeButton(label = 'Install Web App', kind = '') {
     const b = document.createElement('button'); b.type = 'button'; b.className = 'site-app-button '+kind;
-    if (label === 'Install App') {
+    if (label === 'Install Web App') {
       b.setAttribute('aria-label',`Install ${brand.name} app`);
-      b.innerHTML = '<svg class="site-app-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m-4-4 4 4 4-4M5 15v5h14v-5"/></svg><span>Install App</span>';
+      b.innerHTML = '<svg class="site-app-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m-4-4 4 4 4-4M5 15v5h14v-5"/></svg><span>Install Web App</span>';
       b.addEventListener('click', install);
     } else b.textContent = label;
     controls.push(b); return b;
@@ -68,10 +68,10 @@
   const experience=document.createElement("script");experience.src=new URL("site-experience.js?v=20261017-jukebox",document.currentScript.src).href;document.head.append(experience);
   function init() {
     const desktopHost = document.querySelector(brand.desktop);
-    const desktop = makeButton('Install App','site-app-desktop');
+    const desktop = makeButton('Install Web App','site-app-desktop');
     if (desktopHost) desktopHost.append(desktop);
     else { const rail = document.createElement('div'); rail.className='site-app-mobile-rail'; rail.append(desktop); (document.querySelector('main') || document.body).prepend(rail); }
-    const mobile = makeButton('Install App','site-app-mobile');
+    const mobile = makeButton('Install Web App','site-app-mobile');
     const mobileHost = document.querySelector(brand.mobile);
     if (mobileHost) { mobileHost.prepend(mobile); new MutationObserver(() => { if (!mobileHost.contains(mobile)) mobileHost.prepend(mobile); }).observe(mobileHost, {childList:true}); }
     else { const rail=document.createElement('div');rail.className='site-app-mobile-rail site-app-mobile-slot';rail.append(mobile);(document.querySelector('main')||document.body).prepend(rail); }
@@ -79,7 +79,7 @@
     legacy.forEach(b => { b.hidden=true;b.style.setProperty('display','none','important'); });
     document.querySelectorAll('.site-app-footer').forEach(n=>n.remove());
     const footer=document.querySelector('footer');
-    if(footer){const host=footer.querySelector('.footer-word-links,.footer-links,.footer-nav,.legal-links,nav')||footer;const link=document.createElement('button');link.type='button';link.className='site-app-footer-text';link.textContent='Install App';link.addEventListener('click',install);host.append(link);controls.push(link);}
+    if(footer){const host=footer.querySelector('.footer-word-links,.footer-links,.footer-nav,.legal-links,nav')||footer;const link=document.createElement('button');link.type='button';link.className='site-app-footer-text';link.textContent='Install Web App';link.addEventListener('click',install);host.append(link);controls.push(link);}
     sync();
   }
   // Keep older install buttons on the same prompt, without duplicate prompts.
