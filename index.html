@@ -161,7 +161,7 @@
             <div class="mhd-video-kicker">Why this work matters</div>
             <h2 class="mhd-video-title">America is in a mental health crisis. What do we do now?</h2>
             <div class="video" id="mhdVideo" aria-label="Mental health in America video">
-              <iframe id="mhdYouTube" src="https://www.youtube.com/embed/7iDb7PaEszM?start=4&rel=0&playsinline=1&controls=1&modestbranding=1&enablejsapi=1" title="Mental Health in America" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="eager"></iframe><button class="mhd-video-play" id="mhdVideoPlay" type="button">Play video</button>
+              <iframe id="mhdYouTube" src="https://www.youtube.com/embed/7iDb7PaEszM?start=4&rel=0&playsinline=1&controls=1&modestbranding=1" title="Mental Health in America" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="eager"></iframe>
             </div>
           </div>
         </div>
@@ -448,34 +448,6 @@
   document.getElementById('year').textContent=new Date().getFullYear();document.querySelectorAll('.footerYear').forEach(el=>el.textContent=new Date().getFullYear());
 </script>
 
-<script>
-window.onYouTubeIframeAPIReady=function(){
-  var frame=document.getElementById("mhdYouTube"),wrap=document.getElementById("mhdVideo"),play=document.getElementById("mhdVideoPlay");
-  if(!frame||!wrap||!window.YT||!YT.Player)return;
-  try{
-    window.mhdHeroPlayer=new YT.Player("mhdYouTube",{events:{
-      onReady:function(e){
-        var reveal=function(){wrap.classList.add("mhd-cued")};
-        try{
-          e.target.mute();
-          e.target.seekTo(4,true);
-          e.target.playVideo();
-          setTimeout(function(){try{e.target.pauseVideo();e.target.unMute()}catch(err){} reveal()},500);
-          setTimeout(reveal,1500);
-        }catch(err){reveal()}
-        if(play)play.onclick=function(){
-          wrap.classList.add("mhd-playing","mhd-cued");
-          try{e.target.seekTo(4,true);e.target.playVideo()}catch(err){}
-        };
-      },
-      onStateChange:function(e){
-        if(e.data===YT.PlayerState.PLAYING)wrap.classList.add("mhd-playing");
-      }
-    }});
-  }catch(err){wrap.classList.add("mhd-cued")}
-};
-</script>
-<script src="https://www.youtube.com/iframe_api"></script>
 <script src="mhd-comfort.js?v=20261006b"></script>
 </body>
 </html>
